@@ -378,6 +378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42650e5041b41994ea4f9524e7ae7831, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasSleepTimeout: 1
 --- !u!4 &1610139148
 Transform:
   m_ObjectHideFlags: 0
@@ -397,6 +398,6 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1459550758}
   - {fileID: 1610139148}
+  - {fileID: 1459550758}
   - {fileID: 114834883}
