@@ -4,7 +4,9 @@
 
 **FIGMA:** [link:](https://www.figma.com/file/KTYZqqU3yKmgi3KuWg34NU/Authority-tracker)
 
-**APK:** [link:](Build/AuthorityTracker.apk)
+**ARM7:** [download:](Build/AuthorityTrackerARM7.apk) 
+
+**ARM64:** [download:](Build/AuthorityTrackerARM64.apk)
 
 ![Model](Tutorial/Tutorial_Page_1.png)
 ![Model](Tutorial/Tutorial_Page_2.png)
