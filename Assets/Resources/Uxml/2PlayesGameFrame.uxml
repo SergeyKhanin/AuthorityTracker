@@ -4,8 +4,8 @@
     <ui:Template name="SettingsFrame" src="project://database/Assets/Resources/Templates/SettingsFrame.uxml?fileID=9197481963319205126&amp;guid=83b191b376cc5f841a1dfe9ba23d215c&amp;type=3#SettingsFrame" />
     <ui:Template name="AdditionalFrame" src="project://database/Assets/Resources/Templates/AdditionalFrame.uxml?fileID=9197481963319205126&amp;guid=afde3a305a59b404f86c18a2045bb74e&amp;type=3#AdditionalFrame" />
     <ui:VisualElement name="players-frame" picking-mode="Ignore" class="frame frame-game label">
-        <ui:Instance name="player-2" template="PlayerFrame" picking-mode="Ignore" class="player-frame player player-2" />
         <ui:Instance name="separator-frame" template="SeparatorFrame" picking-mode="Ignore" class="separator-frame" />
+        <ui:Instance name="player-2" template="PlayerFrame" picking-mode="Ignore" class="player-frame player player-2" />
         <ui:Instance name="player-1" template="PlayerFrame" picking-mode="Ignore" class="player-frame player player-1" />
     </ui:VisualElement>
     <ui:Instance name="settings-frame" template="SettingsFrame" picking-mode="Ignore" class="frame frame-settings label hide" />
