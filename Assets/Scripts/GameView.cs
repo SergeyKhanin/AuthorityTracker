@@ -56,6 +56,11 @@ public class GameView : MonoBehaviour
 
     private void EnableSettings(bool isEnabled)
     {
+        if (isEnabled)
+            Screen.sleepTimeout = SleepTimeout.SystemSetting;
+        else
+            Screen.sleepTimeout = SleepTimeout.NeverSleep;
+
         _playersFrame.EnableInClassList(CommonUssClassNames.Hide, isEnabled);
         _settingsButton.EnableInClassList(CommonUssClassNames.Hide, isEnabled);
         _settingsFrame.EnableInClassList(CommonUssClassNames.Hide, !isEnabled);
