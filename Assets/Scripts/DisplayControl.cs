@@ -2,5 +2,13 @@ using UnityEngine;
 
 public class DisplayControl : MonoBehaviour
 {
-    void Start() => Screen.sleepTimeout = SleepTimeout.NeverSleep;
+    [SerializeField] private bool hasSleepTimeout;
+
+    void Start()
+    {
+        if (hasSleepTimeout)
+            Screen.sleepTimeout = SleepTimeout.NeverSleep;
+        else
+            Screen.sleepTimeout = SleepTimeout.SystemSetting;
+    }
 }
