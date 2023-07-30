@@ -48,8 +48,10 @@
 }
 
 :root {
-    --font-definition: resource('Fonts/Roboto-Bold SDF');
-    --font: resource('Fonts/Roboto-Bold');
+    --font-authority-definition: resource('Fonts/Authority SDF');
+    --font-authority: resource('Fonts/DIN Pro Bold');
+    --font-common-definition: resource('Fonts/Common SDF');
+    --font-common: resource('Fonts/Handel Gothic Regular');
 }
 
 :root {
