@@ -94,10 +94,11 @@
     text-shadow: 0 0 0 var(--color-transperent);
     -unity-font-definition: var(--font-common-definition);
     -unity-font: var(--common);
-    -unity-text-align: middle-center;
+    -unity-text-align: lower-center;
     align-items: center;
     justify-content: center;
     letter-spacing: 4px;
+    padding-bottom: 26px;
 }
 
 .button:active {
