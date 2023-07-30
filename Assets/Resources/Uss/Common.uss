@@ -42,9 +42,9 @@
 }
 
 :root {
-    --font-size-common: 120px;
-    --font-size-authority-big: 320px;
-    --font-size-authority-small: 190px;
+    --font-size-common: 140px;
+    --font-size-authority-big: 340px;
+    --font-size-authority-small: 200px;
 }
 
 :root {
