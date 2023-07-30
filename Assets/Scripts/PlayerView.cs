@@ -3,7 +3,7 @@ using UnityEngine.UIElements;
 
 public class PlayerView : MonoBehaviour
 {
-    private const float TimeDelay = 0.75f;
+    private const float TimeDelay = 1.0f;
 
     [SerializeField] private PlayersRoster.PlayersList playersRoster;
 
