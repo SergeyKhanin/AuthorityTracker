@@ -71,9 +71,9 @@
 
 .label {
     color: var(--color-black);
-    text-shadow: 2px 2px 0 var(--color-white);
-    -unity-font-definition: var(--font-definition);
-    -unity-font: var(--font);
+    text-shadow: -2px -2px 0 var(--color-white);
+    -unity-font-definition: var(--font-authority-definition);
+    -unity-font: var(--font-authority);
     -unity-text-align: middle-center;
 }
 
@@ -91,9 +91,14 @@
 
 .button {
     font-size: var(--font-size-common);
+    text-shadow: 0 0 0 var(--color-transperent);
+    -unity-font-definition: var(--font-common-definition);
+    -unity-font: var(--common);
+    -unity-text-align: lower-center;
     align-items: center;
     justify-content: center;
-    -unity-text-align: middle-center;
+    letter-spacing: 4px;
+    padding-bottom: 26px;
 }
 
 .button:active {
