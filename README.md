@@ -2,7 +2,11 @@
 
 **ORIGINAL BOARD GAME:** [www.starrealms.com](https://www.starrealms.com/)
 
-**FIGMA:** [link:](https://www.figma.com/file/KTYZqqU3yKmgi3KuWg34NU/Authority-tracker)
+**FIGMA:** [see:](https://www.figma.com/file/KTYZqqU3yKmgi3KuWg34NU/Authority-tracker)
+
+**LATEST RELEASE:** [download:](https://github.com/SergeyKhanin/AuthorityTracker/releases/tag/release)
+
+
 
 ![Model](Tutorial/Tutorial_Page_1.png)
 ![Model](Tutorial/Tutorial_Page_2.png)
