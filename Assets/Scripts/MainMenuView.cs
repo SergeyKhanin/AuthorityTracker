@@ -32,6 +32,11 @@ public class MainMenuView : MonoBehaviour
         if (PlayerPrefs.HasKey("InitialPoints"))
             _initialPointsIntegerField.value = PlayerPrefs.GetInt("InitialPoints");
     }
+    
+    private void Start()
+    {
+        _root.RegisterCallback<GeometryChangedEvent>(SaveScreenResolutions);
+    }
 
     private void OnEnable()
     {
@@ -73,6 +78,13 @@ public class MainMenuView : MonoBehaviour
     private void SaveInitialPoints(int value)
     {
         PlayerPrefs.SetInt("InitialPoints", value);
+        PlayerPrefs.Save();
+    }
+
+    private void SaveScreenResolutions(GeometryChangedEvent evt)
+    {
+        PlayerPrefs.SetFloat("ScreenResolutionsWidth", _root.resolvedStyle.width);
+        PlayerPrefs.SetFloat("ScreenResolutionsHeight", _root.resolvedStyle.height);
         PlayerPrefs.Save();
     }
 }
