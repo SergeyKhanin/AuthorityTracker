@@ -19,6 +19,7 @@ public class PlayerView : MonoBehaviour
     private bool _isMinus5ButtonClicked;
 
     private VisualElement _root;
+    private VisualElement _frame;
     private CustomLabel _authorityLabel;
     private CustomLabel _pointsPlusLabel;
     private CustomLabel _pointsMinusLabel;
@@ -37,18 +38,19 @@ public class PlayerView : MonoBehaviour
 
         SetPlayer();
 
-        _authorityLabel = _root.Q<VisualElement>(_playerName).Q<CustomLabel>("authority-label");
-        _pointsPlusLabel = _root.Q<VisualElement>(_playerName).Q<CustomLabel>("points-plus-label");
-        _pointsMinusLabel = _root.Q<VisualElement>(_playerName).Q<CustomLabel>("points-minus-label");
-        _authorityImage = _root.Q<VisualElement>(_playerName).Q<VisualElement>("authority-image");
+        _frame = _root.Q<VisualElement>(_playerName);
+        _authorityLabel = _frame.Q<CustomLabel>("authority-label");
+        _pointsPlusLabel = _frame.Q<CustomLabel>("points-plus-label");
+        _pointsMinusLabel = _frame.Q<CustomLabel>("points-minus-label");
+        _authorityImage = _frame.Q<VisualElement>("authority-image");
 
-        _minusButton = _root.Q<VisualElement>(_playerName).Q<CustomButton>("minus-button");
-        _plusButton = _root.Q<VisualElement>(_playerName).Q<CustomButton>("plus-button");
-        _plus5Button = _root.Q<VisualElement>(_playerName).Q<CustomButton>("plus-5-button");
-        _minus5Button = _root.Q<VisualElement>(_playerName).Q<CustomButton>("minus-5-button");
+        _minusButton = _frame.Q<CustomButton>("minus-button");
+        _plusButton = _frame.Q<CustomButton>("plus-button");
+        _plus5Button = _frame.Q<CustomButton>("plus-5-button");
+        _minus5Button = _frame.Q<CustomButton>("minus-5-button");
 
-        _pointsPlusContainer = _root.Q<VisualElement>(_playerName).Q<VisualElement>("points-plus-container");
-        _pointsMinusContainer = _root.Q<VisualElement>(_playerName).Q<VisualElement>("points-minus-container");
+        _pointsPlusContainer = _frame.Q<VisualElement>("points-plus-container");
+        _pointsMinusContainer = _frame.Q<VisualElement>("points-minus-container");
 
         _pointsPlusContainer.AddToClassList(CommonUssClassNames.Invisible);
         _pointsMinusContainer.AddToClassList(CommonUssClassNames.Invisible);
