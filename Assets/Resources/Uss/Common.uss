@@ -1,17 +1,13 @@
 :root {
     --color-black: rgb(0, 0, 0);
-    --color-white: rgb(255, 255, 255);
     --color-red: rgb(236, 59, 54);
     --color-green: rgb(89, 168, 90);
-    --color-yellow: rgb(231, 188, 33);
-    --color-blue: rgb(58, 79, 232);
     --color-gray: rgb(190, 190, 190);
     --color-transperent: rgba(0, 0, 0, 0);
 }
 
 :root {
     --color-active-rgb: rgb(140, 140, 140);
-    --color-active-rgba: rgba(50, 50, 50, 0.1);
     --color-active-plus-rgba: rgba(100, 0, 0, 0.1);
     --color-active-minus-rgba: rgba(0, 100, 0, 0.1);
 }
@@ -58,7 +54,6 @@
     --im-main-menu-frame: resource('Images/IM_Menu-frame_Color');
     --im-game-frame: resource('Images/IM_Game-frame_Color');
     --im-settings-frame: resource('Images/IM_Settings-frame_Color');
-    --im-logo: resource('IM_Logo');
 }
 
 :root {

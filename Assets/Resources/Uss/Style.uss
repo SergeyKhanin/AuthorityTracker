@@ -92,7 +92,7 @@
     font-size: var(--font-size-common);
     text-shadow: 0 0 0 var(--color-transperent);
     -unity-font-definition: var(--font-common-definition);
-    -unity-font: var(--common);
+    -unity-font: var(--font-common);
     letter-spacing: 4px;
     -unity-text-align: lower-center;
     align-items: center;
