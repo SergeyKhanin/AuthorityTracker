@@ -1,6 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <CustomButton name="back-button" text="BACK" class="button button-rectangle button-rectangle__green" />
-    <CustomButton name="main-menu-button" text="MENU" class="button button-rectangle button-rectangle__blue" />
-    <CustomButton name="reset-button" text="RESET" class="button button-rectangle button-rectangle__yellow" />
+    <CustomButton name="main-menu-button" text="MENU" class="button button-rectangle button-rectangle__green" />
+    <CustomButton name="reset-button" text="RESET" class="button button-rectangle button-rectangle__green" />
     <CustomButton name="quit-button" text="QUIT" class="button button-rectangle button-rectangle__red" />
 </ui:UXML>

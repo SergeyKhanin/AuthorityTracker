@@ -47,6 +47,7 @@
     height: 100%;
     max-height: var(--base-separator-height);
     background-color: var(--color-black);
+    opacity: 0.5;
 }
 
 .authority {
@@ -99,7 +100,6 @@
     align-items: center;
     justify-content: center;
     letter-spacing: 4px;
-    padding-bottom: 26px;
 }
 
 .button:active {
@@ -107,31 +107,19 @@
 }
 
 .button-square {
-    width: var(--butto-square-size);
-    height: var(--butto-square-size);
+    width: var(--button-square-size);
+    height: var(--button-square-size);
 }
 
 .button-rectangle {
-    width: var(--buttom-rectangle-width);
-    height: var(--buttom-rectangle-height);
-    margin-top: var(--base-margin);
-    margin-bottom: var(--base-margin);
-}
-
-.button-square__red {
-    background-image: var(--ic-button-square-color-red);
+    width: var(--button-rectangle-width);
+    height: var(--button-rectangle-height);
+    margin-bottom: var(--base-margin-half);
+    padding-bottom: 50px;
 }
 
 .button-square__green {
     background-image: var(--ic-button-square-color-green);
-}
-
-.button-square__blue {
-    background-image: var(--ic-button-square-color-blue);
-}
-
-.button-square__yellow {
-    background-image: var(--ic-button-square-color-yellow);
 }
 
 .button-rectangle__red {
@@ -140,14 +128,6 @@
 
 .button-rectangle__green {
     background-image: var(--ic-button-rectangle-color-green);
-}
-
-.button-rectangle__blue {
-    background-image: var(--ic-button-rectangle-color-blue);
-}
-
-.button-rectangle__yellow {
-    background-image: var(--ic-button-rectangle-color-yellow);
 }
 
 .player {
@@ -165,10 +145,6 @@
 
 .player-2 {
     background-color: var(--color-player-2);
-}
-
-.player-3 {
-    background-color: var(--color-player-3);
 }
 
 .rotate-180 {
@@ -204,8 +180,12 @@
     -unity-text-align: upper-center;
 }
 
+#additional-frame-1-players #settings-button {
+    left: 108px;
+}
+
 #additional-frame-2-players #settings-button {
-    rotate: 45deg;
+    left: 0;
 }
 
 .player-frame__button-plus {
@@ -273,7 +253,7 @@
     overflow: hidden;
     white-space: nowrap;
     -unity-text-align: upper-center;
-    bottom: var(--base-margin);
+    bottom: 58px;
 }
 
 .player-frame__points {
@@ -306,7 +286,7 @@
 }
 
 .player-frame__points-plus-icon {
-    height: var(--butto-square-size);
+    height: var(--button-points-icon);
     background-image: var(--ic-authority-small-color-green);
     width: var(--base-icon-large-size);
 }
@@ -318,7 +298,7 @@
 }
 
 .player-frame__points-plus-5-icon {
-    height: var(--butto-square-size);
+    height: var(--button-points-icon);
     background-image: var(--ic-authority-small-x5-color-green);
     width: var(--base-icon-large-size);
 }
@@ -330,7 +310,7 @@
 }
 
 .player-frame__points-plus-1-icon {
-    height: var(--butto-square-size);
+    height: var(--button-points-icon);
     background-image: var(--ic-authority-small-x1-color-green);
     width: var(--base-icon-large-size);
 }

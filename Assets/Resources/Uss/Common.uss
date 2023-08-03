@@ -1,9 +1,9 @@
 :root {
     --color-black: rgb(0, 0, 0);
     --color-white: rgb(255, 255, 255);
-    --color-red: rgb(250, 75, 71);
+    --color-red: rgb(236, 59, 54);
     --color-green: rgb(89, 168, 90);
-    --color-yellow: rgb(238, 194, 35);
+    --color-yellow: rgb(231, 188, 33);
     --color-blue: rgb(58, 79, 232);
     --color-gray: rgb(190, 190, 190);
     --color-transperent: rgba(0, 0, 0, 0);
@@ -18,9 +18,8 @@
 
 :root {
     --color-player-0: rgba(0, 0, 0, 0);
-    --color-player-1: rgba(50, 0, 0, 0.3);
-    --color-player-2: rgba(0, 50, 0, 0.3);
-    --color-player-3: rgba(0, 0, 50, 0.3);
+    --color-player-1: rgba(50, 0, 0, 0.1);
+    --color-player-2: rgba(0, 50, 0, 0.1);
 }
 
 
@@ -37,9 +36,10 @@
 }
 
 :root {
-    --butto-square-size: 96px;
-    --buttom-rectangle-height: 192px;
-    --buttom-rectangle-width: 896px;
+    --button-points-icon: 96px;
+    --button-square-size: 180px;
+    --button-rectangle-height: 234px;
+    --button-rectangle-width: 938px;
 }
 
 :root {
@@ -66,22 +66,12 @@
 :root {
     --ic-authority-color-green: resource('Icons/IC_Authority_Color-green');
     --ic-authority-color-red: resource('Icons/IC_Authority_Color-red');
-    --ic-authority-small-color-green: resource('Icons/IC_Authority-small_Color-green');
     --ic-authority-small-x1-color-green: resource('Icons/IC_Authority-small-x1_Color-green');
     --ic-authority-small-x5-color-green: resource('Icons/IC_Authority-small-x5_Color-green');
-    --ic-authority-small-color-red: resource('Icons/IC_Authority-small_Color-red');
     --ic-authority-text-menu-color-green: resource('Icons/IC_Authority-text-menu_Color-green');
-    --ic-authority-text-small-color-green: resource('Icons/IC_Authority-text-small_Color-green');
-    --ic-authority-tracker-logo: resource('Icons/IC_Authority-tracker_Logo');
-    --ic-button-square-color-red: resource('Icons/IC_Button-square_Color-red');
     --ic-button-square-color-green: resource('Icons/IC_Button-square_Color-green');
-    --ic-button-square-color-blue: resource('Icons/IC_Button-square_Color-blue');
-    --ic-button-square-color-yellow: resource('Icons/IC_Button-square_Color-yellow');
     --ic-button-rectangle-color-red: resource('Icons/IC_Button-rectangle_Color-red');
     --ic-button-rectangle-color-green: resource('Icons/IC_Button-rectangle_Color-green');
-    --ic-button-rectangle-color-blue: resource('Icons/IC_Button-rectangle_Color-blue');
-    --ic-button-rectangle-color-yellow: resource('Icons/IC_Button-rectangle_Color-yellow');
-    --ic-combat-small-color-red: resource('Icons/IC_Combat-small_Color-red');
     --ic-combat-small-x1-color-red: resource('Icons/IC_Combat-small-x1_Color-red');
     --ic-combat-small-x5-color-red: resource('Icons/IC_Combat-small-x5_Color-red');
 }
