@@ -253,7 +253,7 @@
     margin: var(--base-margin);
     height: var(--base-icon-large-size);
     width: var(--base-icon-large-size);
-    opacity: 0.1;
+    opacity: 0.05;
     flex-direction: row;
     align-items: center;
     justify-content: center;
