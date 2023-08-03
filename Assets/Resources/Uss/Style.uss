@@ -1,6 +1,4 @@
 .frame {
-    border-color: var(--color-black);
-    border-width: var(--base-with);
     flex-grow: 1;
     flex-shrink: 1;
     align-items: center;
@@ -68,7 +66,6 @@
 
 .authority__text {
     background-image: var(--ic-authority-text-menu-color-green);
-    margin-bottom: var(--base-margin);
 }
 
 .label {
@@ -177,7 +174,7 @@
 }
 
 #additional-frame-1-players #settings-button {
-    left: 108px;
+    left: 90px;
 }
 
 #additional-frame-2-players #settings-button {
@@ -255,7 +252,7 @@
 .player-frame__points {
     margin: var(--base-margin);
     height: var(--base-icon-large-size);
-    min-width: var(--base-icon-large-size);
+    width: var(--base-icon-large-size);
     opacity: 0.1;
     flex-direction: row;
     align-items: center;
