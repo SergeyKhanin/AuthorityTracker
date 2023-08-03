@@ -54,6 +54,7 @@
     height: var(--base-image-resolution);
     align-items: center;
     justify-content: center;
+    -unity-background-scale-mode: scale-to-fit;
 }
 
 .authority__image-green {
@@ -71,7 +72,7 @@
 
 .label {
     color: var(--color-black);
-    text-shadow: -2px -2px 0 var(--color-white);
+    text-shadow: -2px -2px 0 var(--color-gray);
     -unity-font-definition: var(--font-authority-definition);
     -unity-font: var(--font-authority);
     -unity-text-align: middle-center;
@@ -188,9 +189,9 @@
 }
 
 #initial-points-input {
-    top: 90px;
     font-size: var(--font-size-authority-big);
     -unity-text-align: middle-center;
+    bottom: var(--base-margin-half);
 }
 
 #initial-points-input #unity-text-input {
@@ -268,11 +269,11 @@
 }
 
 .player-frame__authority-label {
-    bottom: 45px;
     max-width: var(--base-authority-text-with);
     overflow: hidden;
     white-space: nowrap;
     -unity-text-align: upper-center;
+    bottom: var(--base-margin);
 }
 
 .player-frame__points {

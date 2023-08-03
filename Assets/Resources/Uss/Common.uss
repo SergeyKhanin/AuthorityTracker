@@ -1,10 +1,11 @@
 :root {
     --color-black: rgb(0, 0, 0);
     --color-white: rgb(255, 255, 255);
-    --color-red: rgb(247, 57, 52);
-    --color-green: rgb(97, 167, 95);
+    --color-red: rgb(250, 75, 71);
+    --color-green: rgb(89, 168, 90);
     --color-yellow: rgb(238, 194, 35);
     --color-blue: rgb(58, 79, 232);
+    --color-gray: rgb(190, 190, 190);
     --color-transperent: rgba(0, 0, 0, 0);
 }
 
