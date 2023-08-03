@@ -43,11 +43,11 @@
 }
 
 .separator {
-    width: 100%;
-    height: 100%;
     max-height: var(--base-separator-height);
     background-color: var(--color-black);
-    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    opacity: 0.75;
 }
 
 .authority {
@@ -96,10 +96,10 @@
     text-shadow: 0 0 0 var(--color-transperent);
     -unity-font-definition: var(--font-common-definition);
     -unity-font: var(--common);
+    letter-spacing: 4px;
     -unity-text-align: lower-center;
     align-items: center;
     justify-content: center;
-    letter-spacing: 4px;
 }
 
 .button:active {
@@ -135,10 +135,6 @@
     justify-content: center;
 }
 
-.player-0 {
-    background-color: var(--color-player-0);
-}
-
 .player-1 {
     background-color: var(--color-player-1);
 }
@@ -166,8 +162,8 @@
 
 #initial-points-input {
     font-size: var(--font-size-authority-big);
-    -unity-text-align: middle-center;
     bottom: var(--base-margin-half);
+    -unity-text-align: middle-center;
 }
 
 #initial-points-input #unity-text-input {
@@ -250,10 +246,10 @@
 
 .player-frame__authority-label {
     max-width: var(--base-authority-text-with);
+    bottom: 58px;
     overflow: hidden;
     white-space: nowrap;
     -unity-text-align: upper-center;
-    bottom: 58px;
 }
 
 .player-frame__points {
