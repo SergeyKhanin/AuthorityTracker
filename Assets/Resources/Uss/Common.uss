@@ -1,5 +1,5 @@
 :root {
-    --color-black: rgb(16, 16, 16);
+    --color-black: rgb(0, 0, 0);
     --color-red: rgb(236, 59, 54);
     --color-green: rgb(89, 168, 90);
     --color-gray: rgb(190, 190, 190);
