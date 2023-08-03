@@ -1,5 +1,5 @@
 :root {
-    --color-black: rgb(0, 0, 0);
+    --color-black: rgb(16, 16, 16);
     --color-red: rgb(236, 59, 54);
     --color-green: rgb(89, 168, 90);
     --color-gray: rgb(190, 190, 190);
@@ -13,8 +13,8 @@
 }
 
 :root {
-    --color-player-1: rgba(0, 0, 50, 0.25);
-    --color-player-2: rgba(50, 0, 0, 0.25);
+    --color-player-1: rgba(0, 0, 50, 0.3);
+    --color-player-2: rgba(50, 0, 0, 0.3);
 }
 
 
