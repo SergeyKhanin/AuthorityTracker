@@ -4,7 +4,7 @@
 
 **FIGMA:** [see:](https://www.figma.com/file/KTYZqqU3yKmgi3KuWg34NU/Authority-tracker)
 
-**LATEST RELEASE:** [download:](https://github.com/SergeyKhanin/AuthorityTracker/releases/tag/release)
+**LATEST RELEASE:** [download:](https://github.com/SergeyKhanin/AuthorityTracker/releases)
 
 
 
