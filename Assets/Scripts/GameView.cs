@@ -51,7 +51,7 @@ public class GameView : MonoBehaviour
     }
 
     private void OnSettingsButtonClicked() => EnableSettings(true);
-    private void OnCommunityButtonClicked() => Application.OpenURL(CommonCommunityPage.Ru);
+    private void OnCommunityButtonClicked() => Application.OpenURL(CommonCommunitiesPages.Ru);
     private void OnBackButtonClicked() => EnableSettings(false);
     private void OnResetButtonClicked() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     private void OnMainMenuButtonClicked() => SceneManager.LoadScene(0);
