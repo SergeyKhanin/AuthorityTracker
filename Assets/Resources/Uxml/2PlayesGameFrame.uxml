@@ -9,5 +9,5 @@
         <ui:Instance name="separator-frame" template="SeparatorFrame" picking-mode="Ignore" class="separator-frame" />
     </ui:VisualElement>
     <ui:Instance name="settings-frame" template="SettingsFrame" picking-mode="Ignore" class="frame frame-settings label hide" />
-    <ui:Instance template="AdditionalFrame" name="additional-frame-2-players" picking-mode="Ignore" class="frame frame-additional" style="align-items: center; justify-content: center;" />
+    <ui:Instance name="additional-frame-2-players" template="AdditionalFrame"  picking-mode="Ignore" class="frame frame-additional" style="align-items: center; justify-content: center;" />
 </ui:UXML>

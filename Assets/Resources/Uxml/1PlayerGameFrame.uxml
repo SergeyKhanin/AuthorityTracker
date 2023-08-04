@@ -6,5 +6,5 @@
         <ui:Instance name="player-1" template="PlayerFrame" picking-mode="Ignore" class="player-frame player player-1" />
     </ui:VisualElement>
     <ui:Instance name="settings-frame" template="SettingsFrame" picking-mode="Ignore" class="frame frame-settings label hide" />
-    <ui:Instance template="AdditionalFrame" name="additional-frame-1-players" picking-mode="Ignore" class="frame frame-additional" />
+    <ui:Instance name="additional-frame-1-players" template="AdditionalFrame" picking-mode="Ignore" class="frame frame-additional" />
 </ui:UXML>
