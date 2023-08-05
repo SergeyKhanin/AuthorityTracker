@@ -154,8 +154,8 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.LoneCubeGames.AuthorityTracker
-    Standalone: com.-Lone-Cube-Games.Authority-tracker
+    Android: com.SergeyKhanin.AuthorityTracker
+    Standalone: com.SergeyKhanin.AuthorityTracker
   buildNumber:
     Standalone: 0
     VisionOS: 0
