@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class PlayerView : MonoBehaviour
+public class CasualPlayerView : MonoBehaviour
 {
     private const float TimeDelay = 1.0f;
 
