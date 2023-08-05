@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="TournamentPlayerFrame" src="project://database/Assets/Resources/Templates/TournamentPlayerFrame.uxml?fileID=9197481963319205126&amp;guid=4947e944fcbc78b4ba2ee389c0f1bd2d&amp;type=3#TournamentPlayerFrame" />
+    <ui:Template name="SettingsFrame" src="project://database/Assets/Resources/Templates/SettingsFrame.uxml?fileID=9197481963319205126&amp;guid=83b191b376cc5f841a1dfe9ba23d215c&amp;type=3#SettingsFrame" />
+    <ui:Template name="AdditionalFrame" src="project://database/Assets/Resources/Templates/AdditionalFrame.uxml?fileID=9197481963319205126&amp;guid=afde3a305a59b404f86c18a2045bb74e&amp;type=3#AdditionalFrame" />
+    <Style src="project://database/Assets/Resources/Uss/Style.uss?fileID=7433441132597879392&amp;guid=65ff8790dd4ca8040b6578d6e9530e55&amp;type=3#Style" />
+    <ui:VisualElement name="players-frame" picking-mode="Ignore" class="frame frame-game label">
+        <ui:Instance name="player-2" template="TournamentPlayerFrame" picking-mode="Ignore" class="player-frame player" />
+        <ui:Instance name="player-1" template="TournamentPlayerFrame" picking-mode="Ignore" class="player-frame player" />
+    </ui:VisualElement>
+    <ui:Instance name="settings-frame" template="SettingsFrame" picking-mode="Ignore" class="frame frame-settings label hide" />
+    <ui:Instance name="additional-frame-2-players" template="AdditionalFrame" picking-mode="Ignore" class="frame frame-additional" style="align-items: center; justify-content: center;" />
+</ui:UXML>
