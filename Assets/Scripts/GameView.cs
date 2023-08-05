@@ -20,6 +20,7 @@ public class GameView : MonoBehaviour
 
         _playersFrame = _root.Q<VisualElement>("players-frame");
         _settingsFrame = _root.Q<VisualElement>("settings-frame");
+        
         _settingsButton = _root.Q<CustomButton>("settings-button");
         _backButton = _root.Q<CustomButton>("back-button");
         _quitButton = _root.Q<CustomButton>("quit-button");

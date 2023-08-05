@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 114834883}
   - component: {fileID: 114834882}
+  - component: {fileID: 114834885}
   - component: {fileID: 114834884}
   m_Layer: 5
   m_Name: GameUIDocument
@@ -185,6 +186,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playersRoster: 1
+  test: {fileID: 114834884}
+--- !u!114 &114834885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114834881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f98be43c77065940bd0f07254bae4fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1459550755
 GameObject:
   m_ObjectHideFlags: 0
