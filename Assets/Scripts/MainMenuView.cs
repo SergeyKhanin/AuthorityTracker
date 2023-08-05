@@ -57,8 +57,8 @@ public class MainMenuView : MonoBehaviour
     }
 
     private void OnQuitButtonClicked() => Application.Quit();
-    private void OnPlayer1ButtonClicked() => SceneManager.LoadScene(1);
-    private void OnPlayer2ButtonClicked() => SceneManager.LoadScene(2);
+    private void OnPlayer1ButtonClicked() => SceneManager.LoadScene(CommonScenesList.Casual1PlayerGameScene);
+    private void OnPlayer2ButtonClicked() => SceneManager.LoadScene(CommonScenesList.Casual2PlayersGameScene);
 
     private void OnIntChangedEvent(ChangeEvent<int> evt)
     {
