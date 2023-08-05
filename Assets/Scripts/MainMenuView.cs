@@ -92,5 +92,19 @@ public class MainMenuView : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    private void OnCommunityButtonClicked() => Application.OpenURL(CommonCommunitiesPages.Ru);
+    private void OnCommunityButtonClicked()
+    {
+        switch (Application.systemLanguage)
+        {
+            case SystemLanguage.English:
+                Application.OpenURL(CommonCommunitiesPages.En);
+                break;
+            case SystemLanguage.Russian:
+                Application.OpenURL(CommonCommunitiesPages.Ru);
+                break;
+            default:
+                Application.OpenURL(CommonCommunitiesPages.None);
+                break;
+        }
+    }
 }
