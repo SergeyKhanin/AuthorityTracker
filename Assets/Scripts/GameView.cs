@@ -12,7 +12,6 @@ public class GameView : MonoBehaviour
     private CustomButton _backButton;
     private CustomButton _quitButton;
     private CustomButton _resetButton;
-    private CustomButton _communityButton;
     private CustomButton _mainMenuButton;
 
     private void Awake()
@@ -21,12 +20,10 @@ public class GameView : MonoBehaviour
 
         _playersFrame = _root.Q<VisualElement>("players-frame");
         _settingsFrame = _root.Q<VisualElement>("settings-frame");
-
         _settingsButton = _root.Q<CustomButton>("settings-button");
         _backButton = _root.Q<CustomButton>("back-button");
         _quitButton = _root.Q<CustomButton>("quit-button");
         _resetButton = _root.Q<CustomButton>("reset-button");
-        _communityButton = _root.Q<CustomButton>("community-button");
         _mainMenuButton = _root.Q<CustomButton>("main-menu-button");
     }
 
@@ -37,7 +34,6 @@ public class GameView : MonoBehaviour
         _resetButton.clicked += OnResetButtonClicked;
         _mainMenuButton.clicked += OnMainMenuButtonClicked;
         _quitButton.clicked += OnQuitAppButtonClicked;
-        _communityButton.clicked += OnCommunityButtonClicked;
     }
 
     private void OnDisable()
@@ -47,11 +43,9 @@ public class GameView : MonoBehaviour
         _resetButton.clicked -= OnResetButtonClicked;
         _mainMenuButton.clicked -= OnMainMenuButtonClicked;
         _quitButton.clicked -= OnQuitAppButtonClicked;
-        _communityButton.clicked -= OnCommunityButtonClicked;
     }
 
     private void OnSettingsButtonClicked() => EnableSettings(true);
-    private void OnCommunityButtonClicked() => Application.OpenURL(CommonCommunitiesPages.Ru);
     private void OnBackButtonClicked() => EnableSettings(false);
     private void OnResetButtonClicked() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     private void OnMainMenuButtonClicked() => SceneManager.LoadScene(0);

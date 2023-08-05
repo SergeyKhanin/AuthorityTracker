@@ -24,6 +24,7 @@
     --base-margin: 32px;
     --base-margin-half: 16px;
     --base-image-resolution: 1024px;
+    --base-image-resolution-var: 704px;
     --base-image-resolution-half: 512px;
     --base-authority-text-with: 400px;
     --base-icon-middle-size: 128px;
@@ -65,6 +66,7 @@
     --ic-button-square-color-green: resource('Icons/IC_Button-square_Color-green');
     --ic-button-rectangle-color-red: resource('Icons/IC_Button-rectangle_Color-red');
     --ic-button-rectangle-color-green: resource('Icons/IC_Button-rectangle_Color-green');
+    --ic-button-rectangle-color-gray: resource('Icons/IC_Button-rectangle_Color-gray');
     --ic-combat-small-x1-color-red: resource('Icons/IC_Combat-small-x1_Color-red');
     --ic-combat-small-x5-color-red: resource('Icons/IC_Combat-small-x5_Color-red');
 }
