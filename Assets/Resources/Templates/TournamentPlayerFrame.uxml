@@ -6,19 +6,16 @@
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement name="authority-points-label" picking-mode="Ignore" class="player-frame__container player-frame__container-label" style="flex-direction: row-reverse;">
-        <ui:VisualElement name="points-plus-container" picking-mode="Ignore" class="player-frame__points-label player-frame__points-label-plus rotate-90">
-            <CustomLabel name="points-plus-label" text="99" picking-mode="Ignore" />
-        </ui:VisualElement>
-        <ui:VisualElement name="points-minus-container" picking-mode="Ignore" class="player-frame__points-label player-frame__points-label-minus rotate-90">
-            <CustomLabel name="points-minus-label" text="99" picking-mode="Ignore" />
+        <ui:VisualElement name="points-container" picking-mode="Ignore" class="player-frame__points-label player-frame__points-label-plus rotate-90">
+            <CustomLabel name="points-label" text="99" picking-mode="Ignore" />
         </ui:VisualElement>
         <ui:VisualElement name="space-empty" picking-mode="Ignore" class="player-frame__authority-image-space" style="width: 512px;" />
-        <ui:VisualElement name="points-minus-container" picking-mode="Ignore" class="player-frame__points-label player-frame__points-label-minus rotate-90" style="visibility: hidden;">
-            <CustomLabel name="points-minus-label" text="99" picking-mode="Ignore" />
+        <ui:VisualElement name="none" picking-mode="Ignore" class="player-frame__points-label player-frame__points-label-minus rotate-90" style="visibility: hidden;">
+            <CustomLabel name="none" text="99" picking-mode="Ignore" />
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement name="tournament-buttons">
-        <CustomButton style="background-color: rgb(255, 0, 0); height: 256px; width: 256px; border-top-left-radius: 50%; border-bottom-left-radius: 50%; border-top-right-radius: 50%; border-bottom-right-radius: 50%;" />
-        <CustomButton style="background-color: rgb(48, 255, 0); height: 256px; width: 256px; border-top-left-radius: 50%; border-bottom-left-radius: 50%; border-top-right-radius: 50%; border-bottom-right-radius: 50%;" />
+        <CustomButton name="minus-button" style="background-color: rgb(255, 21, 0); height: 256px; width: 256px; border-top-left-radius: 50%; border-bottom-left-radius: 50%; border-top-right-radius: 50%; border-bottom-right-radius: 50%;" />
+        <CustomButton name="plus-button" style="background-color: rgb(34, 255, 0); height: 256px; width: 256px; border-top-left-radius: 50%; border-bottom-left-radius: 50%; border-top-right-radius: 50%; border-bottom-right-radius: 50%;" />
     </ui:VisualElement>
 </ui:UXML>
