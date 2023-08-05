@@ -9,9 +9,10 @@ public class MainMenuView : MonoBehaviour
 
     private VisualElement _root;
     private IntegerField _initialPointsIntegerField;
-    private CustomButton _quitButton;
     private CustomButton _player1Button;
     private CustomButton _player2Button;
+    private CustomButton _communityButton;
+    private CustomButton _quitButton;
     private TextElement _pointsTextElement;
 
     private void Awake()
@@ -20,9 +21,10 @@ public class MainMenuView : MonoBehaviour
 
         _initialPointsIntegerField = _root.Q<IntegerField>("initial-points-input");
         _pointsTextElement = _root.Query<TextElement>();
-        _quitButton = _root.Q<CustomButton>("quit-button");
         _player1Button = _root.Q<CustomButton>("1-player-button");
         _player2Button = _root.Q<CustomButton>("2-players-button");
+        _communityButton = _root.Q<CustomButton>("community-button");
+        _quitButton = _root.Q<CustomButton>("quit-button");
 
         _authority = new Authority();
         _pointsLimit = _authority.Limit;
@@ -32,7 +34,7 @@ public class MainMenuView : MonoBehaviour
         if (PlayerPrefs.HasKey("InitialPoints"))
             _initialPointsIntegerField.value = PlayerPrefs.GetInt("InitialPoints");
     }
-    
+
     private void Start()
     {
         _root.RegisterCallback<GeometryChangedEvent>(SaveScreenResolutions);
@@ -40,21 +42,23 @@ public class MainMenuView : MonoBehaviour
 
     private void OnEnable()
     {
-        _quitButton.clicked += OnQuitButtonClicked;
         _player1Button.clicked += OnPlayer1ButtonClicked;
         _player2Button.clicked += OnPlayer2ButtonClicked;
+        _quitButton.clicked += OnQuitButtonClicked;
+        _communityButton.clicked += OnCommunityButtonClicked;
     }
 
     private void OnDisable()
     {
-        _quitButton.clicked -= OnQuitButtonClicked;
         _player1Button.clicked -= OnPlayer1ButtonClicked;
         _player2Button.clicked -= OnPlayer2ButtonClicked;
+        _communityButton.clicked -= OnCommunityButtonClicked;
+        _quitButton.clicked -= OnQuitButtonClicked;
     }
 
     private void OnQuitButtonClicked() => Application.Quit();
-    private void OnPlayer1ButtonClicked() => SceneManager.LoadScene(1);
-    private void OnPlayer2ButtonClicked() => SceneManager.LoadScene(2);
+    private void OnPlayer1ButtonClicked() => SceneManager.LoadScene(CommonScenesList.Casual1PlayerGameScene);
+    private void OnPlayer2ButtonClicked() => SceneManager.LoadScene(CommonScenesList.Casual2PlayersGameScene);
 
     private void OnIntChangedEvent(ChangeEvent<int> evt)
     {
@@ -87,4 +91,6 @@ public class MainMenuView : MonoBehaviour
         PlayerPrefs.SetFloat("ScreenResolutionsHeight", _root.resolvedStyle.height);
         PlayerPrefs.Save();
     }
+
+    private void OnCommunityButtonClicked() => Application.OpenURL(CommonCommunitiesPages.Ru);
 }

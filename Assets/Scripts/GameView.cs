@@ -20,7 +20,6 @@ public class GameView : MonoBehaviour
 
         _playersFrame = _root.Q<VisualElement>("players-frame");
         _settingsFrame = _root.Q<VisualElement>("settings-frame");
-
         _settingsButton = _root.Q<CustomButton>("settings-button");
         _backButton = _root.Q<CustomButton>("back-button");
         _quitButton = _root.Q<CustomButton>("quit-button");
@@ -47,11 +46,9 @@ public class GameView : MonoBehaviour
     }
 
     private void OnSettingsButtonClicked() => EnableSettings(true);
-
     private void OnBackButtonClicked() => EnableSettings(false);
-
     private void OnResetButtonClicked() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    private void OnMainMenuButtonClicked() => SceneManager.LoadScene(0);
+    private void OnMainMenuButtonClicked() => SceneManager.LoadScene(CommonScenesList.MainMenuScene);
     private void OnQuitAppButtonClicked() => Application.Quit();
 
     private void EnableSettings(bool isEnabled)

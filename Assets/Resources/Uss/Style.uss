@@ -66,6 +66,8 @@
 
 .authority__text {
     background-image: var(--ic-authority-text-menu-color-green);
+    width: var(--base-image-resolution);
+    height: var(--base-image-resolution-var);
 }
 
 .label {
@@ -125,6 +127,10 @@
 
 .button-rectangle__green {
     background-image: var(--ic-button-rectangle-color-green);
+}
+
+.button-rectangle__gray {
+    background-image: var(--ic-button-rectangle-color-gray);
 }
 
 .player {
