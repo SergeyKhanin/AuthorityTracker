@@ -1,31 +1,23 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class DoneButtonView : MonoBehaviour
+public class ApplyButtonView : MonoBehaviour
 {
     private TournamentPlayerView[] _tournamentPlayerViews;
     private VisualElement _root;
-    private CustomButton _doneButton;
+    private CustomButton _applyButton;
     private int _counterSum;
-    private bool _isTournamentPlayerViewsEmpty;
 
     private void Awake()
     {
         _root = GetComponent<UIDocument>().rootVisualElement;
-        _doneButton = _root.Q<CustomButton>("done-button");
-        _doneButton.AddToClassList(CommonUssClassNames.Hide);
+        _applyButton = _root.Q<CustomButton>("apply-button");
+        _applyButton.AddToClassList(CommonUssClassNames.Hide);
         _tournamentPlayerViews = GetComponents<TournamentPlayerView>();
-
-        _isTournamentPlayerViewsEmpty = _tournamentPlayerViews.Length == 0;
-
-        if (_isTournamentPlayerViewsEmpty)
-            Debug.LogWarning($"Don't have <color=red>{_tournamentPlayerViews.GetType().Name}</color> component");
     }
 
     public void CheckDoneButton()
     {
-        if (_isTournamentPlayerViewsEmpty) return;
-
         _counterSum = 0;
 
         foreach (var tournamentPlayerView in _tournamentPlayerViews)
@@ -37,8 +29,8 @@ public class DoneButtonView : MonoBehaviour
         }
 
         if (_counterSum == 0)
-            _doneButton.AddToClassList(CommonUssClassNames.Hide);
+            _applyButton.AddToClassList(CommonUssClassNames.Hide);
         else
-            _doneButton.RemoveFromClassList(CommonUssClassNames.Hide);
+            _applyButton.RemoveFromClassList(CommonUssClassNames.Hide);
     }
 }

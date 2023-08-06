@@ -8,6 +8,6 @@
     <ui:Instance name="settings-frame" template="SettingsFrame" picking-mode="Ignore" class="frame frame-settings label hide" />
     <ui:Instance name="additional-frame-1-players" template="AdditionalFrame" picking-mode="Ignore" class="frame frame-additional" />
     <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1; height: 100%; width: 100%; position: absolute; align-items: flex-start; justify-content: center;">
-        <CustomButton name="done-button" style="height: 256px; width: 256px; background-color: rgb(0, 124, 255); border-top-left-radius: 50%; border-bottom-left-radius: 50%; border-top-right-radius: 50%; border-bottom-right-radius: 50%;" />
+        <CustomButton name="apply-button" style="height: 256px; width: 256px; background-color: rgb(0, 124, 255); border-top-left-radius: 50%; border-bottom-left-radius: 50%; border-top-right-radius: 50%; border-bottom-right-radius: 50%;" />
     </ui:VisualElement>
 </ui:UXML>

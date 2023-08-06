@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UIElements;
 
-[RequireComponent(typeof(DoneButtonView))]
+[RequireComponent(typeof(ApplyButtonView))]
 public class TournamentPlayerView : MonoBehaviour
 {
     public int Counter { get; private set; }
@@ -10,12 +10,12 @@ public class TournamentPlayerView : MonoBehaviour
     [SerializeField] private PlayersRoster.PlayersList playersList;
 
     private Authority _authority;
-    private DoneButtonView _doneButtonView;
+    private ApplyButtonView _applyButtonView;
     private VisualElement _root;
     private VisualElement _frame;
     private CustomButton _minusButton;
     private CustomButton _plusButton;
-    private CustomButton _doneButton;
+    private CustomButton _applyButton;
     private VisualElement _pointsMinusContainer;
 
     private CustomLabel _authorityLabel;
@@ -27,7 +27,7 @@ public class TournamentPlayerView : MonoBehaviour
     private void Awake()
     {
         _root = GetComponent<UIDocument>().rootVisualElement;
-        _doneButtonView = GetComponent<DoneButtonView>();
+        _applyButtonView = GetComponent<ApplyButtonView>();
         _playerName = SetPlayers.GetPlayerFromList(playersList);
         _authority = new Authority();
 
@@ -35,7 +35,7 @@ public class TournamentPlayerView : MonoBehaviour
 
         _minusButton = _frame.Q<CustomButton>("minus-button");
         _plusButton = _frame.Q<CustomButton>("plus-button");
-        _doneButton = _root.Q<CustomButton>("done-button");
+        _applyButton = _root.Q<CustomButton>("apply-button");
 
         _authorityLabel = _frame.Q<CustomLabel>("authority-label");
         _pointsLabel = _frame.Q<CustomLabel>("points-label");
@@ -48,14 +48,14 @@ public class TournamentPlayerView : MonoBehaviour
     {
         _plusButton.clicked += OnPlusButtonClicked;
         _minusButton.clicked += OnMinusButtonClicked;
-        _doneButton.clicked += OnDoneButtonClicked;
+        _applyButton.clicked += OnApplyButtonClicked;
     }
 
     private void OnDisable()
     {
         _plusButton.clicked -= OnPlusButtonClicked;
         _minusButton.clicked -= OnMinusButtonClicked;
-        _doneButton.clicked -= OnDoneButtonClicked;
+        _applyButton.clicked -= OnApplyButtonClicked;
     }
 
     private void OnPlusButtonClicked()
@@ -63,7 +63,7 @@ public class TournamentPlayerView : MonoBehaviour
         Counter++;
 
         _pointsLabel.RemoveFromClassList(CommonUssClassNames.Hide);
-        _doneButtonView.CheckDoneButton();
+        _applyButtonView.CheckDoneButton();
 
         CheckLabels();
     }
@@ -73,12 +73,12 @@ public class TournamentPlayerView : MonoBehaviour
         Counter--;
 
         _pointsLabel.RemoveFromClassList(CommonUssClassNames.Hide);
-        _doneButtonView.CheckDoneButton();
+        _applyButtonView.CheckDoneButton();
 
         CheckLabels();
     }
 
-    private void OnDoneButtonClicked()
+    private void OnApplyButtonClicked()
     {
         _authority.Points += Counter;
 
@@ -87,7 +87,7 @@ public class TournamentPlayerView : MonoBehaviour
         _authorityLabel.text = _authority.Points.ToString();
         _pointsLabel.AddToClassList(CommonUssClassNames.Hide);
 
-        _doneButtonView.CheckDoneButton();
+        _applyButtonView.CheckDoneButton();
     }
 
     private void CheckLabels()
