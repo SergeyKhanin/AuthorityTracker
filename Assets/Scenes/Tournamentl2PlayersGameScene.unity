@@ -134,9 +134,9 @@ GameObject:
   - component: {fileID: 114834883}
   - component: {fileID: 114834882}
   - component: {fileID: 114834886}
-  - component: {fileID: 114834887}
-  - component: {fileID: 114834884}
-  - component: {fileID: 114834885}
+  - component: {fileID: 114834889}
+  - component: {fileID: 114834891}
+  - component: {fileID: 114834890}
   m_Layer: 5
   m_Name: GameUIDocument
   m_TagString: Untagged
@@ -175,32 +175,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114834884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 114834881}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78025195b9621b247b1f2c3183a921a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playersList: 1
---- !u!114 &114834885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 114834881}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78025195b9621b247b1f2c3183a921a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playersList: 2
 --- !u!114 &114834886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,7 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f98be43c77065940bd0f07254bae4fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114834887
+--- !u!114 &114834889
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -225,9 +199,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b0ebc2755e0e574387f4d8f1cf40653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tournamentPlayerView:
-  - {fileID: 114834884}
-  - {fileID: 114834885}
+--- !u!114 &114834890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114834881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78025195b9621b247b1f2c3183a921a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playersList: 2
+--- !u!114 &114834891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114834881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78025195b9621b247b1f2c3183a921a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playersList: 1
 --- !u!1 &1459550755
 GameObject:
   m_ObjectHideFlags: 0

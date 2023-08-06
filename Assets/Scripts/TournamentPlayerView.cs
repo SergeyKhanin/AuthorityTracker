@@ -1,6 +1,8 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UIElements;
 
+[RequireComponent(typeof(DoneButtonView))]
 public class TournamentPlayerView : MonoBehaviour
 {
     public int Counter { get; private set; }
@@ -11,7 +13,6 @@ public class TournamentPlayerView : MonoBehaviour
     private DoneButtonView _doneButtonView;
     private VisualElement _root;
     private VisualElement _frame;
-    private string _playerName;
     private CustomButton _minusButton;
     private CustomButton _plusButton;
     private CustomButton _doneButton;
@@ -20,15 +21,15 @@ public class TournamentPlayerView : MonoBehaviour
     private CustomLabel _authorityLabel;
     private CustomLabel _pointsLabel;
     private CustomLabel _pointsMinusLabel;
+    
+    private string _playerName;
 
     private void Awake()
     {
         _root = GetComponent<UIDocument>().rootVisualElement;
         _doneButtonView = GetComponent<DoneButtonView>();
-
-        _authority = new Authority();
-
         _playerName = SetPlayers.GetPlayerFromList(playersList);
+        _authority = new Authority();
 
         _frame = _root.Q<VisualElement>(_playerName);
 
@@ -85,7 +86,8 @@ public class TournamentPlayerView : MonoBehaviour
 
         _authorityLabel.text = _authority.Points.ToString();
         _pointsLabel.AddToClassList(CommonUssClassNames.Hide);
-        _doneButton.AddToClassList(CommonUssClassNames.Hide);
+
+        _doneButtonView.CheckDoneButton();
     }
 
     private void CheckLabels()

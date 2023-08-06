@@ -1,14 +1,15 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UIElements;
 
 public class CasualPlayerView : MonoBehaviour
 {
     private const float TimeDelay = 1.0f;
+    private string _playerName;
 
     [SerializeField] private PlayersRoster.PlayersList playersList;
 
     private Authority _authority;
-    private string _playerName;
     private int _plusCounter;
     private int _minusCounter;
     private float _plusPointsTime;
@@ -34,9 +35,8 @@ public class CasualPlayerView : MonoBehaviour
     private void Awake()
     {
         _root = GetComponent<UIDocument>().rootVisualElement;
-        _authority = new Authority();
-
         _playerName = SetPlayers.GetPlayerFromList(playersList);
+        _authority = new Authority();
 
         _frame = _root.Q<VisualElement>(_playerName);
         _authorityLabel = _frame.Q<CustomLabel>("authority-label");
