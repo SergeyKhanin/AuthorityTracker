@@ -1,4 +1,4 @@
-﻿public class CommonScenesList
+﻿public static class CommonScenesList
 {
     public const string MainMenuScene = "MainMenuScene";
     public const string Casual1PlayerGameScene = "Casual1PlayerGameScene";

@@ -1,4 +1,4 @@
-public class CommonUssClassNames
+public static class CommonUssClassNames
 {
     public const string Hide = "hide";
     public const string Invisible = "invisible";

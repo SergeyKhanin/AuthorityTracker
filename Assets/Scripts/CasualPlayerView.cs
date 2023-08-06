@@ -5,7 +5,7 @@ public class CasualPlayerView : MonoBehaviour
 {
     private const float TimeDelay = 1.0f;
 
-    [SerializeField] private PlayersRoster.PlayersList playersRoster;
+    [SerializeField] private PlayersRoster.PlayersList playersList;
 
     private Authority _authority;
     private string _playerName;
@@ -36,7 +36,7 @@ public class CasualPlayerView : MonoBehaviour
         _root = GetComponent<UIDocument>().rootVisualElement;
         _authority = new Authority();
 
-        SetPlayer();
+        _playerName = SetPlayers.GetPlayerFromList(playersList);
 
         _frame = _root.Q<VisualElement>(_playerName);
         _authorityLabel = _frame.Q<CustomLabel>("authority-label");
@@ -195,22 +195,6 @@ public class CasualPlayerView : MonoBehaviour
         {
             _plusCounter = 0;
             _pointsPlusContainer.AddToClassList(CommonUssClassNames.Invisible);
-        }
-    }
-
-    private void SetPlayer()
-    {
-        switch (playersRoster)
-        {
-            case PlayersRoster.PlayersList.Player1:
-                _playerName = "player-1";
-                break;
-            case PlayersRoster.PlayersList.Player2:
-                _playerName = "player-2";
-                break;
-            default:
-                _playerName = "player-1";
-                break;
         }
     }
 }

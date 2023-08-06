@@ -1,6 +1,4 @@
-using UnityEngine;
-
-public class PlayersRoster : MonoBehaviour
+public static class PlayersRoster
 {
     public enum PlayersList
     {

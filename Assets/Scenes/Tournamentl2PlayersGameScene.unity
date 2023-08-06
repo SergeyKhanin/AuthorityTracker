@@ -186,9 +186,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78025195b9621b247b1f2c3183a921a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playersRoster: 1
+  playersList: 1
   test: {fileID: 114834885}
-  _counter: 0
 --- !u!114 &114834885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,9 +200,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78025195b9621b247b1f2c3183a921a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playersRoster: 2
+  playersList: 2
   test: {fileID: 114834884}
-  _counter: 0
 --- !u!114 &114834886
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,10 +1,9 @@
-using System;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class TournamentPlayerView : MonoBehaviour
 {
-    [SerializeField] private PlayersRoster.PlayersList playersRoster;
+    [SerializeField] private PlayersRoster.PlayersList playersList;
     [SerializeField] private TournamentPlayerView test;
 
     private Authority _authority;
@@ -26,7 +25,7 @@ public class TournamentPlayerView : MonoBehaviour
         _root = GetComponent<UIDocument>().rootVisualElement;
         _authority = new Authority();
 
-        SetPlayer();
+        _playerName = SetPlayers.GetPlayerFromList(playersList);
 
         _frame = _root.Q<VisualElement>(_playerName);
 
@@ -36,7 +35,7 @@ public class TournamentPlayerView : MonoBehaviour
 
         _authorityLabel = _frame.Q<CustomLabel>("authority-label");
         _pointsLabel = _frame.Q<CustomLabel>("points-label");
-        
+
         _doneButton.AddToClassList(CommonUssClassNames.Hide);
         _pointsLabel.AddToClassList(CommonUssClassNames.Hide);
         _authorityLabel.text = _authority.Points.ToString();
@@ -46,7 +45,7 @@ public class TournamentPlayerView : MonoBehaviour
     {
         if (_counter == 0 && test._counter == 0)
             _doneButton.AddToClassList(CommonUssClassNames.Hide);
-            
+
         else
             _doneButton.RemoveFromClassList(CommonUssClassNames.Hide);
     }
@@ -70,10 +69,9 @@ public class TournamentPlayerView : MonoBehaviour
         _counter++;
         _pointsLabel.RemoveFromClassList(CommonUssClassNames.Hide);
         SomeMethod();
-
     }
 
-    
+
     private void OnMinusButtonClicked()
     {
         _counter--;
@@ -89,23 +87,7 @@ public class TournamentPlayerView : MonoBehaviour
         _pointsLabel.AddToClassList(CommonUssClassNames.Hide);
         _doneButton.AddToClassList(CommonUssClassNames.Hide);
     }
-    
-    private void SetPlayer()
-    {
-        switch (playersRoster)
-        {
-            case PlayersRoster.PlayersList.Player1:
-                _playerName = "player-1";
-                break;
-            case PlayersRoster.PlayersList.Player2:
-                _playerName = "player-2";
-                break;
-            default:
-                _playerName = "player-1";
-                break;
-        }
-    }
-    
+
     private void SomeMethod()
     {
         if (_counter < 0)
@@ -114,11 +96,11 @@ public class TournamentPlayerView : MonoBehaviour
             _pointsLabel.AddToClassList(CommonUssClassNames.PointsLabelMinus);
         }
 
-        else if(_counter == 0)
+        else if (_counter == 0)
         {
             _pointsLabel.AddToClassList(CommonUssClassNames.Hide);
         }
-            
+
         else
         {
             _pointsLabel.text = _counter.ToString();
