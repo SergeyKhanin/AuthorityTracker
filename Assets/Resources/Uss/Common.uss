@@ -39,7 +39,7 @@
 }
 
 :root {
-    --font-size-common: 120px;
+    --font-size-common: 110px;
     --font-size-authority-big: 340px;
     --font-size-authority-small: 200px;
 }
