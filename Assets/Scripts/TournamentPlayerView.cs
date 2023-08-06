@@ -3,10 +3,12 @@ using UnityEngine.UIElements;
 
 public class TournamentPlayerView : MonoBehaviour
 {
+    public int Counter { get; private set; }
+
     [SerializeField] private PlayersRoster.PlayersList playersList;
-    [SerializeField] private TournamentPlayerView test;
 
     private Authority _authority;
+    private DoneButtonView _doneButtonView;
     private VisualElement _root;
     private VisualElement _frame;
     private string _playerName;
@@ -15,7 +17,6 @@ public class TournamentPlayerView : MonoBehaviour
     private CustomButton _doneButton;
     private VisualElement _pointsMinusContainer;
 
-    private int _counter;
     private CustomLabel _authorityLabel;
     private CustomLabel _pointsLabel;
     private CustomLabel _pointsMinusLabel;
@@ -23,6 +24,8 @@ public class TournamentPlayerView : MonoBehaviour
     private void Awake()
     {
         _root = GetComponent<UIDocument>().rootVisualElement;
+        _doneButtonView = GetComponent<DoneButtonView>();
+
         _authority = new Authority();
 
         _playerName = SetPlayers.GetPlayerFromList(playersList);
@@ -36,18 +39,8 @@ public class TournamentPlayerView : MonoBehaviour
         _authorityLabel = _frame.Q<CustomLabel>("authority-label");
         _pointsLabel = _frame.Q<CustomLabel>("points-label");
 
-        _doneButton.AddToClassList(CommonUssClassNames.Hide);
         _pointsLabel.AddToClassList(CommonUssClassNames.Hide);
         _authorityLabel.text = _authority.Points.ToString();
-    }
-
-    private void Update()
-    {
-        if (_counter == 0 && test._counter == 0)
-            _doneButton.AddToClassList(CommonUssClassNames.Hide);
-
-        else
-            _doneButton.RemoveFromClassList(CommonUssClassNames.Hide);
     }
 
     private void OnEnable()
@@ -66,44 +59,51 @@ public class TournamentPlayerView : MonoBehaviour
 
     private void OnPlusButtonClicked()
     {
-        _counter++;
-        _pointsLabel.RemoveFromClassList(CommonUssClassNames.Hide);
-        SomeMethod();
-    }
+        Counter++;
 
+        _pointsLabel.RemoveFromClassList(CommonUssClassNames.Hide);
+        _doneButtonView.CheckDoneButton();
+
+        CheckLabels();
+    }
 
     private void OnMinusButtonClicked()
     {
-        _counter--;
+        Counter--;
+
         _pointsLabel.RemoveFromClassList(CommonUssClassNames.Hide);
-        SomeMethod();
+        _doneButtonView.CheckDoneButton();
+
+        CheckLabels();
     }
 
     private void OnDoneButtonClicked()
     {
-        _authority.Points += _counter;
-        _counter = 0;
+        _authority.Points += Counter;
+
+        Counter = 0;
+
         _authorityLabel.text = _authority.Points.ToString();
         _pointsLabel.AddToClassList(CommonUssClassNames.Hide);
         _doneButton.AddToClassList(CommonUssClassNames.Hide);
     }
 
-    private void SomeMethod()
+    private void CheckLabels()
     {
-        if (_counter < 0)
+        if (Counter < 0)
         {
-            _pointsLabel.text = _counter.ToString().TrimStart('-');
+            _pointsLabel.text = Counter.ToString().TrimStart('-');
             _pointsLabel.AddToClassList(CommonUssClassNames.PointsLabelMinus);
         }
 
-        else if (_counter == 0)
+        else if (Counter == 0)
         {
             _pointsLabel.AddToClassList(CommonUssClassNames.Hide);
         }
 
         else
         {
-            _pointsLabel.text = _counter.ToString();
+            _pointsLabel.text = Counter.ToString();
             _pointsLabel.RemoveFromClassList(CommonUssClassNames.PointsLabelMinus);
             _pointsLabel.AddToClassList(CommonUssClassNames.PointsLabelPlus);
         }
