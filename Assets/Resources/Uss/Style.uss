@@ -96,9 +96,9 @@
     -unity-font-definition: var(--font-common-definition);
     -unity-font: var(--font-common);
     letter-spacing: 4px;
-    -unity-text-align: lower-center;
     align-items: center;
     justify-content: center;
+    -unity-text-align: middle-center;
 }
 
 .button:active {
@@ -113,8 +113,11 @@
 .button-rectangle {
     width: var(--button-rectangle-width);
     height: var(--button-rectangle-height);
-    margin-bottom: var(--base-margin-half);
-    padding-bottom: 50px;
+}
+
+.button-rectangle-small {
+    width: var(--button-rectangle-small-width);
+    height: var(--button-rectangle-small-heigh);
 }
 
 .button-square__green {
@@ -131,6 +134,10 @@
 
 .button-rectangle__gray {
     background-image: var(--ic-button-rectangle-color-gray);
+}
+
+.button-rectangle-small__gray {
+    background-image: var(--ic-button-rectangle-small-color-gray);
 }
 
 .player {
@@ -187,8 +194,6 @@
     left: 0;
 }
 
-
-/*remove this*/
 #tournament-buttons {
     flex-grow: 1;
     height: 100px;
@@ -201,7 +206,6 @@
 #player-2 #tournament-buttons {
     align-items: flex-start;
 }
-/*remove this*/
 
 .player-frame__button-plus {
     width: 50%;

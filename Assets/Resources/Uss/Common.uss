@@ -36,6 +36,8 @@
     --button-square-size: 180px;
     --button-rectangle-height: 234px;
     --button-rectangle-width: 938px;
+    --button-rectangle-small-heigh: 176px;
+    --button-rectangle-small-width: 272px;
 }
 
 :root {
