@@ -3,8 +3,8 @@
         <ui:VisualElement name="authority-image-text" picking-mode="Ignore" class="authority authority__text">
             <ui:IntegerField name="initial-points-input" value="50" />
         </ui:VisualElement>
-        <CustomButton name="1-player-button" text="1-PLAYER" class="button button-rectangle button-rectangle__green" />
-        <CustomButton name="2-players-button" text="2-PLAYERS" class="button button-rectangle button-rectangle__green" />
+        <CustomButton name="casual-button" text="CASUAL" class="button button-rectangle button-rectangle__green" />
+        <CustomButton name="tournament-button" text="TOURNAMENT" class="button button-rectangle button-rectangle__green" />
         <CustomButton name="community-button" text="COMMUNITY" class="button button-rectangle button-rectangle__gray" />
         <CustomButton name="quit-button" text="QUIT" class="button button-rectangle button-rectangle__red" />
     </ui:VisualElement>

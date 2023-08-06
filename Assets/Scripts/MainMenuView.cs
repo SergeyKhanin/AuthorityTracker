@@ -9,8 +9,8 @@ public class MainMenuView : MonoBehaviour
 
     private VisualElement _root;
     private IntegerField _initialPointsIntegerField;
-    private CustomButton _player1Button;
-    private CustomButton _player2Button;
+    private CustomButton _casualButton;
+    private CustomButton _tournamentButton;
     private CustomButton _communityButton;
     private CustomButton _quitButton;
     private TextElement _pointsTextElement;
@@ -21,8 +21,8 @@ public class MainMenuView : MonoBehaviour
 
         _initialPointsIntegerField = _root.Q<IntegerField>("initial-points-input");
         _pointsTextElement = _root.Query<TextElement>();
-        _player1Button = _root.Q<CustomButton>("1-player-button");
-        _player2Button = _root.Q<CustomButton>("2-players-button");
+        _casualButton = _root.Q<CustomButton>("casual-button");
+        _tournamentButton = _root.Q<CustomButton>("tournament-button");
         _communityButton = _root.Q<CustomButton>("community-button");
         _quitButton = _root.Q<CustomButton>("quit-button");
 
@@ -42,23 +42,23 @@ public class MainMenuView : MonoBehaviour
 
     private void OnEnable()
     {
-        _player1Button.clicked += OnPlayer1ButtonClicked;
-        _player2Button.clicked += OnPlayer2ButtonClicked;
+        _casualButton.clicked += OnCasualButtonClicked;
+        _tournamentButton.clicked += OnTournamentButtonClicked;
         _quitButton.clicked += OnQuitButtonClicked;
         _communityButton.clicked += OnCommunityButtonClicked;
     }
 
     private void OnDisable()
     {
-        _player1Button.clicked -= OnPlayer1ButtonClicked;
-        _player2Button.clicked -= OnPlayer2ButtonClicked;
+        _casualButton.clicked -= OnCasualButtonClicked;
+        _tournamentButton.clicked -= OnTournamentButtonClicked;
         _communityButton.clicked -= OnCommunityButtonClicked;
         _quitButton.clicked -= OnQuitButtonClicked;
     }
 
     private void OnQuitButtonClicked() => Application.Quit();
-    private void OnPlayer1ButtonClicked() => SceneManager.LoadScene(CommonScenesList.Casual1PlayerGameScene);
-    private void OnPlayer2ButtonClicked() => SceneManager.LoadScene(CommonScenesList.Casual2PlayersGameScene);
+    private void OnCasualButtonClicked() => SceneManager.LoadScene(CommonScenesList.Casual2PlayersGameScene);
+    private void OnTournamentButtonClicked() => SceneManager.LoadScene(CommonScenesList.Tournament2PlayersGameScene);
 
     private void OnIntChangedEvent(ChangeEvent<int> evt)
     {
