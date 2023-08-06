@@ -19,7 +19,7 @@
 
 
 :root {
-    --base-separator-height: 8px;
+    --base-separator-height: 4px;
     --base-with: 16px;
     --base-margin: 32px;
     --base-margin-half: 16px;

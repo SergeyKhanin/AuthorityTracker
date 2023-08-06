@@ -1,4 +1,4 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Resources/Uss/Style.uss?fileID=7433441132597879392&amp;guid=65ff8790dd4ca8040b6578d6e9530e55&amp;type=3#Style" />
-    <CustomButton name="apply-button" text="OK" class="button button-rectangle-small button-rectangle-small__gray" />
+    <CustomButton name="apply-button" text="OK" class="button button-rectangle-small button-rectangle-small__gray rotate-90" />
 </ui:UXML>

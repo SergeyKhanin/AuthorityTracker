@@ -41,11 +41,18 @@
 }
 
 .separator {
-    max-height: var(--base-separator-height);
     background-color: var(--color-black);
     width: 100%;
     height: 100%;
     opacity: 0.7;
+}
+
+.separator-horizontal {
+    max-width: var(--base-separator-height);
+}
+
+.separator-vertical {
+    max-height: var(--base-separator-height);
 }
 
 .authority {
@@ -108,6 +115,10 @@
 .button-square {
     width: var(--button-square-size);
     height: var(--button-square-size);
+}
+
+.button-square_setting-button {
+    left: 90px;
 }
 
 .button-rectangle {
@@ -184,27 +195,6 @@
 #initial-points-input #unity-text-input TextElement {
     max-width: var(--base-authority-text-with);
     -unity-text-align: upper-center;
-}
-
-#additional-frame-1-players #settings-button {
-    left: 90px;
-}
-
-#additional-frame-2-players #settings-button {
-    left: 0;
-}
-
-#tournament-buttons {
-    flex-grow: 1;
-    height: 100px;
-    width: 100%;
-    justify-content: space-around;
-    flex-direction: row;
-    align-items: flex-end;
-}
-
-#player-2 #tournament-buttons {
-    align-items: flex-start;
 }
 
 .player-frame__button-plus {
@@ -324,6 +314,12 @@
     width: var(--base-icon-middle-size);
     height: var(--base-icon-middle-size);
     background-image: var(--ic-combat-small-x5-color-red);
+}
+
+.player-frame__points-minus-10-icon {
+    width: var(--base-icon-middle-size);
+    height: var(--base-icon-middle-size);
+    background-image: var(--ic-combat-small-x10-color-red);
 }
 
 .player-frame__points-plus-1-icon {

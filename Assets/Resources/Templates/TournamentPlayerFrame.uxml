@@ -1,21 +1,45 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="SeparatorFrame" src="project://database/Assets/Resources/Templates/SeparatorHorizontalFrame.uxml?fileID=9197481963319205126&amp;guid=cfce5ce97393f4b498022c45dc21d3b0&amp;type=3#SeparatorHorizontalFrame" />
+    <ui:Template name="SeparatorVerticalFrame" src="project://database/Assets/Resources/Templates/SeparatorVerticalFrame.uxml?fileID=9197481963319205126&amp;guid=f155ae5328db49f408e1a64886f26f42&amp;type=3#SeparatorVerticalFrame" />
     <Style src="project://database/Assets/Resources/Uss/Style.uss?fileID=7433441132597879392&amp;guid=65ff8790dd4ca8040b6578d6e9530e55&amp;type=3#Style" />
+    <ui:VisualElement name="plus-buttons-container" picking-mode="Ignore" class="player-frame__buttons-container">
+        <CustomButton name="minus-10-button" class="player-frame__button-minus" />
+        <CustomButton name="plus-5-button" class="player-frame__button-plus" />
+    </ui:VisualElement>
+    <ui:VisualElement name="minus-buttons-container" picking-mode="Ignore" class="player-frame__buttons-container">
+        <CustomButton name="minus-button" class="player-frame__button-minus" />
+        <CustomButton name="plus-button" class="player-frame__button-plus" />
+    </ui:VisualElement>
+    <ui:Instance name="separator-horizontal-frame" template="SeparatorFrame" picking-mode="Ignore" class="separator-frame" />
+    <ui:Instance name="separator-vertical-frame" template="SeparatorVerticalFrame" class="separator-frame" />
     <ui:VisualElement name="authority-image-container" picking-mode="Ignore" class="player-frame__authority-image">
         <ui:VisualElement name="authority-image" picking-mode="Ignore" class="authority authority__image-green rotate-90">
             <CustomLabel name="authority-label" text="99" picking-mode="Ignore" class="player-frame__authority-label" />
         </ui:VisualElement>
     </ui:VisualElement>
-    <ui:VisualElement name="authority-points-label" picking-mode="Ignore" class="player-frame__container player-frame__container-label" style="flex-direction: row-reverse;">
-        <ui:VisualElement name="points-container" picking-mode="Ignore" class="player-frame__points-label player-frame__points-label-plus rotate-90">
-            <CustomLabel name="points-label" text="99" picking-mode="Ignore" />
+    <ui:VisualElement name="authority-points-label" picking-mode="Ignore" class="player-frame__container player-frame__container-label">
+        <ui:VisualElement name="points-plus-container" picking-mode="Ignore" class="player-frame__points-label player-frame__points-label-plus">
+            <CustomLabel name="points-plus-label" text="99" picking-mode="Ignore" />
         </ui:VisualElement>
-        <ui:VisualElement name="space-empty" picking-mode="Ignore" class="player-frame__authority-image-space" style="width: 512px;" />
-        <ui:VisualElement name="none" picking-mode="Ignore" class="player-frame__points-label player-frame__points-label-minus rotate-90" style="visibility: hidden;">
-            <CustomLabel name="none" text="99" picking-mode="Ignore" />
+        <ui:VisualElement name="space-empty" picking-mode="Ignore" class="player-frame__authority-image-space" />
+        <ui:VisualElement name="points-minus-container" picking-mode="Ignore" class="player-frame__points-label player-frame__points-label-minus">
+            <CustomLabel name="points-minus-label" text="99" picking-mode="Ignore" />
         </ui:VisualElement>
     </ui:VisualElement>
-    <ui:VisualElement name="tournament-buttons">
-        <CustomButton name="minus-button" style="background-color: rgb(255, 21, 0); height: 256px; width: 256px; border-top-left-radius: 50%; border-bottom-left-radius: 50%; border-top-right-radius: 50%; border-bottom-right-radius: 50%;" />
-        <CustomButton name="plus-button" style="background-color: rgb(34, 255, 0); height: 256px; width: 256px; border-top-left-radius: 50%; border-bottom-left-radius: 50%; border-top-right-radius: 50%; border-bottom-right-radius: 50%;" />
+    <ui:VisualElement name="authority-points-x1" picking-mode="Ignore" class="player-frame__container player-frame__container-x1">
+        <ui:VisualElement name="container" picking-mode="Ignore" class="player-frame__points">
+            <ui:VisualElement name="icon" picking-mode="Ignore" class="player-frame__points-icon player-frame__points-plus-icon player-frame__points-plus-5-icon rotate-90" />
+        </ui:VisualElement>
+        <ui:VisualElement name="container" picking-mode="Ignore" class="player-frame__points">
+            <ui:VisualElement name="icon" picking-mode="Ignore" class="player-frame__points-icon player-frame__points-plus-1-icon rotate-90" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="authority-points-x5" picking-mode="Ignore" class="player-frame__container player-frame__container-x5">
+        <ui:VisualElement name="container" picking-mode="Ignore" class="player-frame__points">
+            <ui:VisualElement name="icon" picking-mode="Ignore" class="player-frame__points-icon player-frame__points-minus-10-icon rotate-90" />
+        </ui:VisualElement>
+        <ui:VisualElement name="container" picking-mode="Ignore" class="player-frame__points">
+            <ui:VisualElement name="icon" picking-mode="Ignore" class="player-frame__points-icon player-frame__points-minus-1-icon rotate-90" />
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
