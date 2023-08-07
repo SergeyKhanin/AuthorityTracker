@@ -18,7 +18,7 @@
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement name="authority-points-label" picking-mode="Ignore" class="player-frame__container player-frame__container-label" style="flex-direction: row; align-items: center; justify-content: center;">
-        <ui:VisualElement name="points-container" picking-mode="Ignore" class="player-frame__points-label player-frame__points-label-plus" style="flex-direction: column; left: 264px;">
+        <ui:VisualElement name="points-container" picking-mode="Ignore" class="player-frame__points-label player-frame__points-label-plus" style="flex-direction: column; margin-left: 600px;">
             <ui:VisualElement name="icon-minus" picking-mode="Ignore" class="player-frame__points-icon player-frame__points-minus-icon rotate-90" />
             <ui:VisualElement name="icon-plus" picking-mode="Ignore" class="player-frame__points-icon player-frame__points-plus-icon rotate-90" />
             <CustomLabel name="points-label" text="99" picking-mode="Ignore" class="rotate-90" style="margin-top: 16px; margin-bottom: 16px;" />
