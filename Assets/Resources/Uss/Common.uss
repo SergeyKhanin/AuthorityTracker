@@ -41,7 +41,7 @@
 }
 
 :root {
-    --font-size-common: 110px;
+    --font-size-common: 100px;
     --font-size-authority-big: 340px;
     --font-size-authority-small: 200px;
 }

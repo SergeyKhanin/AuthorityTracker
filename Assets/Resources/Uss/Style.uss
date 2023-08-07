@@ -77,6 +77,12 @@
     height: var(--base-image-resolution-var);
 }
 
+
+.authority__image-tournament {
+    rotate: 90deg;
+    right: 68px;
+}
+
 .label {
     color: var(--color-black);
     text-shadow: -2px -2px 0 var(--color-gray);
@@ -195,11 +201,6 @@
 #initial-points-input #unity-text-input TextElement {
     max-width: var(--base-authority-text-with);
     -unity-text-align: upper-center;
-}
-
-#authority-image-tournament {
-    rotate: 90deg;
-    right: 68px;
 }
 
 .player-frame__button-plus {

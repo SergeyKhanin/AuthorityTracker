@@ -13,16 +13,15 @@
     <ui:Instance name="separator-horizontal-frame" template="SeparatorHorizontalFrame" picking-mode="Ignore" class="separator-frame" />
     <ui:Instance name="separator-vertical-frame" template="SeparatorVerticalFrame" picking-mode="Ignore" class="separator-frame" />
     <ui:VisualElement name="authority-image-container" picking-mode="Ignore" class="player-frame__authority-image">
-        <ui:VisualElement name="authority-image-tournament" picking-mode="Ignore" class="authority authority__image-green">
+        <ui:VisualElement name="authority-image-tournament" picking-mode="Ignore" class="authority authority__image-green authority__image-tournament">
             <CustomLabel name="authority-label" text="99" picking-mode="Ignore" class="player-frame__authority-label" />
         </ui:VisualElement>
     </ui:VisualElement>
-    <ui:VisualElement name="authority-points-label" picking-mode="Ignore" class="player-frame__container player-frame__container-label" style="flex-direction: row;">
-        <ui:VisualElement name="space-empty" picking-mode="Ignore" class="player-frame__authority-image-space" />
-        <ui:VisualElement name="points-container" picking-mode="Ignore" class="player-frame__points-label player-frame__points-label-plus rotate-90">
-            <ui:VisualElement name="icon-minus" picking-mode="Ignore" class="player-frame__points-icon player-frame__points-minus-icon" />
-            <ui:VisualElement name="icon-plus" picking-mode="Ignore" class="player-frame__points-icon player-frame__points-plus-icon" />
-            <CustomLabel name="points-plus-label" text="99" picking-mode="Ignore" />
+    <ui:VisualElement name="authority-points-label" picking-mode="Ignore" class="player-frame__container player-frame__container-label" style="flex-direction: row; align-items: center; justify-content: center;">
+        <ui:VisualElement name="points-container" picking-mode="Ignore" class="player-frame__points-label player-frame__points-label-plus" style="flex-direction: column; left: 264px;">
+            <ui:VisualElement name="icon-minus" picking-mode="Ignore" class="player-frame__points-icon player-frame__points-minus-icon rotate-90" />
+            <ui:VisualElement name="icon-plus" picking-mode="Ignore" class="player-frame__points-icon player-frame__points-plus-icon rotate-90" />
+            <CustomLabel name="points-label" text="99" picking-mode="Ignore" class="rotate-90" style="margin-top: 16px; margin-bottom: 16px;" />
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement name="authority-points-top" picking-mode="Ignore" class="player-frame__container player-frame__container-x1">

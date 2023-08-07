@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UIElements;
 
 public class CasualPlayerView : MonoBehaviour
@@ -116,12 +115,6 @@ public class CasualPlayerView : MonoBehaviour
         _isPlus5ButtonClicked = false;
     }
 
-    private void OnPlus5ButtonClicked()
-    {
-        _isPlus5ButtonClicked = true;
-        OnPlusButtonClicked();
-    }
-
     private void OnMinusButtonClicked()
     {
         _minusPointsTime = 0;
@@ -149,6 +142,12 @@ public class CasualPlayerView : MonoBehaviour
         ValidateClasses();
 
         _isMinus5ButtonClicked = false;
+    }
+
+    private void OnPlus5ButtonClicked()
+    {
+        _isPlus5ButtonClicked = true;
+        OnPlusButtonClicked();
     }
 
     private void OnMinus5ButtonClicked()
