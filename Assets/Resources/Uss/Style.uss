@@ -309,6 +309,13 @@
     margin: var(--base-points-margin-casual);
     flex-direction: row;
     align-items: center;
+    justify-content: center;
+    -unity-text-align: middle-left;
+}
+
+.player-frame__points-label__height {
+    height: 76px;
+    -unity-text-align: middle-left;
 }
 
 .player-frame__points-label-plus {
@@ -324,15 +331,17 @@
 }
 
 .player-frame__points-plus-icon {
-    height: var(--button-points-icon);
-    width: var(--base-icon-large-size);
-    background-image: var(--ic-authority-small-color-green);
+    height: 76px;
+    width: 122px;
+    background-image: var(--ic-authority-small-fill);
+    -unity-background-image-tint-color: var(--color-green);
 }
 
 .player-frame__points-minus-icon {
-    width: var(--base-icon-middle-size);
-    height: var(--base-icon-middle-size);
-    background-image: var(--ic-combat-small-color-red);
+    width: 76px;
+    height: 76px;
+    background-image: var(--ic-combat-small-fill);
+    -unity-background-image-tint-color: var(--color-red);
 }
 
 .player-frame__points-plus-5-icon {

@@ -20,12 +20,12 @@
     <ui:VisualElement name="authority-points-label" picking-mode="Ignore" class="player-frame__container player-frame__container-label">
         <ui:VisualElement name="points-plus-container" picking-mode="Ignore" class="player-frame__points-label player-frame__points-label-plus">
             <ui:VisualElement name="icon-plus" picking-mode="Ignore" class="player-frame__points-icon player-frame__points-plus-icon" />
-            <CustomLabel name="points-plus-label" text="99" picking-mode="Ignore" />
+            <CustomLabel name="points-plus-label" text="99" picking-mode="Ignore" class="player-frame__points-label__height" />
         </ui:VisualElement>
         <ui:VisualElement name="space-empty" picking-mode="Ignore" class="player-frame__authority-image-space" />
         <ui:VisualElement name="points-minus-container" picking-mode="Ignore" class="player-frame__points-label player-frame__points-label-minus">
             <ui:VisualElement name="icon-minus" picking-mode="Ignore" class="player-frame__points-icon player-frame__points-minus-icon" />
-            <CustomLabel name="points-minus-label" text="99" picking-mode="Ignore" />
+            <CustomLabel name="points-minus-label" text="99" picking-mode="Ignore" class="player-frame__points-label__height" />
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement name="authority-points-x1" picking-mode="Ignore" class="player-frame__container player-frame__container-x1">
