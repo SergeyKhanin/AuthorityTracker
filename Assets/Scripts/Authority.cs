@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Authority
 {
-    public int Points { get; set; }
+    public int Points { get; private set; }
     public int Limit { get; }
 
     public Authority()
@@ -22,6 +22,8 @@ public class Authority
     public void PlusFivePoints() => Points += 5;
 
     public void MinusFivePoints() => Points -= 5;
+
+    public void AddCustomPoints(int amount) => Points += amount;
 
     public void ValidatePoints()
     {

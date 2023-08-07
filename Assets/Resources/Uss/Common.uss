@@ -29,6 +29,8 @@
     --base-authority-text-with: 400px;
     --base-icon-middle-size: 128px;
     --base-icon-large-size: 154px;
+    --base-points-margin-casual: 40px;
+    --base-points-margin-tournament: 576px;
 }
 
 :root {

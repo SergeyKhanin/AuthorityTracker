@@ -13,7 +13,7 @@
     <ui:Instance name="separator-vertical-frame" template="SeparatorVerticalFrame" picking-mode="Ignore" class="separator-frame" />
     <ui:Instance name="separator-horizontal-frame" template="SeparatorHorizontalFrame" picking-mode="Ignore" class="separator-frame" />
     <ui:VisualElement name="authority-image-container" picking-mode="Ignore" class="player-frame__authority-image">
-        <ui:VisualElement name="authority-image-casual" picking-mode="Ignore" class="authority authority__image-green">
+        <ui:VisualElement name="authority-image" picking-mode="Ignore" class="authority authority__image-green">
             <CustomLabel name="authority-label" text="99" picking-mode="Ignore" class="player-frame__authority-label" />
         </ui:VisualElement>
     </ui:VisualElement>

@@ -13,6 +13,7 @@ public class TournamentPlayerView : MonoBehaviour
 
     private VisualElement _root;
     private VisualElement _frame;
+    private VisualElement _authorityImage;
     private VisualElement _iconPlus;
     private VisualElement _iconMinus;
 
@@ -29,6 +30,8 @@ public class TournamentPlayerView : MonoBehaviour
     private string _playerName;
     private bool _isPlus5ButtonClicked;
     private bool _isMinus10ButtonClicked;
+    private bool _isPointsZero;
+    private bool _isPointsLong;
 
     private void Awake()
     {
@@ -39,6 +42,7 @@ public class TournamentPlayerView : MonoBehaviour
 
         _frame = _root.Q<VisualElement>(_playerName);
 
+        _authorityImage = _frame.Q<VisualElement>("authority-image");
         _iconPlus = _frame.Q<VisualElement>("icon-plus");
         _iconMinus = _frame.Q<VisualElement>("icon-minus");
 
@@ -86,7 +90,7 @@ public class TournamentPlayerView : MonoBehaviour
         _iconPlus.RemoveFromClassList(CommonUssClassNames.Hide);
         _applyButtonView.CheckDoneButton();
 
-        CheckLabels();
+        UpdatePointsLabel();
 
         _isPlus5ButtonClicked = false;
     }
@@ -102,14 +106,18 @@ public class TournamentPlayerView : MonoBehaviour
         _iconMinus.RemoveFromClassList(CommonUssClassNames.Hide);
         _applyButtonView.CheckDoneButton();
 
-        CheckLabels();
+        UpdatePointsLabel();
 
         _isMinus10ButtonClicked = false;
     }
 
     private void OnApplyButtonClicked()
     {
-        _authority.Points += Counter;
+        _authority.AddCustomPoints(Counter);
+        _authority.ValidatePoints();
+
+        ValidateText();
+        ValidateClasses();
 
         Counter = 0;
 
@@ -121,7 +129,7 @@ public class TournamentPlayerView : MonoBehaviour
         _applyButtonView.CheckDoneButton();
     }
 
-    private void CheckLabels()
+    private void UpdatePointsLabel()
     {
         if (Counter < 0)
         {
@@ -158,5 +166,23 @@ public class TournamentPlayerView : MonoBehaviour
     {
         _isMinus10ButtonClicked = true;
         OnMinusButtonClicked();
+    }
+
+    private void ValidateClasses()
+    {
+        _authorityImage.EnableInClassList(CommonUssClassNames.ImageAuthorityRed, _isPointsZero);
+        _authorityLabel.EnableInClassList(CommonUssClassNames.LabelAuthoritySizeSmall, _isPointsLong);
+    }
+
+    private void ValidateText()
+    {
+        if (_authority.Points <= 0)
+            _isPointsZero = true;
+        else
+            _isPointsZero = false;
+        if (_authority.Points > 99 || _authority.Points < -9)
+            _isPointsLong = true;
+        else
+            _isPointsLong = false;
     }
 }
