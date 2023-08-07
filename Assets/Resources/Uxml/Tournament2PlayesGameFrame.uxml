@@ -11,6 +11,6 @@
         <ui:Instance name="player-1" template="TournamentPlayerFrame" picking-mode="Ignore" class="player-frame player player-2" />
     </ui:VisualElement>
     <ui:Instance name="apply-button-frame" template="ApplyButtonFrame" picking-mode="Ignore" class="frame frame-apply-button" />
-    <ui:Instance name="settings-frame" template="SettingsFrame" picking-mode="Ignore" class="frame frame-settings label hide" />
+    <ui:Instance name="settings-frame" template="SettingsFrame" picking-mode="Ignore" class="frame frame-settings label frame-settings__rotate-90 hide" />
     <ui:Instance name="additional-frame" template="AdditionalFrame" picking-mode="Ignore" class="frame frame-additional" />
 </ui:UXML>
