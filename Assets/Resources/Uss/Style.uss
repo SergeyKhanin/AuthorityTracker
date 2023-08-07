@@ -44,7 +44,7 @@
     background-color: var(--color-black);
     width: 100%;
     height: 100%;
-    opacity: 0.7;
+    opacity: 0.3;
 }
 
 .separator-horizontal {
@@ -197,6 +197,11 @@
     -unity-text-align: upper-center;
 }
 
+#authority-image-tournament {
+    rotate: 90deg;
+    right: 68px;
+}
+
 .player-frame__button-plus {
     width: 50%;
     height: 100%;
@@ -234,6 +239,7 @@
 
 .player-frame__authority-image-space {
     height: var(--base-image-resolution-half);
+    width: var(--base-image-resolution-half);
 }
 
 .player-frame__container {
@@ -278,8 +284,9 @@
 .player-frame__points-label {
     font-size: var(--font-size-common);
     text-shadow: 0 0 0 var(--color-transperent);
-    margin-top: var(--base-margin-half);
-    margin-bottom: var(--base-margin-half);
+    margin: var(--base-margin-half);
+    flex-direction: row;
+    align-items: center;
 }
 
 .player-frame__points-label-plus {
@@ -297,17 +304,19 @@
 .player-frame__points-plus-icon {
     height: var(--button-points-icon);
     width: var(--base-icon-large-size);
+    background-image: var(--ic-authority-small-color-green);
 }
 
 .player-frame__points-minus-icon {
     width: var(--base-icon-middle-size);
     height: var(--base-icon-middle-size);
+    background-image: var(--ic-combat-small-color-red);
 }
 
 .player-frame__points-plus-5-icon {
     height: var(--button-points-icon);
-    background-image: var(--ic-authority-small-x5-color-green);
     width: var(--base-icon-large-size);
+    background-image: var(--ic-authority-small-x5-color-green);
 }
 
 .player-frame__points-minus-5-icon {
