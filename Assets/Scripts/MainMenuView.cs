@@ -6,14 +6,19 @@ public class MainMenuView : MonoBehaviour
 {
     private Authority _authority;
     private int _pointsLimit;
+    private bool _hasOnePlayer;
+    private bool _hasTwoPlayers;
 
     private VisualElement _root;
     private IntegerField _initialPointsIntegerField;
+    private TextElement _pointsTextElement;
     private CustomButton _casualButton;
     private CustomButton _tournamentButton;
     private CustomButton _communityButton;
     private CustomButton _quitButton;
-    private TextElement _pointsTextElement;
+    private CustomButton _onePlayerButton;
+    private CustomButton _twoPlayersButton;
+
 
     private void Awake()
     {
@@ -28,6 +33,7 @@ public class MainMenuView : MonoBehaviour
 
         _authority = new Authority();
         _pointsLimit = _authority.Limit;
+        _hasTwoPlayers = true;
 
         _initialPointsIntegerField.RegisterCallback<ChangeEvent<int>>(OnIntChangedEvent);
 
@@ -57,8 +63,24 @@ public class MainMenuView : MonoBehaviour
     }
 
     private void OnQuitButtonClicked() => Application.Quit();
-    private void OnCasualButtonClicked() => SceneManager.LoadScene(CommonScenesList.Casual2PlayersGameScene);
-    private void OnTournamentButtonClicked() => SceneManager.LoadScene(CommonScenesList.Tournament2PlayersGameScene);
+
+    private void OnCasualButtonClicked()
+    {
+        if (_hasOnePlayer)
+            SceneManager.LoadScene(CommonScenesList.Casual1PlayerGameScene);
+
+        if (_hasTwoPlayers)
+            SceneManager.LoadScene(CommonScenesList.Casual2PlayersGameScene);
+    }
+
+    private void OnTournamentButtonClicked()
+    {
+        if (_hasOnePlayer)
+            SceneManager.LoadScene(CommonScenesList.Tournament1PlayerGameScene);
+
+        if (_hasTwoPlayers)
+            SceneManager.LoadScene(CommonScenesList.Tournament2PlayersGameScene);
+    }
 
     private void OnIntChangedEvent(ChangeEvent<int> evt)
     {

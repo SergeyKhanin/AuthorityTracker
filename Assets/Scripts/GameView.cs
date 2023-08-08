@@ -19,7 +19,7 @@ public class GameView : MonoBehaviour
         _root = GetComponent<UIDocument>().rootVisualElement;
 
         _playersFrame = _root.Q<VisualElement>("players-frame");
-        _settingsFrame = _root.Q<VisualElement>("settings-frame");
+        _settingsFrame = _root.Q<VisualElement>("pause-frame");
         
         _settingsButton = _root.Q<CustomButton>("settings-button");
         _backButton = _root.Q<CustomButton>("back-button");
