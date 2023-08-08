@@ -6,17 +6,20 @@ public class ApplyButtonView : MonoBehaviour
     private TournamentPlayerView[] _tournamentPlayerViews;
     private VisualElement _root;
     private CustomButton _applyButton;
+    private CustomButton _clearButton;
     private int _counterSum;
 
     private void Awake()
     {
         _root = GetComponent<UIDocument>().rootVisualElement;
         _applyButton = _root.Q<CustomButton>("apply-button");
+        _clearButton = _root.Q<CustomButton>("clear-button");
         _applyButton.AddToClassList(CommonUssClassNames.Hide);
+        _clearButton.AddToClassList(CommonUssClassNames.Hide);
         _tournamentPlayerViews = GetComponents<TournamentPlayerView>();
     }
 
-    public void CheckDoneButton()
+    public void CheckPointsAmount()
     {
         _counterSum = 0;
 
@@ -29,8 +32,14 @@ public class ApplyButtonView : MonoBehaviour
         }
 
         if (_counterSum == 0)
+        {
             _applyButton.AddToClassList(CommonUssClassNames.Hide);
+            _clearButton.AddToClassList(CommonUssClassNames.Hide);
+        }
         else
+        {
             _applyButton.RemoveFromClassList(CommonUssClassNames.Hide);
+            _clearButton.RemoveFromClassList(CommonUssClassNames.Hide);
+        }
     }
 }

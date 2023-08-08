@@ -20,6 +20,7 @@ public class TournamentPlayerView : MonoBehaviour
     private CustomButton _minusButton;
     private CustomButton _plusButton;
     private CustomButton _applyButton;
+    private CustomButton _clearButton;
     private CustomButton _plus5Button;
     private CustomButton _minus10Button;
 
@@ -49,6 +50,7 @@ public class TournamentPlayerView : MonoBehaviour
         _minusButton = _frame.Q<CustomButton>("minus-button");
         _plusButton = _frame.Q<CustomButton>("plus-button");
         _applyButton = _root.Q<CustomButton>("apply-button");
+        _clearButton = _root.Q<CustomButton>("clear-button");
         _plus5Button = _frame.Q<CustomButton>("plus-5-button");
         _minus10Button = _frame.Q<CustomButton>("minus-10-button");
 
@@ -65,18 +67,20 @@ public class TournamentPlayerView : MonoBehaviour
     {
         _plusButton.clicked += OnPlusButtonClicked;
         _minusButton.clicked += OnMinusButtonClicked;
-        _applyButton.clicked += OnApplyButtonClicked;
         _plus5Button.clicked += OnPlus5ButtonClicked;
         _minus10Button.clicked += OnMinus10ButtonClicked;
+        _applyButton.clicked += OnApplyButtonClicked;
+        _clearButton.clicked += OnClearButtonClicked;
     }
 
     private void OnDisable()
     {
         _plusButton.clicked -= OnPlusButtonClicked;
         _minusButton.clicked -= OnMinusButtonClicked;
-        _applyButton.clicked -= OnApplyButtonClicked;
         _plus5Button.clicked -= OnPlus5ButtonClicked;
         _minus10Button.clicked -= OnMinus10ButtonClicked;
+        _applyButton.clicked -= OnApplyButtonClicked;
+        _clearButton.clicked -= OnClearButtonClicked;
     }
 
     private void OnPlusButtonClicked()
@@ -88,7 +92,7 @@ public class TournamentPlayerView : MonoBehaviour
 
         _pointsLabel.RemoveFromClassList(CommonUssClassNames.Hide);
         _iconPlus.RemoveFromClassList(CommonUssClassNames.Hide);
-        _applyButtonView.CheckDoneButton();
+        _applyButtonView.CheckPointsAmount();
 
         UpdatePointsLabel();
 
@@ -104,7 +108,7 @@ public class TournamentPlayerView : MonoBehaviour
 
         _pointsLabel.RemoveFromClassList(CommonUssClassNames.Hide);
         _iconMinus.RemoveFromClassList(CommonUssClassNames.Hide);
-        _applyButtonView.CheckDoneButton();
+        _applyButtonView.CheckPointsAmount();
 
         UpdatePointsLabel();
 
@@ -126,7 +130,18 @@ public class TournamentPlayerView : MonoBehaviour
         _iconPlus.AddToClassList(CommonUssClassNames.Hide);
         _iconMinus.AddToClassList(CommonUssClassNames.Hide);
 
-        _applyButtonView.CheckDoneButton();
+        _applyButtonView.CheckPointsAmount();
+    }
+
+    private void OnClearButtonClicked()
+    {
+        Counter = 0;
+
+        _pointsLabel.AddToClassList(CommonUssClassNames.Hide);
+        _iconPlus.AddToClassList(CommonUssClassNames.Hide);
+        _iconMinus.AddToClassList(CommonUssClassNames.Hide);
+
+        _applyButtonView.CheckPointsAmount();
     }
 
     private void UpdatePointsLabel()

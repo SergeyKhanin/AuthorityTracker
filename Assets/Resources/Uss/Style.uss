@@ -178,6 +178,10 @@
     background-image: var(--ic-button-rectangle-small-color-gray);
 }
 
+.button-rectangle-small__green{
+    background-image: var(--ic-button-rectangle-small-color-green);
+}
+
 .player {
     align-items: center;
     justify-content: center;
