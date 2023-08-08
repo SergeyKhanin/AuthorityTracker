@@ -1,11 +1,18 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:VisualElement name="main-menu-frame" picking-mode="Ignore" class="frame frame-menu label">
-        <ui:VisualElement name="authority-image-text" picking-mode="Ignore" class="authority authority__text">
-            <ui:IntegerField name="initial-points-input" value="50" />
+    <ui:VisualElement name="main-menu-frame" picking-mode="Ignore" class="frame frame-menu label" style="justify-content: space-between;">
+        <ui:VisualElement name="header" picking-mode="Ignore" style="height: 202px; width: 100%; align-items: stretch; justify-content: space-between; flex-direction: row;">
+            <CustomButton name="one-player-button" class="button" style="background-image: resource(&apos;Icons/IC_Player-1_Color-green&apos;); -unity-background-scale-mode: scale-to-fit; height: 202px; width: 202px;" />
+            <CustomButton name="two-players-button" class="button" style="background-image: resource(&apos;Icons/IC_Player-2_Color-green&apos;); -unity-background-scale-mode: scale-to-fit; height: 202px; width: 202px;" />
+            <CustomButton name="settings-button" class="button" style="background-image: resource(&apos;Icons/IC_Gear_Color-green&apos;); -unity-background-scale-mode: scale-to-fit; height: 202px; width: 202px;" />
         </ui:VisualElement>
-        <CustomButton name="casual-button" text="CASUAL" class="button button-rectangle button-rectangle__green" />
-        <CustomButton name="tournament-button" text="TOURNAMENT" class="button button-rectangle button-rectangle__green" />
-        <CustomButton name="community-button" text="COMMUNITY" class="button button-rectangle button-rectangle__gray" />
-        <CustomButton name="quit-button" text="QUIT" class="button button-rectangle button-rectangle__red" />
+        <ui:VisualElement name="content" picking-mode="Ignore" style="align-items: center; height: 100%; justify-content: center; width: 100%;">
+            <ui:VisualElement name="authority-image-text" picking-mode="Ignore" class="authority authority__text">
+                <ui:IntegerField name="initial-points-input" value="50" />
+            </ui:VisualElement>
+            <CustomButton name="casual-button" text="CASUAL" class="button button-rectangle button-rectangle__green" />
+            <CustomButton name="tournament-button" text="TOURNAMENT" class="button button-rectangle button-rectangle__green" />
+            <CustomButton name="community-button" text="COMMUNITY" class="button button-rectangle button-rectangle__gray" />
+            <CustomButton name="quit-button" text="QUIT" class="button button-rectangle button-rectangle__red" />
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

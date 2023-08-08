@@ -15,5 +15,5 @@ public class SettingsView : MonoBehaviour
 
     private void OnEnable() => _backButton.clicked += OnBackButtonClicked;
     private void OnDisable() => _backButton.clicked -= OnBackButtonClicked;
-    private void OnBackButtonClicked() => SceneManager.LoadScene(CommonScenesList.SettingsScene);
+    private void OnBackButtonClicked() => SceneManager.LoadScene(CommonScenesList.MainMenuScene);
 }

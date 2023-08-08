@@ -18,6 +18,7 @@ public class MainMenuView : MonoBehaviour
     private CustomButton _quitButton;
     private CustomButton _onePlayerButton;
     private CustomButton _twoPlayersButton;
+    private CustomButton _settingsButton;
 
 
     private void Awake()
@@ -30,10 +31,16 @@ public class MainMenuView : MonoBehaviour
         _tournamentButton = _root.Q<CustomButton>("tournament-button");
         _communityButton = _root.Q<CustomButton>("community-button");
         _quitButton = _root.Q<CustomButton>("quit-button");
+        _onePlayerButton = _root.Q<CustomButton>("one-player-button");
+        _twoPlayersButton = _root.Q<CustomButton>("two-players-button");
+        _settingsButton = _root.Q<CustomButton>("settings-button");
 
         _authority = new Authority();
         _pointsLimit = _authority.Limit;
         _hasTwoPlayers = true;
+
+        _onePlayerButton.EnableInClassList(CommonUssClassNames.Hide, true);
+        _twoPlayersButton.EnableInClassList(CommonUssClassNames.Hide, false);
 
         _initialPointsIntegerField.RegisterCallback<ChangeEvent<int>>(OnIntChangedEvent);
 
@@ -48,6 +55,9 @@ public class MainMenuView : MonoBehaviour
 
     private void OnEnable()
     {
+        _onePlayerButton.clicked += OnOnePlayerButtonClicked;
+        _twoPlayersButton.clicked += OnTwoPlayersButtonClicked;
+        _settingsButton.clicked += OnSettingsButtonClicked;
         _casualButton.clicked += OnCasualButtonClicked;
         _tournamentButton.clicked += OnTournamentButtonClicked;
         _quitButton.clicked += OnQuitButtonClicked;
@@ -56,6 +66,9 @@ public class MainMenuView : MonoBehaviour
 
     private void OnDisable()
     {
+        _onePlayerButton.clicked -= OnOnePlayerButtonClicked;
+        _twoPlayersButton.clicked -= OnTwoPlayersButtonClicked;
+        _settingsButton.clicked -= OnSettingsButtonClicked;
         _casualButton.clicked -= OnCasualButtonClicked;
         _tournamentButton.clicked -= OnTournamentButtonClicked;
         _communityButton.clicked -= OnCommunityButtonClicked;
@@ -63,6 +76,24 @@ public class MainMenuView : MonoBehaviour
     }
 
     private void OnQuitButtonClicked() => Application.Quit();
+
+    private void OnOnePlayerButtonClicked()
+    {
+        _hasOnePlayer = false;
+        _hasTwoPlayers = true;
+        _onePlayerButton.EnableInClassList(CommonUssClassNames.Hide, _hasTwoPlayers);
+        _twoPlayersButton.EnableInClassList(CommonUssClassNames.Hide, _hasOnePlayer);
+    }
+
+    private void OnTwoPlayersButtonClicked()
+    {
+        _hasOnePlayer = true;
+        _hasTwoPlayers = false;
+        _twoPlayersButton.EnableInClassList(CommonUssClassNames.Hide, _hasOnePlayer);
+        _onePlayerButton.EnableInClassList(CommonUssClassNames.Hide, _hasTwoPlayers);
+    }
+
+    private void OnSettingsButtonClicked() => SceneManager.LoadScene(CommonScenesList.SettingsScene);
 
     private void OnCasualButtonClicked()
     {
