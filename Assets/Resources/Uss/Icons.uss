@@ -1,0 +1,27 @@
+.ic {
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.ic-btn-square-color-green {
+    background-image: var(--ic-btn-square-color-green);
+}
+
+.ic-btn-rectangle-color-red {
+    background-image: var(--ic-btn-rectangle-color-red);
+}
+
+.ic-btn-rectangle-color-green {
+    background-image: var(--ic-btn-rectangle-color-green);
+}
+
+.ic-btn-rectangle-color-gray {
+    background-image: var(--ic-btn-rectangle-color-gray);
+}
+
+.ic-btn-rectangle-small-color-gray {
+    background-image: var(--ic-btn-rectangle-small-color-gray);
+}
+
+.ic-btn-rectangle-small-color-green {
+    background-image: var(--ic-btn-rectangle-small-color-green);
+}

@@ -14,7 +14,7 @@
 }
 
 .frame-settings {
-    background-image: var(--im-settings-frame);
+    background-image: var(--im-pause-frame);
 }
 
 .frame-settings__rotate-90 #buttons-container {

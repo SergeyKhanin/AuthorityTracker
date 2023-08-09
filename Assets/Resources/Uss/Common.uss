@@ -59,7 +59,7 @@
 :root {
     --im-main-menu-frame: resource('Images/IM_Menu-frame_Color');
     --im-game-frame: resource('Images/IM_Game-frame_Color');
-    --im-settings-frame: resource('Images/IM_Settings-frame_Color');
+    --im-pause-frame: resource('Images/IM_Pause-frame_Color');
 }
 
 :root {
@@ -69,12 +69,12 @@
     --ic-authority-small-x1-color-green: resource('Icons/IC_Authority-small-x1_Color-green');
     --ic-authority-small-x5-color-green: resource('Icons/IC_Authority-small-x5_Color-green');
     --ic-authority-text-menu-color-green: resource('Icons/IC_Authority-text-menu_Color-green');
-    --ic-button-square-color-green: resource('Icons/IC_Button-square_Color-green');
-    --ic-button-rectangle-color-red: resource('Icons/IC_Button-rectangle_Color-red');
-    --ic-button-rectangle-color-green: resource('Icons/IC_Button-rectangle_Color-green');
-    --ic-button-rectangle-color-gray: resource('Icons/IC_Button-rectangle_Color-gray');
-    --ic-button-rectangle-small-color-gray: resource('Icons/IC_Button-rectangle-small_Color-gray');
-    --ic-button-rectangle-small-color-green: resource('Icons/IC_Button-rectangle-small_Color-green');
+    --ic-btn-square-color-green: resource('Icons/IC_Button-square_Color-green');
+    --ic-btn-rectangle-color-red: resource('Icons/IC_Button-rectangle_Color-red');
+    --ic-btn-rectangle-color-green: resource('Icons/IC_Button-rectangle_Color-green');
+    --ic-btn-rectangle-color-gray: resource('Icons/IC_Button-rectangle_Color-gray');
+    --ic-btn-rectangle-small-color-gray: resource('Icons/IC_Button-rectangle-small_Color-gray');
+    --ic-btn-rectangle-small-color-green: resource('Icons/IC_Button-rectangle-small_Color-green');
     --ic-combat-small-fill: resource('Icons/IC_Combat-small_Fill');
     --ic-combat-small-x1-color-red: resource('Icons/IC_Combat-small-x1_Color-red');
     --ic-combat-small-x5-color-red: resource('Icons/IC_Combat-small-x5_Color-red');
