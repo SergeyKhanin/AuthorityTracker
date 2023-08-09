@@ -1,27 +1,43 @@
 .ic {
-    -unity-background-scale-mode: scale-to-fit;
+    -unity-background-scale-mode: scale-and-crop;
 }
 
-.ic-btn-square-color-green {
+.ic-btn-square__color-green {
     background-image: var(--ic-btn-square-color-green);
 }
 
-.ic-btn-rectangle-color-red {
+.ic-btn-rectangle__color-red {
     background-image: var(--ic-btn-rectangle-color-red);
 }
 
-.ic-btn-rectangle-color-green {
+.ic-btn-rectangle__color-green {
     background-image: var(--ic-btn-rectangle-color-green);
 }
 
-.ic-btn-rectangle-color-gray {
+.ic-btn-rectangle__color-gray {
     background-image: var(--ic-btn-rectangle-color-gray);
 }
 
-.ic-btn-rectangle-small-color-gray {
+.ic-btn-rectangle__small__color-gray {
     background-image: var(--ic-btn-rectangle-small-color-gray);
 }
 
-.ic-btn-rectangle-small-color-green {
+.ic-btn-rectangle__small__color-green {
     background-image: var(--ic-btn-rectangle-small-color-green);
+}
+
+.ic-authority__big__color-green {
+    background-image: var(--ic-authority-color-green);
+}
+
+.ic-gear__color-green {
+    background-image: var(--ic-gear-color-green);
+}
+
+.ic-player-1__color-green {
+    background-image: var(--ic-player-1-color-green);
+}
+
+.ic-player-2__color-green {
+    background-image: var(--ic-player-2-color-green);
 }

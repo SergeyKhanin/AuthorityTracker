@@ -8,16 +8,15 @@
 }
 
 :root {
-    --color-active-rgb: rgb(140, 140, 140);
-    --color-active-plus-rgba: rgba(100, 0, 0, 0.1);
-    --color-active-minus-rgba: rgba(0, 100, 0, 0.1);
+    --color-active: rgb(140, 140, 140);
+    --color-active-plus: rgba(100, 0, 0, 0.1);
+    --color-active-minus: rgba(0, 100, 0, 0.1);
 }
 
 :root {
     --color-player-1: rgba(0, 0, 50, 0.25);
     --color-player-2: rgba(50, 0, 0, 0.25);
 }
-
 
 :root {
     --base-separator-height: 4px;
@@ -28,19 +27,20 @@
     --base-image-resolution-var: 704px;
     --base-image-resolution-half: 512px;
     --base-authority-text-with: 400px;
-    --base-icon-middle-size: 128px;
-    --base-icon-large-size: 154px;
+    --base-icon-small-size: 128px;
+    --base-icon-middle-size: 154px;
+    --base-icon-large-size: 202px;
     --base-points-margin-casual: 40px;
     --base-points-margin-tournament: 576px;
 }
 
 :root {
-    --button-points-icon: 96px;
-    --button-square-size: 180px;
-    --button-rectangle-height: 234px;
-    --button-rectangle-width: 938px;
-    --button-rectangle-small-heigh: 204px;
-    --button-rectangle-small-width: 448px;
+    --btn-points-icon: 96px;
+    --btn-square-size: 180px;
+    --btn-rectangle-height: 234px;
+    --btn-rectangle-width: 938px;
+    --btn-rectangle-small-heigh: 204px;
+    --btn-rectangle-small-width: 448px;
 }
 
 :root {
@@ -69,12 +69,6 @@
     --ic-authority-small-x1-color-green: resource('Icons/IC_Authority-small-x1_Color-green');
     --ic-authority-small-x5-color-green: resource('Icons/IC_Authority-small-x5_Color-green');
     --ic-authority-text-menu-color-green: resource('Icons/IC_Authority-text-menu_Color-green');
-    --ic-btn-square-color-green: resource('Icons/IC_Button-square_Color-green');
-    --ic-btn-rectangle-color-red: resource('Icons/IC_Button-rectangle_Color-red');
-    --ic-btn-rectangle-color-green: resource('Icons/IC_Button-rectangle_Color-green');
-    --ic-btn-rectangle-color-gray: resource('Icons/IC_Button-rectangle_Color-gray');
-    --ic-btn-rectangle-small-color-gray: resource('Icons/IC_Button-rectangle-small_Color-gray');
-    --ic-btn-rectangle-small-color-green: resource('Icons/IC_Button-rectangle-small_Color-green');
     --ic-combat-small-fill: resource('Icons/IC_Combat-small_Fill');
     --ic-combat-small-x1-color-red: resource('Icons/IC_Combat-small-x1_Color-red');
     --ic-combat-small-x5-color-red: resource('Icons/IC_Combat-small-x5_Color-red');
@@ -82,6 +76,12 @@
     --ic-gear-color-green: resource('Icons/IC_Gear_Color-green');
     --ic-player-1-color-green: resource('Icons/IC_Player-1_Color-green');
     --ic-player-2-color-green: resource('Icons/IC_Player-2_Color-green');
+    --ic-btn-square-color-green: resource('Icons/IC_Button-square_Color-green');
+    --ic-btn-rectangle-color-red: resource('Icons/IC_Button-rectangle_Color-red');
+    --ic-btn-rectangle-color-green: resource('Icons/IC_Button-rectangle_Color-green');
+    --ic-btn-rectangle-color-gray: resource('Icons/IC_Button-rectangle_Color-gray');
+    --ic-btn-rectangle-small-color-gray: resource('Icons/IC_Button-rectangle-small_Color-gray');
+    --ic-btn-rectangle-small-color-green: resource('Icons/IC_Button-rectangle-small_Color-green');
 }
 
 

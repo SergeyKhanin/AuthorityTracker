@@ -69,8 +69,8 @@
 
 .player-frame__points {
     margin: var(--base-margin);
-    height: var(--base-icon-large-size);
-    width: var(--base-icon-large-size);
+    height: var(--base-icon-middle-size);
+    width: var(--base-icon-middle-size);
     opacity: 0.05;
     flex-direction: row;
     align-items: center;
@@ -119,31 +119,31 @@
 }
 
 .player-frame__points-plus-5-icon {
-    height: var(--button-points-icon);
-    width: var(--base-icon-large-size);
+    height: var(--btn-points-icon);
+    width: var(--base-icon-middle-size);
     background-image: var(--ic-authority-small-x5-color-green);
 }
 
 .player-frame__points-minus-5-icon {
-    width: var(--base-icon-middle-size);
-    height: var(--base-icon-middle-size);
+    width: var(--base-icon-small-size);
+    height: var(--base-icon-small-size);
     background-image: var(--ic-combat-small-x5-color-red);
 }
 
 .player-frame__points-minus-10-icon {
-    width: var(--base-icon-middle-size);
-    height: var(--base-icon-middle-size);
+    width: var(--base-icon-small-size);
+    height: var(--base-icon-small-size);
     background-image: var(--ic-combat-small-x10-color-red);
 }
 
 .player-frame__points-plus-1-icon {
-    height: var(--button-points-icon);
+    height: var(--btn-points-icon);
     background-image: var(--ic-authority-small-x1-color-green);
-    width: var(--base-icon-large-size);
+    width: var(--base-icon-middle-size);
 }
 
 .player-frame__points-minus-1-icon {
-    width: var(--base-icon-middle-size);
-    height: var(--base-icon-middle-size);
+    width: var(--base-icon-small-size);
+    height: var(--base-icon-small-size);
     background-image: var(--ic-combat-small-x1-color-red);
 }

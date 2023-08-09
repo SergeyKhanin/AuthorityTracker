@@ -1,8 +1,10 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Resources/Uss/Buttons.uss?fileID=7433441132597879392&amp;guid=35acce53848602a46b563b75010f2975&amp;type=3#Buttons" />
+    <Style src="project://database/Assets/Resources/Uss/Icons.uss?fileID=7433441132597879392&amp;guid=876709081a3492642b5667db49455c6f&amp;type=3#Icons" />
     <ui:VisualElement name="buttons-container">
-        <CustomButton name="back-button" text="BACK" class="button button-rectangle button-rectangle__green" />
-        <CustomButton name="main-menu-button" text="MENU" class="button button-rectangle button-rectangle__green" />
-        <CustomButton name="reset-button" text="RESET" class="button button-rectangle button-rectangle__gray" />
-        <CustomButton name="quit-button" text="QUIT" class="button button-rectangle button-rectangle__red" />
+        <CustomButton name="back-button" text="BACK" class="btn btn-rectangle ic ic-btn-rectangle__color-green" />
+        <CustomButton name="main-menu-button" text="MENU" class="btn btn-rectangle ic ic-btn-rectangle__color-green" />
+        <CustomButton name="reset-button" text="RESET" class="btn btn-rectangle ic ic-btn-rectangle__color-gray" />
+        <CustomButton name="quit-button" text="QUIT" class="btn btn-rectangle ic ic-btn-rectangle__color-red" />
     </ui:VisualElement>
 </ui:UXML>

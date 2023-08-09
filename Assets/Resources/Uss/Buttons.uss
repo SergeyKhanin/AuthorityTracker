@@ -10,24 +10,29 @@
 }
 
 .btn:active {
-    -unity-background-image-tint-color: var(--color-active-rgb);
+    -unity-background-image-tint-color: var(--color-active);
 }
 
 .btn-square {
-    width: var(--button-square-size);
-    height: var(--button-square-size);
+    width: var(--btn-square-size);
+    height: var(--btn-square-size);
 }
 
 .btn-square__pause {
     left: 90px;
 }
 
+.btn-square__settings {
+    width: var(--base-icon-large-size);
+    height: var(--base-icon-large-size);
+}
+
 .btn-rectangle {
-    width: var(--button-rectangle-width);
-    height: var(--button-rectangle-height);
+    width: var(--btn-rectangle-width);
+    height: var(--btn-rectangle-height);
 }
 
 .btn-rectangle__small {
-    width: var(--button-rectangle-small-width);
-    height: var(--button-rectangle-small-heigh);
+    width: var(--btn-rectangle-small-width);
+    height: var(--btn-rectangle-small-heigh);
 }
