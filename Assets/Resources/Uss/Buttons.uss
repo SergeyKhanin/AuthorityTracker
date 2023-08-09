@@ -1,0 +1,57 @@
+.button {
+    font-size: var(--font-size-common);
+    text-shadow: 0 0 0 var(--color-transperent);
+    -unity-font-definition: var(--font-common-definition);
+    -unity-font: var(--font-common);
+    letter-spacing: 4px;
+    align-items: center;
+    justify-content: center;
+    -unity-text-align: middle-center;
+}
+
+.button:active {
+    -unity-background-image-tint-color: var(--color-active-rgb);
+}
+
+.button-square {
+    width: var(--button-square-size);
+    height: var(--button-square-size);
+}
+
+.button-square__settings-button {
+    left: 90px;
+}
+
+.button-rectangle {
+    width: var(--button-rectangle-width);
+    height: var(--button-rectangle-height);
+}
+
+.button-rectangle-small {
+    width: var(--button-rectangle-small-width);
+    height: var(--button-rectangle-small-heigh);
+}
+
+.button-square__green {
+    background-image: var(--ic-button-square-color-green);
+}
+
+.button-rectangle__red {
+    background-image: var(--ic-button-rectangle-color-red);
+}
+
+.button-rectangle__green {
+    background-image: var(--ic-button-rectangle-color-green);
+}
+
+.button-rectangle__gray {
+    background-image: var(--ic-button-rectangle-color-gray);
+}
+
+.button-rectangle-small__gray {
+    background-image: var(--ic-button-rectangle-small-color-gray);
+}
+
+.button-rectangle-small__green {
+    background-image: var(--ic-button-rectangle-small-color-green);
+}

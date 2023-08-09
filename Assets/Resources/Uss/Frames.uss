@@ -1,0 +1,64 @@
+.frame {
+    flex-grow: 1;
+    flex-shrink: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.frame-menu {
+    background-image: var(--im-main-menu-frame);
+}
+
+.frame-game {
+    background-image: var(--im-game-frame);
+}
+
+.frame-settings {
+    background-image: var(--im-settings-frame);
+}
+
+.frame-settings__rotate-90 #buttons-container {
+    rotate: 90deg;
+}
+
+.frame-additional {
+    border-color: var(--color-transperent);
+    width: 100%;
+    height: 100%;
+    align-items: flex-end;
+    position: absolute;
+    justify-content: center;
+}
+
+.frame-apply-button {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+}
+
+.frame-apply-button__bottom {
+    align-items: flex-start;
+    margin-right: 1px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+.frame-apply-button__bottom #apply-button {
+    right: var(--base-points-margin-casual);
+}
+
+.player-frame {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.separator-frame {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+}
