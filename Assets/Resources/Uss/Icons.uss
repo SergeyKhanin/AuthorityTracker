@@ -1,5 +1,5 @@
 .ic {
-    -unity-background-scale-mode: scale-and-crop;
+    -unity-background-scale-mode: stretch-to-fill;
 }
 
 .ic-sm {
@@ -67,6 +67,10 @@
 
 .ic-btn-rectangle__small__color-green {
     background-image: var(--ic-btn-rectangle-small-color-green);
+}
+
+.ic-authority__text__color-green {
+    background-image: var(--ic-authority-text-menu-color-green);
 }
 
 .ic-authority__big__color-green {

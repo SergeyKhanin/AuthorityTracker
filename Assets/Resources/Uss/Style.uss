@@ -110,6 +110,5 @@
     color: var(--color-black);
     max-width: var(--base-authority-text-with);
     text-shadow: -2px -2px 0 var(--color-gray);
-    bottom: 42px;
     -unity-text-align: upper-center;
 }

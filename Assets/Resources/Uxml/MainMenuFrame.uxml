@@ -1,4 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Resources/Uss/Style.uss?fileID=7433441132597879392&amp;guid=65ff8790dd4ca8040b6578d6e9530e55&amp;type=3#Style" />
+    <Style src="project://database/Assets/Resources/Uss/Icons.uss?fileID=7433441132597879392&amp;guid=876709081a3492642b5667db49455c6f&amp;type=3#Icons" />
     <ui:VisualElement name="main-menu-frame" picking-mode="Ignore" class="frame frame__main-menu">
         <ui:VisualElement name="header" picking-mode="Ignore" class="header">
             <CustomButton name="one-player-button" class="btn ic ic-e-lg ic-player-1__color-green" />
@@ -6,7 +8,7 @@
             <CustomButton name="settings-button" class="btn ic ic-e-lg ic-gear__color-green" />
         </ui:VisualElement>
         <ui:VisualElement name="content" picking-mode="Ignore" class="content">
-            <ui:VisualElement name="authority-image-text" picking-mode="Ignore" class="authority authority__image-text ic ic-authority__big__color-green">
+            <ui:VisualElement name="authority-image-text" picking-mode="Ignore" class="authority authority__image-text ic ic-authority__text__color-green">
                 <ui:IntegerField name="initial-points-input" value="50" />
             </ui:VisualElement>
             <CustomButton name="casual-button" text="CASUAL" class="btn btn-rectangle ic ic-btn-rectangle__color-green" />
