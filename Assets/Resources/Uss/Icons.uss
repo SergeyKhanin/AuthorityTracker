@@ -91,7 +91,7 @@
 
 .ic-combat__small__fill {
     background-image: var(--ic-combat-small-fill);
-    -unity-background-image-tint-color: var(--color-green);
+    -unity-background-image-tint-color: var(--color-red);
 }
 
 .ic-combat__small-1__color-red {

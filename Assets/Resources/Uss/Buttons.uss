@@ -1,9 +1,8 @@
 .btn {
     font-size: var(--font-size-common);
+    color: var(--color-black);
     -unity-font: var(--font-common);
     -unity-font-definition: var(--font-common-definition);
-    text-shadow: 0 0 0 var(--color-transperent);
-    letter-spacing: 4px;
     align-items: center;
     justify-content: center;
     -unity-text-align: middle-center;

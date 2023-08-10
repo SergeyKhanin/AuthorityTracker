@@ -30,22 +30,27 @@
 }
 
 .label {
-    color: var(--color-black);
-    text-shadow: -2px -2px 0 var(--color-gray);
-    -unity-font-definition: var(--font-authority-definition);
-    -unity-font: var(--font-authority);
-    -unity-text-align: middle-center;
-}
-
-.label-common {
     font-size: var(--font-size-common);
+    -unity-font: var(--font-authority);
+    -unity-font-definition: var(--font-common);
 }
 
-.label-authority__size-big {
+.label__red {
+    -unity-font: var(--font-authority);
+    -unity-font-definition: var(--font-common);
+    color: var(--color-red);
+}
+
+.label__green {
+    -unity-font-definition: var(--font-authority-definition);
+    color: var(--color-green);
+}
+
+.label__size-big {
     font-size: var(--font-size-authority-big);
 }
 
-.label-authority__size-small {
+.label__size-small {
     font-size: var(--font-size-authority-small);
 }
 
@@ -71,6 +76,17 @@
     opacity: 0;
 }
 
+.header {
+    margin: var(--base-margin);
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.content {
+    align-items: center;
+}
+
 #initial-points-input {
     font-size: var(--font-size-authority-big);
     bottom: var(--base-margin-half);
@@ -83,6 +99,11 @@
 }
 
 #initial-points-input #unity-text-input TextElement {
+    -unity-font-definition: var(--font-authority-definition);
+    -unity-font: var(--font-authority);
+    color: var(--color-black);
     max-width: var(--base-authority-text-with);
+    text-shadow: -2px -2px 0 var(--color-gray);
+    bottom: 42px;
     -unity-text-align: upper-center;
 }

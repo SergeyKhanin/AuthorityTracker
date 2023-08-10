@@ -2,6 +2,7 @@
     <ui:Template name="SeparatorVerticalFrame" src="project://database/Assets/Resources/Templates/SeparatorVerticalFrame.uxml?fileID=9197481963319205126&amp;guid=f155ae5328db49f408e1a64886f26f42&amp;type=3#SeparatorVerticalFrame" />
     <ui:Template name="SeparatorHorizontalFrame" src="project://database/Assets/Resources/Templates/SeparatorHorizontalFrame.uxml?fileID=9197481963319205126&amp;guid=cfce5ce97393f4b498022c45dc21d3b0&amp;type=3#SeparatorHorizontalFrame" />
     <Style src="project://database/Assets/Resources/Uss/Icons.uss?fileID=7433441132597879392&amp;guid=876709081a3492642b5667db49455c6f&amp;type=3#Icons" />
+    <Style src="project://database/Assets/Resources/Uss/Style.uss?fileID=7433441132597879392&amp;guid=65ff8790dd4ca8040b6578d6e9530e55&amp;type=3#Style" />
     <ui:VisualElement name="plus-buttons-container" picking-mode="Ignore">
         <CustomButton name="plus-5-button" />
         <CustomButton name="plus-button" />
@@ -19,13 +20,13 @@
     </ui:VisualElement>
     <ui:VisualElement name="authority-points-label" picking-mode="Ignore">
         <ui:VisualElement name="points-plus-container" picking-mode="Ignore">
-            <ui:VisualElement name="icon-plus" picking-mode="Ignore" class="ic" />
-            <CustomLabel name="points-plus-label" text="99" picking-mode="Ignore" />
+            <ui:VisualElement name="icon-plus" picking-mode="Ignore" class="ic ic-a-vr ic-authority__small__fill" />
+            <CustomLabel name="points-plus-label" text="99" picking-mode="Ignore" class="label label__green" />
         </ui:VisualElement>
         <ui:VisualElement name="space-empty" picking-mode="Ignore" />
         <ui:VisualElement name="points-minus-container" picking-mode="Ignore">
-            <ui:VisualElement name="icon-minus" picking-mode="Ignore" />
-            <CustomLabel name="points-minus-label" text="99" picking-mode="Ignore" />
+            <ui:VisualElement name="icon-minus" picking-mode="Ignore" class="ic ic-c-vr ic-combat__small__fill" />
+            <CustomLabel name="points-minus-label" text="99" picking-mode="Ignore" class="label label__red" />
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement name="authority-points-x1" picking-mode="Ignore">
