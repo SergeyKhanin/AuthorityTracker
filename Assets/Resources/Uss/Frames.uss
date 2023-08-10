@@ -10,10 +10,25 @@
 
 .frame__main-menu {
     background-image: var(--im-main-menu-frame);
-    justify-content: space-between;
 }
 
 .frame__settings {
     background-image: var(--im-main-menu-frame);
-    justify-content: space-between;
+}
+
+.frame__game {
+    background-image: var(--im-game-frame);
+}
+
+.frame__pause {
+    background-image: var(--im-pause-frame);
+}
+
+.frame__additional {
+    position: absolute;
+    align-items: flex-end;
+}
+
+.frame__separator {
+    position: absolute;
 }

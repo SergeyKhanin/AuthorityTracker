@@ -3,11 +3,12 @@
     <ui:Template name="SeparatorVerticalFrame" src="project://database/Assets/Resources/Templates/SeparatorVerticalFrame.uxml?fileID=9197481963319205126&amp;guid=f155ae5328db49f408e1a64886f26f42&amp;type=3#SeparatorVerticalFrame" />
     <ui:Template name="PauseFrame" src="project://database/Assets/Resources/Templates/PauseFrame.uxml?fileID=9197481963319205126&amp;guid=83b191b376cc5f841a1dfe9ba23d215c&amp;type=3#PauseFrame" />
     <ui:Template name="AdditionalFrame" src="project://database/Assets/Resources/Templates/AdditionalFrame.uxml?fileID=9197481963319205126&amp;guid=afde3a305a59b404f86c18a2045bb74e&amp;type=3#AdditionalFrame" />
+    <Style src="project://database/Assets/Resources/Uss/Style.uss?fileID=7433441132597879392&amp;guid=65ff8790dd4ca8040b6578d6e9530e55&amp;type=3#Style" />
     <ui:VisualElement name="players-frame" picking-mode="Ignore">
         <ui:Instance name="player-2" template="CasualPlayerFrame" picking-mode="Ignore" />
         <ui:Instance name="separator-vertical-frame" template="SeparatorVerticalFrame" picking-mode="Ignore" />
         <ui:Instance name="player-1" template="CasualPlayerFrame" picking-mode="Ignore" />
     </ui:VisualElement>
-    <ui:Instance name="pause-frame" template="PauseFrame" picking-mode="Ignore" />
+    <ui:Instance name="pause-frame" template="PauseFrame" picking-mode="Ignore" class="hide" />
     <ui:Instance name="additional-frame" template="AdditionalFrame" picking-mode="Ignore" />
 </ui:UXML>

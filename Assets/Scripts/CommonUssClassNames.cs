@@ -2,8 +2,8 @@ public static class CommonUssClassNames
 {
     public const string Hide = "hide";
     public const string Invisible = "invisible";
-    public const string ImageAuthorityRed = "authority__image-red";
-    public const string LabelAuthoritySizeSmall = "label-authority__size-small";
-    public const string PointsLabelPlus = "player-frame__points-label-plus";
-    public const string PointsLabelMinus = "player-frame__points-label-minus";
+    public const string ImageAuthorityRed = "ic-authority__big__color-red";
+    public const string LabelAuthoritySizeSmall = "label__size-small";
+    public const string PointsLabelGreen = "label__green";
+    public const string PointsLabelRed = "label__red";
 }

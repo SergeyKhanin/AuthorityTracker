@@ -26,3 +26,11 @@
     width: var(--btn-rectangle-small-width);
     height: var(--btn-rectangle-small-heigh);
 }
+
+.btn-plus:active {
+    background-color: var(--color-active-plus);
+}
+
+.btn-minus:active {
+    background-color: var(--color-active-minus);
+}

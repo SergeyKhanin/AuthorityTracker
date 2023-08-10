@@ -20,9 +20,9 @@
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement name="authority-points-label" picking-mode="Ignore">
-        <ui:VisualElement name="points-container" picking-mode="Ignore">
-            <ui:VisualElement name="icon-minus" picking-mode="Ignore" class="ic ic-c-vr ic-combat__small__fill" />
-            <ui:VisualElement name="icon-plus" picking-mode="Ignore" class="ic ic-a-vr ic-authority__small__fill" />
+        <ui:VisualElement name="points-container" picking-mode="Ignore" style="flex-direction: row;">
+            <ui:VisualElement name="icon-minus" picking-mode="Ignore" class="ic ic-md ic-combat__small__color-red" />
+            <ui:VisualElement name="icon-plus" picking-mode="Ignore" class="ic ic-vr ic-authority__small__color-green" />
             <CustomLabel name="points-label" text="99" picking-mode="Ignore" class="label label__points label__authority label__green" />
         </ui:VisualElement>
     </ui:VisualElement>

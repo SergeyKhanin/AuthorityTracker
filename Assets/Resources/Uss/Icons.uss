@@ -27,16 +27,6 @@
     height: var(--base-icon-small-size);
 }
 
-.ic-c-vr {
-    width: 76px;
-    height: 76px;
-}
-
-.ic-a-vr {
-    width: 122px;
-    height: 76px;
-}
-
 .ic-opacity__tournament {
     opacity: var(--opacity-icon-tournament);
 }
@@ -93,9 +83,8 @@
     background-image: var(--ic-player-2-color-green);
 }
 
-.ic-combat__small__fill {
-    background-image: var(--ic-combat-small-fill);
-    -unity-background-image-tint-color: var(--color-red);
+.ic-combat__small__color-red {
+    background-image: var(--ic-combat-small-color-red);
 }
 
 .ic-combat__small-1__color-red {
@@ -110,9 +99,8 @@
     background-image: var(--ic-combat-small-x10-color-red);
 }
 
-.ic-authority__small__fill {
-    background-image: var(--ic-authority-small-fill);
-    -unity-background-image-tint-color: var(--color-green);
+.ic-authority__small__color-green {
+    background-image: var(--ic-authority-small-color-green);
 }
 
 .ic-authority__small-1__color-green {
