@@ -17,10 +17,6 @@
     height: var(--btn-square-size);
 }
 
-.btn-square__pause {
-    left: 90px;
-}
-
 .btn-rectangle {
     width: var(--btn-rectangle-width);
     height: var(--btn-rectangle-height);

@@ -112,3 +112,7 @@
     text-shadow: -2px -2px 0 var(--color-gray);
     -unity-text-align: upper-center;
 }
+
+#pause-button {
+    left: 90px;
+}

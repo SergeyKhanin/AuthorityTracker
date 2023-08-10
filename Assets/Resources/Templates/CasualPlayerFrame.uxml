@@ -3,6 +3,7 @@
     <ui:Template name="SeparatorHorizontalFrame" src="project://database/Assets/Resources/Templates/SeparatorHorizontalFrame.uxml?fileID=9197481963319205126&amp;guid=cfce5ce97393f4b498022c45dc21d3b0&amp;type=3#SeparatorHorizontalFrame" />
     <Style src="project://database/Assets/Resources/Uss/Icons.uss?fileID=7433441132597879392&amp;guid=876709081a3492642b5667db49455c6f&amp;type=3#Icons" />
     <Style src="project://database/Assets/Resources/Uss/Style.uss?fileID=7433441132597879392&amp;guid=65ff8790dd4ca8040b6578d6e9530e55&amp;type=3#Style" />
+    <Style src="project://database/Assets/Resources/Uss/Casual.uss?fileID=7433441132597879392&amp;guid=ab8c6f5ae7d4ce74aa149174d6e0ad8b&amp;type=3#Casual" />
     <ui:VisualElement name="plus-buttons-container" picking-mode="Ignore">
         <CustomButton name="plus-5-button" />
         <CustomButton name="plus-button" />
