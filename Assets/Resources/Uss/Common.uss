@@ -36,6 +36,11 @@
 }
 
 :root {
+    --opacity-icon-tournament: 0.7;
+    --opacity-icon-casual: 0.3;
+}
+
+:root {
     --btn-points-icon: 96px;
     --btn-square-size: 180px;
     --btn-rectangle-height: 234px;

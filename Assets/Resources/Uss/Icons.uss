@@ -22,9 +22,27 @@
     height: var(--base-icon-e-large-size);
 }
 
-.ic-var {
+.ic-vr {
     width: var(--base-icon-large-size);
     height: var(--base-icon-small-size);
+}
+
+.ic-c-vr {
+    width: 76px;
+    height: 76px;
+}
+
+.ic-a-vr {
+    width: 122px;
+    height: 76px;
+}
+
+.ic-opacity__tournament {
+    opacity: var(--opacity-icon-tournament);
+}
+
+.ic-opacity__casual {
+    opacity: var(--opacity-icon-casual);
 }
 
 .ic-btn-square__color-green {
@@ -73,6 +91,7 @@
 
 .ic-combat__small__fill {
     background-image: var(--ic-combat-small-fill);
+    -unity-background-image-tint-color: var(--color-green);
 }
 
 .ic-combat__small-1__color-red {
@@ -89,6 +108,7 @@
 
 .ic-authority__small__fill {
     background-image: var(--ic-authority-small-fill);
+    -unity-background-image-tint-color: var(--color-green);
 }
 
 .ic-authority__small-1__color-green {
