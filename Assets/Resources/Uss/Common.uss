@@ -27,9 +27,10 @@
     --base-image-resolution-var: 704px;
     --base-image-resolution-half: 512px;
     --base-authority-text-with: 400px;
-    --base-icon-small-size: 128px;
-    --base-icon-middle-size: 154px;
-    --base-icon-large-size: 202px;
+    --base-icon-small-size: 96px;
+    --base-icon-middle-size: 128px;
+    --base-icon-large-size: 154px;
+    --base-icon-e-large-size: 202px;
     --base-points-margin-casual: 40px;
     --base-points-margin-tournament: 576px;
 }

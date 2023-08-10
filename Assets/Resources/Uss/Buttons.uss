@@ -22,11 +22,6 @@
     left: 90px;
 }
 
-.btn-square__settings {
-    width: var(--base-icon-large-size);
-    height: var(--base-icon-large-size);
-}
-
 .btn-rectangle {
     width: var(--btn-rectangle-width);
     height: var(--btn-rectangle-height);

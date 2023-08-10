@@ -4,9 +4,9 @@
     <Style src="project://database/Assets/Resources/Uss/Icons.uss?fileID=7433441132597879392&amp;guid=876709081a3492642b5667db49455c6f&amp;type=3#Icons" />
     <ui:VisualElement name="main-menu-frame" picking-mode="Ignore">
         <ui:VisualElement name="header" picking-mode="Ignore">
-            <CustomButton name="one-player-button" class="btn btn-square__settings ic ic-player-1__color-green" />
-            <CustomButton name="two-players-button" class="btn btn-square__settings ic ic-player-2__color-green" />
-            <CustomButton name="settings-button" class="btn btn-square__settings ic ic-gear__color-green" />
+            <CustomButton name="one-player-button" class="btn ic ic-e-lg ic-player-1__color-green" />
+            <CustomButton name="two-players-button" class="btn ic ic-e-lg ic-player-2__color-green" />
+            <CustomButton name="settings-button" class="btn ic ic-e-lg ic-gear__color-green" />
         </ui:VisualElement>
         <ui:VisualElement name="content" picking-mode="Ignore">
             <ui:VisualElement name="authority-image-text" picking-mode="Ignore" class="authority authority__image-text ic ic-authority__big__color-green">

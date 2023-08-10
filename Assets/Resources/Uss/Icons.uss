@@ -2,6 +2,31 @@
     -unity-background-scale-mode: scale-and-crop;
 }
 
+.ic-sm {
+    width: var(--base-icon-small-size);
+    height: var(--base-icon-small-size);
+}
+
+.ic-md {
+    width: var(--base-icon-middle-size);
+    height: var(--base-icon-middle-size);
+}
+
+.ic-lg {
+    width: var(--base-icon-large-size);
+    height: var(--base-icon-large-size);
+}
+
+.ic-e-lg {
+    width: var(--base-icon-e-large-size);
+    height: var(--base-icon-e-large-size);
+}
+
+.ic-var {
+    width: var(--base-icon-large-size);
+    height: var(--base-icon-small-size);
+}
+
 .ic-btn-square__color-green {
     background-image: var(--ic-btn-square-color-green);
 }
@@ -30,6 +55,10 @@
     background-image: var(--ic-authority-color-green);
 }
 
+.ic-authority__big__color-red {
+    background-image: var(--ic-authority-color-red);
+}
+
 .ic-gear__color-green {
     background-image: var(--ic-gear-color-green);
 }
@@ -40,4 +69,32 @@
 
 .ic-player-2__color-green {
     background-image: var(--ic-player-2-color-green);
+}
+
+.ic-combat__small__fill {
+    background-image: var(--ic-combat-small-fill);
+}
+
+.ic-combat__small-1__color-red {
+    background-image: var(--ic-combat-small-x1-color-red);
+}
+
+.ic-combat__small-5__color-red {
+    background-image: var(--ic-combat-small-x5-color-red);
+}
+
+.ic-combat__small-10__color-red {
+    background-image: var(--ic-combat-small-x10-color-red);
+}
+
+.ic-authority__small__fill {
+    background-image: var(--ic-authority-small-fill);
+}
+
+.ic-authority__small-1__color-green {
+    background-image: var(--ic-authority-small-x1-color-green);
+}
+
+.ic-authority__small-5__color-green {
+    background-image: var(--ic-authority-small-x1-color-green);
 }
