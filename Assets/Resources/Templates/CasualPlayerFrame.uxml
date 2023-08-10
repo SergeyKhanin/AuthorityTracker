@@ -21,12 +21,12 @@
     <ui:VisualElement name="authority-points-label" picking-mode="Ignore">
         <ui:VisualElement name="points-plus-container" picking-mode="Ignore">
             <ui:VisualElement name="icon-plus" picking-mode="Ignore" class="ic ic-a-vr ic-authority__small__fill" />
-            <CustomLabel name="points-plus-label" text="99" picking-mode="Ignore" class="label label__green" />
+            <CustomLabel name="points-plus-label" text="99" picking-mode="Ignore" class="label label__points label__authority label__green" />
         </ui:VisualElement>
         <ui:VisualElement name="space-empty" picking-mode="Ignore" />
         <ui:VisualElement name="points-minus-container" picking-mode="Ignore">
             <ui:VisualElement name="icon-minus" picking-mode="Ignore" class="ic ic-c-vr ic-combat__small__fill" />
-            <CustomLabel name="points-minus-label" text="99" picking-mode="Ignore" class="label label__red" />
+            <CustomLabel name="points-minus-label" text="99" picking-mode="Ignore" class="label label__points label__authority label__red" />
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement name="authority-points-x1" picking-mode="Ignore">

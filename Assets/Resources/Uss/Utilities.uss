@@ -1,3 +1,21 @@
+.flex-fill {
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.flex-empty {
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
 .rotate-180 {
     rotate: 180deg;
 }

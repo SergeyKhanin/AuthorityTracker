@@ -4,12 +4,12 @@
     <ui:Template name="ApplyButtonFrame" src="project://database/Assets/Resources/Templates/ApplyButtonFrame.uxml?fileID=9197481963319205126&amp;guid=d4f61027e1d6d4b47b5ec443cc6f101c&amp;type=3#ApplyButtonFrame" />
     <ui:Template name="PauseFrame" src="project://database/Assets/Resources/Templates/PauseFrame.uxml?fileID=9197481963319205126&amp;guid=83b191b376cc5f841a1dfe9ba23d215c&amp;type=3#PauseFrame" />
     <ui:Template name="AdditionalFrame" src="project://database/Assets/Resources/Templates/AdditionalFrame.uxml?fileID=9197481963319205126&amp;guid=afde3a305a59b404f86c18a2045bb74e&amp;type=3#AdditionalFrame" />
-    <ui:VisualElement name="players-frame" picking-mode="Ignore" class="frame frame-game label">
-        <ui:Instance name="player-2" template="TournamentPlayerFrame" picking-mode="Ignore" class="player-frame player player-1" />
-        <ui:Instance name="separator-vertical-frame" template="SeparatorVerticalFrame" picking-mode="Ignore" class="separator-frame" />
-        <ui:Instance name="player-1" template="TournamentPlayerFrame" picking-mode="Ignore" class="player-frame player player-2" />
+    <ui:VisualElement name="players-frame" picking-mode="Ignore">
+        <ui:Instance name="player-2" template="TournamentPlayerFrame" picking-mode="Ignore" />
+        <ui:Instance name="separator-vertical-frame" template="SeparatorVerticalFrame" picking-mode="Ignore" />
+        <ui:Instance name="player-1" template="TournamentPlayerFrame" picking-mode="Ignore" />
     </ui:VisualElement>
-    <ui:Instance name="apply-button-frame" template="ApplyButtonFrame" picking-mode="Ignore" class="frame frame-apply-button" style="flex-direction: row; justify-content: center;" />
-    <ui:Instance name="pause-frame" template="PauseFrame" picking-mode="Ignore" class="frame frame-settings label frame-settings__rotate-90 hide" />
-    <ui:Instance name="additional-frame" template="AdditionalFrame" picking-mode="Ignore" class="frame frame-additional" />
+    <ui:Instance name="apply-button-frame" template="ApplyButtonFrame" picking-mode="Ignore" />
+    <ui:Instance name="pause-frame" template="PauseFrame" picking-mode="Ignore" />
+    <ui:Instance name="additional-frame" template="AdditionalFrame" picking-mode="Ignore" />
 </ui:UXML>
