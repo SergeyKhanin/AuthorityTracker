@@ -37,6 +37,10 @@
     align-items: flex-end;
 }
 
+.justify-content-start {
+    align-items: flex-start;
+}
+
 .rotate-180 {
     rotate: 180deg;
 }

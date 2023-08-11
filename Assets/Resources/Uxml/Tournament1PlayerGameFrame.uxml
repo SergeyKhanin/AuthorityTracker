@@ -3,10 +3,14 @@
     <ui:Template name="ApplyButtonFrame" src="project://database/Assets/Resources/Templates/ApplyButtonFrame.uxml?fileID=9197481963319205126&amp;guid=d4f61027e1d6d4b47b5ec443cc6f101c&amp;type=3#ApplyButtonFrame" />
     <ui:Template name="PauseFrame" src="project://database/Assets/Resources/Templates/PauseFrame.uxml?fileID=9197481963319205126&amp;guid=83b191b376cc5f841a1dfe9ba23d215c&amp;type=3#PauseFrame" />
     <ui:Template name="AdditionalFrame" src="project://database/Assets/Resources/Templates/AdditionalFrame.uxml?fileID=9197481963319205126&amp;guid=afde3a305a59b404f86c18a2045bb74e&amp;type=3#AdditionalFrame" />
-    <ui:VisualElement name="players-frame" picking-mode="Ignore">
-        <ui:Instance name="player-1" template="TournamentPlayerFrame" picking-mode="Ignore" />
+    <Style src="project://database/Assets/Resources/Uss/Frames.uss?fileID=7433441132597879392&amp;guid=6a8e66e86c65e4f408b4bbb280cad650&amp;type=3#Frames" />
+    <Style src="project://database/Assets/Resources/Uss/Style.uss?fileID=7433441132597879392&amp;guid=65ff8790dd4ca8040b6578d6e9530e55&amp;type=3#Style" />
+    <Style src="project://database/Assets/Resources/Uss/Utilities.uss?fileID=7433441132597879392&amp;guid=b6b8ff86f02818e43940a1c354d8873e&amp;type=3#Utilities" />
+    <Style src="project://database/Assets/Resources/Uss/Tournament.uss?fileID=7433441132597879392&amp;guid=5ab82be4ff2983b4ab39812a8de525b2&amp;type=3#Tournament" />
+    <ui:VisualElement name="players-frame" picking-mode="Ignore" class="frame frame__game">
+        <ui:Instance name="player-1" template="TournamentPlayerFrame" picking-mode="Ignore" class="flex-fill size-100" />
     </ui:VisualElement>
-    <ui:Instance name="apply-button-frame" template="ApplyButtonFrame" picking-mode="Ignore" />
-    <ui:Instance name="pause-frame" template="PauseFrame" picking-mode="Ignore" />
-    <ui:Instance name="additional-frame" template="AdditionalFrame" picking-mode="Ignore" />
+    <ui:Instance name="apply-button-frame" template="ApplyButtonFrame" picking-mode="Ignore" class="frame frame__apply-button tournament__apply-1p" />
+    <ui:Instance name="pause-frame" template="PauseFrame" picking-mode="Ignore" class="frame frame__pause hide" />
+    <ui:Instance name="additional-frame" template="AdditionalFrame" picking-mode="Ignore" class="frame frame__additional" />
 </ui:UXML>

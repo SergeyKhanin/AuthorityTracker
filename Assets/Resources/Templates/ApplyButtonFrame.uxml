@@ -1,4 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <CustomButton name="apply-button" text="APPLY" class="btn btn-rectangle__small ic ic-btn-rectangle__small__color-gray" />
-    <CustomButton name="clear-button" text="CLEAR" class="btn btn-rectangle__small ic ic-btn-rectangle__small__color-green" />
+    <Style src="project://database/Assets/Resources/Uss/Utilities.uss?fileID=7433441132597879392&amp;guid=b6b8ff86f02818e43940a1c354d8873e&amp;type=3#Utilities" />
+    <CustomButton name="apply-button" text="APPLY" class="btn btn-rectangle__small ic ic-btn-rectangle__small__color-gray rotate-90" />
+    <CustomButton name="clear-button" text="CLEAR" class="btn btn-rectangle__small ic ic-btn-rectangle__small__color-green rotate-90" />
 </ui:UXML>

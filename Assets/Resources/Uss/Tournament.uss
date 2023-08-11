@@ -10,8 +10,39 @@
     justify-content: center;
 }
 
+.tournament__points-container {
+    height: var(--base-icon-e-large-size);
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
 .tournament__empty-center {
     height: var(--base-image-resolution-half);
     width: var(--base-image-resolution-half);
-    margin: var(--base-margin);
+    margin-left: 200px;
+}
+
+.tournament__apply-1p CustomButton {
+    right: 80px;
+}
+
+.tournament__apply-1p #apply-button {
+    margin-bottom: var(--space-apply-button-horizontal);
+}
+
+.tournament__apply-1p #clear-button {
+    margin-top: var(--space-apply-button-horizontal);
+}
+
+.tournament__apply-2p CustomButton {
+    right: 80px;
+}
+
+.tournament__apply-2p #apply-button {
+    margin-bottom: var(--space-apply-button-horizontal);
+}
+
+.tournament__apply-2p #clear-button {
+    margin-top: var(--space-apply-button-horizontal);
 }

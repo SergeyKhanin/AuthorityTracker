@@ -29,6 +29,11 @@
     align-items: flex-end;
 }
 
+.frame__apply-button {
+    position: absolute;
+    align-items: flex-start;
+}
+
 .frame__separator {
     position: absolute;
 }

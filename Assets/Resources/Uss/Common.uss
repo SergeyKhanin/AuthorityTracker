@@ -36,6 +36,10 @@
 }
 
 :root {
+    --space-apply-button-horizontal: 150px
+}
+
+:root {
     --opacity-icon-tournament: 0.7;
     --opacity-icon-casual: 0.3;
 }
