@@ -1,0 +1,17 @@
+.tournament__label-offset {
+    bottom: 58px;
+}
+
+.tournament__icons-container {
+    height: var(--base-icon-e-large-size);
+    width: var(--base-icon-e-large-size);
+    margin: var(--base-margin);
+    align-items: center;
+    justify-content: center;
+}
+
+.tournament__empty-center {
+    height: var(--base-image-resolution-half);
+    width: var(--base-image-resolution-half);
+    margin: var(--base-margin);
+}

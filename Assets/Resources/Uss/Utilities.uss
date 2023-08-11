@@ -29,8 +29,12 @@
     justify-content: center;
 }
 
-.justify-space-between {
+.justify-content-between {
     justify-content: space-between;
+}
+
+.justify-content-end {
+    align-items: flex-end;
 }
 
 .rotate-180 {

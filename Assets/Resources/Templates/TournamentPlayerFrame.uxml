@@ -1,9 +1,12 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:Template name="SeparatorHorizontalFrame" src="project://database/Assets/Resources/Templates/SeparatorHorizontalFrame.uxml?fileID=9197481963319205126&amp;guid=cfce5ce97393f4b498022c45dc21d3b0&amp;type=3#SeparatorHorizontalFrame" />
     <ui:Template name="SeparatorVerticalFrame" src="project://database/Assets/Resources/Templates/SeparatorVerticalFrame.uxml?fileID=9197481963319205126&amp;guid=f155ae5328db49f408e1a64886f26f42&amp;type=3#SeparatorVerticalFrame" />
-    <Style src="project://database/Assets/Resources/Uss/Style.uss?fileID=7433441132597879392&amp;guid=65ff8790dd4ca8040b6578d6e9530e55&amp;type=3#Style" />
     <Style src="project://database/Assets/Resources/Uss/Icons.uss?fileID=7433441132597879392&amp;guid=876709081a3492642b5667db49455c6f&amp;type=3#Icons" />
-    <Style src="project://database/Assets/Resources/Uss/Tournament.uss?fileID=7433441132597879392&amp;guid=5ab82be4ff2983b4ab39812a8de525b2&amp;type=3#Tournament" />
+    <Style src="project://database/Assets/Resources/Uss/Style.uss?fileID=7433441132597879392&amp;guid=65ff8790dd4ca8040b6578d6e9530e55&amp;type=3#Style" />
+    <Style src="project://database/Assets/Resources/Uss/Casual.uss?fileID=7433441132597879392&amp;guid=ab8c6f5ae7d4ce74aa149174d6e0ad8b&amp;type=3#Casual" />
+    <Style src="project://database/Assets/Resources/Uss/Utilities.uss?fileID=7433441132597879392&amp;guid=b6b8ff86f02818e43940a1c354d8873e&amp;type=3#Utilities" />
+    <Style src="project://database/Assets/Resources/Uss/Buttons.uss?fileID=7433441132597879392&amp;guid=35acce53848602a46b563b75010f2975&amp;type=3#Buttons" />
+    <Style src="project://database/Assets/Resources/Uss/Frames.uss?fileID=7433441132597879392&amp;guid=6a8e66e86c65e4f408b4bbb280cad650&amp;type=3#Frames" />
     <ui:VisualElement name="buttons-container-left" picking-mode="Ignore">
         <CustomButton name="minus-10-button" />
         <CustomButton name="plus-5-button" />
@@ -20,7 +23,7 @@
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement name="authority-points-label" picking-mode="Ignore">
-        <ui:VisualElement name="points-container" picking-mode="Ignore" style="flex-direction: row;">
+        <ui:VisualElement name="points-container" picking-mode="Ignore">
             <ui:VisualElement name="icon-minus" picking-mode="Ignore" class="ic ic-md ic-combat__small__color-red" />
             <ui:VisualElement name="icon-plus" picking-mode="Ignore" class="ic ic-vr ic-authority__small__color-green" />
             <CustomLabel name="points-label" text="99" picking-mode="Ignore" class="label label__points label__authority label__green" />

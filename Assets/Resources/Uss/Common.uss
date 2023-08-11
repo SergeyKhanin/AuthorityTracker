@@ -9,8 +9,8 @@
 
 :root {
     --color-active: rgb(140, 140, 140);
-    --color-active-plus: rgba(100, 0, 0, 0.1);
-    --color-active-minus: rgba(0, 100, 0, 0.1);
+    --color-active-plus: rgba(0, 100, 0, 0.1);
+    --color-active-minus: rgba(100, 0, 0, 0.1);
 }
 
 :root {

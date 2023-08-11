@@ -108,5 +108,5 @@
 }
 
 .ic-authority__small-5__color-green {
-    background-image: var(--ic-authority-small-x1-color-green);
+    background-image: var(--ic-authority-small-x5-color-green);
 }
