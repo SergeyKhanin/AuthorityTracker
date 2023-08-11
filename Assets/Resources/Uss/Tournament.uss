@@ -35,14 +35,17 @@
     margin-top: var(--space-apply-button-horizontal);
 }
 
-.tournament__apply-2p CustomButton {
-    right: 80px;
-}
-
 .tournament__apply-2p #apply-button {
-    margin-bottom: var(--space-apply-button-horizontal);
+    right: 225px;
 }
 
-.tournament__apply-2p #clear-button {
-    margin-top: var(--space-apply-button-horizontal);
+.tournament__1p #buttons {
+    flex-direction: column-reverse;
 }
+
+.tournament__1p #authority-points-top {
+}
+
+.tournament__1p #authority-points-bottom {
+}
+

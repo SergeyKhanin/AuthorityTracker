@@ -3,8 +3,20 @@
     flex-shrink: 1;
 }
 
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-column-reverse {
+    flex-direction: column-reverse;
+}
+
 .flex-row {
     flex-direction: row;
+}
+
+.flex-row-reverse {
+    flex-direction: row-reverse;
 }
 
 .size-100 {

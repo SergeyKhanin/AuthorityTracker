@@ -8,13 +8,15 @@
     <Style src="project://database/Assets/Resources/Uss/Buttons.uss?fileID=7433441132597879392&amp;guid=35acce53848602a46b563b75010f2975&amp;type=3#Buttons" />
     <Style src="project://database/Assets/Resources/Uss/Frames.uss?fileID=7433441132597879392&amp;guid=6a8e66e86c65e4f408b4bbb280cad650&amp;type=3#Frames" />
     <Style src="project://database/Assets/Resources/Uss/Tournament.uss?fileID=7433441132597879392&amp;guid=5ab82be4ff2983b4ab39812a8de525b2&amp;type=3#Tournament" />
-    <ui:VisualElement name="buttons-container-left" picking-mode="Ignore" class="flex-fill size-100 flex-row">
-        <CustomButton name="minus-10-button" class="btn-minus flex-fill size-100" />
-        <CustomButton name="plus-5-button" class="btn-plus flex-fill size-100" />
-    </ui:VisualElement>
-    <ui:VisualElement name="buttons-container-right" picking-mode="Ignore" class="flex-fill size-100 flex-row">
-        <CustomButton name="minus-button" class="btn-minus flex-fill size-100" />
-        <CustomButton name="plus-button" class="btn-plus flex-fill size-100" />
+    <ui:VisualElement name="buttons" picking-mode="Ignore" class="flex-fill size-100">
+        <ui:VisualElement name="buttons-container-left" picking-mode="Ignore" class="flex-fill size-100 flex-row">
+            <CustomButton name="minus-10-button" class="btn-minus flex-fill size-100" />
+            <CustomButton name="plus-5-button" class="btn-plus flex-fill size-100" />
+        </ui:VisualElement>
+        <ui:VisualElement name="buttons-container-right" picking-mode="Ignore" class="flex-fill size-100 flex-row">
+            <CustomButton name="minus-button" class="btn-minus flex-fill size-100" />
+            <CustomButton name="plus-button" class="btn-plus flex-fill size-100" />
+        </ui:VisualElement>
     </ui:VisualElement>
     <ui:Instance name="separator-horizontal-frame" template="SeparatorHorizontalFrame" picking-mode="Ignore" class="frame frame__separator" />
     <ui:Instance name="separator-vertical-frame" template="SeparatorVerticalFrame" picking-mode="Ignore" class="frame frame__separator" />
@@ -31,20 +33,22 @@
             <CustomLabel name="points-label" text="99" picking-mode="Ignore" class="label label__points label__authority label__green" />
         </ui:VisualElement>
     </ui:VisualElement>
-    <ui:VisualElement name="authority-points-bottom" picking-mode="Ignore" class="absolute flex-fill size-100 justify-content-between justify-content-start">
-        <ui:VisualElement name="container" picking-mode="Ignore" class="tournament__icons-container">
-            <ui:VisualElement name="icon" picking-mode="Ignore" class="ic ic-md ic-combat__small-10__color-red ic-opacity__tournament rotate-90" />
+    <ui:VisualElement name="points" picking-mode="Ignore" class="absolute flex-fill size-100">
+        <ui:VisualElement name="authority-points-bottom" picking-mode="Ignore" class="flex-fill size-100 flex-row justify-content-between justify-content-start">
+            <ui:VisualElement name="container" picking-mode="Ignore" class="tournament__icons-container">
+                <ui:VisualElement name="icon" picking-mode="Ignore" class="ic ic-md ic-combat__small-10__color-red ic-opacity__tournament rotate-90" />
+            </ui:VisualElement>
+            <ui:VisualElement name="container" picking-mode="Ignore" class="tournament__icons-container">
+                <ui:VisualElement name="icon" picking-mode="Ignore" class="ic ic-vr ic-authority__small-5__color-green ic-opacity__tournament rotate-90" />
+            </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="container" picking-mode="Ignore" class="tournament__icons-container">
-            <ui:VisualElement name="icon" picking-mode="Ignore" class="ic ic-md ic-combat__small-1__color-red ic-opacity__tournament rotate-90" />
-        </ui:VisualElement>
-    </ui:VisualElement>
-    <ui:VisualElement name="authority-points-top" picking-mode="Ignore" class="absolute flex-fill size-100 justify-content-between justify-content-end">
-        <ui:VisualElement name="container" picking-mode="Ignore" class="tournament__icons-container">
-            <ui:VisualElement name="icon" picking-mode="Ignore" class="ic ic-vr ic-authority__small-5__color-green ic-opacity__tournament rotate-90" />
-        </ui:VisualElement>
-        <ui:VisualElement name="container" picking-mode="Ignore" class="tournament__icons-container">
-            <ui:VisualElement name="icon" picking-mode="Ignore" class="ic ic-vr ic-authority__small-1__color-green ic-opacity__tournament rotate-90" />
+        <ui:VisualElement name="authority-points-top" picking-mode="Ignore" class="flex-fill size-100 flex-row justify-content-between justify-content-end">
+            <ui:VisualElement name="container" picking-mode="Ignore" class="tournament__icons-container">
+                <ui:VisualElement name="icon" picking-mode="Ignore" class="ic ic-md ic-combat__small-1__color-red ic-opacity__tournament rotate-90" />
+            </ui:VisualElement>
+            <ui:VisualElement name="container" picking-mode="Ignore" class="tournament__icons-container">
+                <ui:VisualElement name="icon" picking-mode="Ignore" class="ic ic-vr ic-authority__small-1__color-green ic-opacity__tournament rotate-90" />
+            </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

@@ -6,11 +6,11 @@
     <ui:Template name="AdditionalFrame" src="project://database/Assets/Resources/Templates/AdditionalFrame.uxml?fileID=9197481963319205126&amp;guid=afde3a305a59b404f86c18a2045bb74e&amp;type=3#AdditionalFrame" />
     <Style src="project://database/Assets/Resources/Uss/Tournament.uss?fileID=7433441132597879392&amp;guid=5ab82be4ff2983b4ab39812a8de525b2&amp;type=3#Tournament" />
     <ui:VisualElement name="players-frame" picking-mode="Ignore" class="frame frame__game">
-        <ui:Instance name="player-1" template="TournamentPlayerFrame" picking-mode="Ignore" class="flex-fill size-100 player-1" />
+        <ui:Instance name="player-1" template="TournamentPlayerFrame" picking-mode="Ignore" class="flex-fill size-100 player-1 tournament__1p" />
         <ui:Instance name="separator-vertical-frame" template="SeparatorVerticalFrame" picking-mode="Ignore" class="frame frame__separator" />
         <ui:Instance name="player-2" template="TournamentPlayerFrame" picking-mode="Ignore" class="flex-fill size-100 player-2" />
     </ui:VisualElement>
-    <ui:Instance name="apply-button-frame" template="ApplyButtonFrame" picking-mode="Ignore" class="frame frame__apply-button tournament__apply-1p" />
+    <ui:Instance name="apply-button-frame" template="ApplyButtonFrame" picking-mode="Ignore" class="frame frame__apply-button tournament__apply-2p flex-row-reverse align-items-center" />
     <ui:Instance name="pause-frame" template="PauseFrame" picking-mode="Ignore" class="frame frame__pause hide" />
     <ui:Instance name="additional-frame" template="AdditionalFrame" picking-mode="Ignore" class="frame frame__additional" />
 </ui:UXML>
