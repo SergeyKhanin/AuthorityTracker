@@ -23,10 +23,7 @@
 .authority__image-text {
     width: var(--base-image-resolution);
     height: var(--base-image-resolution-var);
-}
-
-.authority__image-tournament {
-    rotate: 90deg;
+    margin-bottom: var(--base-margin);
 }
 
 .label {
@@ -58,7 +55,6 @@
     font-size: var(--font-size-authority);
     padding-bottom: 10px;
 }
-
 
 .label__green {
     color: var(--color-green);
@@ -102,6 +98,7 @@
 
 .content {
     align-items: center;
+    flex-shrink: 0;
 }
 
 #initial-points-input {
