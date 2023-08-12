@@ -149,6 +149,7 @@ public class TournamentPlayerView : MonoBehaviour
         if (Counter < 0)
         {
             _pointsLabel.text = Counter.ToString().TrimStart('-');
+            _pointsLabel.RemoveFromClassList(CommonUssClassNames.PointsLabelGreen);
             _pointsLabel.AddToClassList(CommonUssClassNames.PointsLabelRed);
             _iconPlus.AddToClassList(CommonUssClassNames.Hide);
             _iconMinus.RemoveFromClassList(CommonUssClassNames.Hide);
