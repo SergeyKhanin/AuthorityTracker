@@ -143,7 +143,7 @@ public class MainMenuView : MonoBehaviour
         if (PlayerPrefs.HasKey("PlayersAmount"))
             _playersAmount = PlayerPrefs.GetInt("PlayersAmount");
         else
-            _playersAmount = 1;
+            _playersAmount = 2;
     }
 
     private void SetPlayersAmount()
