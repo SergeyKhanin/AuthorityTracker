@@ -6,14 +6,21 @@ public class MainMenuView : MonoBehaviour
 {
     private Authority _authority;
     private int _pointsLimit;
+    private int _playersAmount;
+    private bool _hasOnePlayer;
+    private bool _hasTwoPlayers;
 
     private VisualElement _root;
     private IntegerField _initialPointsIntegerField;
-    private CustomButton _player1Button;
-    private CustomButton _player2Button;
+    private TextElement _pointsTextElement;
+    private CustomButton _casualButton;
+    private CustomButton _tournamentButton;
     private CustomButton _communityButton;
     private CustomButton _quitButton;
-    private TextElement _pointsTextElement;
+    private CustomButton _onePlayerButton;
+    private CustomButton _twoPlayersButton;
+    private CustomButton _settingsButton;
+
 
     private void Awake()
     {
@@ -21,20 +28,24 @@ public class MainMenuView : MonoBehaviour
 
         _initialPointsIntegerField = _root.Q<IntegerField>("initial-points-input");
         _pointsTextElement = _root.Query<TextElement>();
-        _player1Button = _root.Q<CustomButton>("1-player-button");
-        _player2Button = _root.Q<CustomButton>("2-players-button");
+        _casualButton = _root.Q<CustomButton>("casual-button");
+        _tournamentButton = _root.Q<CustomButton>("tournament-button");
         _communityButton = _root.Q<CustomButton>("community-button");
         _quitButton = _root.Q<CustomButton>("quit-button");
+        _onePlayerButton = _root.Q<CustomButton>("one-player-button");
+        _twoPlayersButton = _root.Q<CustomButton>("two-players-button");
+        _settingsButton = _root.Q<CustomButton>("settings-button");
 
         _authority = new Authority();
         _pointsLimit = _authority.Limit;
 
-        _initialPointsIntegerField.RegisterCallback<ChangeEvent<int>>(OnIntChangedEvent);
-
-        if (PlayerPrefs.HasKey("InitialPoints"))
-            _initialPointsIntegerField.value = PlayerPrefs.GetInt("InitialPoints");
+        GetInitialPoints();
+        SetInitialPoints();
+        GetPlayersAmount();
+        SetPlayersAmount();
+        SetPlayersButtons();
     }
-
+    
     private void Start()
     {
         _root.RegisterCallback<GeometryChangedEvent>(SaveScreenResolutions);
@@ -42,23 +53,71 @@ public class MainMenuView : MonoBehaviour
 
     private void OnEnable()
     {
-        _player1Button.clicked += OnPlayer1ButtonClicked;
-        _player2Button.clicked += OnPlayer2ButtonClicked;
+        _onePlayerButton.clicked += OnOnePlayerButtonClicked;
+        _twoPlayersButton.clicked += OnTwoPlayersButtonClicked;
+        _settingsButton.clicked += OnSettingsButtonClicked;
+        _casualButton.clicked += OnCasualButtonClicked;
+        _tournamentButton.clicked += OnTournamentButtonClicked;
         _quitButton.clicked += OnQuitButtonClicked;
         _communityButton.clicked += OnCommunityButtonClicked;
     }
 
     private void OnDisable()
     {
-        _player1Button.clicked -= OnPlayer1ButtonClicked;
-        _player2Button.clicked -= OnPlayer2ButtonClicked;
+        _onePlayerButton.clicked -= OnOnePlayerButtonClicked;
+        _twoPlayersButton.clicked -= OnTwoPlayersButtonClicked;
+        _settingsButton.clicked -= OnSettingsButtonClicked;
+        _casualButton.clicked -= OnCasualButtonClicked;
+        _tournamentButton.clicked -= OnTournamentButtonClicked;
         _communityButton.clicked -= OnCommunityButtonClicked;
         _quitButton.clicked -= OnQuitButtonClicked;
     }
 
     private void OnQuitButtonClicked() => Application.Quit();
-    private void OnPlayer1ButtonClicked() => SceneManager.LoadScene(CommonScenesList.Casual1PlayerGameScene);
-    private void OnPlayer2ButtonClicked() => SceneManager.LoadScene(CommonScenesList.Casual2PlayersGameScene);
+
+    private void OnOnePlayerButtonClicked()
+    {
+        SavePlayersAmount(2);
+        GetPlayersAmount();
+        SetPlayersAmount();
+
+        var isEnabled = _hasOnePlayer;
+        
+        _onePlayerButton.EnableInClassList(CommonUssClassNames.Hide, !isEnabled);
+        _twoPlayersButton.EnableInClassList(CommonUssClassNames.Hide, isEnabled);
+    }
+
+    private void OnTwoPlayersButtonClicked()
+    {
+        SavePlayersAmount(1);
+        GetPlayersAmount();
+        SetPlayersAmount();
+
+        var isEnabled = _hasTwoPlayers;
+        
+        _twoPlayersButton.EnableInClassList(CommonUssClassNames.Hide, !isEnabled);
+        _onePlayerButton.EnableInClassList(CommonUssClassNames.Hide, isEnabled);
+    }
+
+    private void OnSettingsButtonClicked() => SceneManager.LoadScene(CommonScenesList.SettingsScene);
+
+    private void OnCasualButtonClicked()
+    {
+        if (_hasOnePlayer)
+            SceneManager.LoadScene(CommonScenesList.Casual1PlayerGameScene);
+
+        if (_hasTwoPlayers)
+            SceneManager.LoadScene(CommonScenesList.Casual2PlayersGameScene);
+    }
+
+    private void OnTournamentButtonClicked()
+    {
+        if (_hasOnePlayer)
+            SceneManager.LoadScene(CommonScenesList.Tournament1PlayerGameScene);
+
+        if (_hasTwoPlayers)
+            SceneManager.LoadScene(CommonScenesList.Tournament2PlayersGameScene);
+    }
 
     private void OnIntChangedEvent(ChangeEvent<int> evt)
     {
@@ -79,19 +138,47 @@ public class MainMenuView : MonoBehaviour
         _pointsTextElement.EnableInClassList(CommonUssClassNames.LabelAuthoritySizeSmall, isIntLonger);
     }
 
-    private void SaveInitialPoints(int value)
+    private void GetPlayersAmount()
     {
-        PlayerPrefs.SetInt("InitialPoints", value);
-        PlayerPrefs.Save();
+        if (PlayerPrefs.HasKey("PlayersAmount"))
+            _playersAmount = PlayerPrefs.GetInt("PlayersAmount");
+        else
+            _playersAmount = 1;
     }
 
-    private void SaveScreenResolutions(GeometryChangedEvent evt)
+    private void SetPlayersAmount()
     {
-        PlayerPrefs.SetFloat("ScreenResolutionsWidth", _root.resolvedStyle.width);
-        PlayerPrefs.SetFloat("ScreenResolutionsHeight", _root.resolvedStyle.height);
-        PlayerPrefs.Save();
+        if (_playersAmount == 1)
+        {
+            _hasOnePlayer = true;
+            _hasTwoPlayers = false;
+        }
+        else if (_playersAmount == 2)
+        {
+            _hasTwoPlayers = true;
+            _hasOnePlayer = false;
+        }
+        else
+        {
+            _hasTwoPlayers = true;
+            _hasOnePlayer = false;
+        }
     }
 
+    private void GetInitialPoints()
+    {
+        if (PlayerPrefs.HasKey("InitialPoints"))
+            _initialPointsIntegerField.value = PlayerPrefs.GetInt("InitialPoints");
+    }
+
+    private void SetInitialPoints() => _initialPointsIntegerField.RegisterCallback<ChangeEvent<int>>(OnIntChangedEvent);
+
+    private void SetPlayersButtons()
+    {
+        _onePlayerButton.EnableInClassList(CommonUssClassNames.Hide, _hasTwoPlayers);
+        _twoPlayersButton.EnableInClassList(CommonUssClassNames.Hide, _hasOnePlayer);
+    }
+    
     private void OnCommunityButtonClicked()
     {
         switch (Application.systemLanguage)
@@ -106,5 +193,24 @@ public class MainMenuView : MonoBehaviour
                 Application.OpenURL(CommonCommunitiesPages.None);
                 break;
         }
+    }
+
+    private void SaveInitialPoints(int value)
+    {
+        PlayerPrefs.SetInt("InitialPoints", value);
+        PlayerPrefs.Save();
+    }
+
+    private void SaveScreenResolutions(GeometryChangedEvent evt)
+    {
+        PlayerPrefs.SetFloat("ScreenResolutionsWidth", _root.resolvedStyle.width);
+        PlayerPrefs.SetFloat("ScreenResolutionsHeight", _root.resolvedStyle.height);
+        PlayerPrefs.Save();
+    }
+
+    private void SavePlayersAmount(int playersAmount)
+    {
+        PlayerPrefs.SetInt("PlayersAmount", playersAmount);
+        PlayerPrefs.Save();
     }
 }

@@ -1,5 +1,6 @@
 :root {
     --color-black: rgb(0, 0, 0);
+    --color-white: rgb(255, 255, 255);
     --color-red: rgb(236, 59, 54);
     --color-green: rgb(89, 168, 90);
     --color-gray: rgb(190, 190, 190);
@@ -7,19 +8,18 @@
 }
 
 :root {
-    --color-active-rgb: rgb(140, 140, 140);
-    --color-active-plus-rgba: rgba(100, 0, 0, 0.1);
-    --color-active-minus-rgba: rgba(0, 100, 0, 0.1);
+    --color-active: rgb(140, 140, 140);
+    --color-active-plus: rgba(0, 100, 0, 0.1);
+    --color-active-minus: rgba(100, 0, 0, 0.1);
 }
 
 :root {
-    --color-player-1: rgba(0, 0, 50, 0.3);
-    --color-player-2: rgba(50, 0, 0, 0.3);
+    --color-player-1: rgba(0, 0, 50, 0.25);
+    --color-player-2: rgba(50, 0, 0, 0.25);
 }
 
-
 :root {
-    --base-separator-height: 8px;
+    --base-separator-height: 4px;
     --base-with: 16px;
     --base-margin: 32px;
     --base-margin-half: 16px;
@@ -27,19 +27,35 @@
     --base-image-resolution-var: 704px;
     --base-image-resolution-half: 512px;
     --base-authority-text-with: 400px;
+    --base-icon-small-size: 96px;
     --base-icon-middle-size: 128px;
     --base-icon-large-size: 154px;
+    --base-icon-e-large-size: 202px;
+    --base-points-margin-casual: 40px;
+    --base-points-margin-tournament: 576px;
 }
 
 :root {
-    --button-points-icon: 96px;
-    --button-square-size: 180px;
-    --button-rectangle-height: 234px;
-    --button-rectangle-width: 938px;
+    --space-apply-button-horizontal: 150px
 }
 
 :root {
-    --font-size-common: 120px;
+    --opacity-icon-tournament: 0.7;
+    --opacity-icon-casual: 0.3;
+}
+
+:root {
+    --btn-points-icon: 96px;
+    --btn-square-size: 180px;
+    --btn-rectangle-height: 234px;
+    --btn-rectangle-width: 938px;
+    --btn-rectangle-small-heigh: 204px;
+    --btn-rectangle-small-width: 448px;
+}
+
+:root {
+    --font-size-common: 100px;
+    --font-size-authority: 120px;
     --font-size-authority-big: 340px;
     --font-size-authority-small: 200px;
 }
@@ -54,21 +70,29 @@
 :root {
     --im-main-menu-frame: resource('Images/IM_Menu-frame_Color');
     --im-game-frame: resource('Images/IM_Game-frame_Color');
-    --im-settings-frame: resource('Images/IM_Settings-frame_Color');
+    --im-pause-frame: resource('Images/IM_Pause-frame_Color');
 }
 
 :root {
     --ic-authority-color-green: resource('Icons/IC_Authority_Color-green');
     --ic-authority-color-red: resource('Icons/IC_Authority_Color-red');
+    --ic-authority-small-color-green: resource('Icons/IC_Authority-small_Color-green');
     --ic-authority-small-x1-color-green: resource('Icons/IC_Authority-small-x1_Color-green');
     --ic-authority-small-x5-color-green: resource('Icons/IC_Authority-small-x5_Color-green');
     --ic-authority-text-menu-color-green: resource('Icons/IC_Authority-text-menu_Color-green');
-    --ic-button-square-color-green: resource('Icons/IC_Button-square_Color-green');
-    --ic-button-rectangle-color-red: resource('Icons/IC_Button-rectangle_Color-red');
-    --ic-button-rectangle-color-green: resource('Icons/IC_Button-rectangle_Color-green');
-    --ic-button-rectangle-color-gray: resource('Icons/IC_Button-rectangle_Color-gray');
+    --ic-combat-small-color-red: resource('Icons/IC_Combat-small_Color-red');
     --ic-combat-small-x1-color-red: resource('Icons/IC_Combat-small-x1_Color-red');
     --ic-combat-small-x5-color-red: resource('Icons/IC_Combat-small-x5_Color-red');
+    --ic-combat-small-x10-color-red: resource('Icons/IC_Combat-small-x10_Color-red');
+    --ic-gear-color-green: resource('Icons/IC_Gear_Color-green');
+    --ic-player-1-color-green: resource('Icons/IC_Player-1_Color-green');
+    --ic-player-2-color-green: resource('Icons/IC_Player-2_Color-green');
+    --ic-btn-square-color-green: resource('Icons/IC_Button-square_Color-green');
+    --ic-btn-rectangle-color-red: resource('Icons/IC_Button-rectangle_Color-red');
+    --ic-btn-rectangle-color-green: resource('Icons/IC_Button-rectangle_Color-green');
+    --ic-btn-rectangle-color-gray: resource('Icons/IC_Button-rectangle_Color-gray');
+    --ic-btn-rectangle-small-color-gray: resource('Icons/IC_Button-rectangle-small_Color-gray');
+    --ic-btn-rectangle-small-color-green: resource('Icons/IC_Button-rectangle-small_Color-green');
 }
 
 

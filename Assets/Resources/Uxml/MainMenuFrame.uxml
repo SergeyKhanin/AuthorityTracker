@@ -1,11 +1,21 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:VisualElement name="main-menu-frame" picking-mode="Ignore" class="frame frame-menu label">
-        <ui:VisualElement name="authority-image-text" picking-mode="Ignore" class="authority authority__text">
-            <ui:IntegerField name="initial-points-input" value="50" />
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance"
+         engine="UnityEngine.UIElements" editor="UnityEditor.UIElements"
+         noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="main-menu-frame" picking-mode="Ignore" class="frame frame__main-menu  justify-content-between">
+        <ui:VisualElement name="header" picking-mode="Ignore" class="header">
+            <CustomButton name="one-player-button" class="btn ic ic-e-lg ic-player-1__color-green" />
+            <CustomButton name="two-players-button" class="btn ic ic-e-lg ic-player-2__color-green" />
+            <CustomButton name="settings-button" class="btn ic ic-e-lg ic-gear__color-green" />
         </ui:VisualElement>
-        <CustomButton name="1-player-button" text="1-PLAYER" class="button button-rectangle button-rectangle__green" />
-        <CustomButton name="2-players-button" text="2-PLAYERS" class="button button-rectangle button-rectangle__green" />
-        <CustomButton name="community-button" text="COMMUNITY" class="button button-rectangle button-rectangle__gray" />
-        <CustomButton name="quit-button" text="QUIT" class="button button-rectangle button-rectangle__red" />
+        <ui:VisualElement name="content" picking-mode="Ignore" class="content">
+            <ui:VisualElement name="authority-image-text" picking-mode="Ignore" class="authority authority__image-text ic ic-authority__text__color-green">
+                <ui:IntegerField name="initial-points-input" value="50" />
+            </ui:VisualElement>
+            <CustomButton name="casual-button" text="CASUAL" class="btn btn-rectangle ic ic-btn-rectangle__color-green" />
+            <CustomButton name="tournament-button" text="TOURNAMENT" class="btn btn-rectangle ic ic-btn-rectangle__color-green" />
+            <CustomButton name="community-button" text="COMMUNITY" class="btn btn-rectangle ic ic-btn-rectangle__color-gray" />
+            <CustomButton name="quit-button" text="QUIT" class="btn btn-rectangle ic ic-btn-rectangle__color-red" />
+            <CustomButton name="empty" text="EMPTY" class="btn btn-rectangle invisible" />
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

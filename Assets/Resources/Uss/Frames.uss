@@ -1,0 +1,39 @@
+.frame {
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    align-items: center;
+    justify-content: center;
+    -unity-background-scale-mode: scale-and-crop;
+}
+
+.frame__main-menu {
+    background-image: var(--im-main-menu-frame);
+}
+
+.frame__settings {
+    background-image: var(--im-main-menu-frame);
+}
+
+.frame__game {
+    background-image: var(--im-game-frame);
+}
+
+.frame__pause {
+    background-image: var(--im-pause-frame);
+}
+
+.frame__additional {
+    position: absolute;
+    align-items: flex-end;
+}
+
+.frame__apply-button {
+    position: absolute;
+    align-items: flex-start;
+}
+
+.frame__separator {
+    position: absolute;
+}

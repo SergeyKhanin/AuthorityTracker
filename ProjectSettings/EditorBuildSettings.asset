@@ -9,9 +9,18 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenuScene.unity
     guid: e4dfe18eb4a3b2641bcd63296dbb345d
   - enabled: 1
+    path: Assets/Scenes/SettingsScene.unity
+    guid: e1f142684e529de4d9ceb4ad20c65ac4
+  - enabled: 1
     path: Assets/Scenes/Casual1PlayerGameScene.unity
     guid: ee0c4732f3fcb51488d53fac4942b4c0
   - enabled: 1
     path: Assets/Scenes/Casual2PlayersGameScene.unity
     guid: 0756ddc72f0f97d4e8da48c1b5011b20
+  - enabled: 1
+    path: Assets/Scenes/Tournament1PlayerGameScene.unity
+    guid: 4ac81ee58233ec94785f46ba95d2b3f0
+  - enabled: 1
+    path: Assets/Scenes/Tournamentl2PlayersGameScene.unity
+    guid: 6f584f76838f515409c8707e12f95294
   m_configObjects: {}

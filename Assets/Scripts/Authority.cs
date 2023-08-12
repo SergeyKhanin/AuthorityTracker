@@ -23,6 +23,8 @@ public class Authority
 
     public void MinusFivePoints() => Points -= 5;
 
+    public void AddCustomPoints(int amount) => Points += amount;
+
     public void ValidatePoints()
     {
         if (Points >= Limit)

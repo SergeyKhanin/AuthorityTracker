@@ -8,7 +8,7 @@ public class GameView : MonoBehaviour
     private VisualElement _playersFrame;
     private VisualElement _settingsFrame;
 
-    private CustomButton _settingsButton;
+    private CustomButton _pauseButton;
     private CustomButton _backButton;
     private CustomButton _quitButton;
     private CustomButton _resetButton;
@@ -19,8 +19,9 @@ public class GameView : MonoBehaviour
         _root = GetComponent<UIDocument>().rootVisualElement;
 
         _playersFrame = _root.Q<VisualElement>("players-frame");
-        _settingsFrame = _root.Q<VisualElement>("settings-frame");
-        _settingsButton = _root.Q<CustomButton>("settings-button");
+        _settingsFrame = _root.Q<VisualElement>("pause-frame");
+        
+        _pauseButton = _root.Q<CustomButton>("pause-button");
         _backButton = _root.Q<CustomButton>("back-button");
         _quitButton = _root.Q<CustomButton>("quit-button");
         _resetButton = _root.Q<CustomButton>("reset-button");
@@ -29,7 +30,7 @@ public class GameView : MonoBehaviour
 
     private void OnEnable()
     {
-        _settingsButton.clicked += OnSettingsButtonClicked;
+        _pauseButton.clicked += OnPauseButtonClicked;
         _backButton.clicked += OnBackButtonClicked;
         _resetButton.clicked += OnResetButtonClicked;
         _mainMenuButton.clicked += OnMainMenuButtonClicked;
@@ -38,14 +39,14 @@ public class GameView : MonoBehaviour
 
     private void OnDisable()
     {
-        _settingsButton.clicked -= OnSettingsButtonClicked;
+        _pauseButton.clicked -= OnPauseButtonClicked;
         _backButton.clicked -= OnBackButtonClicked;
         _resetButton.clicked -= OnResetButtonClicked;
         _mainMenuButton.clicked -= OnMainMenuButtonClicked;
         _quitButton.clicked -= OnQuitAppButtonClicked;
     }
 
-    private void OnSettingsButtonClicked() => EnableSettings(true);
+    private void OnPauseButtonClicked() => EnableSettings(true);
     private void OnBackButtonClicked() => EnableSettings(false);
     private void OnResetButtonClicked() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     private void OnMainMenuButtonClicked() => SceneManager.LoadScene(CommonScenesList.MainMenuScene);
@@ -59,7 +60,7 @@ public class GameView : MonoBehaviour
             Screen.sleepTimeout = SleepTimeout.NeverSleep;
 
         _playersFrame.EnableInClassList(CommonUssClassNames.Hide, isEnabled);
-        _settingsButton.EnableInClassList(CommonUssClassNames.Hide, isEnabled);
+        _pauseButton.EnableInClassList(CommonUssClassNames.Hide, isEnabled);
         _settingsFrame.EnableInClassList(CommonUssClassNames.Hide, !isEnabled);
     }
 }

@@ -4,11 +4,11 @@ using UnityEngine.UIElements;
 public class CasualPlayerView : MonoBehaviour
 {
     private const float TimeDelay = 1.0f;
+    private string _playerName;
 
-    [SerializeField] private PlayersRoster.PlayersList playersRoster;
+    [SerializeField] private PlayersRoster.PlayersList playersList;
 
     private Authority _authority;
-    private string _playerName;
     private int _plusCounter;
     private int _minusCounter;
     private float _plusPointsTime;
@@ -34,9 +34,8 @@ public class CasualPlayerView : MonoBehaviour
     private void Awake()
     {
         _root = GetComponent<UIDocument>().rootVisualElement;
+        _playerName = SetPlayers.GetPlayerFromList(playersList);
         _authority = new Authority();
-
-        SetPlayer();
 
         _frame = _root.Q<VisualElement>(_playerName);
         _authorityLabel = _frame.Q<CustomLabel>("authority-label");
@@ -116,12 +115,6 @@ public class CasualPlayerView : MonoBehaviour
         _isPlus5ButtonClicked = false;
     }
 
-    private void OnPlus5ButtonClicked()
-    {
-        _isPlus5ButtonClicked = true;
-        OnPlusButtonClicked();
-    }
-
     private void OnMinusButtonClicked()
     {
         _minusPointsTime = 0;
@@ -149,6 +142,12 @@ public class CasualPlayerView : MonoBehaviour
         ValidateClasses();
 
         _isMinus5ButtonClicked = false;
+    }
+
+    private void OnPlus5ButtonClicked()
+    {
+        _isPlus5ButtonClicked = true;
+        OnPlusButtonClicked();
     }
 
     private void OnMinus5ButtonClicked()
@@ -195,22 +194,6 @@ public class CasualPlayerView : MonoBehaviour
         {
             _plusCounter = 0;
             _pointsPlusContainer.AddToClassList(CommonUssClassNames.Invisible);
-        }
-    }
-
-    private void SetPlayer()
-    {
-        switch (playersRoster)
-        {
-            case PlayersRoster.PlayersList.Player1:
-                _playerName = "player-1";
-                break;
-            case PlayersRoster.PlayersList.Player2:
-                _playerName = "player-2";
-                break;
-            default:
-                _playerName = "player-1";
-                break;
         }
     }
 }

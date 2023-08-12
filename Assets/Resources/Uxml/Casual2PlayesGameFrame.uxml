@@ -1,13 +1,15 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance"
+         engine="UnityEngine.UIElements" editor="UnityEditor.UIElements"
+         noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:Template name="CasualPlayerFrame" src="project://database/Assets/Resources/Templates/CasualPlayerFrame.uxml?fileID=9197481963319205126&amp;guid=682b7ba1a31567747848360f55835399&amp;type=3#CasualPlayerFrame" />
-    <ui:Template name="SeparatorFrame" src="project://database/Assets/Resources/Templates/SeparatorFrame.uxml?fileID=9197481963319205126&amp;guid=cfce5ce97393f4b498022c45dc21d3b0&amp;type=3#SeparatorFrame" />
-    <ui:Template name="SettingsFrame" src="project://database/Assets/Resources/Templates/SettingsFrame.uxml?fileID=9197481963319205126&amp;guid=83b191b376cc5f841a1dfe9ba23d215c&amp;type=3#SettingsFrame" />
+    <ui:Template name="PauseFrame" src="project://database/Assets/Resources/Templates/PauseFrame.uxml?fileID=9197481963319205126&amp;guid=83b191b376cc5f841a1dfe9ba23d215c&amp;type=3#PauseFrame" />
     <ui:Template name="AdditionalFrame" src="project://database/Assets/Resources/Templates/AdditionalFrame.uxml?fileID=9197481963319205126&amp;guid=afde3a305a59b404f86c18a2045bb74e&amp;type=3#AdditionalFrame" />
-    <ui:VisualElement name="players-frame" picking-mode="Ignore" class="frame frame-game label">
-        <ui:Instance name="player-2" template="CasualPlayerFrame" picking-mode="Ignore" class="player-frame player player-2 rotate-180" />
-        <ui:Instance name="player-1" template="CasualPlayerFrame" picking-mode="Ignore" class="player-frame player player-1" />
-        <ui:Instance name="separator-frame" template="SeparatorFrame" picking-mode="Ignore" class="separator-frame" />
+    <ui:Template name="SeparatorHorizontalFrame" src="project://database/Assets/Resources/Templates/SeparatorHorizontalFrame.uxml?fileID=9197481963319205126&amp;guid=cfce5ce97393f4b498022c45dc21d3b0&amp;type=3#SeparatorHorizontalFrame" />
+    <ui:VisualElement name="players-frame" picking-mode="Ignore" class="frame frame__game">
+        <ui:Instance name="player-1" template="CasualPlayerFrame" picking-mode="Ignore" class="flex-fill size-100 player-1" />
+        <ui:Instance name="separator-horizontal-frame" template="SeparatorHorizontalFrame"  picking-mode="Ignore" class="frame frame__separator"  />
+        <ui:Instance name="player-2" template="CasualPlayerFrame" picking-mode="Ignore" class="flex-fill size-100 player-2" />
     </ui:VisualElement>
-    <ui:Instance name="settings-frame" template="SettingsFrame" picking-mode="Ignore" class="frame frame-settings label hide" />
-    <ui:Instance name="additional-frame-2-players" template="AdditionalFrame"  picking-mode="Ignore" class="frame frame-additional" style="align-items: center; justify-content: center;" />
+    <ui:Instance name="pause-frame" template="PauseFrame" picking-mode="Ignore" class="frame frame__pause hide" />
+    <ui:Instance name="additional-frame" template="AdditionalFrame" picking-mode="Ignore" class="frame frame__additional" />
 </ui:UXML>
