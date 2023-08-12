@@ -1,5 +1,7 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:VisualElement name="main-menu-frame" picking-mode="Ignore" class="frame frame-menu label">
-        <CustomButton name="back-button" text="BACK" class="button button-rectangle button-rectangle__green" />
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance"
+         engine="UnityEngine.UIElements" editor="UnityEditor.UIElements"
+         noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="settings-frame" picking-mode="Ignore" class="frame frame__settings">
+        <CustomButton name="back-button" text="BACK" class="btn btn-rectangle ic ic-btn-rectangle__color-green" />
     </ui:VisualElement>
 </ui:UXML>

@@ -1,5 +1,6 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/Resources/Uss/Style.uss?fileID=7433441132597879392&amp;guid=65ff8790dd4ca8040b6578d6e9530e55&amp;type=3#Style" />
-    <CustomButton name="clear-button" text="CLEAR" class="button button-rectangle-small button-rectangle-small__green rotate-90" />
-    <CustomButton name="apply-button" text="APPLY" class="button button-rectangle-small button-rectangle-small__gray rotate-90" style="right: 225px;" />
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance"
+         engine="UnityEngine.UIElements" editor="UnityEditor.UIElements"
+         noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <CustomButton name="apply-button" text="APPLY" class="btn btn-rectangle__small ic ic-btn-rectangle__small__color-gray rotate-90" />
+    <CustomButton name="clear-button" text="CLEAR" class="btn btn-rectangle__small ic ic-btn-rectangle__small__color-green rotate-90" />
 </ui:UXML>

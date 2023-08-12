@@ -1,0 +1,60 @@
+.tournament__label-offset {
+    bottom: 58px;
+}
+
+.tournament__icons-container {
+    height: var(--base-icon-e-large-size);
+    width: var(--base-icon-e-large-size);
+    margin: var(--base-margin);
+    align-items: center;
+    justify-content: center;
+}
+
+.tournament__points-container {
+    height: var(--base-icon-e-large-size);
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.tournament__empty-center {
+    height: var(--base-image-resolution-half);
+    width: var(--base-image-resolution-half);
+    margin-left: 200px;
+}
+
+.tournament__apply-1p CustomButton {
+    right: 80px;
+}
+
+.tournament__apply-1p #apply-button {
+    margin-bottom: var(--space-apply-button-horizontal);
+}
+
+.tournament__apply-1p #clear-button {
+    margin-top: var(--space-apply-button-horizontal);
+}
+
+.tournament__apply-2p #apply-button {
+    right: 225px;
+}
+
+.tournament__reverse-points #buttons {
+    flex-direction: column-reverse;
+}
+
+.tournament__reverse-points #points {
+    flex-direction: column-reverse;
+}
+
+.tournament__reverse-points #authority-points-top {
+    align-items: flex-start;
+}
+
+.tournament__reverse-points #authority-points-bottom {
+    align-items: flex-end;
+}
+
+.tournament__pause-rotate #container {
+    rotate: 90deg;
+}

@@ -149,7 +149,8 @@ public class TournamentPlayerView : MonoBehaviour
         if (Counter < 0)
         {
             _pointsLabel.text = Counter.ToString().TrimStart('-');
-            _pointsLabel.AddToClassList(CommonUssClassNames.PointsLabelMinus);
+            _pointsLabel.RemoveFromClassList(CommonUssClassNames.PointsLabelGreen);
+            _pointsLabel.AddToClassList(CommonUssClassNames.PointsLabelRed);
             _iconPlus.AddToClassList(CommonUssClassNames.Hide);
             _iconMinus.RemoveFromClassList(CommonUssClassNames.Hide);
         }
@@ -164,8 +165,8 @@ public class TournamentPlayerView : MonoBehaviour
         else
         {
             _pointsLabel.text = Counter.ToString();
-            _pointsLabel.RemoveFromClassList(CommonUssClassNames.PointsLabelMinus);
-            _pointsLabel.AddToClassList(CommonUssClassNames.PointsLabelPlus);
+            _pointsLabel.RemoveFromClassList(CommonUssClassNames.PointsLabelRed);
+            _pointsLabel.AddToClassList(CommonUssClassNames.PointsLabelGreen);
             _iconPlus.RemoveFromClassList(CommonUssClassNames.Hide);
             _iconMinus.AddToClassList(CommonUssClassNames.Hide);
         }

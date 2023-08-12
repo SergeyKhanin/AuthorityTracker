@@ -1,47 +1,50 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance"
+         engine="UnityEngine.UIElements" editor="UnityEditor.UIElements"
+         noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:Template name="SeparatorVerticalFrame" src="project://database/Assets/Resources/Templates/SeparatorVerticalFrame.uxml?fileID=9197481963319205126&amp;guid=f155ae5328db49f408e1a64886f26f42&amp;type=3#SeparatorVerticalFrame" />
     <ui:Template name="SeparatorHorizontalFrame" src="project://database/Assets/Resources/Templates/SeparatorHorizontalFrame.uxml?fileID=9197481963319205126&amp;guid=cfce5ce97393f4b498022c45dc21d3b0&amp;type=3#SeparatorHorizontalFrame" />
-    <Style src="project://database/Assets/Resources/Uss/Style.uss?fileID=7433441132597879392&amp;guid=65ff8790dd4ca8040b6578d6e9530e55&amp;type=3#Style" />
-    <ui:VisualElement name="plus-buttons-container" picking-mode="Ignore" class="player-frame__buttons-container">
-        <CustomButton name="plus-5-button" class="player-frame__button-plus" />
-        <CustomButton name="plus-button" class="player-frame__button-plus" />
+    <ui:VisualElement name="plus-buttons-container" picking-mode="Ignore" class="flex-fill size-100 flex-row">
+        <CustomButton name="plus-5-button" class="btn-plus flex-fill size-100" />
+        <CustomButton name="plus-button" class="btn-plus flex-fill size-100" />
     </ui:VisualElement>
-    <ui:VisualElement name="minus-buttons-container" picking-mode="Ignore" class="player-frame__buttons-container">
-        <CustomButton name="minus-5-button" class="player-frame__button-minus" />
-        <CustomButton name="minus-button" class="player-frame__button-minus" />
+    <ui:VisualElement name="minus-buttons-container" picking-mode="Ignore" class="flex-fill size-100 flex-row">
+        <CustomButton name="minus-5-button" class="btn-minus flex-fill size-100" />
+        <CustomButton name="minus-button" class="btn-minus flex-fill size-100" />
     </ui:VisualElement>
-    <ui:Instance name="separator-vertical-frame" template="SeparatorVerticalFrame" picking-mode="Ignore" class="separator-frame" />
-    <ui:Instance name="separator-horizontal-frame" template="SeparatorHorizontalFrame" picking-mode="Ignore" class="separator-frame" />
-    <ui:VisualElement name="authority-image-container" picking-mode="Ignore" class="player-frame__authority-image">
-        <ui:VisualElement name="authority-image" picking-mode="Ignore" class="authority authority__image-green">
-            <CustomLabel name="authority-label" text="99" picking-mode="Ignore" class="player-frame__authority-label" />
-        </ui:VisualElement>
-    </ui:VisualElement>
-    <ui:VisualElement name="authority-points-label" picking-mode="Ignore" class="player-frame__container player-frame__container-label">
-        <ui:VisualElement name="points-plus-container" picking-mode="Ignore" class="player-frame__points-label player-frame__points-label-plus">
-            <ui:VisualElement name="icon-plus" picking-mode="Ignore" class="player-frame__points-icon player-frame__points-plus-icon" />
-            <CustomLabel name="points-plus-label" text="99" picking-mode="Ignore" class="player-frame__points-label__height" />
-        </ui:VisualElement>
-        <ui:VisualElement name="space-empty" picking-mode="Ignore" class="player-frame__authority-image-space" />
-        <ui:VisualElement name="points-minus-container" picking-mode="Ignore" class="player-frame__points-label player-frame__points-label-minus">
-            <ui:VisualElement name="icon-minus" picking-mode="Ignore" class="player-frame__points-icon player-frame__points-minus-icon" />
-            <CustomLabel name="points-minus-label" text="99" picking-mode="Ignore" class="player-frame__points-label__height" />
+    <ui:Instance name="separator-vertical-frame" template="SeparatorVerticalFrame" picking-mode="Ignore" class="frame frame__separator" />
+    <ui:Instance name="separator-horizontal-frame" template="SeparatorHorizontalFrame" picking-mode="Ignore" class="frame frame__separator" />
+    <ui:VisualElement name="authority-image-container" picking-mode="Ignore" class="absolute flex-fill size-100 align-items-center justify-content-center">
+        <ui:VisualElement name="authority-image" picking-mode="Ignore" class="authority ic ic-authority__big__color-green">
+            <CustomLabel name="authority-label" text="99" picking-mode="Ignore" class="label label__shadow label__authority label__size-big label__width-limit casual__label-offset" />
         </ui:VisualElement>
     </ui:VisualElement>
-    <ui:VisualElement name="authority-points-x1" picking-mode="Ignore" class="player-frame__container player-frame__container-x1">
-        <ui:VisualElement name="container" picking-mode="Ignore" class="player-frame__points">
-            <ui:VisualElement name="icon" picking-mode="Ignore" class="player-frame__points-icon player-frame__points-plus-icon player-frame__points-plus-1-icon" />
+    <ui:VisualElement name="authority-points-label" picking-mode="Ignore" class="absolute flex-fill size-100 justify-content-center align-items-center">
+        <ui:VisualElement name="points-plus-container" picking-mode="Ignore" class="flex-row align-items-center">
+            <ui:VisualElement name="icon-plus" picking-mode="Ignore" class="ic ic-vr ic-authority__small__color-green" />
+            <CustomLabel name="points-plus-label" text="99" picking-mode="Ignore" class="label label__points label__authority label__green" />
         </ui:VisualElement>
-        <ui:VisualElement name="container" picking-mode="Ignore" class="player-frame__points">
-            <ui:VisualElement name="icon" picking-mode="Ignore" class="player-frame__points-icon player-frame__points-minus-1-icon" />
+        <ui:VisualElement name="empty-center" picking-mode="Ignore" class="casual__empty-center" />
+        <ui:VisualElement name="points-minus-container" picking-mode="Ignore" class="flex-row align-items-center">
+            <ui:VisualElement name="icon-minus" picking-mode="Ignore" class="ic ic-md ic-combat__small__color-red" />
+            <CustomLabel name="points-minus-label" text="99" picking-mode="Ignore" class="label label__points label__authority label__red" />
         </ui:VisualElement>
     </ui:VisualElement>
-    <ui:VisualElement name="authority-points-x5" picking-mode="Ignore" class="player-frame__container player-frame__container-x5">
-        <ui:VisualElement name="container" picking-mode="Ignore" class="player-frame__points">
-            <ui:VisualElement name="icon" picking-mode="Ignore" class="player-frame__points-icon player-frame__points-plus-5-icon" />
+    <ui:VisualElement name="points-icons-container" picking-mode="Ignore" class="absolute flex-fill size-100">
+        <ui:VisualElement name="authority-points-x1" picking-mode="Ignore" class="flex-fill size-100 flex-row justify-content-between">
+            <ui:VisualElement name="container" picking-mode="Ignore" class="casual__icons-container">
+                <ui:VisualElement name="icon" picking-mode="Ignore" class="ic ic-vr ic-authority__small-5__color-green ic-opacity__casual" />
+            </ui:VisualElement>
+            <ui:VisualElement name="container" picking-mode="Ignore" class="casual__icons-container">
+                <ui:VisualElement name="icon" picking-mode="Ignore" class="ic ic-vr ic-authority__small-1__color-green ic-opacity__casual" />
+            </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="container" picking-mode="Ignore" class="player-frame__points">
-            <ui:VisualElement name="icon" picking-mode="Ignore" class="player-frame__points-icon player-frame__points-minus-5-icon" />
+        <ui:VisualElement name="authority-points-x5" picking-mode="Ignore" class="flex-fill size-100 flex-row justify-content-between justify-content-end">
+            <ui:VisualElement name="container" picking-mode="Ignore" class="casual__icons-container">
+                <ui:VisualElement name="icon" picking-mode="Ignore" class="ic ic-md ic-combat__small-5__color-red ic-opacity__casual" />
+            </ui:VisualElement>
+            <ui:VisualElement name="container" picking-mode="Ignore" class="casual__icons-container">
+                <ui:VisualElement name="icon" picking-mode="Ignore" class="ic ic-md ic-combat__small-1__color-red ic-opacity__casual" />
+            </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
