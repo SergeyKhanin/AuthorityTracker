@@ -39,13 +39,22 @@
     right: 225px;
 }
 
-.tournament__1p #buttons {
+.tournament__reverse-points #buttons {
     flex-direction: column-reverse;
 }
 
-.tournament__1p #authority-points-top {
+.tournament__reverse-points #points {
+    flex-direction: column-reverse;
 }
 
-.tournament__1p #authority-points-bottom {
+.tournament__reverse-points #authority-points-top {
+    align-items: flex-start;
 }
 
+.tournament__reverse-points #authority-points-bottom {
+    align-items: flex-end;
+}
+
+.tournament__pause-rotate #container {
+    rotate: 90deg;
+}
