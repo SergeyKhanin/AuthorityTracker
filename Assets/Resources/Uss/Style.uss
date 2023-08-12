@@ -6,11 +6,11 @@
 }
 
 .separator__horizontal {
-    max-width: var(--base-separator-height);
+    max-height: var(--base-separator-height);
 }
 
 .separator__vertical {
-    max-height: var(--base-separator-height);
+    max-width: var(--base-separator-height);
 }
 
 .authority {

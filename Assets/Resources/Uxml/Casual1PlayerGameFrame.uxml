@@ -1,4 +1,6 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance"
+         engine="UnityEngine.UIElements" editor="UnityEditor.UIElements"
+         noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:Template name="CasualPlayerFrame" src="project://database/Assets/Resources/Templates/CasualPlayerFrame.uxml?fileID=9197481963319205126&amp;guid=682b7ba1a31567747848360f55835399&amp;type=3#CasualPlayerFrame" />
     <ui:Template name="PauseFrame" src="project://database/Assets/Resources/Templates/PauseFrame.uxml?fileID=9197481963319205126&amp;guid=83b191b376cc5f841a1dfe9ba23d215c&amp;type=3#PauseFrame" />
     <ui:Template name="AdditionalFrame" src="project://database/Assets/Resources/Templates/AdditionalFrame.uxml?fileID=9197481963319205126&amp;guid=afde3a305a59b404f86c18a2045bb74e&amp;type=3#AdditionalFrame" />

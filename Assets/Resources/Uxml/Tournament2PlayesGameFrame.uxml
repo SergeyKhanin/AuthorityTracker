@@ -1,13 +1,14 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance"
+         engine="UnityEngine.UIElements" editor="UnityEditor.UIElements"
+         noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:Template name="TournamentPlayerFrame" src="project://database/Assets/Resources/Templates/TournamentPlayerFrame.uxml?fileID=9197481963319205126&amp;guid=4947e944fcbc78b4ba2ee389c0f1bd2d&amp;type=3#TournamentPlayerFrame" />
-    <ui:Template name="SeparatorVerticalFrame" src="project://database/Assets/Resources/Templates/SeparatorVerticalFrame.uxml?fileID=9197481963319205126&amp;guid=f155ae5328db49f408e1a64886f26f42&amp;type=3#SeparatorVerticalFrame" />
+    <ui:Template name="SeparatorHorizontalFrame" src="project://database/Assets/Resources/Templates/SeparatorHorizontalFrame.uxml?fileID=9197481963319205126&amp;guid=cfce5ce97393f4b498022c45dc21d3b0&amp;type=3#SeparatorHorizontalFrame" />
     <ui:Template name="ApplyButtonFrame" src="project://database/Assets/Resources/Templates/ApplyButtonFrame.uxml?fileID=9197481963319205126&amp;guid=d4f61027e1d6d4b47b5ec443cc6f101c&amp;type=3#ApplyButtonFrame" />
     <ui:Template name="PauseFrame" src="project://database/Assets/Resources/Templates/PauseFrame.uxml?fileID=9197481963319205126&amp;guid=83b191b376cc5f841a1dfe9ba23d215c&amp;type=3#PauseFrame" />
     <ui:Template name="AdditionalFrame" src="project://database/Assets/Resources/Templates/AdditionalFrame.uxml?fileID=9197481963319205126&amp;guid=afde3a305a59b404f86c18a2045bb74e&amp;type=3#AdditionalFrame" />
-    <Style src="project://database/Assets/Resources/Uss/Tournament.uss?fileID=7433441132597879392&amp;guid=5ab82be4ff2983b4ab39812a8de525b2&amp;type=3#Tournament" />
     <ui:VisualElement name="players-frame" picking-mode="Ignore" class="frame frame__game">
         <ui:Instance name="player-1" template="TournamentPlayerFrame" picking-mode="Ignore" class="flex-fill size-100 player-1 tournament__1p" />
-        <ui:Instance name="separator-vertical-frame" template="SeparatorVerticalFrame" picking-mode="Ignore" class="frame frame__separator" />
+        <ui:Instance name="separator-horizontal-frame" template="SeparatorHorizontalFrame" picking-mode="Ignore" class="frame frame__separator" />
         <ui:Instance name="player-2" template="TournamentPlayerFrame" picking-mode="Ignore" class="flex-fill size-100 player-2" />
     </ui:VisualElement>
     <ui:Instance name="apply-button-frame" template="ApplyButtonFrame" picking-mode="Ignore" class="frame frame__apply-button tournament__apply-2p flex-row-reverse align-items-center" />
