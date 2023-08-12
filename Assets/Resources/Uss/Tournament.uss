@@ -20,7 +20,7 @@
 .tournament__empty-center {
     height: var(--base-image-resolution-half);
     width: var(--base-image-resolution-half);
-    margin-left: 200px;
+    margin-left: 220px;
 }
 
 .tournament__apply-1p CustomButton {

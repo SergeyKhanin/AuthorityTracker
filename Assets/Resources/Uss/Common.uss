@@ -40,8 +40,8 @@
 }
 
 :root {
-    --opacity-icon-tournament: 0.1;
-    --opacity-icon-casual: 0.05;
+    --opacity-icon-tournament: 0.025;
+    --opacity-icon-casual: 0.025;
 }
 
 :root {
