@@ -6,6 +6,7 @@ public class MainMenuView : MonoBehaviour
 {
     private Authority _authority;
     private int _pointsLimit;
+    private int _playersAmount;
     private bool _hasOnePlayer;
     private bool _hasTwoPlayers;
 
@@ -37,17 +38,14 @@ public class MainMenuView : MonoBehaviour
 
         _authority = new Authority();
         _pointsLimit = _authority.Limit;
-        _hasTwoPlayers = true;
 
-        _onePlayerButton.EnableInClassList(CommonUssClassNames.Hide, true);
-        _twoPlayersButton.EnableInClassList(CommonUssClassNames.Hide, false);
-
-        _initialPointsIntegerField.RegisterCallback<ChangeEvent<int>>(OnIntChangedEvent);
-
-        if (PlayerPrefs.HasKey("InitialPoints"))
-            _initialPointsIntegerField.value = PlayerPrefs.GetInt("InitialPoints");
+        GetInitialPoints();
+        SetInitialPoints();
+        GetPlayersAmount();
+        SetPlayersAmount();
+        SetPlayersButtons();
     }
-
+    
     private void Start()
     {
         _root.RegisterCallback<GeometryChangedEvent>(SaveScreenResolutions);
@@ -79,18 +77,26 @@ public class MainMenuView : MonoBehaviour
 
     private void OnOnePlayerButtonClicked()
     {
-        _hasOnePlayer = false;
-        _hasTwoPlayers = true;
-        _onePlayerButton.EnableInClassList(CommonUssClassNames.Hide, _hasTwoPlayers);
-        _twoPlayersButton.EnableInClassList(CommonUssClassNames.Hide, _hasOnePlayer);
+        SavePlayersAmount(2);
+        GetPlayersAmount();
+        SetPlayersAmount();
+
+        var isEnabled = _hasOnePlayer;
+        
+        _onePlayerButton.EnableInClassList(CommonUssClassNames.Hide, !isEnabled);
+        _twoPlayersButton.EnableInClassList(CommonUssClassNames.Hide, isEnabled);
     }
 
     private void OnTwoPlayersButtonClicked()
     {
-        _hasOnePlayer = true;
-        _hasTwoPlayers = false;
-        _twoPlayersButton.EnableInClassList(CommonUssClassNames.Hide, _hasOnePlayer);
-        _onePlayerButton.EnableInClassList(CommonUssClassNames.Hide, _hasTwoPlayers);
+        SavePlayersAmount(1);
+        GetPlayersAmount();
+        SetPlayersAmount();
+
+        var isEnabled = _hasTwoPlayers;
+        
+        _twoPlayersButton.EnableInClassList(CommonUssClassNames.Hide, !isEnabled);
+        _onePlayerButton.EnableInClassList(CommonUssClassNames.Hide, isEnabled);
     }
 
     private void OnSettingsButtonClicked() => SceneManager.LoadScene(CommonScenesList.SettingsScene);
@@ -132,19 +138,47 @@ public class MainMenuView : MonoBehaviour
         _pointsTextElement.EnableInClassList(CommonUssClassNames.LabelAuthoritySizeSmall, isIntLonger);
     }
 
-    private void SaveInitialPoints(int value)
+    private void GetPlayersAmount()
     {
-        PlayerPrefs.SetInt("InitialPoints", value);
-        PlayerPrefs.Save();
+        if (PlayerPrefs.HasKey("PlayersAmount"))
+            _playersAmount = PlayerPrefs.GetInt("PlayersAmount");
+        else
+            _playersAmount = 1;
     }
 
-    private void SaveScreenResolutions(GeometryChangedEvent evt)
+    private void SetPlayersAmount()
     {
-        PlayerPrefs.SetFloat("ScreenResolutionsWidth", _root.resolvedStyle.width);
-        PlayerPrefs.SetFloat("ScreenResolutionsHeight", _root.resolvedStyle.height);
-        PlayerPrefs.Save();
+        if (_playersAmount == 1)
+        {
+            _hasOnePlayer = true;
+            _hasTwoPlayers = false;
+        }
+        else if (_playersAmount == 2)
+        {
+            _hasTwoPlayers = true;
+            _hasOnePlayer = false;
+        }
+        else
+        {
+            _hasTwoPlayers = true;
+            _hasOnePlayer = false;
+        }
     }
 
+    private void GetInitialPoints()
+    {
+        if (PlayerPrefs.HasKey("InitialPoints"))
+            _initialPointsIntegerField.value = PlayerPrefs.GetInt("InitialPoints");
+    }
+
+    private void SetInitialPoints() => _initialPointsIntegerField.RegisterCallback<ChangeEvent<int>>(OnIntChangedEvent);
+
+    private void SetPlayersButtons()
+    {
+        _onePlayerButton.EnableInClassList(CommonUssClassNames.Hide, _hasTwoPlayers);
+        _twoPlayersButton.EnableInClassList(CommonUssClassNames.Hide, _hasOnePlayer);
+    }
+    
     private void OnCommunityButtonClicked()
     {
         switch (Application.systemLanguage)
@@ -159,5 +193,24 @@ public class MainMenuView : MonoBehaviour
                 Application.OpenURL(CommonCommunitiesPages.None);
                 break;
         }
+    }
+
+    private void SaveInitialPoints(int value)
+    {
+        PlayerPrefs.SetInt("InitialPoints", value);
+        PlayerPrefs.Save();
+    }
+
+    private void SaveScreenResolutions(GeometryChangedEvent evt)
+    {
+        PlayerPrefs.SetFloat("ScreenResolutionsWidth", _root.resolvedStyle.width);
+        PlayerPrefs.SetFloat("ScreenResolutionsHeight", _root.resolvedStyle.height);
+        PlayerPrefs.Save();
+    }
+
+    private void SavePlayersAmount(int playersAmount)
+    {
+        PlayerPrefs.SetInt("PlayersAmount", playersAmount);
+        PlayerPrefs.Save();
     }
 }
