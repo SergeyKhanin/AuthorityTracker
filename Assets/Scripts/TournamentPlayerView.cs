@@ -191,20 +191,24 @@ public class TournamentPlayerView : MonoBehaviour
 
     private void ValidateClasses()
     {
-        _authorityImage.EnableInClassList(CommonUssClassNames.ImageAuthorityBroken, _isPointsZero);
+        _authorityImage.EnableInClassList(CommonUssClassNames.ImageAuthorityOrange, _isPointsLessHalf);
         _authorityImage.EnableInClassList(CommonUssClassNames.ImageAuthorityRed, _isPointsLessQuarter);
-        _authorityImage.EnableInClassList(CommonUssClassNames.ImageAuthorityYellow, _isPointsLessHalf);
+        _authorityImage.EnableInClassList(CommonUssClassNames.ImageAuthorityBroken, _isPointsZero);
         _authorityLabel.EnableInClassList(CommonUssClassNames.LabelAuthoritySizeSmall, _isPointsLong);
     }
 
     private void ValidateText()
     {
+
         if (_authority.Points <= _startPoints / 2)
         {
             _isPointsZero = false;
             _isPointsLessQuarter = false;
             _isPointsLessHalf = true;
         }
+        
+        if (_authority.Points > _startPoints / 2) 
+            _isPointsLessHalf = false;
 
         if (_authority.Points <= _startPoints / 4)
         {
@@ -213,20 +217,14 @@ public class TournamentPlayerView : MonoBehaviour
             _isPointsLessHalf = false;
         }
 
-        if (_authority.Points <= 0)
+        if  (_authority.Points <= 0)
         {
             _isPointsZero = true;
             _isPointsLessQuarter = false;
             _isPointsLessHalf = false;
         }
-
-        else
-        {
-            _isPointsZero = false;
-            _isPointsLessQuarter = false;
-            _isPointsLessHalf = false;
-        }
-
+        
+        
         if (_authority.Points > 99 || _authority.Points < -9)
             _isPointsLong = true;
         else
