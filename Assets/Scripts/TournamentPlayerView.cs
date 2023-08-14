@@ -16,14 +16,12 @@ public class TournamentPlayerView : MonoBehaviour
     private VisualElement _authorityImage;
     private VisualElement _iconPlus;
     private VisualElement _iconMinus;
-
     private CustomButton _minusButton;
     private CustomButton _plusButton;
     private CustomButton _applyButton;
     private CustomButton _clearButton;
     private CustomButton _plus5Button;
     private CustomButton _minus10Button;
-
     private CustomLabel _authorityLabel;
     private CustomLabel _pointsLabel;
     private CustomLabel _pointsMinusLabel;
@@ -64,10 +62,15 @@ public class TournamentPlayerView : MonoBehaviour
         _iconPlus.AddToClassList(CommonUssClassNames.Hide);
         _iconMinus.AddToClassList(CommonUssClassNames.Hide);
         _authorityLabel.text = _authority.Points.ToString();
+        _startPoints = _authority.Points;
     }
 
-    private void Start() => _startPoints = _authority.Points;
-
+    private void Start()
+    {
+        ValidateText();
+        ValidateClasses();
+    }
+    
     private void OnEnable()
     {
         _plusButton.clicked += OnPlusButtonClicked;
@@ -199,15 +202,14 @@ public class TournamentPlayerView : MonoBehaviour
 
     private void ValidateText()
     {
-
         if (_authority.Points <= _startPoints / 2)
         {
             _isPointsZero = false;
             _isPointsLessQuarter = false;
             _isPointsLessHalf = true;
         }
-        
-        if (_authority.Points > _startPoints / 2) 
+
+        if (_authority.Points > _startPoints / 2)
             _isPointsLessHalf = false;
 
         if (_authority.Points <= _startPoints / 4)
@@ -217,14 +219,13 @@ public class TournamentPlayerView : MonoBehaviour
             _isPointsLessHalf = false;
         }
 
-        if  (_authority.Points <= 0)
+        if (_authority.Points <= 0)
         {
             _isPointsZero = true;
             _isPointsLessQuarter = false;
             _isPointsLessHalf = false;
         }
-        
-        
+
         if (_authority.Points > 99 || _authority.Points < -9)
             _isPointsLong = true;
         else

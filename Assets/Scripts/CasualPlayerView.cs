@@ -9,14 +9,18 @@ public class CasualPlayerView : MonoBehaviour
     [SerializeField] private PlayersRoster.PlayersList playersList;
 
     private Authority _authority;
+    
     private int _plusCounter;
     private int _minusCounter;
+    private int _startPoints;
     private float _plusPointsTime;
     private float _minusPointsTime;
     private bool _isPointsZero;
     private bool _isPointsLong;
     private bool _isPlus5ButtonClicked;
     private bool _isMinus5ButtonClicked;
+    private bool _isPointsLessHalf;
+    private bool _isPointsLessQuarter;
 
     private VisualElement _root;
     private VisualElement _frame;
@@ -54,6 +58,7 @@ public class CasualPlayerView : MonoBehaviour
         _pointsPlusContainer.AddToClassList(CommonUssClassNames.Invisible);
         _pointsMinusContainer.AddToClassList(CommonUssClassNames.Invisible);
         _authorityLabel.text = _authority.Points.ToString();
+        _startPoints = _authority.Points;
     }
 
     private void Start()
@@ -158,16 +163,38 @@ public class CasualPlayerView : MonoBehaviour
 
     private void ValidateClasses()
     {
-        _authorityImage.EnableInClassList(CommonUssClassNames.ImageAuthorityRed, _isPointsZero);
+        _authorityImage.EnableInClassList(CommonUssClassNames.ImageAuthorityOrange, _isPointsLessHalf);
+        _authorityImage.EnableInClassList(CommonUssClassNames.ImageAuthorityRed, _isPointsLessQuarter);
+        _authorityImage.EnableInClassList(CommonUssClassNames.ImageAuthorityBroken, _isPointsZero);
         _authorityLabel.EnableInClassList(CommonUssClassNames.LabelAuthoritySizeSmall, _isPointsLong);
     }
 
     private void ValidateText()
     {
-        if (_authority.Points <= 0)
-            _isPointsZero = true;
-        else
+        if (_authority.Points <= _startPoints / 2)
+        {
             _isPointsZero = false;
+            _isPointsLessQuarter = false;
+            _isPointsLessHalf = true;
+        }
+
+        if (_authority.Points > _startPoints / 2)
+            _isPointsLessHalf = false;
+
+        if (_authority.Points <= _startPoints / 4)
+        {
+            _isPointsZero = false;
+            _isPointsLessQuarter = true;
+            _isPointsLessHalf = false;
+        }
+
+        if (_authority.Points <= 0)
+        {
+            _isPointsZero = true;
+            _isPointsLessQuarter = false;
+            _isPointsLessHalf = false;
+        }
+
         if (_authority.Points > 99 || _authority.Points < -9)
             _isPointsLong = true;
         else
