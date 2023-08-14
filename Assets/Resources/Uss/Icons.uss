@@ -75,8 +75,8 @@
     background-image: var(--ic-authority-color-red);
 }
 
-.ic-authority__big__color-broken {
-    background-image: var(--ic-authority-color-broken);
+.ic-authority__big__color-black {
+    background-image: var(--ic-authority-color-black);
 }
 
 .ic-gear__color-green {

@@ -165,7 +165,7 @@ public class CasualPlayerView : MonoBehaviour
     {
         _authorityImage.EnableInClassList(CommonUssClassNames.ImageAuthorityOrange, _isPointsLessHalf);
         _authorityImage.EnableInClassList(CommonUssClassNames.ImageAuthorityRed, _isPointsLessQuarter);
-        _authorityImage.EnableInClassList(CommonUssClassNames.ImageAuthorityBroken, _isPointsZero);
+        _authorityImage.EnableInClassList(CommonUssClassNames.ImageAuthorityBlack, _isPointsZero);
         _authorityLabel.EnableInClassList(CommonUssClassNames.LabelAuthoritySizeSmall, _isPointsLong);
     }
 
