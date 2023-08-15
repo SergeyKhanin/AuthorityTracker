@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
+using Random = System.Random;
 
 public class GameView : MonoBehaviour
 {
@@ -20,13 +21,15 @@ public class GameView : MonoBehaviour
 
         _playersFrame = _root.Q<VisualElement>("players-frame");
         _settingsFrame = _root.Q<VisualElement>("pause-frame");
-        
+
         _pauseButton = _root.Q<CustomButton>("pause-button");
         _backButton = _root.Q<CustomButton>("back-button");
         _quitButton = _root.Q<CustomButton>("quit-button");
         _resetButton = _root.Q<CustomButton>("reset-button");
         _mainMenuButton = _root.Q<CustomButton>("main-menu-button");
     }
+
+    private void Start() => SetBackgroundImage();
 
     private void OnEnable()
     {
@@ -46,13 +49,13 @@ public class GameView : MonoBehaviour
         _quitButton.clicked -= OnQuitAppButtonClicked;
     }
 
-    private void OnPauseButtonClicked() => EnableSettings(true);
-    private void OnBackButtonClicked() => EnableSettings(false);
+    private void OnPauseButtonClicked() => EnablePause(true);
+    private void OnBackButtonClicked() => EnablePause(false);
     private void OnResetButtonClicked() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     private void OnMainMenuButtonClicked() => SceneManager.LoadScene(CommonScenesList.MainMenuScene);
     private void OnQuitAppButtonClicked() => Application.Quit();
 
-    private void EnableSettings(bool isEnabled)
+    private void EnablePause(bool isEnabled)
     {
         if (isEnabled)
             Screen.sleepTimeout = SleepTimeout.SystemSetting;
@@ -62,5 +65,27 @@ public class GameView : MonoBehaviour
         _playersFrame.EnableInClassList(CommonUssClassNames.Hide, isEnabled);
         _pauseButton.EnableInClassList(CommonUssClassNames.Hide, isEnabled);
         _settingsFrame.EnableInClassList(CommonUssClassNames.Hide, !isEnabled);
+    }
+
+    private void SetBackgroundImage()
+    {
+        var random = new Random();
+        var index = random.Next(0, 4);
+
+        switch (index)
+        {
+            case 1:
+                _playersFrame.AddToClassList(CommonUssClassNames.FrameGameImage1);
+                break;
+            case 2:
+                _playersFrame.AddToClassList(CommonUssClassNames.FrameGameImage2);
+                break;
+            case 3:
+                _playersFrame.AddToClassList(CommonUssClassNames.FrameGameImage3);
+                break;
+            default:
+                _playersFrame.AddToClassList(CommonUssClassNames.FrameGameImage);
+                break;
+        }
     }
 }
