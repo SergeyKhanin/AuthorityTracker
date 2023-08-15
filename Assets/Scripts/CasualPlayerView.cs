@@ -9,14 +9,19 @@ public class CasualPlayerView : MonoBehaviour
     [SerializeField] private PlayersRoster.PlayersList playersList;
 
     private Authority _authority;
+
     private int _plusCounter;
     private int _minusCounter;
+    private int _startPoints;
     private float _plusPointsTime;
     private float _minusPointsTime;
-    private bool _isPointsZero;
-    private bool _isPointsLong;
     private bool _isPlus5ButtonClicked;
     private bool _isMinus5ButtonClicked;
+    private bool _isPointsLong;
+    private bool _isPointsLessZero;
+    private bool _isPointsMoreZero;
+    private bool _isPointsLessHalf;
+    private bool _isPointsLessQuarter;
 
     private VisualElement _root;
     private VisualElement _frame;
@@ -38,26 +43,29 @@ public class CasualPlayerView : MonoBehaviour
         _authority = new Authority();
 
         _frame = _root.Q<VisualElement>(_playerName);
+        
+        _authorityImage = _frame.Q<VisualElement>("authority-image");
+        _pointsPlusContainer = _frame.Q<VisualElement>("points-plus-container");
+        _pointsMinusContainer = _frame.Q<VisualElement>("points-minus-container");
+        
         _authorityLabel = _frame.Q<CustomLabel>("authority-label");
         _pointsPlusLabel = _frame.Q<CustomLabel>("points-plus-label");
         _pointsMinusLabel = _frame.Q<CustomLabel>("points-minus-label");
-        _authorityImage = _frame.Q<VisualElement>("authority-image");
 
         _minusButton = _frame.Q<CustomButton>("minus-button");
         _plusButton = _frame.Q<CustomButton>("plus-button");
         _plus5Button = _frame.Q<CustomButton>("plus-5-button");
         _minus5Button = _frame.Q<CustomButton>("minus-5-button");
-
-        _pointsPlusContainer = _frame.Q<VisualElement>("points-plus-container");
-        _pointsMinusContainer = _frame.Q<VisualElement>("points-minus-container");
-
+        
         _pointsPlusContainer.AddToClassList(CommonUssClassNames.Invisible);
         _pointsMinusContainer.AddToClassList(CommonUssClassNames.Invisible);
         _authorityLabel.text = _authority.Points.ToString();
+        _startPoints = _authority.Points;
     }
 
     private void Start()
     {
+        ValidatePoints();
         ValidateText();
         ValidateClasses();
     }
@@ -109,6 +117,8 @@ public class CasualPlayerView : MonoBehaviour
         _pointsPlusLabel.text = _plusCounter.ToString();
 
         AddTimeDelay(ref _plusPointsTime);
+
+        ValidatePoints();
         ValidateText();
         ValidateClasses();
 
@@ -138,6 +148,8 @@ public class CasualPlayerView : MonoBehaviour
         _authority.ValidatePoints();
 
         AddTimeDelay(ref _minusPointsTime);
+
+        ValidatePoints();
         ValidateText();
         ValidateClasses();
 
@@ -155,25 +167,7 @@ public class CasualPlayerView : MonoBehaviour
         _isMinus5ButtonClicked = true;
         OnMinusButtonClicked();
     }
-
-    private void ValidateClasses()
-    {
-        _authorityImage.EnableInClassList(CommonUssClassNames.ImageAuthorityRed, _isPointsZero);
-        _authorityLabel.EnableInClassList(CommonUssClassNames.LabelAuthoritySizeSmall, _isPointsLong);
-    }
-
-    private void ValidateText()
-    {
-        if (_authority.Points <= 0)
-            _isPointsZero = true;
-        else
-            _isPointsZero = false;
-        if (_authority.Points > 99 || _authority.Points < -9)
-            _isPointsLong = true;
-        else
-            _isPointsLong = false;
-    }
-
+    
     private void AddTimeDelay(ref float time)
     {
         time += TimeDelay;
@@ -194,6 +188,58 @@ public class CasualPlayerView : MonoBehaviour
         {
             _plusCounter = 0;
             _pointsPlusContainer.AddToClassList(CommonUssClassNames.Invisible);
+        }
+    }
+    
+    private void ValidateClasses()
+    {
+        _authorityImage.EnableInClassList(CommonUssClassNames.ImageAuthorityOrange, _isPointsLessHalf);
+        _authorityImage.EnableInClassList(CommonUssClassNames.ImageAuthorityRed, _isPointsLessQuarter);
+        _authorityImage.EnableInClassList(CommonUssClassNames.ImageAuthorityBlack, _isPointsLessZero);
+        _authorityImage.EnableInClassList(CommonUssClassNames.ImageAuthorityGreen, _isPointsMoreZero);
+        _authorityLabel.EnableInClassList(CommonUssClassNames.LabelAuthoritySizeSmall, _isPointsLong);
+    }
+
+    private void ValidateText()
+    {
+        if (_authority.Points > 99 || _authority.Points < -9)
+            _isPointsLong = true;
+        else
+            _isPointsLong = false;
+    }
+
+    private void ValidatePoints()
+    {
+        if (_authority.Points > _startPoints / 2)
+        {
+            _isPointsMoreZero = true;
+            _isPointsLessZero = false;
+            _isPointsLessQuarter = false;
+            _isPointsLessHalf = false;
+        }
+
+        if (_authority.Points <= _startPoints / 2)
+        {
+            _isPointsMoreZero = false;
+            _isPointsLessZero = false;
+            _isPointsLessQuarter = false;
+            _isPointsLessHalf = true;
+        }
+
+        if (_authority.Points <= _startPoints / 4)
+        {
+            _isPointsMoreZero = false;
+            _isPointsLessZero = false;
+            _isPointsLessQuarter = true;
+            _isPointsLessHalf = false;
+        }
+
+        if (_authority.Points <= 0)
+        {
+            _isPointsMoreZero = false;
+            _isPointsLessZero = true;
+            _isPointsLessQuarter = false;
+            _isPointsLessHalf = false;
         }
     }
 }

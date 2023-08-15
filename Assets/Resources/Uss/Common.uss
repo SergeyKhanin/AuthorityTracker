@@ -40,7 +40,7 @@
 }
 
 :root {
-    --opacity-icon-tournament: 0.025;
+    --opacity-icon-tournament: 0.2;
     --opacity-icon-casual: 0.025;
 }
 
@@ -76,6 +76,8 @@
 :root {
     --ic-authority-color-green: resource('Icons/IC_Authority_Color-green');
     --ic-authority-color-red: resource('Icons/IC_Authority_Color-red');
+    --ic-authority-color-orange: resource('Icons/IC_Authority_Color-orange');
+    --ic-authority-color-black: resource('Icons/IC_Authority_Color-black');
     --ic-authority-small-color-green: resource('Icons/IC_Authority-small_Color-green');
     --ic-authority-small-x1-color-green: resource('Icons/IC_Authority-small-x1_Color-green');
     --ic-authority-small-x5-color-green: resource('Icons/IC_Authority-small-x5_Color-green');

@@ -5,6 +5,7 @@ using UnityEngine.UIElements;
 public class MainMenuView : MonoBehaviour
 {
     private Authority _authority;
+    
     private int _pointsLimit;
     private int _playersAmount;
     private bool _hasOnePlayer;
