@@ -44,7 +44,7 @@ public class TournamentPlayerView : MonoBehaviour
         _authority = new Authority();
 
         _frame = _root.Q<VisualElement>(_playerName);
-
+        
         _authorityImage = _frame.Q<VisualElement>("authority-image");
         _iconPlus = _frame.Q<VisualElement>("icon-plus");
         _iconMinus = _frame.Q<VisualElement>("icon-minus");

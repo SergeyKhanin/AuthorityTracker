@@ -43,19 +43,20 @@ public class CasualPlayerView : MonoBehaviour
         _authority = new Authority();
 
         _frame = _root.Q<VisualElement>(_playerName);
+        
+        _authorityImage = _frame.Q<VisualElement>("authority-image");
+        _pointsPlusContainer = _frame.Q<VisualElement>("points-plus-container");
+        _pointsMinusContainer = _frame.Q<VisualElement>("points-minus-container");
+        
         _authorityLabel = _frame.Q<CustomLabel>("authority-label");
         _pointsPlusLabel = _frame.Q<CustomLabel>("points-plus-label");
         _pointsMinusLabel = _frame.Q<CustomLabel>("points-minus-label");
-        _authorityImage = _frame.Q<VisualElement>("authority-image");
 
         _minusButton = _frame.Q<CustomButton>("minus-button");
         _plusButton = _frame.Q<CustomButton>("plus-button");
         _plus5Button = _frame.Q<CustomButton>("plus-5-button");
         _minus5Button = _frame.Q<CustomButton>("minus-5-button");
-
-        _pointsPlusContainer = _frame.Q<VisualElement>("points-plus-container");
-        _pointsMinusContainer = _frame.Q<VisualElement>("points-minus-container");
-
+        
         _pointsPlusContainer.AddToClassList(CommonUssClassNames.Invisible);
         _pointsMinusContainer.AddToClassList(CommonUssClassNames.Invisible);
         _authorityLabel.text = _authority.Points.ToString();
