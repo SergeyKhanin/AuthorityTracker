@@ -15,10 +15,11 @@ public class CasualPlayerView : MonoBehaviour
     private int _startPoints;
     private float _plusPointsTime;
     private float _minusPointsTime;
-    private bool _isPointsZero;
-    private bool _isPointsLong;
     private bool _isPlus5ButtonClicked;
     private bool _isMinus5ButtonClicked;
+    private bool _isPointsLong;
+    private bool _isPointsLessZero;
+    private bool _isPointsMoreZero;
     private bool _isPointsLessHalf;
     private bool _isPointsLessQuarter;
 
@@ -165,32 +166,41 @@ public class CasualPlayerView : MonoBehaviour
     {
         _authorityImage.EnableInClassList(CommonUssClassNames.ImageAuthorityOrange, _isPointsLessHalf);
         _authorityImage.EnableInClassList(CommonUssClassNames.ImageAuthorityRed, _isPointsLessQuarter);
-        _authorityImage.EnableInClassList(CommonUssClassNames.ImageAuthorityBlack, _isPointsZero);
+        _authorityImage.EnableInClassList(CommonUssClassNames.ImageAuthorityBlack, _isPointsLessZero);
+        _authorityImage.EnableInClassList(CommonUssClassNames.ImageAuthorityGreen, _isPointsMoreZero);
         _authorityLabel.EnableInClassList(CommonUssClassNames.LabelAuthoritySizeSmall, _isPointsLong);
     }
 
     private void ValidateText()
     {
+        if (_authority.Points > _startPoints / 2)
+        {
+            _isPointsMoreZero = true;
+            _isPointsLessZero = false;
+            _isPointsLessQuarter = false;
+            _isPointsLessHalf = false;
+        }
+
         if (_authority.Points <= _startPoints / 2)
         {
-            _isPointsZero = false;
+            _isPointsMoreZero = false;
+            _isPointsLessZero = false;
             _isPointsLessQuarter = false;
             _isPointsLessHalf = true;
         }
 
-        if (_authority.Points > _startPoints / 2)
-            _isPointsLessHalf = false;
-
         if (_authority.Points <= _startPoints / 4)
         {
-            _isPointsZero = false;
+            _isPointsMoreZero = false;
+            _isPointsLessZero = false;
             _isPointsLessQuarter = true;
             _isPointsLessHalf = false;
         }
 
         if (_authority.Points <= 0)
         {
-            _isPointsZero = true;
+            _isPointsMoreZero = false;
+            _isPointsLessZero = true;
             _isPointsLessQuarter = false;
             _isPointsLessHalf = false;
         }
