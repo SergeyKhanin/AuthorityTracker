@@ -69,8 +69,11 @@
 
 :root {
     --im-main-menu-frame: resource('Images/IM_Menu-frame_Color');
-    --im-game-frame: resource('Images/IM_Game-frame_Color');
     --im-pause-frame: resource('Images/IM_Pause-frame_Color');
+    --im-game-frame: resource('Images/IM_Game-frame_Color');
+    --im-game-1-frame: resource('Images/IM_Game-frame-1_Color');
+    --im-game-2-frame: resource('Images/IM_Game-frame-2_Color');
+    --im-game-3-frame: resource('Images/IM_Game-frame-3_Color');
 }
 
 :root {
