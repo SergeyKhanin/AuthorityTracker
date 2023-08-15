@@ -33,6 +33,7 @@ public class CasualPlayerView : MonoBehaviour
     private CustomButton _plus5Button;
     private CustomButton _minus5Button;
     private VisualElement _pointsPlusContainer;
+    private VisualElement _pointsIconsContainer;
     private VisualElement _pointsMinusContainer;
     private VisualElement _authorityImage;
 
@@ -45,6 +46,7 @@ public class CasualPlayerView : MonoBehaviour
         _frame = _root.Q<VisualElement>(_playerName);
         
         _authorityImage = _frame.Q<VisualElement>("authority-image");
+        _pointsIconsContainer = _frame.Q<VisualElement>("points-icons-container");
         _pointsPlusContainer = _frame.Q<VisualElement>("points-plus-container");
         _pointsMinusContainer = _frame.Q<VisualElement>("points-minus-container");
         
@@ -61,16 +63,6 @@ public class CasualPlayerView : MonoBehaviour
         _pointsMinusContainer.AddToClassList(CommonUssClassNames.Invisible);
         _authorityLabel.text = _authority.Points.ToString();
         _startPoints = _authority.Points;
-
-        if (PlayerPrefs.HasKey("IconOpacity"))
-        {
-            PlayerPrefs.GetFloat("IconOpacity");
-        }
-        else
-        {
-            
-        }
-
     }
 
     private void Start()
@@ -78,8 +70,9 @@ public class CasualPlayerView : MonoBehaviour
         ValidatePoints();
         ValidateText();
         ValidateClasses();
+        SetPointsIconsOpacityValue();
     }
-
+    
     private void Update()
     {
         _plusPointsTime -= Time.deltaTime;
@@ -251,5 +244,12 @@ public class CasualPlayerView : MonoBehaviour
             _isPointsLessQuarter = false;
             _isPointsLessHalf = false;
         }
+    }
+    private void SetPointsIconsOpacityValue()
+    {
+        if (PlayerPrefs.HasKey("PointsIconsOpacity"))
+            _pointsIconsContainer.style.opacity = new StyleFloat(PlayerPrefs.GetFloat("PointsIconsOpacity"));
+        else
+            _pointsIconsContainer.style.opacity = new StyleFloat(0.1f);
     }
 }

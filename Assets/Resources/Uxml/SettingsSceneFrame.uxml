@@ -2,7 +2,8 @@
          engine="UnityEngine.UIElements" editor="UnityEditor.UIElements"
          noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:VisualElement name="settings-frame" picking-mode="Ignore" class="frame frame__settings">
-        <ui:Slider name="icon-opacity-slider" picking-mode="Ignore" value="0" high-value="100" style="width: 66%; margin-bottom: 276px;" />
+        <ui:VisualElement name="icon-opacity-example" picking-mode="Ignore" class="ic ic-vr ic-authority__small__color-green" />
+        <ui:Slider name="icon-opacity-slider" picking-mode="Ignore" value="0" high-value="1" style="width: 66%; margin-bottom: 276px;" />
         <CustomButton name="back-button" text="BACK" class="btn btn-rectangle ic ic-btn-rectangle__color-green" />
     </ui:VisualElement>
 </ui:UXML>

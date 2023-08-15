@@ -5,26 +5,43 @@ using UnityEngine.UIElements;
 public class SettingsView : MonoBehaviour
 {
     private VisualElement _root;
+    private VisualElement _iconOpacityExample;
     private CustomButton _backButton;
     private Slider _iconOpacitySlider;
 
     private void Awake()
     {
         _root = GetComponent<UIDocument>().rootVisualElement;
+        _iconOpacityExample = _root.Q<VisualElement>("icon-opacity-example");
         _backButton = _root.Q<CustomButton>("back-button");
         _iconOpacitySlider = _root.Q<Slider>("icon-opacity-slider");
 
         _iconOpacitySlider.RegisterValueChangedCallback(OnIconOpacitySliderChanged);
     }
 
+    private void Start() => SetPointsIconsOpacityValue();
+
+    private void SetPointsIconsOpacityValue()
+    {
+        if (PlayerPrefs.HasKey("PointsIconsOpacity"))
+            _iconOpacitySlider.value = PlayerPrefs.GetFloat("PointsIconsOpacity");
+        else
+            _iconOpacitySlider.value = 0.1f;
+    }
+
     private void OnEnable() => _backButton.clicked += OnBackButtonClicked;
     private void OnDisable() => _backButton.clicked -= OnBackButtonClicked;
     private void OnBackButtonClicked() => SceneManager.LoadScene(CommonScenesList.MainMenuScene);
-    private void OnIconOpacitySliderChanged(ChangeEvent<float> evt) => SaveIconOpacity(evt.newValue);
 
-    private static void SaveIconOpacity(float value)
+    private void OnIconOpacitySliderChanged(ChangeEvent<float> evt)
     {
-        PlayerPrefs.SetFloat("IconOpacity", value);
+        SavePointsIconsOpacityValue(evt.newValue);
+        _iconOpacityExample.style.opacity = evt.newValue;
+    }
+
+    private static void SavePointsIconsOpacityValue(float value)
+    {
+        PlayerPrefs.SetFloat("PointsIconsOpacity", value);
         PlayerPrefs.Save();
     }
 }

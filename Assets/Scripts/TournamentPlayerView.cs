@@ -16,6 +16,7 @@ public class TournamentPlayerView : MonoBehaviour
     private VisualElement _authorityImage;
     private VisualElement _iconPlus;
     private VisualElement _iconMinus;
+    private VisualElement _pointsIconsContainer;
     private CustomButton _minusButton;
     private CustomButton _plusButton;
     private CustomButton _applyButton;
@@ -46,6 +47,7 @@ public class TournamentPlayerView : MonoBehaviour
         _frame = _root.Q<VisualElement>(_playerName);
         
         _authorityImage = _frame.Q<VisualElement>("authority-image");
+        _pointsIconsContainer = _frame.Q<VisualElement>("points-icons-container");
         _iconPlus = _frame.Q<VisualElement>("icon-plus");
         _iconMinus = _frame.Q<VisualElement>("icon-minus");
 
@@ -71,6 +73,7 @@ public class TournamentPlayerView : MonoBehaviour
         ValidatePoints();
         ValidateText();
         ValidateClasses();
+        SetPointsIconsOpacityValue();
     }
 
     private void OnEnable()
@@ -245,5 +248,13 @@ public class TournamentPlayerView : MonoBehaviour
             _isPointsLessQuarter = false;
             _isPointsLessHalf = false;
         }
+    }
+    
+    private void SetPointsIconsOpacityValue()
+    {
+        if (PlayerPrefs.HasKey("PointsIconsOpacity"))
+            _pointsIconsContainer.style.opacity = new StyleFloat(PlayerPrefs.GetFloat("PointsIconsOpacity"));
+        else
+            _pointsIconsContainer.style.opacity = new StyleFloat(0.1f);
     }
 }
