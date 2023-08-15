@@ -9,7 +9,7 @@ public class CasualPlayerView : MonoBehaviour
     [SerializeField] private PlayersRoster.PlayersList playersList;
 
     private Authority _authority;
-    
+
     private int _plusCounter;
     private int _minusCounter;
     private int _startPoints;
@@ -64,6 +64,7 @@ public class CasualPlayerView : MonoBehaviour
 
     private void Start()
     {
+        ValidatePoints();
         ValidateText();
         ValidateClasses();
     }
@@ -115,6 +116,8 @@ public class CasualPlayerView : MonoBehaviour
         _pointsPlusLabel.text = _plusCounter.ToString();
 
         AddTimeDelay(ref _plusPointsTime);
+
+        ValidatePoints();
         ValidateText();
         ValidateClasses();
 
@@ -144,6 +147,8 @@ public class CasualPlayerView : MonoBehaviour
         _authority.ValidatePoints();
 
         AddTimeDelay(ref _minusPointsTime);
+
+        ValidatePoints();
         ValidateText();
         ValidateClasses();
 
@@ -161,7 +166,30 @@ public class CasualPlayerView : MonoBehaviour
         _isMinus5ButtonClicked = true;
         OnMinusButtonClicked();
     }
+    
+    private void AddTimeDelay(ref float time)
+    {
+        time += TimeDelay;
+    }
 
+    private void UpdateMinusPointsContainer()
+    {
+        if (_minusPointsTime < 0)
+        {
+            _minusCounter = 0;
+            _pointsMinusContainer.AddToClassList(CommonUssClassNames.Invisible);
+        }
+    }
+
+    private void UpdatePlusPointsContainer()
+    {
+        if (_plusPointsTime < 0)
+        {
+            _plusCounter = 0;
+            _pointsPlusContainer.AddToClassList(CommonUssClassNames.Invisible);
+        }
+    }
+    
     private void ValidateClasses()
     {
         _authorityImage.EnableInClassList(CommonUssClassNames.ImageAuthorityOrange, _isPointsLessHalf);
@@ -172,6 +200,14 @@ public class CasualPlayerView : MonoBehaviour
     }
 
     private void ValidateText()
+    {
+        if (_authority.Points > 99 || _authority.Points < -9)
+            _isPointsLong = true;
+        else
+            _isPointsLong = false;
+    }
+
+    private void ValidatePoints()
     {
         if (_authority.Points > _startPoints / 2)
         {
@@ -203,34 +239,6 @@ public class CasualPlayerView : MonoBehaviour
             _isPointsLessZero = true;
             _isPointsLessQuarter = false;
             _isPointsLessHalf = false;
-        }
-
-        if (_authority.Points > 99 || _authority.Points < -9)
-            _isPointsLong = true;
-        else
-            _isPointsLong = false;
-    }
-
-    private void AddTimeDelay(ref float time)
-    {
-        time += TimeDelay;
-    }
-
-    private void UpdateMinusPointsContainer()
-    {
-        if (_minusPointsTime < 0)
-        {
-            _minusCounter = 0;
-            _pointsMinusContainer.AddToClassList(CommonUssClassNames.Invisible);
-        }
-    }
-
-    private void UpdatePlusPointsContainer()
-    {
-        if (_plusPointsTime < 0)
-        {
-            _plusCounter = 0;
-            _pointsPlusContainer.AddToClassList(CommonUssClassNames.Invisible);
         }
     }
 }

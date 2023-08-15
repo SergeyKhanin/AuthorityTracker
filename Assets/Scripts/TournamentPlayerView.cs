@@ -68,6 +68,7 @@ public class TournamentPlayerView : MonoBehaviour
 
     private void Start()
     {
+        ValidatePoints();
         ValidateText();
         ValidateClasses();
     }
@@ -129,6 +130,7 @@ public class TournamentPlayerView : MonoBehaviour
         _authority.AddCustomPoints(Counter);
         _authority.ValidatePoints();
 
+        ValidatePoints();
         ValidateText();
         ValidateClasses();
 
@@ -204,6 +206,14 @@ public class TournamentPlayerView : MonoBehaviour
 
     private void ValidateText()
     {
+        if (_authority.Points > 99 || _authority.Points < -9)
+            _isPointsLong = true;
+        else
+            _isPointsLong = false;
+    }
+
+    private void ValidatePoints()
+    {
         if (_authority.Points > _startPoints / 2)
         {
             _isPointsMoreZero = true;
@@ -235,10 +245,5 @@ public class TournamentPlayerView : MonoBehaviour
             _isPointsLessQuarter = false;
             _isPointsLessHalf = false;
         }
-        
-        if (_authority.Points > 99 || _authority.Points < -9)
-            _isPointsLong = true;
-        else
-            _isPointsLong = false;
     }
 }
