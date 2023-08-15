@@ -27,10 +27,6 @@
     height: var(--base-icon-small-size);
 }
 
-.ic-opacity {
-    opacity: var(--opacity-icon);
-}
-
 .ic-btn-square__color-green {
     background-image: var(--ic-btn-square-color-green);
 }

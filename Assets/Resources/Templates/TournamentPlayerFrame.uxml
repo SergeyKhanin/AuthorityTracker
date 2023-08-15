@@ -28,21 +28,21 @@
             <CustomLabel name="points-label" text="99" picking-mode="Ignore" class="label label__points label__authority label__green" />
         </ui:VisualElement>
     </ui:VisualElement>
-    <ui:VisualElement name="points" picking-mode="Ignore" class="absolute flex-fill size-100">
+    <ui:VisualElement name="points-icons-container" picking-mode="Ignore" class="absolute flex-fill size-100">
         <ui:VisualElement name="authority-points-bottom" picking-mode="Ignore" class="flex-fill size-100 flex-row justify-content-between justify-content-start">
             <ui:VisualElement name="container" picking-mode="Ignore" class="tournament__icons-container">
-                <ui:VisualElement name="icon" picking-mode="Ignore" class="ic ic-md ic-combat__small-10__color-red ic-opacity rotate-90" />
+                <ui:VisualElement name="icon" picking-mode="Ignore" class="ic ic-md ic-combat__small-10__color-red rotate-90" />
             </ui:VisualElement>
             <ui:VisualElement name="container" picking-mode="Ignore" class="tournament__icons-container">
-                <ui:VisualElement name="icon" picking-mode="Ignore" class="ic ic-vr ic-authority__small-5__color-green ic-opacity rotate-90" />
+                <ui:VisualElement name="icon" picking-mode="Ignore" class="ic ic-vr ic-authority__small-5__color-green rotate-90" />
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="authority-points-top" picking-mode="Ignore" class="flex-fill size-100 flex-row justify-content-between justify-content-end">
             <ui:VisualElement name="container" picking-mode="Ignore" class="tournament__icons-container">
-                <ui:VisualElement name="icon" picking-mode="Ignore" class="ic ic-md ic-combat__small-1__color-red ic-opacity rotate-90" />
+                <ui:VisualElement name="icon" picking-mode="Ignore" class="ic ic-md ic-combat__small-1__color-red rotate-90" />
             </ui:VisualElement>
             <ui:VisualElement name="container" picking-mode="Ignore" class="tournament__icons-container">
-                <ui:VisualElement name="icon" picking-mode="Ignore" class="ic ic-vr ic-authority__small-1__color-green ic-opacity rotate-90" />
+                <ui:VisualElement name="icon" picking-mode="Ignore" class="ic ic-vr ic-authority__small-1__color-green rotate-90" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>

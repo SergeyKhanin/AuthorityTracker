@@ -40,10 +40,6 @@
 }
 
 :root {
-    --opacity-icon: 0.01;
-}
-
-:root {
     --btn-points-icon: 96px;
     --btn-square-size: 180px;
     --btn-rectangle-height: 234px;

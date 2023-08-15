@@ -61,6 +61,16 @@ public class CasualPlayerView : MonoBehaviour
         _pointsMinusContainer.AddToClassList(CommonUssClassNames.Invisible);
         _authorityLabel.text = _authority.Points.ToString();
         _startPoints = _authority.Points;
+
+        if (PlayerPrefs.HasKey("IconOpacity"))
+        {
+            PlayerPrefs.GetFloat("IconOpacity");
+        }
+        else
+        {
+            
+        }
+
     }
 
     private void Start()

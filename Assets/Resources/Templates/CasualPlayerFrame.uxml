@@ -32,18 +32,18 @@
     <ui:VisualElement name="points-icons-container" picking-mode="Ignore" class="absolute flex-fill size-100">
         <ui:VisualElement name="authority-points-x1" picking-mode="Ignore" class="flex-fill size-100 flex-row justify-content-between">
             <ui:VisualElement name="container" picking-mode="Ignore" class="casual__icons-container">
-                <ui:VisualElement name="icon" picking-mode="Ignore" class="ic ic-vr ic-authority__small-5__color-green ic-opacity" />
+                <ui:VisualElement name="icon" picking-mode="Ignore" class="ic ic-vr ic-authority__small-5__color-green" />
             </ui:VisualElement>
             <ui:VisualElement name="container" picking-mode="Ignore" class="casual__icons-container">
-                <ui:VisualElement name="icon" picking-mode="Ignore" class="ic ic-vr ic-authority__small-1__color-green ic-opacity" />
+                <ui:VisualElement name="icon" picking-mode="Ignore" class="ic ic-vr ic-authority__small-1__color-green" />
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="authority-points-x5" picking-mode="Ignore" class="flex-fill size-100 flex-row justify-content-between justify-content-end">
             <ui:VisualElement name="container" picking-mode="Ignore" class="casual__icons-container">
-                <ui:VisualElement name="icon" picking-mode="Ignore" class="ic ic-md ic-combat__small-5__color-red ic-opacity" />
+                <ui:VisualElement name="icon" picking-mode="Ignore" class="ic ic-md ic-combat__small-5__color-red" />
             </ui:VisualElement>
             <ui:VisualElement name="container" picking-mode="Ignore" class="casual__icons-container">
-                <ui:VisualElement name="icon" picking-mode="Ignore" class="ic ic-md ic-combat__small-1__color-red ic-opacity" />
+                <ui:VisualElement name="icon" picking-mode="Ignore" class="ic ic-md ic-combat__small-1__color-red" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
