@@ -67,8 +67,16 @@
     background-image: var(--ic-authority-color-green);
 }
 
+.ic-authority__big__color-orange {
+    background-image: var(--ic-authority-color-orange);
+}
+
 .ic-authority__big__color-red {
     background-image: var(--ic-authority-color-red);
+}
+
+.ic-authority__big__color-black {
+    background-image: var(--ic-authority-color-black);
 }
 
 .ic-gear__color-green {

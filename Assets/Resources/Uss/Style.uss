@@ -29,12 +29,13 @@
 .label {
     font-size: var(--font-size-common);
     -unity-text-align: middle-center;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .label__width-limit {
     max-width: var(--base-authority-text-with);
-    white-space: nowrap;
-    overflow: hidden;
+
 }
 
 .label__shadow {

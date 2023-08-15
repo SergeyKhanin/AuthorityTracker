@@ -16,23 +16,25 @@ public class TournamentPlayerView : MonoBehaviour
     private VisualElement _authorityImage;
     private VisualElement _iconPlus;
     private VisualElement _iconMinus;
-
     private CustomButton _minusButton;
     private CustomButton _plusButton;
     private CustomButton _applyButton;
     private CustomButton _clearButton;
     private CustomButton _plus5Button;
     private CustomButton _minus10Button;
-
     private CustomLabel _authorityLabel;
     private CustomLabel _pointsLabel;
     private CustomLabel _pointsMinusLabel;
 
     private string _playerName;
+    private int _startPoints;
     private bool _isPlus5ButtonClicked;
     private bool _isMinus10ButtonClicked;
-    private bool _isPointsZero;
     private bool _isPointsLong;
+    private bool _isPointsLessZero;
+    private bool _isPointsMoreZero;
+    private bool _isPointsLessHalf;
+    private bool _isPointsLessQuarter;
 
     private void Awake()
     {
@@ -42,7 +44,7 @@ public class TournamentPlayerView : MonoBehaviour
         _authority = new Authority();
 
         _frame = _root.Q<VisualElement>(_playerName);
-
+        
         _authorityImage = _frame.Q<VisualElement>("authority-image");
         _iconPlus = _frame.Q<VisualElement>("icon-plus");
         _iconMinus = _frame.Q<VisualElement>("icon-minus");
@@ -61,6 +63,14 @@ public class TournamentPlayerView : MonoBehaviour
         _iconPlus.AddToClassList(CommonUssClassNames.Hide);
         _iconMinus.AddToClassList(CommonUssClassNames.Hide);
         _authorityLabel.text = _authority.Points.ToString();
+        _startPoints = _authority.Points;
+    }
+
+    private void Start()
+    {
+        ValidatePoints();
+        ValidateText();
+        ValidateClasses();
     }
 
     private void OnEnable()
@@ -120,6 +130,7 @@ public class TournamentPlayerView : MonoBehaviour
         _authority.AddCustomPoints(Counter);
         _authority.ValidatePoints();
 
+        ValidatePoints();
         ValidateText();
         ValidateClasses();
 
@@ -186,19 +197,53 @@ public class TournamentPlayerView : MonoBehaviour
 
     private void ValidateClasses()
     {
-        _authorityImage.EnableInClassList(CommonUssClassNames.ImageAuthorityRed, _isPointsZero);
+        _authorityImage.EnableInClassList(CommonUssClassNames.ImageAuthorityOrange, _isPointsLessHalf);
+        _authorityImage.EnableInClassList(CommonUssClassNames.ImageAuthorityRed, _isPointsLessQuarter);
+        _authorityImage.EnableInClassList(CommonUssClassNames.ImageAuthorityBlack, _isPointsLessZero);
+        _authorityImage.EnableInClassList(CommonUssClassNames.ImageAuthorityGreen, _isPointsMoreZero);
         _authorityLabel.EnableInClassList(CommonUssClassNames.LabelAuthoritySizeSmall, _isPointsLong);
     }
 
     private void ValidateText()
     {
-        if (_authority.Points <= 0)
-            _isPointsZero = true;
-        else
-            _isPointsZero = false;
         if (_authority.Points > 99 || _authority.Points < -9)
             _isPointsLong = true;
         else
             _isPointsLong = false;
+    }
+
+    private void ValidatePoints()
+    {
+        if (_authority.Points > _startPoints / 2)
+        {
+            _isPointsMoreZero = true;
+            _isPointsLessZero = false;
+            _isPointsLessQuarter = false;
+            _isPointsLessHalf = false;
+        }
+
+        if (_authority.Points <= _startPoints / 2)
+        {
+            _isPointsMoreZero = false;
+            _isPointsLessZero = false;
+            _isPointsLessQuarter = false;
+            _isPointsLessHalf = true;
+        }
+
+        if (_authority.Points <= _startPoints / 4)
+        {
+            _isPointsMoreZero = false;
+            _isPointsLessZero = false;
+            _isPointsLessQuarter = true;
+            _isPointsLessHalf = false;
+        }
+
+        if (_authority.Points <= 0)
+        {
+            _isPointsMoreZero = false;
+            _isPointsLessZero = true;
+            _isPointsLessQuarter = false;
+            _isPointsLessHalf = false;
+        }
     }
 }
