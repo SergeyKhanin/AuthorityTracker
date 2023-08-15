@@ -29,7 +29,7 @@ public class GameView : MonoBehaviour
         _mainMenuButton = _root.Q<CustomButton>("main-menu-button");
     }
 
-    private void Start() => SetBackground();
+    private void Start() => SetBackgroundImage();
 
     private void OnEnable()
     {
@@ -67,7 +67,7 @@ public class GameView : MonoBehaviour
         _settingsFrame.EnableInClassList(CommonUssClassNames.Hide, !isEnabled);
     }
 
-    private void SetBackground()
+    private void SetBackgroundImage()
     {
         var random = new Random();
         var index = random.Next(0, 4);
