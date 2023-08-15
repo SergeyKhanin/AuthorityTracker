@@ -27,12 +27,8 @@
     height: var(--base-icon-small-size);
 }
 
-.ic-opacity__tournament {
-    opacity: var(--opacity-icon-tournament);
-}
-
-.ic-opacity__casual {
-    opacity: var(--opacity-icon-casual);
+.ic-opacity {
+    opacity: var(--opacity-icon);
 }
 
 .ic-btn-square__color-green {
