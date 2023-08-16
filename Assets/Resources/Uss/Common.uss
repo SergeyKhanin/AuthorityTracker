@@ -40,11 +40,6 @@
 }
 
 :root {
-    --opacity-icon-tournament: 0.2;
-    --opacity-icon-casual: 0.025;
-}
-
-:root {
     --btn-points-icon: 96px;
     --btn-square-size: 180px;
     --btn-rectangle-height: 234px;
@@ -98,6 +93,8 @@
     --ic-btn-rectangle-color-gray: resource('Icons/IC_Button-rectangle_Color-gray');
     --ic-btn-rectangle-small-color-gray: resource('Icons/IC_Button-rectangle-small_Color-gray');
     --ic-btn-rectangle-small-color-green: resource('Icons/IC_Button-rectangle-small_Color-green');
+    --ic-slider-dragger-color-green: resource('Icons/IC_Slider-Dragger_Color-green');
+    --ic-slider-tracker-color-green: resource('Icons/IC_Slider-Tracker_Color-green');
 }
 
 

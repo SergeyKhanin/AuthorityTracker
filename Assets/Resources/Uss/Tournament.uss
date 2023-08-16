@@ -43,7 +43,7 @@
     flex-direction: column-reverse;
 }
 
-.tournament__reverse-points #points {
+.tournament__reverse-points #points-icons-container {
     flex-direction: column-reverse;
 }
 
