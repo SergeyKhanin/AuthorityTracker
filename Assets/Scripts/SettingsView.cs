@@ -21,7 +21,13 @@ public class SettingsView : MonoBehaviour
         _iconOpacitySlider.RegisterValueChangedCallback(OnIconOpacitySliderChanged);
     }
 
-    private void Start() => SetPointsIconsOpacityValue();
+    private void Start()
+    {
+        SetPointsIconsOpacityValue();
+        SetIconsOpacityStyle();
+    }
+
+    private void SetIconsOpacityStyle() => _iconOpacityExample.style.opacity = _iconOpacitySlider.value;
 
     private void SetPointsIconsOpacityValue()
     {
