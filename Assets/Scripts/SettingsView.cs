@@ -6,6 +6,7 @@ public class SettingsView : MonoBehaviour
 {
     private VisualElement _root;
     private VisualElement _iconOpacityExample;
+    private VisualElement _iconOpacitySliderRoot;
     private CustomButton _backButton;
     private Slider _iconOpacitySlider;
 
@@ -13,8 +14,9 @@ public class SettingsView : MonoBehaviour
     {
         _root = GetComponent<UIDocument>().rootVisualElement;
         _iconOpacityExample = _root.Q<VisualElement>("icon-opacity-example");
+        _iconOpacitySliderRoot = _root.Q<VisualElement>("icon-opacity-slider");
         _backButton = _root.Q<CustomButton>("back-button");
-        _iconOpacitySlider = _root.Q<Slider>("icon-opacity-slider");
+        _iconOpacitySlider = _iconOpacitySliderRoot.Q<Slider>();
 
         _iconOpacitySlider.RegisterValueChangedCallback(OnIconOpacitySliderChanged);
     }

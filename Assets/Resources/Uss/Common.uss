@@ -93,6 +93,8 @@
     --ic-btn-rectangle-color-gray: resource('Icons/IC_Button-rectangle_Color-gray');
     --ic-btn-rectangle-small-color-gray: resource('Icons/IC_Button-rectangle-small_Color-gray');
     --ic-btn-rectangle-small-color-green: resource('Icons/IC_Button-rectangle-small_Color-green');
+    --ic-slider-dragger-color-green: resource('Icons/IC_Slider-Dragger_Color-green');
+    --ic-slider-tracker-color-green: resource('Icons/IC_Slider-Tracker_Color-green');
 }
 
 
