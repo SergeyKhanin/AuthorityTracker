@@ -52,4 +52,11 @@
 
 .frame__tools {
     position: absolute;
+    justify-content: center;
+    align-items: center;
+}
+
+.frame__dice {
+    justify-content: center;
+    align-items: center;
 }
