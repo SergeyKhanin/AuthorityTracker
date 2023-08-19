@@ -110,3 +110,27 @@
 .ic-authority__small-5__color-green {
     background-image: var(--ic-authority-small-x5-color-green);
 }
+
+.ic-die__color-green-1 {
+    background-image: var(--ic-die-color-green-1);
+}
+
+.ic-die__color-green-2 {
+    background-image: var(--ic-die-color-green-2);
+}
+
+.ic-die__color-green-3 {
+    background-image: var(--ic-die-color-green-3);
+}
+
+.ic-die__color-green-4 {
+    background-image: var(--ic-die-color-green-4);
+}
+
+.ic-die__color-green-5 {
+    background-image: var(--ic-die-color-green-5);
+}
+
+.ic-die__color-green-6 {
+    background-image: var(--ic-die-color-green-6);
+}
