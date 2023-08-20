@@ -111,6 +111,10 @@
     background-image: var(--ic-authority-small-x5-color-green);
 }
 
+.ic-update__color-gray {
+    background-image: var(--ic-update-color-gray);
+}
+
 .ic-die__color-green-1 {
     background-image: var(--ic-die-color-green-1);
 }
