@@ -138,3 +138,16 @@
 .ic-die__color-green-6 {
     background-image: var(--ic-die-color-green-6);
 }
+
+.ic-deck__color-green {
+    background-image: var(--ic-deck-color-green);
+}
+
+.ic-arrow-left__color-gray {
+    background-image: var(--ic-arrow-left-color-gray);
+}
+
+.ic-arrow-right__color-gray {
+    background-image: var(--ic-arrow-right-color-gray);
+}
+

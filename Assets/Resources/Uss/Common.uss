@@ -102,6 +102,9 @@
     --ic-die-color-green-4: resource('Icons/IC_Die_Color-green-4');
     --ic-die-color-green-5: resource('Icons/IC_Die_Color-green-5');
     --ic-die-color-green-6: resource('Icons/IC_Die_Color-green-6');
+    --ic-deck-color-green: resource('Icons/IC_Deck_Color-green');
+    --ic-arrow-left-color-gray: resource('Icons/IC_Arrow-left_Color-gray');
+    --ic-arrow-right-color-gray: resource('Icons/IC_Arrow-right_Color-gray');
 }
 
 
