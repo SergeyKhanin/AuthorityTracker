@@ -1,8 +1,9 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="DeckFrame" src="project://database/Assets/Resources/Templates/DeckFrame.uxml?fileID=9197481963319205126&amp;guid=dfe75d0f703dcca4dacf73328d2b4971&amp;type=3#DeckFrame" />
     <ui:Template name="DiceFrame" src="project://database/Assets/Resources/Templates/DiceFrame.uxml?fileID=9197481963319205126&amp;guid=df73a504b0c7dba478159dd00cdc90fd&amp;type=3#DiceFrame" />
     <Style src="project://database/Assets/Resources/Uss/Frames.uss?fileID=7433441132597879392&amp;guid=6a8e66e86c65e4f408b4bbb280cad650&amp;type=3#Frames" />
     <Style src="project://database/Assets/Resources/Uss/Utilities.uss?fileID=7433441132597879392&amp;guid=b6b8ff86f02818e43940a1c354d8873e&amp;type=3#Utilities" />
     <Style src="project://database/Assets/Resources/Uss/Icons.uss?fileID=7433441132597879392&amp;guid=876709081a3492642b5667db49455c6f&amp;type=3#Icons" />
-    <ui:Instance name="dice-frame" template="DiceFrame" picking-mode="Ignore" class="frame frame__dice" />
+    <ui:Instance template="DeckFrame" name="deck-frame" picking-mode="Ignore" class="frame frame__dice" />
     <ui:Instance name="dice-frame" template="DiceFrame" picking-mode="Ignore" class="frame frame__dice" />
 </ui:UXML>
