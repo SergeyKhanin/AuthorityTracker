@@ -29,6 +29,7 @@ public class TournamentPlayerView : MonoBehaviour
 
     private string _playerName;
     private int _startPoints;
+    private int _maxPoints;
     private bool _isPlus5ButtonClicked;
     private bool _isMinus10ButtonClicked;
     private bool _isPointsLong;
@@ -45,7 +46,7 @@ public class TournamentPlayerView : MonoBehaviour
         _authority = new Authority();
 
         _frame = _root.Q<VisualElement>(_playerName);
-        
+
         _authorityImage = _frame.Q<VisualElement>("authority-image");
         _pointsIconsContainer = _frame.Q<VisualElement>("points-icons-container");
         _iconPlus = _frame.Q<VisualElement>("icon-plus");
@@ -66,6 +67,7 @@ public class TournamentPlayerView : MonoBehaviour
         _iconMinus.AddToClassList(CommonUssClassNames.Hide);
         _authorityLabel.text = _authority.Points.ToString();
         _startPoints = _authority.Points;
+        _maxPoints = _startPoints;
     }
 
     private void Start()
@@ -217,7 +219,10 @@ public class TournamentPlayerView : MonoBehaviour
 
     private void ValidatePoints()
     {
-        if (_authority.Points > _startPoints / 2)
+        if (_maxPoints <= _authority.Points)
+            _maxPoints = _authority.Points;
+
+        if (_authority.Points > _maxPoints / 2)
         {
             _isPointsMoreZero = true;
             _isPointsLessZero = false;
@@ -225,7 +230,7 @@ public class TournamentPlayerView : MonoBehaviour
             _isPointsLessHalf = false;
         }
 
-        if (_authority.Points <= _startPoints / 2)
+        if (_authority.Points <= _maxPoints / 2)
         {
             _isPointsMoreZero = false;
             _isPointsLessZero = false;
@@ -233,7 +238,7 @@ public class TournamentPlayerView : MonoBehaviour
             _isPointsLessHalf = true;
         }
 
-        if (_authority.Points <= _startPoints / 4)
+        if (_authority.Points <= _maxPoints / 4)
         {
             _isPointsMoreZero = false;
             _isPointsLessZero = false;
@@ -249,7 +254,7 @@ public class TournamentPlayerView : MonoBehaviour
             _isPointsLessHalf = false;
         }
     }
-    
+
     private void SetPointsIconsOpacityValue()
     {
         if (PlayerPrefs.HasKey("PointsIconsOpacity"))
