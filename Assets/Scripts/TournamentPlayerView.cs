@@ -67,7 +67,7 @@ public class TournamentPlayerView : MonoBehaviour
         _iconMinus.AddToClassList(CommonUssClassNames.Hide);
 
         if (PlayerPrefs.HasKey(_playerName))
-            _authority.Points = PlayerPrefs.GetInt(_playerName);
+            _authority.SetPoints(PlayerPrefs.GetInt(_playerName));
 
         _authorityLabel.text = _authority.Points.ToString();
         _startPoints = _authority.Points;

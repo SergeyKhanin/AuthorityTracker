@@ -64,7 +64,7 @@ public class CasualPlayerView : MonoBehaviour
         _pointsMinusContainer.AddToClassList(CommonUssClassNames.Invisible);
 
         if (PlayerPrefs.HasKey(_playerName))
-            _authority.Points = PlayerPrefs.GetInt(_playerName);
+            _authority.SetPoints(PlayerPrefs.GetInt(_playerName));
 
         _authorityLabel.text = _authority.Points.ToString();
         _startPoints = _authority.Points;
