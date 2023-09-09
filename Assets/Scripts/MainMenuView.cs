@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -44,16 +43,16 @@ public class MainMenuView : MonoBehaviour
             _initialPointsIntegerField.value = PlayerPrefs.GetInt(CommonSaveParameters.InitialPoints);
         else
             _initialPointsIntegerField.value = _authority.Points;
-        
+
         _authority.SetPoints(_initialPointsIntegerField.value);
-        
+
         _initialPointsIntegerField.RegisterCallback<ChangeEvent<int>>(OnIntChangedEvent);
-        
+
         GetPlayersAmount();
         SetPlayersAmount();
         SetPlayersButtons();
     }
-    
+
     private void OnEnable()
     {
         _onePlayerButton.clicked += OnOnePlayerButtonClicked;
@@ -132,7 +131,7 @@ public class MainMenuView : MonoBehaviour
             _initialPointsIntegerField.value = 1;
         else
             _initialPointsIntegerField.value = value;
-        
+
         SaveInitialPoints(value);
         CheckFontSize(value);
     }
