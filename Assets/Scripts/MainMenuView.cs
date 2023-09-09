@@ -82,8 +82,8 @@ public class MainMenuView : MonoBehaviour
     {
         SavePlayersAmount(2);
         GetPlayersAmount();
-        SetPlayersAmount();
         GetStartPoints();
+        SetPlayersAmount();
 
         var isEnabled = _hasOnePlayer;
 
@@ -95,8 +95,8 @@ public class MainMenuView : MonoBehaviour
     {
         SavePlayersAmount(1);
         GetPlayersAmount();
-        SetPlayersAmount();
         GetStartPoints();
+        SetPlayersAmount();
 
         var isEnabled = _hasTwoPlayers;
 
