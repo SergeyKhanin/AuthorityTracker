@@ -132,8 +132,6 @@ public class MainMenuView : MonoBehaviour
             _initialPointsIntegerField.value = 1;
         else
             _initialPointsIntegerField.value = value;
-
-        Debug.Log("Hello");
         
         SaveInitialPoints(value);
         CheckFontSize(value);
