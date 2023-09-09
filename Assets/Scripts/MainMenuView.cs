@@ -44,14 +44,12 @@ public class MainMenuView : MonoBehaviour
         else
             _initialPointsIntegerField.value = _authority.Points;
 
-        _authority.SetPoints(_initialPointsIntegerField.value);
-
-        _initialPointsIntegerField.RegisterCallback<ChangeEvent<int>>(OnIntChangedEvent);
-
         GetPlayersAmount();
         SetPlayersAmount();
         SetPlayersButtons();
     }
+
+    private void Start() => _initialPointsIntegerField.RegisterCallback<ChangeEvent<int>>(OnIntChangedEvent);
 
     private void OnEnable()
     {
