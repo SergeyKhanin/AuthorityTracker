@@ -1,6 +1,4 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance"
-         engine="UnityEngine.UIElements" editor="UnityEditor.UIElements"
-         noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:Template name="Slider" src="project://database/Assets/Resources/Templates/Slider.uxml?fileID=9197481963319205126&amp;guid=3311b5c1543307e45aaacbc9767a5f0e&amp;type=3#Slider" />
     <ui:VisualElement name="settings-frame" picking-mode="Ignore" class="frame frame__settings">
         <ui:VisualElement name="icon-opacity-example" picking-mode="Ignore" class="ic ic-vr ic-authority__small__color-green" />
@@ -8,5 +6,6 @@
             <AttributeOverrides element-name="slider-label" text="ICONS OPACITY" />
         </ui:Instance>
         <CustomButton name="back-button" text="BACK" class="btn btn-rectangle ic ic-btn-rectangle__color-green" />
+        <CustomButton name="clear-settings-button" text="CLEAR SETTINGS" class="btn btn-rectangle ic ic-btn-rectangle__color-red" />
     </ui:VisualElement>
 </ui:UXML>

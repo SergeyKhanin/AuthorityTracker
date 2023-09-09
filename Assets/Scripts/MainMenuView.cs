@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -44,8 +45,10 @@ public class MainMenuView : MonoBehaviour
         else
             _initialPointsIntegerField.value = _authority.Points;
         
+        _authority.SetPoints(_initialPointsIntegerField.value);
+        
         _initialPointsIntegerField.RegisterCallback<ChangeEvent<int>>(OnIntChangedEvent);
-
+        
         GetPlayersAmount();
         SetPlayersAmount();
         SetPlayersButtons();
@@ -130,6 +133,8 @@ public class MainMenuView : MonoBehaviour
         else
             _initialPointsIntegerField.value = value;
 
+        Debug.Log("Hello");
+        
         SaveInitialPoints(value);
         CheckFontSize(value);
     }
