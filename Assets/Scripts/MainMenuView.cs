@@ -39,21 +39,18 @@ public class MainMenuView : MonoBehaviour
         _authority = new Authority();
         _pointsLimit = _authority.Limit;
 
+        if (PlayerPrefs.HasKey(CommonSaveParameters.InitialPoints))
+            _initialPointsIntegerField.value = PlayerPrefs.GetInt(CommonSaveParameters.InitialPoints);
+        else
+            _initialPointsIntegerField.value = _authority.Points;
+        
         _initialPointsIntegerField.RegisterCallback<ChangeEvent<int>>(OnIntChangedEvent);
 
         GetPlayersAmount();
         SetPlayersAmount();
         SetPlayersButtons();
     }
-
-    private void Start()
-    {
-        if (PlayerPrefs.HasKey(CommonSaveParameters.InitialPoints))
-            _initialPointsIntegerField.value = PlayerPrefs.GetInt(CommonSaveParameters.InitialPoints);
-        else
-            _initialPointsIntegerField.value = _authority.Points;
-    }
-
+    
     private void OnEnable()
     {
         _onePlayerButton.clicked += OnOnePlayerButtonClicked;

@@ -272,8 +272,7 @@ public class TournamentPlayerView : MonoBehaviour
     private void SetPointsIconsOpacityValue()
     {
         if (PlayerPrefs.HasKey(CommonSaveParameters.PointsIconsOpacity))
-            _pointsIconsContainer.style.opacity =
-                new StyleFloat(PlayerPrefs.GetFloat(CommonSaveParameters.PointsIconsOpacity));
+            _pointsIconsContainer.style.opacity = new StyleFloat(PlayerPrefs.GetFloat(CommonSaveParameters.PointsIconsOpacity));
         else
             _pointsIconsContainer.style.opacity = new StyleFloat(0.1f);
     }
