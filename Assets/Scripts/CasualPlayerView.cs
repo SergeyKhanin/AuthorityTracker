@@ -13,6 +13,7 @@ public class CasualPlayerView : MonoBehaviour
     private int _plusCounter;
     private int _minusCounter;
     private int _startPoints;
+    private int _maxPoints;
     private float _plusPointsTime;
     private float _minusPointsTime;
     private bool _isPlus5ButtonClicked;
@@ -63,6 +64,7 @@ public class CasualPlayerView : MonoBehaviour
         _pointsMinusContainer.AddToClassList(CommonUssClassNames.Invisible);
         _authorityLabel.text = _authority.Points.ToString();
         _startPoints = _authority.Points;
+        _maxPoints = _startPoints;
     }
 
     private void Start()
@@ -213,7 +215,10 @@ public class CasualPlayerView : MonoBehaviour
 
     private void ValidatePoints()
     {
-        if (_authority.Points > _startPoints / 2)
+        if (_maxPoints <= _authority.Points)
+            _maxPoints = _authority.Points;
+        
+        if (_authority.Points > _maxPoints / 2)
         {
             _isPointsMoreZero = true;
             _isPointsLessZero = false;
@@ -221,7 +226,7 @@ public class CasualPlayerView : MonoBehaviour
             _isPointsLessHalf = false;
         }
 
-        if (_authority.Points <= _startPoints / 2)
+        if (_authority.Points <= _maxPoints / 2)
         {
             _isPointsMoreZero = false;
             _isPointsLessZero = false;
@@ -229,7 +234,7 @@ public class CasualPlayerView : MonoBehaviour
             _isPointsLessHalf = true;
         }
 
-        if (_authority.Points <= _startPoints / 4)
+        if (_authority.Points <= _maxPoints / 4)
         {
             _isPointsMoreZero = false;
             _isPointsLessZero = false;
