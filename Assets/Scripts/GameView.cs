@@ -56,12 +56,12 @@ public class GameView : MonoBehaviour
 
     private void OnResetButtonClicked()
     {
-        var initialPoints = PlayerPrefs.GetInt("InitialPoints");
+        var initialPoints = PlayerPrefs.GetInt(CommonSaveParameters.InitialPoints);
 
-        PlayerPrefs.SetInt("player-1", initialPoints);
-        PlayerPrefs.SetInt("player-1_MaxPoints", initialPoints);
-        PlayerPrefs.SetInt("player-2", initialPoints);
-        PlayerPrefs.SetInt("player-2_MaxPoints", initialPoints);
+        PlayerPrefs.SetInt(CommonSaveParameters.Player1, initialPoints);
+        PlayerPrefs.SetInt(CommonSaveParameters.Player1MaxPoints, initialPoints);
+        PlayerPrefs.SetInt(CommonSaveParameters.Player2, initialPoints);
+        PlayerPrefs.SetInt(CommonSaveParameters.Player2MaxPoints, initialPoints);
         PlayerPrefs.Save();
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

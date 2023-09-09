@@ -31,8 +31,8 @@ public class SettingsView : MonoBehaviour
 
     private void SetPointsIconsOpacityValue()
     {
-        if (PlayerPrefs.HasKey("PointsIconsOpacity"))
-            _iconOpacitySlider.value = PlayerPrefs.GetFloat("PointsIconsOpacity");
+        if (PlayerPrefs.HasKey(CommonSaveParameters.PointsIconsOpacity))
+            _iconOpacitySlider.value = PlayerPrefs.GetFloat(CommonSaveParameters.PointsIconsOpacity);
         else
             _iconOpacitySlider.value = 0.1f;
     }
@@ -49,7 +49,7 @@ public class SettingsView : MonoBehaviour
 
     private static void SavePointsIconsOpacityValue(float value)
     {
-        PlayerPrefs.SetFloat("PointsIconsOpacity", value);
+        PlayerPrefs.SetFloat(CommonSaveParameters.PointsIconsOpacity, value);
         PlayerPrefs.Save();
     }
 }

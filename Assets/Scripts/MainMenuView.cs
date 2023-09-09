@@ -39,16 +39,19 @@ public class MainMenuView : MonoBehaviour
         _authority = new Authority();
         _pointsLimit = _authority.Limit;
 
-        if (PlayerPrefs.HasKey("InitialPoints"))
-            _initialPointsIntegerField.value = PlayerPrefs.GetInt("InitialPoints");
-        else
-            _initialPointsIntegerField.value = _authority.Points;
-
         _initialPointsIntegerField.RegisterCallback<ChangeEvent<int>>(OnIntChangedEvent);
 
         GetPlayersAmount();
         SetPlayersAmount();
         SetPlayersButtons();
+    }
+
+    private void Start()
+    {
+        if (PlayerPrefs.HasKey(CommonSaveParameters.InitialPoints))
+            _initialPointsIntegerField.value = PlayerPrefs.GetInt(CommonSaveParameters.InitialPoints);
+        else
+            _initialPointsIntegerField.value = _authority.Points;
     }
 
     private void OnEnable()
@@ -142,8 +145,8 @@ public class MainMenuView : MonoBehaviour
 
     private void GetPlayersAmount()
     {
-        if (PlayerPrefs.HasKey("PlayersAmount"))
-            _playersAmount = PlayerPrefs.GetInt("PlayersAmount");
+        if (PlayerPrefs.HasKey(CommonSaveParameters.PlayersAmount))
+            _playersAmount = PlayerPrefs.GetInt(CommonSaveParameters.PlayersAmount);
         else
             _playersAmount = 2;
     }
@@ -191,28 +194,28 @@ public class MainMenuView : MonoBehaviour
 
     private void SaveInitialPoints(int value)
     {
-        PlayerPrefs.SetInt("InitialPoints", value);
-        PlayerPrefs.SetInt("player-1", value);
-        PlayerPrefs.SetInt("player-1_MaxPoints", value);
-        PlayerPrefs.SetInt("player-2", value);
-        PlayerPrefs.SetInt("player-2_MaxPoints", value);
+        PlayerPrefs.SetInt(CommonSaveParameters.InitialPoints, value);
+        PlayerPrefs.SetInt(CommonSaveParameters.Player1, value);
+        PlayerPrefs.SetInt(CommonSaveParameters.Player1MaxPoints, value);
+        PlayerPrefs.SetInt(CommonSaveParameters.Player2, value);
+        PlayerPrefs.SetInt(CommonSaveParameters.Player2MaxPoints, value);
         PlayerPrefs.Save();
     }
 
     private void GetStartPoints()
     {
-        var initialPoints = PlayerPrefs.GetInt("InitialPoints");
+        var initialPoints = PlayerPrefs.GetInt(CommonSaveParameters.InitialPoints);
 
-        PlayerPrefs.SetInt("player-1", initialPoints);
-        PlayerPrefs.SetInt("player-1_MaxPoints", initialPoints);
-        PlayerPrefs.SetInt("player-2", initialPoints);
-        PlayerPrefs.SetInt("player-2_MaxPoints", initialPoints);
+        PlayerPrefs.SetInt(CommonSaveParameters.Player1, initialPoints);
+        PlayerPrefs.SetInt(CommonSaveParameters.Player1MaxPoints, initialPoints);
+        PlayerPrefs.SetInt(CommonSaveParameters.Player2, initialPoints);
+        PlayerPrefs.SetInt(CommonSaveParameters.Player2MaxPoints, initialPoints);
         PlayerPrefs.Save();
     }
 
     private void SavePlayersAmount(int playersAmount)
     {
-        PlayerPrefs.SetInt("PlayersAmount", playersAmount);
+        PlayerPrefs.SetInt(CommonSaveParameters.PlayersAmount, playersAmount);
         PlayerPrefs.Save();
     }
 }

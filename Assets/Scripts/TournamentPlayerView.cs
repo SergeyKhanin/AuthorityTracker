@@ -72,8 +72,8 @@ public class TournamentPlayerView : MonoBehaviour
         _authorityLabel.text = _authority.Points.ToString();
         _startPoints = _authority.Points;
 
-        if (PlayerPrefs.HasKey(_playerName + "_MaxPoints"))
-            _maxPoints = PlayerPrefs.GetInt(_playerName + "_MaxPoints");
+        if (PlayerPrefs.HasKey(_playerName + CommonSaveParameters.MaxPoints))
+            _maxPoints = PlayerPrefs.GetInt(_playerName + CommonSaveParameters.MaxPoints);
         else
             _maxPoints = _startPoints;
     }
@@ -232,7 +232,7 @@ public class TournamentPlayerView : MonoBehaviour
         if (_maxPoints <= _authority.Points)
         {
             _maxPoints = _authority.Points;
-            PlayerPrefs.SetInt(_playerName + "_MaxPoints", _maxPoints);
+            PlayerPrefs.SetInt(_playerName + CommonSaveParameters.MaxPoints, _maxPoints);
             PlayerPrefs.Save();
         }
 
@@ -271,8 +271,9 @@ public class TournamentPlayerView : MonoBehaviour
 
     private void SetPointsIconsOpacityValue()
     {
-        if (PlayerPrefs.HasKey("PointsIconsOpacity"))
-            _pointsIconsContainer.style.opacity = new StyleFloat(PlayerPrefs.GetFloat("PointsIconsOpacity"));
+        if (PlayerPrefs.HasKey(CommonSaveParameters.PointsIconsOpacity))
+            _pointsIconsContainer.style.opacity =
+                new StyleFloat(PlayerPrefs.GetFloat(CommonSaveParameters.PointsIconsOpacity));
         else
             _pointsIconsContainer.style.opacity = new StyleFloat(0.1f);
     }
