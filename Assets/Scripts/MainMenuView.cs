@@ -6,7 +6,6 @@ public class MainMenuView : MonoBehaviour
 {
     private Authority _authority;
 
-    private int _pointsLimit;
     private int _playersAmount;
     private bool _hasOnePlayer;
     private bool _hasTwoPlayers;
@@ -25,8 +24,6 @@ public class MainMenuView : MonoBehaviour
     private void Awake()
     {
         _authority = new Authority();
-        _pointsLimit = _authority.Limit;
-
         _root = GetComponent<UIDocument>().rootVisualElement;
 
         _initialPointsIntegerField = _root.Q<IntegerField>("initial-points-input");
@@ -120,7 +117,7 @@ public class MainMenuView : MonoBehaviour
     {
         var value = evt.newValue;
 
-        if (value > _pointsLimit || value < 1)
+        if (value > 999 || value < 1)
             _initialPointsIntegerField.value = 1;
         else
             _initialPointsIntegerField.value = value;
@@ -196,18 +193,11 @@ public class MainMenuView : MonoBehaviour
 
     private void GetStartPoints()
     {
-        int initialPoints;
-
-        if (PlayerPrefs.HasKey(CommonSaveParameters.InitialPoints))
-            initialPoints = PlayerPrefs.GetInt(CommonSaveParameters.InitialPoints);
-        else
-            initialPoints = _authority.Points;
-
-        PlayerPrefs.SetInt(CommonSaveParameters.InitialPoints, initialPoints);
-        PlayerPrefs.SetInt(CommonSaveParameters.Player1, initialPoints);
-        PlayerPrefs.SetInt(CommonSaveParameters.Player1MaxPoints, initialPoints);
-        PlayerPrefs.SetInt(CommonSaveParameters.Player2, initialPoints);
-        PlayerPrefs.SetInt(CommonSaveParameters.Player2MaxPoints, initialPoints);
+        PlayerPrefs.SetInt(CommonSaveParameters.InitialPoints, _authority.Points);
+        PlayerPrefs.SetInt(CommonSaveParameters.Player1, _authority.Points);
+        PlayerPrefs.SetInt(CommonSaveParameters.Player1MaxPoints, _authority.Points);
+        PlayerPrefs.SetInt(CommonSaveParameters.Player2, _authority.Points);
+        PlayerPrefs.SetInt(CommonSaveParameters.Player2MaxPoints, _authority.Points);
         PlayerPrefs.Save();
     }
 
@@ -217,13 +207,6 @@ public class MainMenuView : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    private void GetInitialPoints()
-    {
-        if (PlayerPrefs.HasKey(CommonSaveParameters.InitialPoints))
-            _initialPointsIntegerField.value = PlayerPrefs.GetInt(CommonSaveParameters.InitialPoints);
-        else
-            _initialPointsIntegerField.value = _authority.Points;
-    }
-
+    private void GetInitialPoints() => _initialPointsIntegerField.value = _authority.Points;
     private void SetInitialPoints() => _initialPointsIntegerField.RegisterCallback<ChangeEvent<int>>(OnIntChangedEvent);
 }
