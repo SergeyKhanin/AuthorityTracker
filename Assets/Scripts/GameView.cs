@@ -51,9 +51,21 @@ public class GameView : MonoBehaviour
 
     private void OnPauseButtonClicked() => EnablePause(true);
     private void OnBackButtonClicked() => EnablePause(false);
-    private void OnResetButtonClicked() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     private void OnMainMenuButtonClicked() => SceneManager.LoadScene(CommonScenesList.MainMenuScene);
     private void OnQuitAppButtonClicked() => Application.Quit();
+
+    private void OnResetButtonClicked()
+    {
+        var initialPoints = PlayerPrefs.GetInt("InitialPoints");
+
+        PlayerPrefs.SetInt("player-1", initialPoints);
+        PlayerPrefs.SetInt("player-1_MaxPoints", initialPoints);
+        PlayerPrefs.SetInt("player-2", initialPoints);
+        PlayerPrefs.SetInt("player-2_MaxPoints", initialPoints);
+        PlayerPrefs.Save();
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 
     private void EnablePause(bool isEnabled)
     {

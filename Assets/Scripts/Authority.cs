@@ -1,19 +1,7 @@
-using UnityEngine;
-
 public class Authority
 {
-    public int Points { get; private set; }
-    public int Limit { get; }
-
-    public Authority()
-    {
-        if (PlayerPrefs.HasKey("InitialPoints"))
-            Points = PlayerPrefs.GetInt("InitialPoints");
-        else
-            Points = 50;
-
-        Limit = 999;
-    }
+    public int Points { get; set; } = 50;
+    public readonly int Limit = 999;
 
     public void PlusPoint() => Points++;
 

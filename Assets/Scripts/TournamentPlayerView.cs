@@ -65,17 +65,26 @@ public class TournamentPlayerView : MonoBehaviour
         _pointsLabel.AddToClassList(CommonUssClassNames.Hide);
         _iconPlus.AddToClassList(CommonUssClassNames.Hide);
         _iconMinus.AddToClassList(CommonUssClassNames.Hide);
+
+        if (PlayerPrefs.HasKey(_playerName))
+            _authority.Points = PlayerPrefs.GetInt(_playerName);
+
         _authorityLabel.text = _authority.Points.ToString();
         _startPoints = _authority.Points;
-        _maxPoints = _startPoints;
+
+        if (PlayerPrefs.HasKey(_playerName + "_MaxPoints"))
+            _maxPoints = PlayerPrefs.GetInt(_playerName + "_MaxPoints");
+        else
+            _maxPoints = _startPoints;
     }
 
     private void Start()
     {
+        SetPointsIconsOpacityValue();
         ValidatePoints();
         ValidateText();
         ValidateClasses();
-        SetPointsIconsOpacityValue();
+        SavePlayerAuthority(_playerName, _authority.Points);
     }
 
     private void OnEnable()
@@ -138,6 +147,7 @@ public class TournamentPlayerView : MonoBehaviour
         ValidatePoints();
         ValidateText();
         ValidateClasses();
+        SavePlayerAuthority(_playerName, _authority.Points);
 
         Counter = 0;
 
@@ -220,7 +230,11 @@ public class TournamentPlayerView : MonoBehaviour
     private void ValidatePoints()
     {
         if (_maxPoints <= _authority.Points)
+        {
             _maxPoints = _authority.Points;
+            PlayerPrefs.SetInt(_playerName + "_MaxPoints", _maxPoints);
+            PlayerPrefs.Save();
+        }
 
         if (_authority.Points > _maxPoints / 2)
         {
@@ -261,5 +275,11 @@ public class TournamentPlayerView : MonoBehaviour
             _pointsIconsContainer.style.opacity = new StyleFloat(PlayerPrefs.GetFloat("PointsIconsOpacity"));
         else
             _pointsIconsContainer.style.opacity = new StyleFloat(0.1f);
+    }
+
+    private void SavePlayerAuthority(string playerName, int authorityPoints)
+    {
+        PlayerPrefs.SetInt(playerName, authorityPoints);
+        PlayerPrefs.Save();
     }
 }
