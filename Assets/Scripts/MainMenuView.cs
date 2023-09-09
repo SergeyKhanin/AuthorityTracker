@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -46,8 +45,6 @@ public class MainMenuView : MonoBehaviour
         SetPlayersAmount();
         SetPlayersButtons();
     }
-
-    private void Start() => GetInitialPoints();
 
     private void OnEnable()
     {
@@ -227,6 +224,6 @@ public class MainMenuView : MonoBehaviour
         else
             _initialPointsIntegerField.value = _authority.Points;
     }
-    
+
     private void SetInitialPoints() => _initialPointsIntegerField.RegisterCallback<ChangeEvent<int>>(OnIntChangedEvent);
 }
