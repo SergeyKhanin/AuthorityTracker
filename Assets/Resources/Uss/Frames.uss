@@ -52,5 +52,4 @@
 
 .frame__screen-dead-zone {
     position: absolute;
-    background-color: rgba(214, 41, 41, 0.25);
 }

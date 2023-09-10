@@ -1,8 +1,6 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance"
-         engine="UnityEngine.UIElements" editor="UnityEditor.UIElements"
-         noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:VisualElement name="screen-dead-zone-top" class="frame__screen-dead-zone screen-dead-zone__top size-100" />
-    <ui:VisualElement name="screen-dead-zone-left" class="frame__screen-dead-zone screen-dead-zone__left size-100" />
-    <ui:VisualElement name="screen-dead-zone-bottom" class="frame__screen-dead-zone screen-dead-zone__bottom size-100" />
-    <ui:VisualElement name="screen-dead-zone-right" class="frame__screen-dead-zone screen-dead-zone__right size-100" />
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="screen-dead-zone-top" class="screen-dead-zone__top size-100 absolute" />
+    <ui:VisualElement name="screen-dead-zone-left" class="screen-dead-zone__left size-100 absolute" />
+    <ui:VisualElement name="screen-dead-zone-bottom" class="screen-dead-zone__bottom size-100 absolute" />
+    <ui:VisualElement name="screen-dead-zone-right" class="screen-dead-zone__right size-100 absolute" />
 </ui:UXML>
