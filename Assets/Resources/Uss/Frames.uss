@@ -49,3 +49,7 @@
 .frame__separator {
     position: absolute;
 }
+
+.frame__screen-dead-zone {
+    position: absolute;
+}

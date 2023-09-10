@@ -33,6 +33,7 @@
     --base-icon-e-large-size: 202px;
     --base-points-margin-casual: 40px;
     --base-points-margin-tournament: 576px;
+    --base-screen-dead-zone-offset: 64px;
 }
 
 :root {
