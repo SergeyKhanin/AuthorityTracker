@@ -45,12 +45,12 @@ public class CasualPlayerView : MonoBehaviour
         _authority = new Authority();
 
         _frame = _root.Q<VisualElement>(_playerName);
-        
+
         _authorityImage = _frame.Q<VisualElement>("authority-image");
         _pointsIconsContainer = _frame.Q<VisualElement>("points-icons-container");
         _pointsPlusContainer = _frame.Q<VisualElement>("points-plus-container");
         _pointsMinusContainer = _frame.Q<VisualElement>("points-minus-container");
-        
+
         _authorityLabel = _frame.Q<CustomLabel>("authority-label");
         _pointsPlusLabel = _frame.Q<CustomLabel>("points-plus-label");
         _pointsMinusLabel = _frame.Q<CustomLabel>("points-minus-label");
@@ -59,22 +59,31 @@ public class CasualPlayerView : MonoBehaviour
         _plusButton = _frame.Q<CustomButton>("plus-button");
         _plus5Button = _frame.Q<CustomButton>("plus-5-button");
         _minus5Button = _frame.Q<CustomButton>("minus-5-button");
-        
+
         _pointsPlusContainer.AddToClassList(CommonUssClassNames.Invisible);
         _pointsMinusContainer.AddToClassList(CommonUssClassNames.Invisible);
+
+        if (PlayerPrefs.HasKey(_playerName))
+            _authority.SetPoints(PlayerPrefs.GetInt(_playerName));
+
         _authorityLabel.text = _authority.Points.ToString();
         _startPoints = _authority.Points;
-        _maxPoints = _startPoints;
+
+        if (PlayerPrefs.HasKey(_playerName + CommonSaveParameters.MaxPoints))
+            _maxPoints = PlayerPrefs.GetInt(_playerName + CommonSaveParameters.MaxPoints);
+        else
+            _maxPoints = _startPoints;
     }
 
     private void Start()
     {
+        SetPointsIconsOpacityValue();
         ValidatePoints();
         ValidateText();
         ValidateClasses();
-        SetPointsIconsOpacityValue();
+        SavePlayerAuthority(_playerName, _authority.Points);
     }
-    
+
     private void Update()
     {
         _plusPointsTime -= Time.deltaTime;
@@ -126,6 +135,7 @@ public class CasualPlayerView : MonoBehaviour
         ValidatePoints();
         ValidateText();
         ValidateClasses();
+        SavePlayerAuthority(_playerName, _authority.Points);
 
         _isPlus5ButtonClicked = false;
     }
@@ -157,6 +167,7 @@ public class CasualPlayerView : MonoBehaviour
         ValidatePoints();
         ValidateText();
         ValidateClasses();
+        SavePlayerAuthority(_playerName, _authority.Points);
 
         _isMinus5ButtonClicked = false;
     }
@@ -172,7 +183,7 @@ public class CasualPlayerView : MonoBehaviour
         _isMinus5ButtonClicked = true;
         OnMinusButtonClicked();
     }
-    
+
     private void AddTimeDelay(ref float time)
     {
         time += TimeDelay;
@@ -195,7 +206,7 @@ public class CasualPlayerView : MonoBehaviour
             _pointsPlusContainer.AddToClassList(CommonUssClassNames.Invisible);
         }
     }
-    
+
     private void ValidateClasses()
     {
         _authorityImage.EnableInClassList(CommonUssClassNames.ImageAuthorityOrange, _isPointsLessHalf);
@@ -216,8 +227,12 @@ public class CasualPlayerView : MonoBehaviour
     private void ValidatePoints()
     {
         if (_maxPoints <= _authority.Points)
+        {
             _maxPoints = _authority.Points;
-        
+            PlayerPrefs.SetInt(_playerName + CommonSaveParameters.MaxPoints, _maxPoints);
+            PlayerPrefs.Save();
+        }
+
         if (_authority.Points > _maxPoints / 2)
         {
             _isPointsMoreZero = true;
@@ -250,11 +265,18 @@ public class CasualPlayerView : MonoBehaviour
             _isPointsLessHalf = false;
         }
     }
+
     private void SetPointsIconsOpacityValue()
     {
-        if (PlayerPrefs.HasKey("PointsIconsOpacity"))
-            _pointsIconsContainer.style.opacity = new StyleFloat(PlayerPrefs.GetFloat("PointsIconsOpacity"));
+        if (PlayerPrefs.HasKey(CommonSaveParameters.PointsIconsOpacity))
+            _pointsIconsContainer.style.opacity = new StyleFloat(PlayerPrefs.GetFloat(CommonSaveParameters.PointsIconsOpacity));
         else
             _pointsIconsContainer.style.opacity = new StyleFloat(0.1f);
+    }
+
+    private void SavePlayerAuthority(string playerName, int authorityPoints)
+    {
+        PlayerPrefs.SetInt(playerName, authorityPoints);
+        PlayerPrefs.Save();
     }
 }

@@ -9,7 +9,7 @@
         </ui:VisualElement>
         <ui:VisualElement name="content" picking-mode="Ignore" class="content">
             <ui:VisualElement name="authority-image-text" picking-mode="Ignore" class="authority authority__image-text ic ic-authority__text__color-green">
-                <ui:IntegerField name="initial-points-input" value="50" />
+                <ui:IntegerField name="initial-points-input" />
             </ui:VisualElement>
             <CustomButton name="casual-button" text="CASUAL" class="btn btn-rectangle ic ic-btn-rectangle__color-green" />
             <CustomButton name="tournament-button" text="TOURNAMENT" class="btn btn-rectangle ic ic-btn-rectangle__color-green" />

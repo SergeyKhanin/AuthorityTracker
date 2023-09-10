@@ -7,13 +7,13 @@ public static class SetPlayers
         switch (playersList)
         {
             case PlayersRoster.PlayersList.Player1:
-                playerName = "player-1";
+                playerName = CommonSaveParameters.Player1;
                 break;
             case PlayersRoster.PlayersList.Player2:
-                playerName = "player-2";
+                playerName = CommonSaveParameters.Player2;
                 break;
             default:
-                playerName = "player-1";
+                playerName = CommonSaveParameters.Player1;
                 break;
         }
 
