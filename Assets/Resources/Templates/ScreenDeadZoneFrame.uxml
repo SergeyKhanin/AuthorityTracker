@@ -1,8 +1,8 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/Resources/Uss/Frames.uss?fileID=7433441132597879392&amp;guid=6a8e66e86c65e4f408b4bbb280cad650&amp;type=3#Frames" />
-    <Style src="project://database/Assets/Resources/Uss/Utilities.uss?fileID=7433441132597879392&amp;guid=b6b8ff86f02818e43940a1c354d8873e&amp;type=3#Utilities" />
-    <ui:VisualElement style="position: absolute; width: 100%; height: 100%; translate: 100% 0; right: 10px; background-color: rgba(255, 28, 28, 0.87);" />
-    <ui:VisualElement style="position: absolute; width: 100%; height: 100%; translate: -100% 0; left: 10px; background-color: rgba(245, 255, 13, 0.84);" />
-    <ui:VisualElement style="position: absolute; width: 100%; height: 100%; translate: 0 100%; bottom: 10px; background-color: rgba(72, 245, 31, 0.95);" />
-    <ui:VisualElement style="position: absolute; width: 100%; height: 100%; translate: 0 -100%; top: 10px; background-color: rgb(255, 4, 227);" />
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance"
+         engine="UnityEngine.UIElements" editor="UnityEditor.UIElements"
+         noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="screen-dead-zone-top" class="frame__screen-dead-zone screen-dead-zone__top size-100" />
+    <ui:VisualElement name="screen-dead-zone-left" class="frame__screen-dead-zone screen-dead-zone__left size-100" />
+    <ui:VisualElement name="screen-dead-zone-bottom" class="frame__screen-dead-zone screen-dead-zone__bottom size-100" />
+    <ui:VisualElement name="screen-dead-zone-right" class="frame__screen-dead-zone screen-dead-zone__right size-100" />
 </ui:UXML>
