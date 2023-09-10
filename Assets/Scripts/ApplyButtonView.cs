@@ -6,7 +6,7 @@ public class ApplyButtonView : MonoBehaviour
     private int _counterSum;
 
     private TournamentPlayerView[] _tournamentPlayerViews;
-    
+
     private VisualElement _root;
     private CustomButton _applyButton;
     private CustomButton _clearButton;

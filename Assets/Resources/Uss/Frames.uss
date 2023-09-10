@@ -50,6 +50,10 @@
     position: absolute;
 }
 
+.frame__screen-dead-zone {
+    position: absolute;
+}
+
 .frame__tools {
     position: absolute;
     justify-content: center;

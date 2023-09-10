@@ -2,34 +2,33 @@ using UnityEngine;
 
 public class Authority
 {
+    private readonly int _defaultValue = 50;
+    private readonly int _limit = 999;
     public int Points { get; private set; }
-    public int Limit { get; }
 
     public Authority()
     {
-        if (PlayerPrefs.HasKey("InitialPoints"))
-            Points = PlayerPrefs.GetInt("InitialPoints");
+        if (PlayerPrefs.HasKey(CommonSaveParameters.InitialPoints))
+            Points = PlayerPrefs.GetInt(CommonSaveParameters.InitialPoints);
         else
-            Points = 50;
-
-        Limit = 999;
+        {
+            PlayerPrefs.SetInt(CommonSaveParameters.InitialPoints, _defaultValue);
+            Points = _defaultValue;
+        }
     }
 
     public void PlusPoint() => Points++;
-
     public void MinusPoint() => Points--;
-
     public void PlusFivePoints() => Points += 5;
-
     public void MinusFivePoints() => Points -= 5;
-
     public void AddCustomPoints(int amount) => Points += amount;
+    public void SetPoints(int amount) => Points = amount;
 
     public void ValidatePoints()
     {
-        if (Points >= Limit)
-            Points = Limit;
-        if (Points <= -Limit)
-            Points = -Limit;
+        if (Points >= _limit)
+            Points = _limit;
+        if (Points <= -_limit)
+            Points = -_limit;
     }
 }

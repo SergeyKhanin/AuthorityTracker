@@ -5,8 +5,7 @@ using UnityEngine.UIElements;
 public class MainMenuView : MonoBehaviour
 {
     private Authority _authority;
-    
-    private int _pointsLimit;
+
     private int _playersAmount;
     private bool _hasOnePlayer;
     private bool _hasTwoPlayers;
@@ -22,9 +21,9 @@ public class MainMenuView : MonoBehaviour
     private CustomButton _twoPlayersButton;
     private CustomButton _settingsButton;
 
-
     private void Awake()
     {
+        _authority = new Authority();
         _root = GetComponent<UIDocument>().rootVisualElement;
 
         _initialPointsIntegerField = _root.Q<IntegerField>("initial-points-input");
@@ -37,19 +36,11 @@ public class MainMenuView : MonoBehaviour
         _twoPlayersButton = _root.Q<CustomButton>("two-players-button");
         _settingsButton = _root.Q<CustomButton>("settings-button");
 
-        _authority = new Authority();
-        _pointsLimit = _authority.Limit;
-
+        GetPlayersAmount();
         GetInitialPoints();
         SetInitialPoints();
-        GetPlayersAmount();
         SetPlayersAmount();
         SetPlayersButtons();
-    }
-    
-    private void Start()
-    {
-        _root.RegisterCallback<GeometryChangedEvent>(SaveScreenResolutions);
     }
 
     private void OnEnable()
@@ -80,10 +71,11 @@ public class MainMenuView : MonoBehaviour
     {
         SavePlayersAmount(2);
         GetPlayersAmount();
+        GetStartPoints();
         SetPlayersAmount();
 
         var isEnabled = _hasOnePlayer;
-        
+
         _onePlayerButton.EnableInClassList(CommonUssClassNames.Hide, !isEnabled);
         _twoPlayersButton.EnableInClassList(CommonUssClassNames.Hide, isEnabled);
     }
@@ -92,10 +84,11 @@ public class MainMenuView : MonoBehaviour
     {
         SavePlayersAmount(1);
         GetPlayersAmount();
+        GetStartPoints();
         SetPlayersAmount();
 
         var isEnabled = _hasTwoPlayers;
-        
+
         _twoPlayersButton.EnableInClassList(CommonUssClassNames.Hide, !isEnabled);
         _onePlayerButton.EnableInClassList(CommonUssClassNames.Hide, isEnabled);
     }
@@ -124,7 +117,7 @@ public class MainMenuView : MonoBehaviour
     {
         var value = evt.newValue;
 
-        if (value > _pointsLimit || value < 1)
+        if (value > 999 || value < 1)
             _initialPointsIntegerField.value = 1;
         else
             _initialPointsIntegerField.value = value;
@@ -141,8 +134,8 @@ public class MainMenuView : MonoBehaviour
 
     private void GetPlayersAmount()
     {
-        if (PlayerPrefs.HasKey("PlayersAmount"))
-            _playersAmount = PlayerPrefs.GetInt("PlayersAmount");
+        if (PlayerPrefs.HasKey(CommonSaveParameters.PlayersAmount))
+            _playersAmount = PlayerPrefs.GetInt(CommonSaveParameters.PlayersAmount);
         else
             _playersAmount = 2;
     }
@@ -166,20 +159,12 @@ public class MainMenuView : MonoBehaviour
         }
     }
 
-    private void GetInitialPoints()
-    {
-        if (PlayerPrefs.HasKey("InitialPoints"))
-            _initialPointsIntegerField.value = PlayerPrefs.GetInt("InitialPoints");
-    }
-
-    private void SetInitialPoints() => _initialPointsIntegerField.RegisterCallback<ChangeEvent<int>>(OnIntChangedEvent);
-
     private void SetPlayersButtons()
     {
         _onePlayerButton.EnableInClassList(CommonUssClassNames.Hide, _hasTwoPlayers);
         _twoPlayersButton.EnableInClassList(CommonUssClassNames.Hide, _hasOnePlayer);
     }
-    
+
     private void OnCommunityButtonClicked()
     {
         switch (Application.systemLanguage)
@@ -198,20 +183,30 @@ public class MainMenuView : MonoBehaviour
 
     private void SaveInitialPoints(int value)
     {
-        PlayerPrefs.SetInt("InitialPoints", value);
+        PlayerPrefs.SetInt(CommonSaveParameters.InitialPoints, value);
+        PlayerPrefs.SetInt(CommonSaveParameters.Player1, value);
+        PlayerPrefs.SetInt(CommonSaveParameters.Player1MaxPoints, value);
+        PlayerPrefs.SetInt(CommonSaveParameters.Player2, value);
+        PlayerPrefs.SetInt(CommonSaveParameters.Player2MaxPoints, value);
         PlayerPrefs.Save();
     }
 
-    private void SaveScreenResolutions(GeometryChangedEvent evt)
+    private void GetStartPoints()
     {
-        PlayerPrefs.SetFloat("ScreenResolutionsWidth", _root.resolvedStyle.width);
-        PlayerPrefs.SetFloat("ScreenResolutionsHeight", _root.resolvedStyle.height);
+        PlayerPrefs.SetInt(CommonSaveParameters.InitialPoints, _authority.Points);
+        PlayerPrefs.SetInt(CommonSaveParameters.Player1, _authority.Points);
+        PlayerPrefs.SetInt(CommonSaveParameters.Player1MaxPoints, _authority.Points);
+        PlayerPrefs.SetInt(CommonSaveParameters.Player2, _authority.Points);
+        PlayerPrefs.SetInt(CommonSaveParameters.Player2MaxPoints, _authority.Points);
         PlayerPrefs.Save();
     }
 
     private void SavePlayersAmount(int playersAmount)
     {
-        PlayerPrefs.SetInt("PlayersAmount", playersAmount);
+        PlayerPrefs.SetInt(CommonSaveParameters.PlayersAmount, playersAmount);
         PlayerPrefs.Save();
     }
+
+    private void GetInitialPoints() => _initialPointsIntegerField.value = _authority.Points;
+    private void SetInitialPoints() => _initialPointsIntegerField.RegisterCallback<ChangeEvent<int>>(OnIntChangedEvent);
 }
