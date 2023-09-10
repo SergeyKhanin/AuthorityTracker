@@ -27,7 +27,6 @@ public class MainMenuView : MonoBehaviour
         _root = GetComponent<UIDocument>().rootVisualElement;
 
         _initialPointsIntegerField = _root.Q<IntegerField>("initial-points-input");
-        _pointsTextElement = _root.Query<TextElement>();
         _casualButton = _root.Q<CustomButton>("casual-button");
         _tournamentButton = _root.Q<CustomButton>("tournament-button");
         _communityButton = _root.Q<CustomButton>("community-button");
@@ -35,6 +34,7 @@ public class MainMenuView : MonoBehaviour
         _onePlayerButton = _root.Q<CustomButton>("one-player-button");
         _twoPlayersButton = _root.Q<CustomButton>("two-players-button");
         _settingsButton = _root.Q<CustomButton>("settings-button");
+        _pointsTextElement = _initialPointsIntegerField.Q<TextElement>();
 
         GetPlayersAmount();
         GetInitialPoints();
@@ -42,6 +42,8 @@ public class MainMenuView : MonoBehaviour
         SetPlayersAmount();
         SetPlayersButtons();
     }
+
+    private void Start() => CheckFontSize(_initialPointsIntegerField.value);
 
     private void OnEnable()
     {
@@ -71,7 +73,7 @@ public class MainMenuView : MonoBehaviour
     {
         SavePlayersAmount(2);
         GetPlayersAmount();
-        GetStartPoints();
+        SaveStartAuthorityPoints();
         SetPlayersAmount();
 
         var isEnabled = _hasOnePlayer;
@@ -84,7 +86,7 @@ public class MainMenuView : MonoBehaviour
     {
         SavePlayersAmount(1);
         GetPlayersAmount();
-        GetStartPoints();
+        SaveStartAuthorityPoints();
         SetPlayersAmount();
 
         var isEnabled = _hasTwoPlayers;
@@ -122,7 +124,7 @@ public class MainMenuView : MonoBehaviour
         else
             _initialPointsIntegerField.value = value;
 
-        SaveInitialPoints(value);
+        SaveInitialAuthorityPoints(value);
         CheckFontSize(value);
     }
 
@@ -181,7 +183,13 @@ public class MainMenuView : MonoBehaviour
         }
     }
 
-    private void SaveInitialPoints(int value)
+    private void SavePlayersAmount(int playersAmount)
+    {
+        PlayerPrefs.SetInt(CommonSaveParameters.PlayersAmount, playersAmount);
+        PlayerPrefs.Save();
+    }
+
+    private void SaveAuthorityPoints(int value)
     {
         PlayerPrefs.SetInt(CommonSaveParameters.InitialPoints, value);
         PlayerPrefs.SetInt(CommonSaveParameters.Player1, value);
@@ -191,22 +199,8 @@ public class MainMenuView : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    private void GetStartPoints()
-    {
-        PlayerPrefs.SetInt(CommonSaveParameters.InitialPoints, _authority.Points);
-        PlayerPrefs.SetInt(CommonSaveParameters.Player1, _authority.Points);
-        PlayerPrefs.SetInt(CommonSaveParameters.Player1MaxPoints, _authority.Points);
-        PlayerPrefs.SetInt(CommonSaveParameters.Player2, _authority.Points);
-        PlayerPrefs.SetInt(CommonSaveParameters.Player2MaxPoints, _authority.Points);
-        PlayerPrefs.Save();
-    }
-
-    private void SavePlayersAmount(int playersAmount)
-    {
-        PlayerPrefs.SetInt(CommonSaveParameters.PlayersAmount, playersAmount);
-        PlayerPrefs.Save();
-    }
-
+    private void SaveInitialAuthorityPoints(int value) => SaveAuthorityPoints(value);
+    private void SaveStartAuthorityPoints() => SaveAuthorityPoints(_authority.Points);
     private void GetInitialPoints() => _initialPointsIntegerField.value = _authority.Points;
     private void SetInitialPoints() => _initialPointsIntegerField.RegisterCallback<ChangeEvent<int>>(OnIntChangedEvent);
 }
