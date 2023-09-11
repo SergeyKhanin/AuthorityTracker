@@ -41,11 +41,19 @@ public class DeckView : MonoBehaviour
     {
         _deck.MinusDeckAmount();
         _deckLabel.text = _deck.DeckAmount.ToString();
+        SaveDeckAmount(_deck.DeckAmount);
     }
 
     private void OnArrowRightButtonClicked()
     {
         _deck.PlusDeckAmount();
         _deckLabel.text = _deck.DeckAmount.ToString();
+        SaveDeckAmount(_deck.DeckAmount);
+    }
+    
+    private void SaveDeckAmount(int deckAmount)
+    {
+        PlayerPrefs.SetInt(CommonSaveParameters.DeckAmount, deckAmount);
+        PlayerPrefs.Save();
     }
 }

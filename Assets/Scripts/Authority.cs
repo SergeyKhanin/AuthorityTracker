@@ -17,14 +17,43 @@ public class Authority
         }
     }
 
-    public void PlusPoint() => Points++;
-    public void MinusPoint() => Points--;
-    public void PlusFivePoints() => Points += 5;
-    public void MinusFivePoints() => Points -= 5;
-    public void AddCustomPoints(int amount) => Points += amount;
-    public void SetPoints(int amount) => Points = amount;
+    public void PlusPoint()
+    {
+        Points++;
+        ValidatePoints();
+    }
 
-    public void ValidatePoints()
+    public void MinusPoint()
+    {
+        Points--;
+        ValidatePoints();
+    }
+
+    public void PlusFivePoints()
+    {
+        Points += 5;
+        ValidatePoints();
+    }
+
+    public void MinusFivePoints()
+    {
+        Points -= 5;
+        ValidatePoints();
+    }
+
+    public void AddCustomPoints(int amount)
+    {
+        Points += amount;
+        ValidatePoints();
+    }
+
+    public void SetPoints(int amount)
+    {
+        Points = amount;
+        ValidatePoints();
+    }
+
+    private void ValidatePoints()
     {
         if (Points >= _limit)
             Points = _limit;

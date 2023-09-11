@@ -21,14 +21,12 @@ public class Deck
     {
         DeckAmount++;
         ValidateDeckAmount();
-        SaveDeckAmount(DeckAmount);
     }
 
     public void MinusDeckAmount()
     {
         DeckAmount--;
         ValidateDeckAmount();
-        SaveDeckAmount(DeckAmount);
     }
 
     private void ValidateDeckAmount()
@@ -37,11 +35,5 @@ public class Deck
             DeckAmount = _limit;
         if (DeckAmount <= 0)
             DeckAmount = 0;
-    }
-
-    private void SaveDeckAmount(int deckAmount)
-    {
-        PlayerPrefs.SetInt(CommonSaveParameters.DeckAmount, deckAmount);
-        PlayerPrefs.Save();
     }
 }

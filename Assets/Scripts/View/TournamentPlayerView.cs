@@ -142,7 +142,6 @@ public class TournamentPlayerView : MonoBehaviour
     private void OnApplyButtonClicked()
     {
         _authority.AddCustomPoints(Counter);
-        _authority.ValidatePoints();
 
         ValidatePoints();
         ValidateText();

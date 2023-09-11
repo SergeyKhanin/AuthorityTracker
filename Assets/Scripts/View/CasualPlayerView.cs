@@ -123,9 +123,7 @@ public class CasualPlayerView : MonoBehaviour
             _authority.PlusPoint();
             _plusCounter++;
         }
-
-        _authority.ValidatePoints();
-
+        
         _pointsPlusContainer.RemoveFromClassList(CommonUssClassNames.Invisible);
         _authorityLabel.text = _authority.Points.ToString();
         _pointsPlusLabel.text = _plusCounter.ToString();
@@ -154,13 +152,10 @@ public class CasualPlayerView : MonoBehaviour
             _authority.MinusPoint();
             _minusCounter++;
         }
-
-        _authority.ValidatePoints();
-
+        
         _pointsMinusContainer.RemoveFromClassList(CommonUssClassNames.Invisible);
         _authorityLabel.text = _authority.Points.ToString();
         _pointsMinusLabel.text = _minusCounter.ToString();
-        _authority.ValidatePoints();
 
         AddTimeDelay(ref _minusPointsTime);
 
