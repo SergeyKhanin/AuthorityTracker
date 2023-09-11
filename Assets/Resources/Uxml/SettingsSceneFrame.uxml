@@ -7,7 +7,7 @@
         <ui:Instance name="icon-opacity-slider" template="Slider" picking-mode="Ignore" class="slider">
             <AttributeOverrides element-name="slider-label" text="ICONS OPACITY" />
         </ui:Instance>
-        <CustomButton name="back-button" text="BACK" class="btn btn-rectangle ic ic-btn-rectangle__color-green" />
-        <CustomButton name="clear-settings-button" text="CLEAR SETTINGS" class="btn btn-rectangle ic ic-btn-rectangle__color-red" />
+        <Elements.CustomButton name="back-button" text="BACK" class="btn btn-rectangle ic ic-btn-rectangle__color-green" />
+        <Elements.CustomButton name="clear-settings-button" text="CLEAR SETTINGS" class="btn btn-rectangle ic ic-btn-rectangle__color-red" />
     </ui:VisualElement>
 </ui:UXML>

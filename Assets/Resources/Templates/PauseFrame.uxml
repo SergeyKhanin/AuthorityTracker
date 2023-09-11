@@ -2,9 +2,9 @@
          engine="UnityEngine.UIElements" editor="UnityEditor.UIElements"
          noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:VisualElement name="container" picking-mode="Ignore"  class="flex-empty">
-        <CustomButton name="back-button" text="BACK" class="btn btn-rectangle ic ic-btn-rectangle__color-green" />
-        <CustomButton name="main-menu-button" text="MENU" class="btn btn-rectangle ic ic-btn-rectangle__color-green" />
-        <CustomButton name="reset-button" text="RESET" class="btn btn-rectangle ic ic-btn-rectangle__color-gray" />
-        <CustomButton name="quit-button" text="QUIT" class="btn btn-rectangle ic ic-btn-rectangle__color-red" />
+        <Elements.CustomButton name="back-button" text="BACK" class="btn btn-rectangle ic ic-btn-rectangle__color-green" />
+        <Elements.CustomButton name="main-menu-button" text="MENU" class="btn btn-rectangle ic ic-btn-rectangle__color-green" />
+        <Elements.CustomButton name="reset-button" text="RESET" class="btn btn-rectangle ic ic-btn-rectangle__color-gray" />
+        <Elements.CustomButton name="quit-button" text="QUIT" class="btn btn-rectangle ic ic-btn-rectangle__color-red" />
     </ui:VisualElement>
 </ui:UXML>

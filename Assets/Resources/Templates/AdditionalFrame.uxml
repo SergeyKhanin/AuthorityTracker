@@ -1,5 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance"
          engine="UnityEngine.UIElements" editor="UnityEditor.UIElements"
          noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <CustomButton name="pause-button" class="btn btn-square btn-square__pause ic ic-btn-square__color-green" />
+    <Elements.CustomButton name="pause-button" class="btn btn-square btn-square__pause ic ic-btn-square__color-green" />
 </ui:UXML>
