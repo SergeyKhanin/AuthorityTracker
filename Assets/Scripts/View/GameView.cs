@@ -63,7 +63,7 @@ public class GameView : MonoBehaviour
         PlayerPrefs.SetInt(CommonSaveParameters.Player2, initialPoints);
         PlayerPrefs.SetInt(CommonSaveParameters.Player2MaxPoints, initialPoints);
         PlayerPrefs.Save();
-
+        PlayerPrefs.DeleteKey(CommonSaveParameters.DeckAmount);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
