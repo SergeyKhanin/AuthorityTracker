@@ -1,73 +1,78 @@
+using Common;
+using Elements;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
-public class SettingsView : MonoBehaviour
+namespace View
 {
-    private VisualElement _root;
-    private VisualElement _iconOpacityExample;
-    private VisualElement _iconOpacitySliderRoot;
-    private CustomButton _backButton;
-    private CustomButton _clearSettings;
-    private Slider _iconOpacitySlider;
-
-    private void Awake()
+    public class SettingsView : MonoBehaviour
     {
-        _root = GetComponent<UIDocument>().rootVisualElement;
-        _iconOpacityExample = _root.Q<VisualElement>("icon-opacity-example");
-        _iconOpacitySliderRoot = _root.Q<VisualElement>("icon-opacity-slider");
-        _backButton = _root.Q<CustomButton>("back-button");
-        _clearSettings = _root.Q<CustomButton>("clear-settings-button");
-        _iconOpacitySlider = _iconOpacitySliderRoot.Q<Slider>();
+        private VisualElement _root;
+        private VisualElement _iconOpacityExample;
+        private VisualElement _iconOpacitySliderRoot;
+        private CustomButton _backButton;
+        private CustomButton _clearSettings;
+        private Slider _iconOpacitySlider;
 
-        _iconOpacitySlider.RegisterValueChangedCallback(OnIconOpacitySliderChanged);
-    }
+        private void Awake()
+        {
+            _root = GetComponent<UIDocument>().rootVisualElement;
+            _iconOpacityExample = _root.Q<VisualElement>("icon-opacity-example");
+            _iconOpacitySliderRoot = _root.Q<VisualElement>("icon-opacity-slider");
+            _backButton = _root.Q<CustomButton>("back-button");
+            _clearSettings = _root.Q<CustomButton>("clear-settings-button");
+            _iconOpacitySlider = _iconOpacitySliderRoot.Q<Slider>();
 
-    private void Start()
-    {
-        SetPointsIconsOpacityValue();
-        SetIconsOpacityStyle();
-    }
+            _iconOpacitySlider.RegisterValueChangedCallback(OnIconOpacitySliderChanged);
+        }
 
-    private void SetIconsOpacityStyle() => _iconOpacityExample.style.opacity = _iconOpacitySlider.value;
+        private void Start()
+        {
+            SetPointsIconsOpacityValue();
+            SetIconsOpacityStyle();
+        }
 
-    private void SetPointsIconsOpacityValue()
-    {
-        if (PlayerPrefs.HasKey(CommonSaveParameters.PointsIconsOpacity))
-            _iconOpacitySlider.value = PlayerPrefs.GetFloat(CommonSaveParameters.PointsIconsOpacity);
-        else
-            _iconOpacitySlider.value = 0.1f;
-    }
+        private void SetIconsOpacityStyle() => _iconOpacityExample.style.opacity = _iconOpacitySlider.value;
 
-    private void OnEnable()
-    {
-        _backButton.clicked += OnBackButtonClicked;
-        _clearSettings.clicked += OnClearSettingsButtonButtonClicked;
-    }
+        private void SetPointsIconsOpacityValue()
+        {
+            if (PlayerPrefs.HasKey(CommonSaveParameters.PointsIconsOpacity))
+                _iconOpacitySlider.value = PlayerPrefs.GetFloat(CommonSaveParameters.PointsIconsOpacity);
+            else
+                _iconOpacitySlider.value = 0.1f;
+        }
 
-    private void OnDisable()
-    {
-        _backButton.clicked -= OnBackButtonClicked;
-        _clearSettings.clicked -= OnClearSettingsButtonButtonClicked;
-    }
+        private void OnEnable()
+        {
+            _backButton.clicked += OnBackButtonClicked;
+            _clearSettings.clicked += OnClearSettingsButtonButtonClicked;
+        }
 
-    private void OnBackButtonClicked() => SceneManager.LoadScene(CommonScenesList.MainMenuScene);
+        private void OnDisable()
+        {
+            _backButton.clicked -= OnBackButtonClicked;
+            _clearSettings.clicked -= OnClearSettingsButtonButtonClicked;
+        }
 
-    private void OnClearSettingsButtonButtonClicked()
-    {
-        PlayerPrefs.DeleteAll();
-        SceneManager.LoadScene(CommonScenesList.MainMenuScene);
-    }
+        private void OnBackButtonClicked() => SceneManager.LoadScene(CommonScenesList.MainMenuScene);
 
-    private void OnIconOpacitySliderChanged(ChangeEvent<float> evt)
-    {
-        SavePointsIconsOpacityValue(evt.newValue);
-        _iconOpacityExample.style.opacity = evt.newValue;
-    }
+        private void OnClearSettingsButtonButtonClicked()
+        {
+            PlayerPrefs.DeleteAll();
+            SceneManager.LoadScene(CommonScenesList.MainMenuScene);
+        }
 
-    private static void SavePointsIconsOpacityValue(float value)
-    {
-        PlayerPrefs.SetFloat(CommonSaveParameters.PointsIconsOpacity, value);
-        PlayerPrefs.Save();
+        private void OnIconOpacitySliderChanged(ChangeEvent<float> evt)
+        {
+            SavePointsIconsOpacityValue(evt.newValue);
+            _iconOpacityExample.style.opacity = evt.newValue;
+        }
+
+        private static void SavePointsIconsOpacityValue(float value)
+        {
+            PlayerPrefs.SetFloat(CommonSaveParameters.PointsIconsOpacity, value);
+            PlayerPrefs.Save();
+        }
     }
 }

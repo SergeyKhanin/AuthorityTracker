@@ -1,59 +1,64 @@
+using Common;
+using Elements;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class DeckView : MonoBehaviour
+namespace View
 {
-    private Deck _deck;
-    private VisualElement _root;
-    private VisualElement _deckContainer;
-    private CustomLabel _deckLabel;
-    private CustomButton _arrowLeftButton;
-    private CustomButton _arrowRightButton;
-    private int _deckCounter;
-
-    private void Awake()
+    public class DeckView : MonoBehaviour
     {
-        _deck = new Deck();
-        _root = GetComponent<UIDocument>().rootVisualElement;
+        private Deck _deck;
+        private VisualElement _root;
+        private VisualElement _deckContainer;
+        private CustomLabel _deckLabel;
+        private CustomButton _arrowLeftButton;
+        private CustomButton _arrowRightButton;
+        private int _deckCounter;
 
-        _deckContainer = _root.Q<VisualElement>("deck-container");
-        _deckLabel = _deckContainer.Q<CustomLabel>("deck-label");
-        _arrowLeftButton = _deckContainer.Q<CustomButton>("arrow-left-button");
-        _arrowRightButton = _deckContainer.Q<CustomButton>("arrow-right-button");
+        private void Awake()
+        {
+            _deck = new Deck();
+            _root = GetComponent<UIDocument>().rootVisualElement;
 
-        _deckCounter = _deck.DeckAmount;
-        _deckLabel.text = _deckCounter.ToString();
-    }
+            _deckContainer = _root.Q<VisualElement>("deck-container");
+            _deckLabel = _deckContainer.Q<CustomLabel>("deck-label");
+            _arrowLeftButton = _deckContainer.Q<CustomButton>("arrow-left-button");
+            _arrowRightButton = _deckContainer.Q<CustomButton>("arrow-right-button");
 
-    private void OnEnable()
-    {
-        _arrowLeftButton.clicked += OnArrowLeftButtonClicked;
-        _arrowRightButton.clicked += OnArrowRightButtonClicked;
-    }
+            _deckCounter = _deck.DeckAmount;
+            _deckLabel.text = _deckCounter.ToString();
+        }
 
-    private void OnDisable()
-    {
-        _arrowLeftButton.clicked -= OnArrowLeftButtonClicked;
-        _arrowRightButton.clicked -= OnArrowRightButtonClicked;
-    }
+        private void OnEnable()
+        {
+            _arrowLeftButton.clicked += OnArrowLeftButtonClicked;
+            _arrowRightButton.clicked += OnArrowRightButtonClicked;
+        }
 
-    private void OnArrowLeftButtonClicked()
-    {
-        _deck.MinusDeckAmount();
-        _deckLabel.text = _deck.DeckAmount.ToString();
-        SaveDeckAmount(_deck.DeckAmount);
-    }
+        private void OnDisable()
+        {
+            _arrowLeftButton.clicked -= OnArrowLeftButtonClicked;
+            _arrowRightButton.clicked -= OnArrowRightButtonClicked;
+        }
 
-    private void OnArrowRightButtonClicked()
-    {
-        _deck.PlusDeckAmount();
-        _deckLabel.text = _deck.DeckAmount.ToString();
-        SaveDeckAmount(_deck.DeckAmount);
-    }
+        private void OnArrowLeftButtonClicked()
+        {
+            _deck.MinusDeckAmount();
+            _deckLabel.text = _deck.DeckAmount.ToString();
+            SaveDeckAmount(_deck.DeckAmount);
+        }
+
+        private void OnArrowRightButtonClicked()
+        {
+            _deck.PlusDeckAmount();
+            _deckLabel.text = _deck.DeckAmount.ToString();
+            SaveDeckAmount(_deck.DeckAmount);
+        }
     
-    private void SaveDeckAmount(int deckAmount)
-    {
-        PlayerPrefs.SetInt(CommonSaveParameters.DeckAmount, deckAmount);
-        PlayerPrefs.Save();
+        private void SaveDeckAmount(int deckAmount)
+        {
+            PlayerPrefs.SetInt(CommonSaveParameters.DeckAmount, deckAmount);
+            PlayerPrefs.Save();
+        }
     }
 }

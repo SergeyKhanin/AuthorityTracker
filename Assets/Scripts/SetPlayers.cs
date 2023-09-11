@@ -1,3 +1,5 @@
+using Common;
+
 public static class SetPlayers
 {
     public static string GetPlayerFromList(PlayersRoster.PlayersList playersList)

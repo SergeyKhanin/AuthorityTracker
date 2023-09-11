@@ -1,50 +1,55 @@
+using Common;
+using Elements;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class ApplyButtonView : MonoBehaviour
+namespace View
 {
-    private int _counterSum;
-
-    private TournamentPlayerView[] _tournamentPlayerViews;
-
-    private VisualElement _root;
-    private CustomButton _applyButton;
-    private CustomButton _clearButton;
-
-    private void Awake()
+    public class ApplyButtonView : MonoBehaviour
     {
-        _tournamentPlayerViews = GetComponents<TournamentPlayerView>();
+        private int _counterSum;
 
-        _root = GetComponent<UIDocument>().rootVisualElement;
+        private TournamentPlayerView[] _tournamentPlayerViews;
 
-        _applyButton = _root.Q<CustomButton>("apply-button");
-        _clearButton = _root.Q<CustomButton>("clear-button");
+        private VisualElement _root;
+        private CustomButton _applyButton;
+        private CustomButton _clearButton;
 
-        _applyButton.AddToClassList(CommonUssClassNames.Hide);
-        _clearButton.AddToClassList(CommonUssClassNames.Hide);
-    }
-
-    public void CheckPointsAmount()
-    {
-        _counterSum = 0;
-
-        foreach (var tournamentPlayerView in _tournamentPlayerViews)
+        private void Awake()
         {
-            if (tournamentPlayerView.Counter == 0)
-                _counterSum += 0;
-            else
-                _counterSum += 1;
-        }
+            _tournamentPlayerViews = GetComponents<TournamentPlayerView>();
 
-        if (_counterSum == 0)
-        {
+            _root = GetComponent<UIDocument>().rootVisualElement;
+
+            _applyButton = _root.Q<CustomButton>("apply-button");
+            _clearButton = _root.Q<CustomButton>("clear-button");
+
             _applyButton.AddToClassList(CommonUssClassNames.Hide);
             _clearButton.AddToClassList(CommonUssClassNames.Hide);
         }
-        else
+
+        public void CheckPointsAmount()
         {
-            _applyButton.RemoveFromClassList(CommonUssClassNames.Hide);
-            _clearButton.RemoveFromClassList(CommonUssClassNames.Hide);
+            _counterSum = 0;
+
+            foreach (var tournamentPlayerView in _tournamentPlayerViews)
+            {
+                if (tournamentPlayerView.Counter == 0)
+                    _counterSum += 0;
+                else
+                    _counterSum += 1;
+            }
+
+            if (_counterSum == 0)
+            {
+                _applyButton.AddToClassList(CommonUssClassNames.Hide);
+                _clearButton.AddToClassList(CommonUssClassNames.Hide);
+            }
+            else
+            {
+                _applyButton.RemoveFromClassList(CommonUssClassNames.Hide);
+                _clearButton.RemoveFromClassList(CommonUssClassNames.Hide);
+            }
         }
     }
 }

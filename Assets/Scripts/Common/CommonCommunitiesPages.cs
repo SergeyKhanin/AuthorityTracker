@@ -1,6 +1,9 @@
-﻿public static class CommonCommunitiesPages
+﻿namespace Common
 {
-    public const string None = "https://www.starrealms.com";
-    public const string Ru = "https://vk.com/starrealms";
-    public const string En = "https://megahaulin.com";
+    public static class CommonCommunitiesPages
+    {
+        public const string None = "https://www.starrealms.com";
+        public const string Ru = "https://vk.com/starrealms";
+        public const string En = "https://megahaulin.com";
+    }
 }

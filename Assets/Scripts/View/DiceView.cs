@@ -1,14 +1,17 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class DiceView : MonoBehaviour
+namespace View
 {
-    private VisualElement _root;
-    private VisualElement _diceContainer;
-
-    private void Awake()
+    public class DiceView : MonoBehaviour
     {
-        _root = GetComponent<UIDocument>().rootVisualElement;
-        _diceContainer = _root.Q<VisualElement>("dice-container");
+        private VisualElement _root;
+        private VisualElement _diceContainer;
+
+        private void Awake()
+        {
+            _root = GetComponent<UIDocument>().rootVisualElement;
+            _diceContainer = _root.Q<VisualElement>("dice-container");
+        }
     }
 }
