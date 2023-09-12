@@ -15,5 +15,6 @@ namespace Common
         public const string FrameGameImage1 = "frame__game__image-1";
         public const string FrameGameImage2 = "frame__game__image-2";
         public const string FrameGameImage3 = "frame__game__image-3";
+        public const string DieImage = "ic-die__color-green-";
     }
 }
