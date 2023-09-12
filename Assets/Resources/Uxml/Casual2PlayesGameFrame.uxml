@@ -6,7 +6,7 @@
     <ui:Template name="PauseFrame" src="project://database/Assets/Resources/Templates/PauseFrame.uxml?fileID=9197481963319205126&amp;guid=83b191b376cc5f841a1dfe9ba23d215c&amp;type=3#PauseFrame" />
     <ui:Template name="AdditionalFrame" src="project://database/Assets/Resources/Templates/AdditionalFrame.uxml?fileID=9197481963319205126&amp;guid=afde3a305a59b404f86c18a2045bb74e&amp;type=3#AdditionalFrame" />
     <ui:Template name="ScreenDeadZoneFrame" src="project://database/Assets/Resources/Templates/ScreenDeadZoneFrame.uxml?fileID=9197481963319205126&amp;guid=36f43ba111b2ebc428bf9a61cc2a4b2b&amp;type=3#ScreenDeadZoneFrame" />
-    <ui:VisualElement name="players-frame" picking-mode="Ignore" class="frame frame__game">
+    <ui:VisualElement name="players-frame" picking-mode="Ignore" class="frame frame__game__image-1">
         <ui:Instance name="player-1" template="CasualPlayerFrame" picking-mode="Ignore" class="flex-fill size-100 player-1 rotate-180" />
         <ui:Instance name="separator-horizontal-frame" template="SeparatorHorizontalFrame" picking-mode="Ignore" class="frame frame__separator" />
         <ui:Instance name="player-2" template="CasualPlayerFrame" picking-mode="Ignore" class="flex-fill size-100 player-2" />

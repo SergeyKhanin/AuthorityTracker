@@ -9,6 +9,8 @@ namespace View
 {
     public class GameView : MonoBehaviour
     {
+        private int _previousIndex = 1;
+
         private VisualElement _root;
         private VisualElement _playersFrame;
         private VisualElement _settingsFrame;
@@ -86,23 +88,11 @@ namespace View
         private void SetBackgroundImage()
         {
             var random = new Random();
-            var index = random.Next(0, 4);
+            var index = random.Next(1, 5);
 
-            switch (index)
-            {
-                case 1:
-                    _playersFrame.AddToClassList(CommonUssClassNames.FrameGameImage1);
-                    break;
-                case 2:
-                    _playersFrame.AddToClassList(CommonUssClassNames.FrameGameImage2);
-                    break;
-                case 3:
-                    _playersFrame.AddToClassList(CommonUssClassNames.FrameGameImage3);
-                    break;
-                default:
-                    _playersFrame.AddToClassList(CommonUssClassNames.FrameGameImage);
-                    break;
-            }
+            _playersFrame.RemoveFromClassList(CommonUssClassNames.FrameGameImage + _previousIndex);
+            _playersFrame.AddToClassList(CommonUssClassNames.FrameGameImage + index);
+            _previousIndex = index;
         }
     }
 }

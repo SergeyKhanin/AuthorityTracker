@@ -33,6 +33,7 @@ namespace View
         {
             var random = new Random();
             var index = random.Next(1, 7);
+            
             _diceImage.RemoveFromClassList(CommonUssClassNames.DieImage + _previousIndex);
             _diceImage.AddToClassList(CommonUssClassNames.DieImage + index);
             _previousIndex = index;

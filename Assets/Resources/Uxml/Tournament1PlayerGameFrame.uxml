@@ -5,7 +5,7 @@
     <ui:Template name="ScreenDeadZoneFrame" src="project://database/Assets/Resources/Templates/ScreenDeadZoneFrame.uxml?fileID=9197481963319205126&amp;guid=36f43ba111b2ebc428bf9a61cc2a4b2b&amp;type=3#ScreenDeadZoneFrame" />
     <ui:Template name="ToolsFrame" src="project://database/Assets/Resources/Templates/ToolsFrame.uxml?fileID=9197481963319205126&amp;guid=67f40400357a66a4cbf788704c6c9620&amp;type=3#ToolsFrame" />
     <ui:Template name="AdditionalFrame" src="project://database/Assets/Resources/Templates/AdditionalFrame.uxml?fileID=9197481963319205126&amp;guid=afde3a305a59b404f86c18a2045bb74e&amp;type=3#AdditionalFrame" />
-    <ui:VisualElement name="players-frame" picking-mode="Ignore" class="frame frame__game">
+    <ui:VisualElement name="players-frame" picking-mode="Ignore" class="frame frame__game__image-1">
         <ui:Instance name="player-1" template="TournamentPlayerFrame" picking-mode="Ignore" class="flex-fill size-100" />
     </ui:VisualElement>
     <ui:Instance name="apply-button-frame" template="ApplyButtonFrame" picking-mode="Ignore" class="frame frame__apply-button tournament__apply-1p" />
