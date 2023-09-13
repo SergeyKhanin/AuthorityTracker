@@ -5,7 +5,7 @@ namespace Core
 {
     public class Deck
     {
-        private readonly int _defaultValue = 0;
+        private readonly int _defaultValue = 1;
         private readonly int _limit = 99;
         public int DeckAmount { get; private set; }
 
