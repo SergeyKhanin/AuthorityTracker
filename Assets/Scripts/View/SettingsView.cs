@@ -16,6 +16,7 @@ namespace View
         private Slider _iconOpacitySlider;
         private Toggle _deckToggle;
         private Toggle _diceToggle;
+        private Toggle _swapToolsToggle;
 
         private void Awake()
         {
@@ -26,19 +27,22 @@ namespace View
             _clearSettings = _root.Q<CustomButton>("clear-settings-button");
             _deckToggle = _root.Q<Toggle>("deck-toggle");
             _diceToggle = _root.Q<Toggle>("dice-toggle");
+            _swapToolsToggle = _root.Q<Toggle>("swap-tools-toggle");
             _iconOpacitySlider = _iconOpacitySliderRoot.Q<Slider>();
 
             _iconOpacitySlider.RegisterValueChangedCallback(OnIconOpacitySliderChanged);
             _diceToggle.RegisterValueChangedCallback(SaveDiceVisibilityState);
             _deckToggle.RegisterValueChangedCallback(SaveDeckVisibilityState);
+            _swapToolsToggle.RegisterValueChangedCallback(SaveToolsDirectionState);
         }
 
         private void Start()
         {
             SetPointsIconsOpacityValue();
             SetIconsOpacityStyle();
-            SetToggleVisibility(_diceToggle, CommonSaveParameters.DiceVisibility, CommonSaveParameters.DiceIsVisible);
-            SetToggleVisibility(_deckToggle, CommonSaveParameters.DeckVisibility, CommonSaveParameters.DeckIsVisible);
+            SetToggleState(_diceToggle, CommonSaveParameters.DiceVisibility, CommonSaveParameters.DiceIsVisible);
+            SetToggleState(_deckToggle, CommonSaveParameters.DeckVisibility, CommonSaveParameters.DeckIsVisible);
+            SetToggleState(_swapToolsToggle, CommonSaveParameters.ToolsDirectionState, CommonSaveParameters.ToolsDirectionNormal);
         }
 
         private void SetIconsOpacityStyle() => _iconOpacityExample.style.opacity = _iconOpacitySlider.value;
@@ -101,7 +105,19 @@ namespace View
             PlayerPrefs.Save();
         }
 
-        private void SetToggleVisibility(Toggle toggle, string keyName, string keyState)
+        private void SaveToolsDirectionState(ChangeEvent<bool> evt)
+        {
+            var isNormal = evt.newValue;
+
+            if (isNormal)
+                PlayerPrefs.SetString(CommonSaveParameters.ToolsDirectionState, CommonSaveParameters.ToolsDirectionNormal);
+            else
+                PlayerPrefs.SetString(CommonSaveParameters.ToolsDirectionState, CommonSaveParameters.ToolsDirectionReverse);
+
+            PlayerPrefs.Save();
+        }
+
+        private void SetToggleState(Toggle toggle, string keyName, string keyState)
         {
             if (PlayerPrefs.HasKey(keyName))
             {
