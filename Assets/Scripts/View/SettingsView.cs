@@ -14,6 +14,8 @@ namespace View
         private CustomButton _backButton;
         private CustomButton _clearSettings;
         private Slider _iconOpacitySlider;
+        private Toggle _deckToggle;
+        private Toggle _diceToggle;
 
         private void Awake()
         {
@@ -22,6 +24,8 @@ namespace View
             _iconOpacitySliderRoot = _root.Q<VisualElement>("icon-opacity-slider");
             _backButton = _root.Q<CustomButton>("back-button");
             _clearSettings = _root.Q<CustomButton>("clear-settings-button");
+            _deckToggle = _root.Q<Toggle>("deck-toggle");
+            _diceToggle = _root.Q<Toggle>("dice-button");
             _iconOpacitySlider = _iconOpacitySliderRoot.Q<Slider>();
 
             _iconOpacitySlider.RegisterValueChangedCallback(OnIconOpacitySliderChanged);
