@@ -1,3 +1,4 @@
+using System;
 using Common;
 using Elements;
 using UnityEngine;
@@ -25,6 +26,7 @@ namespace View
             RandomDieImage();
         }
 
+        private void Start() => SetDiceVisibility();
         private void OnEnable() => _rollDieButton.clicked += OnRollDieButtonClicked;
         private void OnDisable() => _rollDieButton.clicked -= OnRollDieButtonClicked;
         private void OnRollDieButtonClicked() => RandomDieImage();
@@ -33,10 +35,23 @@ namespace View
         {
             var random = new Random();
             var index = random.Next(1, 7);
-            
+
             _diceImage.RemoveFromClassList(CommonUssClassNames.DieImage + _previousIndex);
             _diceImage.AddToClassList(CommonUssClassNames.DieImage + index);
             _previousIndex = index;
+        }
+        
+        private void SetDiceVisibility()
+        {
+            if (PlayerPrefs.HasKey(CommonSaveParameters.DiceVisibility))
+            {
+                var stringName = PlayerPrefs.GetString(CommonSaveParameters.DiceVisibility);
+                var isVisible = stringName == CommonSaveParameters.DiceIsVisible;
+
+                _diceContainer.EnableInClassList(CommonUssClassNames.Hide, !isVisible);
+            }
+            else
+                _diceContainer.AddToClassList(CommonUssClassNames.Hide);
         }
     }
 }

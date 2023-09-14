@@ -25,16 +25,20 @@ namespace View
             _backButton = _root.Q<CustomButton>("back-button");
             _clearSettings = _root.Q<CustomButton>("clear-settings-button");
             _deckToggle = _root.Q<Toggle>("deck-toggle");
-            _diceToggle = _root.Q<Toggle>("dice-button");
+            _diceToggle = _root.Q<Toggle>("dice-toggle");
             _iconOpacitySlider = _iconOpacitySliderRoot.Q<Slider>();
 
             _iconOpacitySlider.RegisterValueChangedCallback(OnIconOpacitySliderChanged);
+            _diceToggle.RegisterValueChangedCallback(SaveDiceVisibilityState);
+            _deckToggle.RegisterValueChangedCallback(SaveDeckVisibilityState);
         }
 
         private void Start()
         {
             SetPointsIconsOpacityValue();
             SetIconsOpacityStyle();
+            SetToggleVisibility(_diceToggle, CommonSaveParameters.DiceVisibility, CommonSaveParameters.DiceIsVisible);
+            SetToggleVisibility(_deckToggle, CommonSaveParameters.DeckVisibility, CommonSaveParameters.DeckIsVisible);
         }
 
         private void SetIconsOpacityStyle() => _iconOpacityExample.style.opacity = _iconOpacitySlider.value;
@@ -71,6 +75,43 @@ namespace View
         {
             SavePointsIconsOpacityValue(evt.newValue);
             _iconOpacityExample.style.opacity = evt.newValue;
+        }
+
+        private void SaveDiceVisibilityState(ChangeEvent<bool> evt)
+        {
+            var isVisible = evt.newValue;
+
+            if (isVisible)
+                PlayerPrefs.SetString(CommonSaveParameters.DiceVisibility, CommonSaveParameters.DiceIsVisible);
+            else
+                PlayerPrefs.SetString(CommonSaveParameters.DiceVisibility, CommonSaveParameters.DiceIsNotVisible);
+
+            PlayerPrefs.Save();
+        }
+
+        private void SaveDeckVisibilityState(ChangeEvent<bool> evt)
+        {
+            var isVisible = evt.newValue;
+
+            if (isVisible)
+                PlayerPrefs.SetString(CommonSaveParameters.DeckVisibility, CommonSaveParameters.DeckIsVisible);
+            else
+                PlayerPrefs.SetString(CommonSaveParameters.DeckVisibility, CommonSaveParameters.DeckIsNotVisible);
+
+            PlayerPrefs.Save();
+        }
+
+        private void SetToggleVisibility(Toggle toggle, string keyName, string keyState)
+        {
+            if (PlayerPrefs.HasKey(keyName))
+            {
+                var stringName = PlayerPrefs.GetString(keyName);
+                var isVisible = stringName == keyState;
+
+                toggle.value = isVisible;
+            }
+            else
+                toggle.value = false;
         }
 
         private static void SavePointsIconsOpacityValue(float value)

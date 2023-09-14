@@ -30,6 +30,8 @@ namespace View
             _deckLabel.text = _deckCounter.ToString();
         }
 
+        private void Start() => SetDeckVisibility();
+
         private void OnEnable()
         {
             _arrowLeftButton.clicked += OnArrowLeftButtonClicked;
@@ -55,11 +57,24 @@ namespace View
             _deckLabel.text = _deck.DeckAmount.ToString();
             SaveDeckAmount(_deck.DeckAmount);
         }
-    
+
         private void SaveDeckAmount(int deckAmount)
         {
             PlayerPrefs.SetInt(CommonSaveParameters.DeckAmount, deckAmount);
             PlayerPrefs.Save();
+        }
+
+        private void SetDeckVisibility()
+        {
+            if (PlayerPrefs.HasKey(CommonSaveParameters.DeckVisibility))
+            {
+                var stringName = PlayerPrefs.GetString(CommonSaveParameters.DeckVisibility);
+                var isVisible = stringName == CommonSaveParameters.DeckIsVisible;
+
+                _deckContainer.EnableInClassList(CommonUssClassNames.Hide, !isVisible);
+            }
+            else
+                _deckContainer.AddToClassList(CommonUssClassNames.Hide);
         }
     }
 }

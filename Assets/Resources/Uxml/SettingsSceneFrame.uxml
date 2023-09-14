@@ -4,8 +4,8 @@
     <ui:Template name="Slider" src="project://database/Assets/Resources/Uxml/Templates/Slider.uxml?fileID=9197481963319205126&amp;guid=3311b5c1543307e45aaacbc9767a5f0e&amp;type=3#Slider" />
     <ui:VisualElement name="settings-frame" picking-mode="Ignore" class="frame frame__settings">
         <ui:VisualElement style="flex-direction: row;">
-            <ui:Toggle name="deck-toogle" style="margin-top: 50px; margin-right: 50px; margin-bottom: 50px; margin-left: 50px;" />
-            <ui:Toggle name="dice-toogle" style="margin-top: 50px; margin-right: 50px; margin-bottom: 50px; margin-left: 50px;" />
+            <ui:Toggle name="deck-toggle" style="margin-top: 50px; margin-right: 50px; margin-bottom: 50px; margin-left: 50px;" />
+            <ui:Toggle name="dice-toggle" style="margin-top: 50px; margin-right: 50px; margin-bottom: 50px; margin-left: 50px;" />
         </ui:VisualElement>
         <ui:VisualElement name="icon-opacity-example" picking-mode="Ignore" class="ic ic-vr ic-authority__small__color-green" />
         <ui:Instance name="icon-opacity-slider" template="Slider" picking-mode="Ignore" class="slider">
