@@ -115,28 +115,28 @@
     background-image: var(--ic-update-color-gray);
 }
 
-.ic-die__color-green-1 {
-    background-image: var(--ic-die-color-green-1);
+.ic-dice__color-green-1 {
+    background-image: var(--ic-dice-color-green-1);
 }
 
-.ic-die__color-green-2 {
-    background-image: var(--ic-die-color-green-2);
+.ic-dice__color-green-2 {
+    background-image: var(--ic-dice-color-green-2);
 }
 
-.ic-die__color-green-3 {
-    background-image: var(--ic-die-color-green-3);
+.ic-dice__color-green-3 {
+    background-image: var(--ic-dice-color-green-3);
 }
 
-.ic-die__color-green-4 {
-    background-image: var(--ic-die-color-green-4);
+.ic-dice__color-green-4 {
+    background-image: var(--ic-dice-color-green-4);
 }
 
-.ic-die__color-green-5 {
-    background-image: var(--ic-die-color-green-5);
+.ic-dice__color-green-5 {
+    background-image: var(--ic-dice-color-green-5);
 }
 
-.ic-die__color-green-6 {
-    background-image: var(--ic-die-color-green-6);
+.ic-dice__color-green-6 {
+    background-image: var(--ic-dice-color-green-6);
 }
 
 .ic-deck__color-green {

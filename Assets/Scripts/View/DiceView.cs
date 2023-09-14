@@ -14,22 +14,22 @@ namespace View
         private VisualElement _root;
         private VisualElement _diceContainer;
         private VisualElement _diceImage;
-        private CustomButton _rollDieButton;
+        private CustomButton _rollDiceButton;
 
         private void Awake()
         {
             _root = GetComponent<UIDocument>().rootVisualElement;
             _diceContainer = _root.Q<VisualElement>("dice-container");
-            _diceImage = _diceContainer.Q<VisualElement>("die-image");
-            _rollDieButton = _diceContainer.Q<CustomButton>("roll-die-button");
+            _diceImage = _diceContainer.Q<VisualElement>("dice-image");
+            _rollDiceButton = _diceContainer.Q<CustomButton>("roll-dice-button");
 
             RandomDieImage();
         }
 
         private void Start() => SetDiceVisibility();
-        private void OnEnable() => _rollDieButton.clicked += OnRollDieButtonClicked;
-        private void OnDisable() => _rollDieButton.clicked -= OnRollDieButtonClicked;
-        private void OnRollDieButtonClicked() => RandomDieImage();
+        private void OnEnable() => _rollDiceButton.clicked += OnRollDiceButtonClicked;
+        private void OnDisable() => _rollDiceButton.clicked -= OnRollDiceButtonClicked;
+        private void OnRollDiceButtonClicked() => RandomDieImage();
 
         private void RandomDieImage()
         {

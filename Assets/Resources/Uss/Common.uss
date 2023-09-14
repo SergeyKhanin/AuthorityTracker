@@ -97,12 +97,12 @@
     --ic-slider-dragger-color-green: resource('Icons/IC_Slider-Dragger_Color-green');
     --ic-slider-tracker-color-green: resource('Icons/IC_Slider-Tracker_Color-green');
     --ic-update-color-gray: resource('Icons/IC_Update_Color-gray');
-    --ic-die-color-green-1: resource('Icons/IC_Die_Color-green-1');
-    --ic-die-color-green-2: resource('Icons/IC_Die_Color-green-2');
-    --ic-die-color-green-3: resource('Icons/IC_Die_Color-green-3');
-    --ic-die-color-green-4: resource('Icons/IC_Die_Color-green-4');
-    --ic-die-color-green-5: resource('Icons/IC_Die_Color-green-5');
-    --ic-die-color-green-6: resource('Icons/IC_Die_Color-green-6');
+    --ic-dice-color-green-1: resource('Icons/IC_Dice_Color-green-1');
+    --ic-dice-color-green-2: resource('Icons/IC_Dice_Color-green-2');
+    --ic-dice-color-green-3: resource('Icons/IC_Dice_Color-green-3');
+    --ic-dice-color-green-4: resource('Icons/IC_Dice_Color-green-4');
+    --ic-dice-color-green-5: resource('Icons/IC_Dice_Color-green-5');
+    --ic-dice-color-green-6: resource('Icons/IC_Dice_Color-green-6');
     --ic-deck-color-green: resource('Icons/IC_Deck_Color-green');
     --ic-arrow-left-color-gray: resource('Icons/IC_Arrow-left_Color-gray');
     --ic-arrow-right-color-gray: resource('Icons/IC_Arrow-right_Color-gray');

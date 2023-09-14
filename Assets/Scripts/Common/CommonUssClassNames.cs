@@ -12,6 +12,6 @@ namespace Common
         public const string PointsLabelGreen = "label__green";
         public const string PointsLabelRed = "label__red";
         public const string FrameGameImage = "frame__game__image-";
-        public const string DieImage = "ic-die__color-green-";
+        public const string DieImage = "ic-dice__color-green-";
     }
 }
