@@ -101,6 +101,14 @@
     flex-shrink: 0;
 }
 
+.tools__swap {
+    flex-direction: column-reverse;
+}
+
+.tools__swap #dice-container {
+    flex-direction: column-reverse;
+}
+
 .slider {
     height: 300px;
     margin-bottom: 128px;
