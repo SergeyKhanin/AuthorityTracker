@@ -151,6 +151,14 @@
     background-image: var(--ic-arrow-right-color-gray);
 }
 
+.ic-arrow-swap__color-green {
+    background-image: var(--ic-arrow-swap-color-green);
+}
+
+.ic-arrow-swap__color-gray {
+    background-image: var(--ic-arrow-swap-color-gray);
+}
+
 .ic-toggle-checkmark__color-green {
     background-image: var(--ic-toggle-checkmark-color-green);
 }
@@ -158,4 +166,5 @@
 .ic-toggle-checkbox__color-green {
     background-image: var(--ic-toggle-checkbox-color-green);
 }
+
 
