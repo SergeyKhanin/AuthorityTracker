@@ -34,6 +34,7 @@
     --base-points-margin-casual: 40px;
     --base-points-margin-tournament: 576px;
     --base-screen-dead-zone-offset: 64px;
+    --base-deck-arrow-offset: 40px;
 }
 
 :root {

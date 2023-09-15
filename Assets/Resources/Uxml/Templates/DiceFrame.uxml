@@ -2,7 +2,7 @@
          engine="UnityEngine.UIElements" editor="UnityEditor.UIElements"
          noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:VisualElement name="dice-container">
-        <ui:VisualElement name="dice-image" class="ic ic-md ic-dice__color-green-6 rotate-90" style="width: 176px; height: 176px;" />
-        <Elements.CustomButton name="roll-dice-button" class="btn ic ic-md ic-update__color-gray rotate-90" style="width: 176px; height: 176px;" />
+        <ui:VisualElement name="dice-image" class="ic ic-e-lg ic-dice__color-green-6 rotate-90" />
+        <Elements.CustomButton name="roll-dice-button" class="btn ic ic-e-lg ic-update__color-gray rotate-90" />
     </ui:VisualElement>
 </ui:UXML>

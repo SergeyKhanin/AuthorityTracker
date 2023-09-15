@@ -91,9 +91,9 @@
 
 .header {
     margin: var(--base-margin);
-    width: 100%;
     flex-direction: row;
     justify-content: space-between;
+    width: 100%;
 }
 
 .content {
@@ -102,8 +102,8 @@
 }
 
 .tools-container {
+    width: var(--btn-rectangle-width);
     flex-direction: row;
-    width: 938px;
     align-items: flex-start;
     justify-content: space-between;
     margin-bottom: 128px;
@@ -119,6 +119,18 @@
 
 .tools__swap #dice-container {
     flex-direction: column-reverse;
+}
+
+.deck__arrow-left {
+    top: var(--base-deck-arrow-offset);
+}
+
+.deck__arrow-right {
+    bottom: var(--base-deck-arrow-offset);
+}
+
+.deck__arrow-text {
+    right: 12px;
 }
 
 #pause-button {
@@ -144,3 +156,5 @@
     text-shadow: -2px -2px 0 var(--color-gray);
     -unity-text-align: upper-center;
 }
+
+
