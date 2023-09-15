@@ -1,10 +1,13 @@
 using UnityEngine.UIElements;
 
-public class CustomButton : Button
+namespace Elements
 {
-    public new class UxmlFactory : UxmlFactory<CustomButton, UxmlTraits>
+    public class CustomButton : Button
     {
-    }
+        public new class UxmlFactory : UxmlFactory<CustomButton, UxmlTraits>
+        {
+        }
 
-    public CustomButton() => ClearClassList();
+        public CustomButton() => ClearClassList();
+    }
 }

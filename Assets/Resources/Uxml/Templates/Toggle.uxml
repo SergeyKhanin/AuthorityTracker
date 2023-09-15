@@ -1,0 +1,4 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Toggle name="toggle" />
+    <Elements.CustomLabel name="toggle-label" class="label label__common label__green" style="min-width: 256px; max-width: 256px; width: 256px;" />
+</ui:UXML>

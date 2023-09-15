@@ -16,10 +16,6 @@
     background-image: var(--im-main-menu-frame);
 }
 
-.frame__game {
-    background-image: var(--im-game-frame);
-}
-
 .frame__game__image-1 {
     background-image: var(--im-game-1-frame);
 }
@@ -30,6 +26,10 @@
 
 .frame__game__image-3 {
     background-image: var(--im-game-3-frame);
+}
+
+.frame__game__image-4 {
+    background-image: var(--im-game-4-frame);
 }
 
 .frame__pause {
@@ -52,4 +52,20 @@
 
 .frame__screen-dead-zone {
     position: absolute;
+}
+
+.frame__tools {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+}
+
+.frame__dice {
+    justify-content: center;
+    align-items: center;
+}
+
+.frame__deck {
+    justify-content: center;
+    align-items: center;
 }
