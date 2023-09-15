@@ -109,7 +109,7 @@
     margin-bottom: 128px;
 }
 
-.tools__swap {
+.tools__swap-column {
     flex-direction: column-reverse;
 }
 
@@ -117,7 +117,7 @@
     flex-direction: row-reverse;
 }
 
-.tools__swap #dice-container {
+.tools__swap-column #dice-container {
     flex-direction: column-reverse;
 }
 
