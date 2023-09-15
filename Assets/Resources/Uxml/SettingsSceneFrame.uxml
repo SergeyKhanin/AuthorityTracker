@@ -8,15 +8,17 @@
         <ui:Instance name="icon-opacity-slider" template="Slider" picking-mode="Ignore" class="slider">
             <AttributeOverrides element-name="slider-label" text="ICONS OPACITY" />
         </ui:Instance>
-        <ui:VisualElement name="tools-container" picking-mode="Ignore" class="tools-container" style="justify-content: space-between; margin-bottom: 93px; align-items: center; width: 938px;">
+        <ui:VisualElement name="tools-container" picking-mode="Ignore" class="tools-container" style="justify-content: space-between; margin-bottom: 136px; align-items: center; width: 938px;">
             <ui:Instance template="Toggle" name="deck-toggle-container" picking-mode="Ignore" class="toggle">
                 <AttributeOverrides element-name="toggle-label" text="DECK" />
+                <ui:VisualElement name="deck-image" picking-mode="Ignore" class="ic ic-md ic-deck__color-green" style="width: 176px; height: 176px; align-items: center; justify-content: center;" />
             </ui:Instance>
             <ui:VisualElement name="VisualElement" picking-mode="Ignore" style="height: 100%; width: 100%; position: absolute; align-items: center; justify-content: center;">
                 <ui:Instance template="Toggle" name="swap-toggle-container" class="toggle toggle-swap" style="position: absolute;" />
             </ui:VisualElement>
             <ui:Instance template="Toggle" name="dice-toggle-container" picking-mode="Ignore" class="toggle">
                 <AttributeOverrides element-name="toggle-label" text="DICE" />
+                <ui:VisualElement name="dice-image" picking-mode="Ignore" class="ic ic-md ic-dice__color-green-6" style="width: 176px; height: 176px; align-items: center; justify-content: center;" />
             </ui:Instance>
         </ui:VisualElement>
         <Elements.CustomButton name="back-button" text="BACK" class="btn btn-rectangle ic ic-btn-rectangle__color-green" />
