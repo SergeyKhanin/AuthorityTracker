@@ -14,6 +14,7 @@ namespace View
         private VisualElement _deckContainer;
         private VisualElement _diceContainer;
         private VisualElement _swapContainer;
+        private VisualElement _toolsContainer;
         private CustomButton _backButton;
         private CustomButton _clearSettings;
         private Slider _iconOpacitySlider;
@@ -26,6 +27,7 @@ namespace View
             _root = GetComponent<UIDocument>().rootVisualElement;
             _iconOpacityExample = _root.Q<VisualElement>("icon-opacity-example");
             _iconOpacitySliderRoot = _root.Q<VisualElement>("icon-opacity-slider");
+            _toolsContainer = _root.Q<VisualElement>("tools-container");
             _backButton = _root.Q<CustomButton>("back-button");
             _clearSettings = _root.Q<CustomButton>("clear-settings-button");
             _deckContainer = _root.Q<VisualElement>("deck-toggle-container");
@@ -114,6 +116,8 @@ namespace View
         private void SaveToolsDirectionState(ChangeEvent<bool> evt)
         {
             var isNormal = evt.newValue;
+
+            _toolsContainer.EnableInClassList(CommonUssClassNames.ToolsSwapRow, isNormal);
 
             if (isNormal)
                 PlayerPrefs.SetString(CommonSaveParameters.ToolsDirectionState, CommonSaveParameters.ToolsDirectionNormal);

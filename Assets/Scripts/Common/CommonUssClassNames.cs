@@ -14,5 +14,6 @@ namespace Common
         public const string FrameGameImage = "frame__game__image-";
         public const string DieImage = "ic-dice__color-green-";
         public const string ToolsSwap = "tools__swap";
+        public const string ToolsSwapRow = "tools__swap-row";
     }
 }

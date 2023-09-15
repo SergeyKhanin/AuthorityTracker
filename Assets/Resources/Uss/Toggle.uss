@@ -36,3 +36,8 @@ Toggle:checked #unity-checkmark {
 .toggle-swap Toggle:checked #unity-checkmark {
     background-image: resource('Icons/IC_Arrow-swap_Color-green');
 }
+
+.toggle-swap CustomLabel {
+    display: none;
+    visibility: hidden;
+}
