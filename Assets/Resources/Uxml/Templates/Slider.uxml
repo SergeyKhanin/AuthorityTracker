@@ -1,8 +1,4 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance"
-         engine="UnityEngine.UIElements" editor="UnityEditor.UIElements"
-         noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Elements.CustomLabel text="LABEL" name="slider-label" class="label label__common label__green" />
-    <ui:VisualElement name="slider-elements">
-        <ui:Slider picking-mode="Ignore" value="0" high-value="1" />
-    </ui:VisualElement>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Elements.CustomLabel name="slider-label" class="label label__common label__green" />
+    <ui:Slider picking-mode="Ignore" value="0" high-value="1" name="slider" />
 </ui:UXML>

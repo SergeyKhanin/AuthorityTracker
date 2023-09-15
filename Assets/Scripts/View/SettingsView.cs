@@ -11,6 +11,9 @@ namespace View
         private VisualElement _root;
         private VisualElement _iconOpacityExample;
         private VisualElement _iconOpacitySliderRoot;
+        private VisualElement _deckContainer;
+        private VisualElement _diceContainer;
+        private VisualElement _swapContainer;
         private CustomButton _backButton;
         private CustomButton _clearSettings;
         private Slider _iconOpacitySlider;
@@ -25,9 +28,12 @@ namespace View
             _iconOpacitySliderRoot = _root.Q<VisualElement>("icon-opacity-slider");
             _backButton = _root.Q<CustomButton>("back-button");
             _clearSettings = _root.Q<CustomButton>("clear-settings-button");
-            _deckToggle = _root.Q<Toggle>("deck-toggle");
-            _diceToggle = _root.Q<Toggle>("dice-toggle");
-            _swapToolsToggle = _root.Q<Toggle>("swap-tools-toggle");
+            _deckContainer = _root.Q<VisualElement>("deck-toggle-container");
+            _diceContainer = _root.Q<VisualElement>("dice-toggle-container");
+            _swapContainer = _root.Q<VisualElement>("swap-toggle-container");
+            _deckToggle = _deckContainer.Q<Toggle>("toggle");
+            _diceToggle = _diceContainer.Q<Toggle>("toggle");
+            _swapToolsToggle = _swapContainer.Q<Toggle>("toggle");
             _iconOpacitySlider = _iconOpacitySliderRoot.Q<Slider>();
 
             _iconOpacitySlider.RegisterValueChangedCallback(OnIconOpacitySliderChanged);

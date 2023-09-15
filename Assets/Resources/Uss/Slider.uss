@@ -1,0 +1,10 @@
+.slider {
+    height: 300px;
+    margin-bottom: 128px;
+    align-items: center;
+    justify-content: center;
+}
+
+Slider {
+    width: var(--btn-rectangle-width);
+}

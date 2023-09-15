@@ -109,13 +109,6 @@
     flex-direction: column-reverse;
 }
 
-.slider {
-    height: 300px;
-    margin-bottom: 128px;
-    align-items: center;
-    justify-content: center;
-}
-
 #initial-points-input {
     font-size: var(--font-size-authority-big);
     bottom: var(--base-margin-half);
@@ -134,10 +127,6 @@
     max-width: var(--base-authority-text-with);
     text-shadow: -2px -2px 0 var(--color-gray);
     -unity-text-align: upper-center;
-}
-
-Slider {
-    width: var(--btn-rectangle-width);
 }
 
 #unity-drag-container #unity-tracker {
