@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Resources/Uss/Toggle.uss?fileID=7433441132597879392&amp;guid=1bb2fb2cee28d1341b9f0ba09897368c&amp;type=3#Toggle" />
+    <Elements.CustomLabel text="LABEL" name="slider-label" class="label label__common label__green" />
+    <ui:Toggle name="toggle" class="toggle" />
+</ui:UXML>

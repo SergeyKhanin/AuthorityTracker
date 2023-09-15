@@ -1,0 +1,7 @@
+.toggle {
+    margin: 0;
+}
+
+.toggle .unity-toggle__checkmark {
+    background-image: resource('Icons/IC_Toggle-checkmark_Color-green');
+}
