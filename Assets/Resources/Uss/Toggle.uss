@@ -1,4 +1,9 @@
 .toggle {
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.toggle-swap {
     flex-direction: row;
 }
 
@@ -17,4 +22,17 @@ Toggle #unity-checkmark {
 
 Toggle:checked #unity-checkmark {
     background-image: resource('Icons/IC_Toggle-checkmark_Color-green');
+}
+
+.toggle-swap Toggle #unity-checkmark {
+    background-image: resource('Icons/IC_Arrow-swap_Color-gray');
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0);
+    border-width: 0;
+    width: 176px;
+    height: 176px;
+}
+
+.toggle-swap Toggle:checked #unity-checkmark {
+    background-image: resource('Icons/IC_Arrow-swap_Color-green');
 }

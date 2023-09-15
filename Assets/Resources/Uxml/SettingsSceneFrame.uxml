@@ -7,20 +7,14 @@
         <ui:Instance name="icon-opacity-slider" template="Slider" picking-mode="Ignore" class="slider">
             <AttributeOverrides element-name="slider-label" text="ICONS OPACITY" />
         </ui:Instance>
-        <ui:Instance template="Toggle" name="swap-toggle-container" class="toggle" />
-        <ui:VisualElement style="flex-direction: row; justify-content: space-between; width: 1041px; margin-bottom: 93px;">
-            <ui:VisualElement style="flex-grow: 1; align-items: center;">
-                <ui:Instance template="Toggle" name="deck-toggle-container" class="toggle">
-                    <AttributeOverrides element-name="toggle-label" text="DECK" />
-                </ui:Instance>
-                <ui:VisualElement name="deck-image" class="ic ic-md ic-deck__color-green" style="width: 176px; height: 176px; align-items: center; justify-content: center;" />
-            </ui:VisualElement>
-            <ui:VisualElement style="flex-grow: 1; align-items: center;">
-                <ui:Instance template="Toggle" name="dice-toggle-container" class="toggle">
-                    <AttributeOverrides element-name="toggle-label" text="DICE" />
-                </ui:Instance>
-                <ui:VisualElement name="dice-image" class="ic ic-md ic-dice__color-green-6" style="width: 176px; height: 176px; align-items: center; justify-content: center;" />
-            </ui:VisualElement>
+        <ui:VisualElement style="flex-direction: row; justify-content: space-around; margin-bottom: 93px; align-items: center; width: 1024px;">
+            <ui:Instance template="Toggle" name="deck-toggle-container" class="toggle">
+                <AttributeOverrides element-name="toggle-label" text="DECK" />
+            </ui:Instance>
+            <ui:Instance template="Toggle" name="swap-toggle-container" class="toggle toggle-swap" />
+            <ui:Instance template="Toggle" name="dice-toggle-container" class="toggle">
+                <AttributeOverrides element-name="toggle-label" text="DICE" />
+            </ui:Instance>
         </ui:VisualElement>
         <Elements.CustomButton name="back-button" text="BACK" class="btn btn-rectangle ic ic-btn-rectangle__color-green" />
         <Elements.CustomButton name="clear-settings-button" text="CLEAR SETTINGS" class="btn btn-rectangle ic ic-btn-rectangle__color-red" />
