@@ -103,6 +103,10 @@
 
 .tools-container {
     flex-direction: row;
+    width: 938px;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 128px;
 }
 
 .tools__swap {
@@ -115,6 +119,10 @@
 
 .tools__swap #dice-container {
     flex-direction: column-reverse;
+}
+
+#pause-button {
+    left: 90px;
 }
 
 #initial-points-input {
@@ -135,26 +143,4 @@
     max-width: var(--base-authority-text-with);
     text-shadow: -2px -2px 0 var(--color-gray);
     -unity-text-align: upper-center;
-}
-
-#unity-drag-container #unity-tracker {
-    background-color: var(--color-transperent);
-    background-image: var(--ic-slider-tracker-color-green);
-    width: var(--btn-rectangle-width);
-    height: var(--base-icon-small-size);
-    border-width: 0;
-    -unity-background-scale-mode: scale-to-fit;
-}
-
-#unity-drag-container #unity-dragger {
-    background-color: var(--color-transperent);
-    background-image: var(--ic-slider-dragger-color-green);
-    border-width: 0;
-    width: 64px;
-    height: 112px;
-    -unity-background-scale-mode: scale-to-fit;
-}
-
-#pause-button {
-    left: 90px;
 }

@@ -8,3 +8,21 @@
 Slider {
     width: var(--btn-rectangle-width);
 }
+
+#unity-drag-container #unity-tracker {
+    background-color: var(--color-transperent);
+    background-image: var(--ic-slider-tracker-color-green);
+    width: var(--btn-rectangle-width);
+    height: var(--base-icon-small-size);
+    border-width: 0;
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+#unity-drag-container #unity-dragger {
+    background-color: var(--color-transperent);
+    background-image: var(--ic-slider-dragger-color-green);
+    border-width: 0;
+    width: 64px;
+    height: 112px;
+    -unity-background-scale-mode: scale-to-fit;
+}

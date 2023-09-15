@@ -1,24 +1,22 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance"
+         engine="UnityEngine.UIElements" editor="UnityEditor.UIElements"
+         noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:Template name="Slider" src="project://database/Assets/Resources/Uxml/Templates/Slider.uxml?fileID=9197481963319205126&amp;guid=3311b5c1543307e45aaacbc9767a5f0e&amp;type=3#Slider" />
     <ui:Template name="Toggle" src="project://database/Assets/Resources/Uxml/Templates/Toggle.uxml?fileID=9197481963319205126&amp;guid=89d3fe44023f1dd4096ccc43503fda9d&amp;type=3#Toggle" />
-    <Style src="project://database/Assets/Resources/Uss/Toggle.uss?fileID=7433441132597879392&amp;guid=1bb2fb2cee28d1341b9f0ba09897368c&amp;type=3#Toggle" />
-    <Style src="project://database/Assets/Resources/Uss/Style.uss?fileID=7433441132597879392&amp;guid=65ff8790dd4ca8040b6578d6e9530e55&amp;type=3#Style" />
     <ui:VisualElement name="settings-frame" picking-mode="Ignore" class="frame frame__settings">
         <ui:VisualElement name="icon-opacity-example" picking-mode="Ignore" class="ic ic-vr ic-authority__small__color-green" />
         <ui:Instance name="icon-opacity-slider" template="Slider" picking-mode="Ignore" class="slider">
             <AttributeOverrides element-name="slider-label" text="ICONS OPACITY" />
         </ui:Instance>
-        <ui:VisualElement name="tools-container" picking-mode="Ignore" class="tools-container" style="justify-content: space-between; margin-bottom: 136px; align-items: center; width: 938px;">
-            <ui:Instance template="Toggle" name="deck-toggle-container" picking-mode="Ignore" class="toggle">
+        <ui:VisualElement name="tools-container" picking-mode="Ignore" class="tools-container">
+            <ui:Instance name="deck-toggle-container" template="Toggle" picking-mode="Ignore" class="toggle">
                 <AttributeOverrides element-name="toggle-label" text="DECK" />
-                <ui:VisualElement name="deck-image" picking-mode="Ignore" class="ic ic-md ic-deck__color-green" style="width: 176px; height: 176px; align-items: center; justify-content: center;" />
             </ui:Instance>
-            <ui:VisualElement name="VisualElement" picking-mode="Ignore" style="height: 100%; width: 100%; position: absolute; align-items: center; justify-content: center;">
-                <ui:Instance template="Toggle" name="swap-toggle-container" class="toggle toggle-swap" style="position: absolute;" />
+            <ui:VisualElement name="toggles-container" picking-mode="Ignore" class="absolute size-100 justify-content-center align-items-center">
+                <ui:Instance name="swap-toggle-container" template="Toggle" class="toggle toggle-swap" />
             </ui:VisualElement>
-            <ui:Instance template="Toggle" name="dice-toggle-container" picking-mode="Ignore" class="toggle">
+            <ui:Instance name="dice-toggle-container" template="Toggle" picking-mode="Ignore" class="toggle">
                 <AttributeOverrides element-name="toggle-label" text="DICE" />
-                <ui:VisualElement name="dice-image" picking-mode="Ignore" class="ic ic-md ic-dice__color-green-6" style="width: 176px; height: 176px; align-items: center; justify-content: center;" />
             </ui:Instance>
         </ui:VisualElement>
         <Elements.CustomButton name="back-button" text="BACK" class="btn btn-rectangle ic ic-btn-rectangle__color-green" />
