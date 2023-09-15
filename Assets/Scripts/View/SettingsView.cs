@@ -89,42 +89,24 @@ namespace View
             _iconOpacityExample.style.opacity = evt.newValue;
         }
 
-        private void SaveDiceVisibilityState(ChangeEvent<bool> evt)
-        {
-            var isVisible = evt.newValue;
+        private void SaveDiceVisibilityState(ChangeEvent<bool> evt) => SaveState(evt.newValue,
+            CommonSaveParameters.DiceVisibility,
+            CommonSaveParameters.DiceIsVisible,
+            CommonSaveParameters.DiceIsNotVisible);
 
-            if (isVisible)
-                PlayerPrefs.SetString(CommonSaveParameters.DiceVisibility, CommonSaveParameters.DiceIsVisible);
-            else
-                PlayerPrefs.SetString(CommonSaveParameters.DiceVisibility, CommonSaveParameters.DiceIsNotVisible);
-
-            PlayerPrefs.Save();
-        }
-
-        private void SaveDeckVisibilityState(ChangeEvent<bool> evt)
-        {
-            var isVisible = evt.newValue;
-
-            if (isVisible)
-                PlayerPrefs.SetString(CommonSaveParameters.DeckVisibility, CommonSaveParameters.DeckIsVisible);
-            else
-                PlayerPrefs.SetString(CommonSaveParameters.DeckVisibility, CommonSaveParameters.DeckIsNotVisible);
-
-            PlayerPrefs.Save();
-        }
+        private void SaveDeckVisibilityState(ChangeEvent<bool> evt) => SaveState(evt.newValue,
+            CommonSaveParameters.DeckVisibility,
+            CommonSaveParameters.DeckIsVisible,
+            CommonSaveParameters.DeckIsNotVisible);
 
         private void SaveToolsDirectionState(ChangeEvent<bool> evt)
         {
-            var isNormal = evt.newValue;
+            SaveState(evt.newValue,
+                CommonSaveParameters.ToolsDirectionState,
+                CommonSaveParameters.ToolsDirectionNormal,
+                CommonSaveParameters.ToolsDirectionReverse);
 
-            _toolsContainer.EnableInClassList(CommonUssClassNames.ToolsSwapRow, isNormal);
-
-            if (isNormal)
-                PlayerPrefs.SetString(CommonSaveParameters.ToolsDirectionState, CommonSaveParameters.ToolsDirectionNormal);
-            else
-                PlayerPrefs.SetString(CommonSaveParameters.ToolsDirectionState, CommonSaveParameters.ToolsDirectionReverse);
-
-            PlayerPrefs.Save();
+            _toolsContainer.EnableInClassList(CommonUssClassNames.ToolsSwapRow, evt.newValue);
         }
 
         private void SetToggleState(Toggle toggle, string keyName, string keyState)
@@ -143,6 +125,17 @@ namespace View
         private static void SavePointsIconsOpacityValue(float value)
         {
             PlayerPrefs.SetFloat(CommonSaveParameters.PointsIconsOpacity, value);
+            PlayerPrefs.Save();
+        }
+
+
+        private void SaveState(bool state, string keyName, string keyStateTrue, string keyStateFalse)
+        {
+            if (state)
+                PlayerPrefs.SetString(keyName, keyStateTrue);
+            else
+                PlayerPrefs.SetString(keyName, keyStateFalse);
+
             PlayerPrefs.Save();
         }
     }

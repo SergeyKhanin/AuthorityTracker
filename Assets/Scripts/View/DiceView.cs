@@ -1,4 +1,3 @@
-using System;
 using Common;
 using Elements;
 using UnityEngine;
@@ -40,7 +39,7 @@ namespace View
             _diceImage.AddToClassList(CommonUssClassNames.DieImage + index);
             _previousIndex = index;
         }
-        
+
         private void SetDiceVisibility()
         {
             if (PlayerPrefs.HasKey(CommonSaveParameters.DiceVisibility))

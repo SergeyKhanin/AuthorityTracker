@@ -128,7 +128,7 @@ namespace View
                 _authority.PlusPoint();
                 _plusCounter++;
             }
-        
+
             _pointsPlusContainer.RemoveFromClassList(CommonUssClassNames.Invisible);
             _authorityLabel.text = _authority.Points.ToString();
             _pointsPlusLabel.text = _plusCounter.ToString();
@@ -157,7 +157,7 @@ namespace View
                 _authority.MinusPoint();
                 _minusCounter++;
             }
-        
+
             _pointsMinusContainer.RemoveFromClassList(CommonUssClassNames.Invisible);
             _authorityLabel.text = _authority.Points.ToString();
             _pointsMinusLabel.text = _minusCounter.ToString();
