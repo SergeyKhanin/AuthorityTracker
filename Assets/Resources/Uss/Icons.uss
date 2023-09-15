@@ -151,3 +151,11 @@
     background-image: var(--ic-arrow-right-color-gray);
 }
 
+.ic-toggle-checkmark__color-green {
+    background-image: var(--ic-toggle-checkmark-color-green);
+}
+
+.ic-toggle-checkbox__color-green {
+    background-image: var(--ic-toggle-checkbox-color-green);
+}
+

@@ -106,6 +106,8 @@
     --ic-deck-color-green: resource('Icons/IC_Deck_Color-green');
     --ic-arrow-left-color-gray: resource('Icons/IC_Arrow-left_Color-gray');
     --ic-arrow-right-color-gray: resource('Icons/IC_Arrow-right_Color-gray');
+    --ic-toggle-checkmark-color-green: resource('Icons/IC_Toggle-checkmark_Color-green');
+    --ic-toggle-checkbox-color-green: resource('Icons/IC_Toggle-checkbox_Color-green');
 }
 
 
