@@ -1,42 +1,46 @@
-.toggle {
+Toogle {
+    margin: 0;
     align-items: center;
 }
 
-.toggle-swap {
-    flex-direction: row;
-}
-
-Toogle {
-    margin: 0;
-}
-
 Toggle #unity-checkmark {
-    background-image: resource('Icons/IC_Toggle-checkbox_Color-green');
-    -unity-background-image-tint-color: rgb(255, 255, 255);
-    background-color: rgba(0, 0, 0, 0);
+    background-color: var(--color-transperent);
+    -unity-background-image-tint-color: var(--color-white);
     border-width: 0;
-    width: 128px;
-    height: 128px;
 }
 
-Toggle:checked #unity-checkmark {
-    background-image: resource('Icons/IC_Toggle-checkmark_Color-green');
-}
-
-.toggle-swap Toggle #unity-checkmark {
-    background-image: resource('Icons/IC_Arrow-swap_Color-gray');
-    -unity-background-image-tint-color: rgb(255, 255, 255);
-    background-color: rgba(0, 0, 0, 0);
-    border-width: 0;
-    width: 176px;
-    height: 176px;
-}
-
-.toggle-swap Toggle:checked #unity-checkmark {
-    background-image: resource('Icons/IC_Arrow-swap_Color-green');
-}
-
-.toggle-swap CustomLabel {
+.toggle-without-label CustomLabel {
     display: none;
     visibility: hidden;
 }
+
+.toggle #unity-checkmark {
+    background-image: var(--ic-toggle-checkbox-color-green);
+    width: var(--base-icon-middle-size);
+    height: var(--base-icon-middle-size);
+}
+
+.toggle:checked #unity-checkmark {
+    background-image: var(--ic-arrow-swap-color-gray);
+}
+
+.toggle-swap Toggle #unity-checkmark {
+    background-image: var(--ic-arrow-swap-color-gray);
+    width: var(--base-icon-m-large-size);
+    height: var(--base-icon-m-large-size);
+}
+
+.toggle-swap Toggle:checked #unity-checkmark {
+    background-image: var(--ic-arrow-swap-color-green);
+}
+
+.toggle-players Toggle #unity-checkmark {
+    background-image: var(--ic-player-1-color-green);
+    width: var(--base-icon-e-large-size);
+    height: var(--base-icon-e-large-size);
+}
+
+.toggle-players Toggle:checked #unity-checkmark {
+    background-image: var(--ic-player-2-color-green);
+}
+

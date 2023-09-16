@@ -10,8 +10,6 @@ namespace View
     public class MainMenuView : MonoBehaviour
     {
         private Authority _authority;
-
-        private int _playersAmount;
         private bool _hasOnePlayer;
         private bool _hasTwoPlayers;
 
@@ -22,8 +20,6 @@ namespace View
         private CustomButton _tournamentButton;
         private CustomButton _communityButton;
         private CustomButton _quitButton;
-        private CustomButton _onePlayerButton;
-        private CustomButton _twoPlayersButton;
         private CustomButton _settingsButton;
 
         private void Awake()
@@ -36,24 +32,17 @@ namespace View
             _tournamentButton = _root.Q<CustomButton>("tournament-button");
             _communityButton = _root.Q<CustomButton>("community-button");
             _quitButton = _root.Q<CustomButton>("quit-button");
-            _onePlayerButton = _root.Q<CustomButton>("one-player-button");
-            _twoPlayersButton = _root.Q<CustomButton>("two-players-button");
             _settingsButton = _root.Q<CustomButton>("settings-button");
             _pointsTextElement = _initialPointsIntegerField.Q<TextElement>();
 
-            GetPlayersAmount();
             GetInitialPoints();
             SetInitialPoints();
-            SetPlayersAmount();
-            SetPlayersButtons();
         }
 
         private void Start() => CheckFontSize(_initialPointsIntegerField.value);
 
         private void OnEnable()
         {
-            _onePlayerButton.clicked += OnOnePlayerButtonClicked;
-            _twoPlayersButton.clicked += OnTwoPlayersButtonClicked;
             _settingsButton.clicked += OnSettingsButtonClicked;
             _casualButton.clicked += OnCasualButtonClicked;
             _tournamentButton.clicked += OnTournamentButtonClicked;
@@ -63,8 +52,6 @@ namespace View
 
         private void OnDisable()
         {
-            _onePlayerButton.clicked -= OnOnePlayerButtonClicked;
-            _twoPlayersButton.clicked -= OnTwoPlayersButtonClicked;
             _settingsButton.clicked -= OnSettingsButtonClicked;
             _casualButton.clicked -= OnCasualButtonClicked;
             _tournamentButton.clicked -= OnTournamentButtonClicked;
@@ -74,31 +61,6 @@ namespace View
 
         private void OnQuitButtonClicked() => Application.Quit();
 
-        private void OnOnePlayerButtonClicked()
-        {
-            SavePlayersAmount(2);
-            GetPlayersAmount();
-            SaveStartAuthorityPoints();
-            SetPlayersAmount();
-
-            var isEnabled = _hasOnePlayer;
-
-            _onePlayerButton.EnableInClassList(CommonUssClassNames.Hide, !isEnabled);
-            _twoPlayersButton.EnableInClassList(CommonUssClassNames.Hide, isEnabled);
-        }
-
-        private void OnTwoPlayersButtonClicked()
-        {
-            SavePlayersAmount(1);
-            GetPlayersAmount();
-            SaveStartAuthorityPoints();
-            SetPlayersAmount();
-
-            var isEnabled = _hasTwoPlayers;
-
-            _twoPlayersButton.EnableInClassList(CommonUssClassNames.Hide, !isEnabled);
-            _onePlayerButton.EnableInClassList(CommonUssClassNames.Hide, isEnabled);
-        }
 
         private void OnSettingsButtonClicked() => SceneManager.LoadScene(CommonScenesList.SettingsScene);
 
@@ -139,39 +101,6 @@ namespace View
             _pointsTextElement.EnableInClassList(CommonUssClassNames.LabelAuthoritySizeSmall, isIntLonger);
         }
 
-        private void GetPlayersAmount()
-        {
-            if (PlayerPrefs.HasKey(CommonSaveParameters.PlayersAmount))
-                _playersAmount = PlayerPrefs.GetInt(CommonSaveParameters.PlayersAmount);
-            else
-                _playersAmount = 2;
-        }
-
-        private void SetPlayersAmount()
-        {
-            if (_playersAmount == 1)
-            {
-                _hasOnePlayer = true;
-                _hasTwoPlayers = false;
-            }
-            else if (_playersAmount == 2)
-            {
-                _hasTwoPlayers = true;
-                _hasOnePlayer = false;
-            }
-            else
-            {
-                _hasTwoPlayers = true;
-                _hasOnePlayer = false;
-            }
-        }
-
-        private void SetPlayersButtons()
-        {
-            _onePlayerButton.EnableInClassList(CommonUssClassNames.Hide, _hasTwoPlayers);
-            _twoPlayersButton.EnableInClassList(CommonUssClassNames.Hide, _hasOnePlayer);
-        }
-
         private void OnCommunityButtonClicked()
         {
             switch (Application.systemLanguage)
@@ -187,13 +116,7 @@ namespace View
                     break;
             }
         }
-
-        private void SavePlayersAmount(int playersAmount)
-        {
-            PlayerPrefs.SetInt(CommonSaveParameters.PlayersAmount, playersAmount);
-            PlayerPrefs.Save();
-        }
-
+        
         private void SaveAuthorityPoints(int value)
         {
             PlayerPrefs.SetInt(CommonSaveParameters.InitialPoints, value);
