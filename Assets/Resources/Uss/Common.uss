@@ -30,6 +30,7 @@
     --base-icon-small-size: 96px;
     --base-icon-middle-size: 128px;
     --base-icon-large-size: 154px;
+    --base-icon-m-large-size: 176px;
     --base-icon-e-large-size: 202px;
     --base-points-margin-casual: 40px;
     --base-points-margin-tournament: 576px;

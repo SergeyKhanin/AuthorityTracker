@@ -9,13 +9,13 @@
             <AttributeOverrides element-name="slider-label" text="ICONS OPACITY" />
         </ui:Instance>
         <ui:VisualElement name="tools-container" picking-mode="Ignore" class="tools-container">
-            <ui:Instance name="deck-toggle-container" template="Toggle" picking-mode="Ignore" class="toggle">
+            <ui:Instance name="deck-toggle-container" template="Toggle" class="toggle align-items-center">
                 <AttributeOverrides element-name="toggle-label" text="DECK" />
             </ui:Instance>
             <ui:VisualElement name="toggles-container" picking-mode="Ignore" class="absolute size-100 justify-content-center align-items-center">
-                <ui:Instance name="swap-toggle-container" template="Toggle" class="toggle toggle-swap" />
+                <ui:Instance name="swap-toggle-container" template="Toggle" class="toggle-swap toggle-without-label" />
             </ui:VisualElement>
-            <ui:Instance name="dice-toggle-container" template="Toggle" picking-mode="Ignore" class="toggle">
+            <ui:Instance name="dice-toggle-container" template="Toggle" class="toggle align-items-center">
                 <AttributeOverrides element-name="toggle-label" text="DICE" />
             </ui:Instance>
         </ui:VisualElement>

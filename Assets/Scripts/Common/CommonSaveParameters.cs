@@ -3,7 +3,6 @@
     public static class CommonSaveParameters
     {
         public const string InitialPoints = "InitialPoints";
-        public const string PlayersAmount = "PlayersAmount";
         public const string PointsIconsOpacity = "PointsIconsOpacity";
         public const string DeckAmount = "DeckAmount";
         public const string DeckVisibility = "DeckVisibility";
@@ -16,7 +15,9 @@
         public const string Player1MaxPoints = Player1 + MaxPoints;
         public const string Player2MaxPoints = Player2 + MaxPoints;
 
-
+        public const string PlayersAmount = "PlayersAmount";
+        public const string HasOnePlayer = "HasOnePlayer";
+        public const string HasTwoPlayers = "HasTwoPlayers";
         public const string DiceIsVisible = "DiceIsVisible";
         public const string DiceIsNotVisible = "DiceIsNotVisible";
         public const string DeckIsVisible = "DeckIsVisible";
