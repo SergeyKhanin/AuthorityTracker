@@ -14,7 +14,6 @@ namespace View
         private VisualElement _root;
         private VisualElement _playersFrame;
         private VisualElement _settingsFrame;
-
         private CustomButton _pauseButton;
         private CustomButton _backButton;
         private CustomButton _quitButton;
@@ -24,10 +23,8 @@ namespace View
         private void Awake()
         {
             _root = GetComponent<UIDocument>().rootVisualElement;
-
             _playersFrame = _root.Q<VisualElement>("players-frame");
             _settingsFrame = _root.Q<VisualElement>("pause-frame");
-
             _pauseButton = _root.Q<CustomButton>("pause-button");
             _backButton = _root.Q<CustomButton>("back-button");
             _quitButton = _root.Q<CustomButton>("quit-button");

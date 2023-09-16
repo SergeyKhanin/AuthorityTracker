@@ -145,15 +145,14 @@ namespace View
 
             if (state)
                 PlayerPrefs.SetString(CommonSaveParameters.PlayersAmount, CommonSaveParameters.HasTwoPlayers);
+
             else
                 PlayerPrefs.SetString(CommonSaveParameters.PlayersAmount, CommonSaveParameters.HasOnePlayer);
 
             PlayerPrefs.Save();
 
-            _hasTwoPlayers = state;
             _hasOnePlayer = !state;
-
-            SaveStartAuthorityPoints();
+            _hasTwoPlayers = state;
         }
 
         private void SetPlayerState()
@@ -161,17 +160,17 @@ namespace View
             if (PlayerPrefs.HasKey(CommonSaveParameters.PlayersAmount))
             {
                 var stringName = PlayerPrefs.GetString(CommonSaveParameters.PlayersAmount);
-                var state = stringName == CommonSaveParameters.HasTwoPlayers;
+                var state = stringName == CommonSaveParameters.HasOnePlayer;
 
-                _playersToggle.value = state;
-                _hasTwoPlayers = state;
-                _hasOnePlayer = !state;
+                _playersToggle.value = !state;
+                _hasOnePlayer = state;
+                _hasTwoPlayers = !state;
             }
             else
             {
-                _playersToggle.value = false;
-                _hasTwoPlayers = false;
-                _hasOnePlayer = true;
+                _playersToggle.value = true;
+                _hasTwoPlayers = true;
+                _hasOnePlayer = false;
             }
         }
     }
