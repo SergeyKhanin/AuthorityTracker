@@ -117,16 +117,30 @@
     flex-direction: row-reverse;
 }
 
-.tools__swap-column #dice-container {
+.tools__swap-column-reverse #dice-container {
     flex-direction: column-reverse;
 }
 
+.tools__swap-column-reverse #deck-container {
+    flex-direction: column-reverse;
+}
+
+.tools__swap-column-reverse #deck-container #arrow-right-button {
+    rotate: 270deg;
+    bottom: var(--base-deck-arrow-offset);
+}
+
+.tools__swap-column-reverse #deck-container #arrow-left-button {
+    rotate: 270deg;
+    bottom: -40px;
+}
+
 .deck__arrow-left {
-    top: var(--base-deck-arrow-offset);
+    bottom: var(--base-deck-arrow-offset);
 }
 
 .deck__arrow-right {
-    bottom: var(--base-deck-arrow-offset);
+    top: var(--base-deck-arrow-offset);
 }
 
 .deck__arrow-text {
