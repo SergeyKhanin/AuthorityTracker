@@ -14,6 +14,7 @@ namespace View
         private bool _hasTwoPlayers;
 
         private VisualElement _root;
+        private VisualElement _playersContainer;
         private IntegerField _initialPointsIntegerField;
         private TextElement _pointsTextElement;
         private CustomButton _casualButton;
@@ -21,19 +22,24 @@ namespace View
         private CustomButton _communityButton;
         private CustomButton _quitButton;
         private CustomButton _settingsButton;
+        private Toggle _playersToggle;
 
         private void Awake()
         {
             _authority = new Authority();
+            
             _root = GetComponent<UIDocument>().rootVisualElement;
-
             _initialPointsIntegerField = _root.Q<IntegerField>("initial-points-input");
+            _playersContainer = _root.Q<VisualElement>("player-amount-toggle-container");
             _casualButton = _root.Q<CustomButton>("casual-button");
             _tournamentButton = _root.Q<CustomButton>("tournament-button");
             _communityButton = _root.Q<CustomButton>("community-button");
             _quitButton = _root.Q<CustomButton>("quit-button");
             _settingsButton = _root.Q<CustomButton>("settings-button");
+            _playersToggle = _playersContainer.Q<Toggle>("toggle");
             _pointsTextElement = _initialPointsIntegerField.Q<TextElement>();
+
+            _playersToggle.RegisterValueChangedCallback(SavePlayersAmountState);
 
             GetInitialPoints();
             SetInitialPoints();
@@ -116,7 +122,7 @@ namespace View
                     break;
             }
         }
-        
+
         private void SaveAuthorityPoints(int value)
         {
             PlayerPrefs.SetInt(CommonSaveParameters.InitialPoints, value);
@@ -131,5 +137,22 @@ namespace View
         private void SaveStartAuthorityPoints() => SaveAuthorityPoints(_authority.Points);
         private void GetInitialPoints() => _initialPointsIntegerField.value = _authority.Points;
         private void SetInitialPoints() => _initialPointsIntegerField.RegisterCallback<ChangeEvent<int>>(OnIntChangedEvent);
+
+        private void SavePlayersAmountState(ChangeEvent<bool> evt)
+        {
+            var state = evt.newValue;
+
+            if (state)
+                PlayerPrefs.SetString(CommonSaveParameters.PlayersAmount, CommonSaveParameters.HasTwoPlayers);
+            else
+                PlayerPrefs.SetString(CommonSaveParameters.PlayersAmount, CommonSaveParameters.HasOnePlayer);
+
+            PlayerPrefs.Save();
+
+            _hasTwoPlayers = state;
+            _hasOnePlayer = !state;
+
+            SaveStartAuthorityPoints();
+        }
     }
 }
