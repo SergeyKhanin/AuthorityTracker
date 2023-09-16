@@ -27,7 +27,7 @@ namespace View
         private void Awake()
         {
             _authority = new Authority();
-            
+
             _root = GetComponent<UIDocument>().rootVisualElement;
             _initialPointsIntegerField = _root.Q<IntegerField>("initial-points-input");
             _playersContainer = _root.Q<VisualElement>("player-amount-toggle-container");
@@ -43,6 +43,7 @@ namespace View
 
             GetInitialPoints();
             SetInitialPoints();
+            SetPlayerState();
         }
 
         private void Start() => CheckFontSize(_initialPointsIntegerField.value);
@@ -153,6 +154,25 @@ namespace View
             _hasOnePlayer = !state;
 
             SaveStartAuthorityPoints();
+        }
+
+        private void SetPlayerState()
+        {
+            if (PlayerPrefs.HasKey(CommonSaveParameters.PlayersAmount))
+            {
+                var stringName = PlayerPrefs.GetString(CommonSaveParameters.PlayersAmount);
+                var state = stringName == CommonSaveParameters.HasTwoPlayers;
+
+                _playersToggle.value = state;
+                _hasTwoPlayers = state;
+                _hasOnePlayer = !state;
+            }
+            else
+            {
+                _playersToggle.value = false;
+                _hasTwoPlayers = false;
+                _hasOnePlayer = true;
+            }
         }
     }
 }
