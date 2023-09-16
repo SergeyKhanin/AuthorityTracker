@@ -20,8 +20,8 @@ Toggle #unity-checkmark {
     height: var(--base-icon-middle-size);
 }
 
-.toggle:checked #unity-checkmark {
-    background-image: var(--ic-arrow-swap-color-gray);
+.toggle Toggle:checked #unity-checkmark {
+    background-image: var(--ic-toggle-checkmark-color-green);
 }
 
 .toggle-swap Toggle #unity-checkmark {
