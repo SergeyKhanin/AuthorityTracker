@@ -38,15 +38,17 @@ namespace View
             _settingsButton = _root.Q<CustomButton>("settings-button");
             _playersToggle = _playersContainer.Q<Toggle>("toggle");
             _pointsTextElement = _initialPointsIntegerField.Q<TextElement>();
-
-            _playersToggle.RegisterValueChangedCallback(SavePlayersAmountState);
-
+            
             GetInitialPoints();
             SetInitialPoints();
             SetPlayerState();
         }
 
-        private void Start() => CheckFontSize(_initialPointsIntegerField.value);
+        private void Start()
+        {
+            CheckFontSize(_initialPointsIntegerField.value);
+            _playersToggle.RegisterValueChangedCallback(SavePlayersAmountState);
+        }
 
         private void OnEnable()
         {
@@ -153,6 +155,8 @@ namespace View
 
             _hasOnePlayer = !state;
             _hasTwoPlayers = state;
+
+            SaveStartAuthorityPoints();
         }
 
         private void SetPlayerState()
