@@ -13,7 +13,7 @@ namespace Common
         public const string PointsLabelRed = "label__red";
         public const string FrameGameImage = "frame__game__image-";
         public const string DieImage = "ic-dice__color-green-";
-        public const string ToolsSwap = "tools__swap-column";
-        public const string ToolsSwapRow = "tools__swap-row";
+        public const string ToolsSwap = "tools__swap-column-reverse";
+        public const string ToolsSwapRow = "tools__swap-row-reverse";
     }
 }

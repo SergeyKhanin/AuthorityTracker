@@ -109,11 +109,11 @@
     margin-bottom: 128px;
 }
 
-.tools__swap-column {
+.tools__swap-column-reverse {
     flex-direction: column-reverse;
 }
 
-.tools__swap-row {
+.tools__swap-row-reverse {
     flex-direction: row-reverse;
 }
 
