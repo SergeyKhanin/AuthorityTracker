@@ -38,7 +38,7 @@ namespace View
             _settingsButton = _root.Q<CustomButton>("settings-button");
             _playersToggle = _playersContainer.Q<Toggle>("toggle");
             _pointsTextElement = _initialPointsIntegerField.Q<TextElement>();
-            
+
             GetInitialPoints();
             SetInitialPoints();
             SetPlayerState();
@@ -70,8 +70,8 @@ namespace View
 
         private void OnQuitButtonClicked() => Application.Quit();
 
-
-        private void OnSettingsButtonClicked() => SceneManager.LoadScene(CommonScenesList.SettingsScene);
+        private void OnSettingsButtonClicked() =>
+            SceneManager.LoadScene(CommonScenesList.SettingsScene);
 
         private void OnCasualButtonClicked()
         {
@@ -107,7 +107,10 @@ namespace View
         private void CheckFontSize(int value)
         {
             var isIntLonger = value > 99;
-            _pointsTextElement.EnableInClassList(CommonUssClassNames.LabelAuthoritySizeSmall, isIntLonger);
+            _pointsTextElement.EnableInClassList(
+                CommonUssClassNames.LabelAuthoritySizeSmall,
+                isIntLonger
+            );
         }
 
         private void OnCommunityButtonClicked()
@@ -137,19 +140,28 @@ namespace View
         }
 
         private void SaveInitialAuthorityPoints(int value) => SaveAuthorityPoints(value);
+
         private void SaveStartAuthorityPoints() => SaveAuthorityPoints(_authority.Points);
+
         private void GetInitialPoints() => _initialPointsIntegerField.value = _authority.Points;
-        private void SetInitialPoints() => _initialPointsIntegerField.RegisterCallback<ChangeEvent<int>>(OnIntChangedEvent);
+
+        private void SetInitialPoints() =>
+            _initialPointsIntegerField.RegisterCallback<ChangeEvent<int>>(OnIntChangedEvent);
 
         private void SavePlayersAmountState(ChangeEvent<bool> evt)
         {
             var state = evt.newValue;
 
             if (state)
-                PlayerPrefs.SetString(CommonSaveParameters.PlayersAmount, CommonSaveParameters.HasTwoPlayers);
-
+                PlayerPrefs.SetString(
+                    CommonSaveParameters.PlayersAmount,
+                    CommonSaveParameters.HasTwoPlayers
+                );
             else
-                PlayerPrefs.SetString(CommonSaveParameters.PlayersAmount, CommonSaveParameters.HasOnePlayer);
+                PlayerPrefs.SetString(
+                    CommonSaveParameters.PlayersAmount,
+                    CommonSaveParameters.HasOnePlayer
+                );
 
             PlayerPrefs.Save();
 

@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class DisplayControl : MonoBehaviour
 {
-    [SerializeField] private bool hasSleepTimeout;
+    [SerializeField]
+    private bool hasSleepTimeout;
 
     void Start()
     {

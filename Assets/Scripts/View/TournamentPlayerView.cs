@@ -2,6 +2,7 @@ using Common;
 using Core;
 using Elements;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UIElements;
 
 namespace View
@@ -11,7 +12,8 @@ namespace View
     {
         public int Counter { get; private set; }
 
-        [SerializeField] private PlayersRoster.PlayersList playersList;
+        [SerializeField]
+        private PlayersRoster _playersRoster;
 
         private Authority _authority;
         private ApplyButtonView _applyButtonView;
@@ -47,7 +49,7 @@ namespace View
         {
             _root = GetComponent<UIDocument>().rootVisualElement;
             _applyButtonView = GetComponent<ApplyButtonView>();
-            _playerName = SetPlayers.GetPlayerFromList(playersList);
+            _playerName = SetPlayers.GetPlayerFromList(_playersRoster);
             _authority = new Authority();
 
             _frame = _root.Q<VisualElement>(_playerName);
@@ -184,14 +186,12 @@ namespace View
                 _iconPlus.AddToClassList(CommonUssClassNames.Hide);
                 _iconMinus.RemoveFromClassList(CommonUssClassNames.Hide);
             }
-
             else if (Counter == 0)
             {
                 _pointsLabel.AddToClassList(CommonUssClassNames.Hide);
                 _iconPlus.AddToClassList(CommonUssClassNames.Hide);
                 _iconMinus.AddToClassList(CommonUssClassNames.Hide);
             }
-
             else
             {
                 _pointsLabel.text = Counter.ToString();
@@ -216,11 +216,26 @@ namespace View
 
         private void ValidateClasses()
         {
-            _authorityImage.EnableInClassList(CommonUssClassNames.ImageAuthorityOrange, _isPointsLessHalf);
-            _authorityImage.EnableInClassList(CommonUssClassNames.ImageAuthorityRed, _isPointsLessQuarter);
-            _authorityImage.EnableInClassList(CommonUssClassNames.ImageAuthorityBlack, _isPointsLessZero);
-            _authorityImage.EnableInClassList(CommonUssClassNames.ImageAuthorityGreen, _isPointsMoreZero);
-            _authorityLabel.EnableInClassList(CommonUssClassNames.LabelAuthoritySizeSmall, _isPointsLong);
+            _authorityImage.EnableInClassList(
+                CommonUssClassNames.ImageAuthorityOrange,
+                _isPointsLessHalf
+            );
+            _authorityImage.EnableInClassList(
+                CommonUssClassNames.ImageAuthorityRed,
+                _isPointsLessQuarter
+            );
+            _authorityImage.EnableInClassList(
+                CommonUssClassNames.ImageAuthorityBlack,
+                _isPointsLessZero
+            );
+            _authorityImage.EnableInClassList(
+                CommonUssClassNames.ImageAuthorityGreen,
+                _isPointsMoreZero
+            );
+            _authorityLabel.EnableInClassList(
+                CommonUssClassNames.LabelAuthoritySizeSmall,
+                _isPointsLong
+            );
         }
 
         private void ValidateText()
@@ -276,7 +291,9 @@ namespace View
         private void SetPointsIconsOpacityValue()
         {
             if (PlayerPrefs.HasKey(CommonSaveParameters.PointsIconsOpacity))
-                _pointsIconsContainer.style.opacity = new StyleFloat(PlayerPrefs.GetFloat(CommonSaveParameters.PointsIconsOpacity));
+                _pointsIconsContainer.style.opacity = new StyleFloat(
+                    PlayerPrefs.GetFloat(CommonSaveParameters.PointsIconsOpacity)
+                );
             else
                 _pointsIconsContainer.style.opacity = new StyleFloat(0.1f);
         }

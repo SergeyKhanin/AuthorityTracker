@@ -11,7 +11,8 @@ namespace View
         private const float TimeDelay = 1.0f;
         private string _playerName;
 
-        [SerializeField] private PlayersRoster.PlayersList playersList;
+        [SerializeField]
+        private PlayersRoster _playersRoster;
 
         private Authority _authority;
 
@@ -46,7 +47,7 @@ namespace View
         private void Awake()
         {
             _root = GetComponent<UIDocument>().rootVisualElement;
-            _playerName = SetPlayers.GetPlayerFromList(playersList);
+            _playerName = SetPlayers.GetPlayerFromList(_playersRoster);
             _authority = new Authority();
 
             _frame = _root.Q<VisualElement>(_playerName);
@@ -209,11 +210,26 @@ namespace View
 
         private void ValidateClasses()
         {
-            _authorityImage.EnableInClassList(CommonUssClassNames.ImageAuthorityOrange, _isPointsLessHalf);
-            _authorityImage.EnableInClassList(CommonUssClassNames.ImageAuthorityRed, _isPointsLessQuarter);
-            _authorityImage.EnableInClassList(CommonUssClassNames.ImageAuthorityBlack, _isPointsLessZero);
-            _authorityImage.EnableInClassList(CommonUssClassNames.ImageAuthorityGreen, _isPointsMoreZero);
-            _authorityLabel.EnableInClassList(CommonUssClassNames.LabelAuthoritySizeSmall, _isPointsLong);
+            _authorityImage.EnableInClassList(
+                CommonUssClassNames.ImageAuthorityOrange,
+                _isPointsLessHalf
+            );
+            _authorityImage.EnableInClassList(
+                CommonUssClassNames.ImageAuthorityRed,
+                _isPointsLessQuarter
+            );
+            _authorityImage.EnableInClassList(
+                CommonUssClassNames.ImageAuthorityBlack,
+                _isPointsLessZero
+            );
+            _authorityImage.EnableInClassList(
+                CommonUssClassNames.ImageAuthorityGreen,
+                _isPointsMoreZero
+            );
+            _authorityLabel.EnableInClassList(
+                CommonUssClassNames.LabelAuthoritySizeSmall,
+                _isPointsLong
+            );
         }
 
         private void ValidateText()
@@ -269,7 +285,9 @@ namespace View
         private void SetPointsIconsOpacityValue()
         {
             if (PlayerPrefs.HasKey(CommonSaveParameters.PointsIconsOpacity))
-                _pointsIconsContainer.style.opacity = new StyleFloat(PlayerPrefs.GetFloat(CommonSaveParameters.PointsIconsOpacity));
+                _pointsIconsContainer.style.opacity = new StyleFloat(
+                    PlayerPrefs.GetFloat(CommonSaveParameters.PointsIconsOpacity)
+                );
             else
                 _pointsIconsContainer.style.opacity = new StyleFloat(0.1f);
         }

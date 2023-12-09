@@ -48,17 +48,32 @@ namespace View
         {
             SetPointsIconsOpacityValue();
             SetIconsOpacityStyle();
-            SetToggleState(_diceToggle, CommonSaveParameters.DiceVisibility, CommonSaveParameters.DiceIsVisible);
-            SetToggleState(_deckToggle, CommonSaveParameters.DeckVisibility, CommonSaveParameters.DeckIsVisible);
-            SetToggleState(_swapToolsToggle, CommonSaveParameters.ToolsDirectionState, CommonSaveParameters.ToolsDirectionNormal);
+            SetToggleState(
+                _diceToggle,
+                CommonSaveParameters.DiceVisibility,
+                CommonSaveParameters.DiceIsVisible
+            );
+            SetToggleState(
+                _deckToggle,
+                CommonSaveParameters.DeckVisibility,
+                CommonSaveParameters.DeckIsVisible
+            );
+            SetToggleState(
+                _swapToolsToggle,
+                CommonSaveParameters.ToolsDirectionState,
+                CommonSaveParameters.ToolsDirectionNormal
+            );
         }
 
-        private void SetIconsOpacityStyle() => _iconOpacityExample.style.opacity = _iconOpacitySlider.value;
+        private void SetIconsOpacityStyle() =>
+            _iconOpacityExample.style.opacity = _iconOpacitySlider.value;
 
         private void SetPointsIconsOpacityValue()
         {
             if (PlayerPrefs.HasKey(CommonSaveParameters.PointsIconsOpacity))
-                _iconOpacitySlider.value = PlayerPrefs.GetFloat(CommonSaveParameters.PointsIconsOpacity);
+                _iconOpacitySlider.value = PlayerPrefs.GetFloat(
+                    CommonSaveParameters.PointsIconsOpacity
+                );
             else
                 _iconOpacitySlider.value = 0.1f;
         }
@@ -75,7 +90,8 @@ namespace View
             _clearSettings.clicked -= OnClearSettingsButtonButtonClicked;
         }
 
-        private void OnBackButtonClicked() => SceneManager.LoadScene(CommonScenesList.MainMenuScene);
+        private void OnBackButtonClicked() =>
+            SceneManager.LoadScene(CommonScenesList.MainMenuScene);
 
         private void OnClearSettingsButtonButtonClicked()
         {
@@ -89,22 +105,30 @@ namespace View
             _iconOpacityExample.style.opacity = evt.newValue;
         }
 
-        private void SaveDiceVisibilityState(ChangeEvent<bool> evt) => SaveState(evt.newValue,
-            CommonSaveParameters.DiceVisibility,
-            CommonSaveParameters.DiceIsVisible,
-            CommonSaveParameters.DiceIsNotVisible);
+        private void SaveDiceVisibilityState(ChangeEvent<bool> evt) =>
+            SaveState(
+                evt.newValue,
+                CommonSaveParameters.DiceVisibility,
+                CommonSaveParameters.DiceIsVisible,
+                CommonSaveParameters.DiceIsNotVisible
+            );
 
-        private void SaveDeckVisibilityState(ChangeEvent<bool> evt) => SaveState(evt.newValue,
-            CommonSaveParameters.DeckVisibility,
-            CommonSaveParameters.DeckIsVisible,
-            CommonSaveParameters.DeckIsNotVisible);
+        private void SaveDeckVisibilityState(ChangeEvent<bool> evt) =>
+            SaveState(
+                evt.newValue,
+                CommonSaveParameters.DeckVisibility,
+                CommonSaveParameters.DeckIsVisible,
+                CommonSaveParameters.DeckIsNotVisible
+            );
 
         private void SaveToolsDirectionState(ChangeEvent<bool> evt)
         {
-            SaveState(evt.newValue,
+            SaveState(
+                evt.newValue,
                 CommonSaveParameters.ToolsDirectionState,
                 CommonSaveParameters.ToolsDirectionNormal,
-                CommonSaveParameters.ToolsDirectionReverse);
+                CommonSaveParameters.ToolsDirectionReverse
+            );
 
             _toolsContainer.EnableInClassList(CommonUssClassNames.ToolsSwapRow, evt.newValue);
         }
@@ -128,8 +152,12 @@ namespace View
             PlayerPrefs.Save();
         }
 
-
-        private void SaveState(bool state, string keyName, string keyStateTrue, string keyStateFalse)
+        private void SaveState(
+            bool state,
+            string keyName,
+            string keyStateTrue,
+            string keyStateFalse
+        )
         {
             if (state)
                 PlayerPrefs.SetString(keyName, keyStateTrue);

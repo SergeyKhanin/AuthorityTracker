@@ -26,8 +26,11 @@ namespace View
         }
 
         private void Start() => SetDiceVisibility();
+
         private void OnEnable() => _rollDiceButton.clicked += OnRollDiceButtonClicked;
+
         private void OnDisable() => _rollDiceButton.clicked -= OnRollDiceButtonClicked;
+
         private void OnRollDiceButtonClicked() => RandomDieImage();
 
         private void RandomDieImage()

@@ -1,11 +1,9 @@
 namespace Core
 {
-    public static class PlayersRoster
+    public enum PlayersRoster
     {
-        public enum PlayersList
-        {
-            Player1 = 1,
-            Player2 = 2
-        }
+        None = 0,
+        Player1 = 1,
+        Player2 = 2,
     }
 }

@@ -53,8 +53,12 @@ namespace View
         }
 
         private void OnPauseButtonClicked() => EnablePause(true);
+
         private void OnBackButtonClicked() => EnablePause(false);
-        private void OnMainMenuButtonClicked() => SceneManager.LoadScene(CommonScenesList.MainMenuScene);
+
+        private void OnMainMenuButtonClicked() =>
+            SceneManager.LoadScene(CommonScenesList.MainMenuScene);
+
         private void OnQuitAppButtonClicked() => Application.Quit();
 
         private void OnResetButtonClicked()

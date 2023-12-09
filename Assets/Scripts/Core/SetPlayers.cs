@@ -4,16 +4,16 @@ namespace Core
 {
     public static class SetPlayers
     {
-        public static string GetPlayerFromList(PlayersRoster.PlayersList playersList)
+        public static string GetPlayerFromList(PlayersRoster playersRoster)
         {
             string playerName;
 
-            switch (playersList)
+            switch (playersRoster)
             {
-                case PlayersRoster.PlayersList.Player1:
+                case PlayersRoster.Player1:
                     playerName = CommonSaveParameters.Player1;
                     break;
-                case PlayersRoster.PlayersList.Player2:
+                case PlayersRoster.Player2:
                     playerName = CommonSaveParameters.Player2;
                     break;
                 default:
