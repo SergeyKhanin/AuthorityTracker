@@ -1,16 +1,13 @@
 using UnityEngine;
 
-public class Turntable : MonoBehaviour
+namespace ScoringTokens
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public class Turntable : MonoBehaviour
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        void Update()
+        {
+            transform.Rotate(Vector3.up, Time.deltaTime * 50f);
+        }
     }
 }
