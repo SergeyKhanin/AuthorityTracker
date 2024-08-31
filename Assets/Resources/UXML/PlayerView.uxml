@@ -1,6 +1,6 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
-    <engine:Button name="x1-plus-button" />
-    <engine:Button name="x5-plus-button" />
-    <engine:Button name="x1-minus-button" />
-    <engine:Button name="x5-minus-button" />
+    <engine:Button name="x1-plus-button" style="flex-shrink: 1; flex-grow: 1;" />
+    <engine:Button name="x5-plus-button" style="flex-shrink: 1; flex-grow: 1;" />
+    <engine:Button name="x1-minus-button" style="flex-shrink: 1; flex-grow: 1;" />
+    <engine:Button name="x5-minus-button" style="flex-shrink: 1; flex-grow: 1;" />
 </engine:UXML>

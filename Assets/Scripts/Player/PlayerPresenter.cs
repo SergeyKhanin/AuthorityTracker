@@ -1,22 +1,46 @@
-using UnityEngine;
+using System;
 
 namespace Player
 {
-    public class PlayerPresenter : MonoBehaviour
+    public sealed class PlayerPresenter : IDisposable
     {
-        private PlayerView _view;
-        private PlayerModel _model;
+        private readonly PlayerView _view;
+        private readonly PlayerModel _model;
 
-
-        private void Awake()
+        public PlayerPresenter(PlayerView view, PlayerModel model)
         {
-            _view = GetComponent<PlayerView>();
-            _view.Init();
+            _view = view;
+            _model = model;
+        }
 
-            _view.X1MinusButton.text = "-1";
-            _view.X5MinusButton.text = "-5";
-            _view.X1PlusButton.text = "+1";
-            _view.X5PlusButton.text = "+5";
+        private void Init()
+        {
+            _view.Init();
+            Subscribe();
+        }
+
+        private void OnX1PlusButtonClicked() => _model.X1Plus();
+
+        private void OnX5PlusButtonClicked() => _model.X5Plus();
+
+        private void OnX1MinusButtonClicked() => _model.X1Minus();
+
+        private void OnX5MinusButtonClicked() => _model.X5Minus();
+
+        private void Subscribe()
+        {
+            _view.X1PlusButton.clickable.clicked += OnX1PlusButtonClicked;
+            _view.X5PlusButton.clickable.clicked += OnX5PlusButtonClicked;
+            _view.X1MinusButton.clickable.clicked += OnX1MinusButtonClicked;
+            _view.X5MinusButton.clickable.clicked += OnX5MinusButtonClicked;
+        }
+
+        public void Dispose()
+        {
+            _view.X1PlusButton.clickable.clicked -= OnX1PlusButtonClicked;
+            _view.X5PlusButton.clickable.clicked -= OnX5PlusButtonClicked;
+            _view.X1MinusButton.clickable.clicked -= OnX1MinusButtonClicked;
+            _view.X5MinusButton.clickable.clicked -= OnX5MinusButtonClicked;
         }
     }
 }
