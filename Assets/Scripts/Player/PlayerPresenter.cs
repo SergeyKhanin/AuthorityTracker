@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using Zenject;
 
 namespace Player
 {
@@ -28,20 +27,20 @@ namespace Player
         private void Subscribe()
         {
             _view.Init();
-            _view.X1PlusButton.clickable.clicked += OnX1PlusButtonClicked;
-            _view.X5PlusButton.clickable.clicked += OnX5PlusButtonClicked;
-            _view.X1MinusButton.clickable.clicked += OnX1MinusButtonClicked;
-            _view.X5MinusButton.clickable.clicked += OnX5MinusButtonClicked;
+            _view.X1PlusButton.clicked += OnX1PlusButtonClicked;
+            _view.X5PlusButton.clicked += OnX5PlusButtonClicked;
+            _view.X1MinusButton.clicked += OnX1MinusButtonClicked;
+            _view.X5MinusButton.clicked += OnX5MinusButtonClicked;
         }
 
         public void Dispose()
         {
-            _view.X1PlusButton.clickable.clicked -= OnX1PlusButtonClicked;
-            _view.X5PlusButton.clickable.clicked -= OnX5PlusButtonClicked;
-            _view.X1MinusButton.clickable.clicked -= OnX1MinusButtonClicked;
-            _view.X5MinusButton.clickable.clicked -= OnX5MinusButtonClicked;
+            // _view.X1PlusButton.clicked -= OnX1PlusButtonClicked;
+            // _view.X5PlusButton.clicked -= OnX5PlusButtonClicked;
+            // _view.X1MinusButton.clicked -= OnX1MinusButtonClicked;
+            // _view.X5MinusButton.clicked -= OnX5MinusButtonClicked;
         }
 
-        private void UpdatePointsLabel() => Debug.Log("OnClick");
+        private void UpdatePointsLabel() => Debug.Log("Сlicked");
     }
 }
