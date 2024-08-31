@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.svermeulen.extenject": {
+      "version": "https://github.com/Mathijs-Bakker/Extenject.git?path=UnityProject/Assets/Plugins/Zenject/Source#9.3.0",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "54b95b22c5eabd16ad342b5ba78d67996bb078a5"
+    },
     "com.unity.ai.navigation": {
       "version": "2.0.3",
       "depth": 0,
