@@ -16,19 +16,7 @@ namespace Player
 
         public void Init()
         {
-            var uiDocument = GetComponent<UIDocument>();
-            if (uiDocument == null)
-            {
-                Debug.LogError("UIDocument component not found on the GameObject.");
-                return;
-            }
-
-            _root = uiDocument.rootVisualElement;
-            if (_root == null)
-            {
-                Debug.LogError("RootVisualElement is null.");
-                return;
-            }
+            _root = GetComponent<UIDocument>().rootVisualElement;
 
             PointsLabel = _root.Q<Label>("points-label");
             X1PlusButton = _root.Q<Button>("x1-plus-button");

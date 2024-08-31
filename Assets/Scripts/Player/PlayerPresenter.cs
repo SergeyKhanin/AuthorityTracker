@@ -14,10 +14,13 @@ namespace Player
         {
             _view = view;
             _model = model;
+            Debug.Log("PlayerPresenter initialized");
+        }
+
+        public void Init()
+        {
             _view.Init();
             Subscribe();
-
-            Debug.Log("PlayerPresenter initialized");
         }
 
         private void OnX1PlusButtonClicked()
