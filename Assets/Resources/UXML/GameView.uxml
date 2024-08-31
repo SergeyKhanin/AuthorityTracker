@@ -1,0 +1,5 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <engine:Template name="PlayerView" src="project://database/Assets/Resources/UXML/PlayerView.uxml?fileID=9197481963319205126&amp;guid=44635cb0be7225e4c9c295fcbf1ca9d4&amp;type=3#PlayerView" />
+    <engine:Instance template="PlayerView" name="player-1" style="flex-grow: 1;" />
+    <engine:Instance template="PlayerView" name="player-2" style="flex-grow: 1;" />
+</engine:UXML>
