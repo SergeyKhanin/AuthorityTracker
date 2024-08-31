@@ -1,4 +1,6 @@
 using System;
+using UnityEngine;
+using Zenject;
 
 namespace Player
 {
@@ -7,25 +9,40 @@ namespace Player
         private readonly PlayerView _view;
         private readonly PlayerModel _model;
 
+        [Inject]
         public PlayerPresenter(PlayerView view, PlayerModel model)
         {
             _view = view;
             _model = model;
-        }
-
-        private void Init()
-        {
             _view.Init();
             Subscribe();
+
+            Debug.Log("PlayerPresenter initialized");
         }
 
-        private void OnX1PlusButtonClicked() => _model.X1Plus();
+        private void OnX1PlusButtonClicked()
+        {
+            _model.X1Plus();
+            UpdatePointsLabel();
+        }
 
-        private void OnX5PlusButtonClicked() => _model.X5Plus();
+        private void OnX5PlusButtonClicked()
+        {
+            _model.X5Plus();
+            UpdatePointsLabel();
+        }
 
-        private void OnX1MinusButtonClicked() => _model.X1Minus();
+        private void OnX1MinusButtonClicked()
+        {
+            _model.X1Minus();
+            UpdatePointsLabel();
+        }
 
-        private void OnX5MinusButtonClicked() => _model.X5Minus();
+        private void OnX5MinusButtonClicked()
+        {
+            _model.X5Minus();
+            UpdatePointsLabel();
+        }
 
         private void Subscribe()
         {
@@ -41,6 +58,12 @@ namespace Player
             _view.X5PlusButton.clickable.clicked -= OnX5PlusButtonClicked;
             _view.X1MinusButton.clickable.clicked -= OnX1MinusButtonClicked;
             _view.X5MinusButton.clickable.clicked -= OnX5MinusButtonClicked;
+        }
+
+        private void UpdatePointsLabel()
+        {
+            _view.PointsLabel.text = _model.Points.ToString();
+            Debug.Log("OnClick");
         }
     }
 }
