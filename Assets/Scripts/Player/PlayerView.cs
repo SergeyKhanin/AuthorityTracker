@@ -23,9 +23,6 @@ namespace Player
             X5PlusButton = _root.Q<Button>("x5-plus-button");
             X1MinusButton = _root.Q<Button>("x1-minus-button");
             X5MinusButton = _root.Q<Button>("x5-minus-button");
-            _root = GetComponent<UIDocument>().rootVisualElement;
-
-            Debug.Log("PlayerView init");
         }
     }
 }
