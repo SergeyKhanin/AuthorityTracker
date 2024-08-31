@@ -14,7 +14,11 @@ namespace Player
             _model = model;
         }
 
-        public void Init() => Subscribe();
+        public void Init()
+        {
+            _view.Init();
+            Subscribe();
+        }
 
         private void OnX1PlusButtonClicked() => UpdatePointsLabel();
 
@@ -35,10 +39,10 @@ namespace Player
 
         public void Dispose()
         {
-            // _view.X1PlusButton.clicked -= OnX1PlusButtonClicked;
-            // _view.X5PlusButton.clicked -= OnX5PlusButtonClicked;
-            // _view.X1MinusButton.clicked -= OnX1MinusButtonClicked;
-            // _view.X5MinusButton.clicked -= OnX5MinusButtonClicked;
+            _view.X1PlusButton.clicked -= OnX1PlusButtonClicked;
+            _view.X5PlusButton.clicked -= OnX5PlusButtonClicked;
+            _view.X1MinusButton.clicked -= OnX1MinusButtonClicked;
+            _view.X5MinusButton.clicked -= OnX5MinusButtonClicked;
         }
 
         private void UpdatePointsLabel() => Debug.Log("Сlicked");
