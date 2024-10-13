@@ -10,7 +10,6 @@ namespace Player
                 new PlayerView(uiDocument, pathToParent),
                 new PlayerModel()
             );
-            playerPresenter.Subscribe();
         }
     }
 }

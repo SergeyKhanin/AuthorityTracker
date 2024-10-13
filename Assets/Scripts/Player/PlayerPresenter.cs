@@ -12,7 +12,15 @@ namespace Player
         {
             _view = view;
             _model = model;
-            view.Init();
+
+            Init();
+        }
+
+        private void Init()
+        {
+            Subscribe();
+
+            _view.PointsLabel.text = _model.Points.ToString();
         }
 
         private void OnX1PlusButtonClicked() => PlusX1();
@@ -23,7 +31,7 @@ namespace Player
 
         private void OnX5MinusButtonClicked() => MinusX5();
 
-        public void Subscribe()
+        private void Subscribe()
         {
             _view.X1PlusButton.clicked += OnX1PlusButtonClicked;
             _view.X5PlusButton.clicked += OnX5PlusButtonClicked;
@@ -63,7 +71,10 @@ namespace Player
             UpdatePointsLabel();
         }
 
-        private void UpdatePointsLabel() =>
+        private void UpdatePointsLabel()
+        {
             Debug.Log($"{_view.Container.name}: Clicked - Score is: {_model.Points}");
+            _view.PointsLabel.text = _model.Points.ToString();
+        }
     }
 }

@@ -8,6 +8,6 @@
         <engine:Button name="x5-minus-button" style="flex-shrink: 1; flex-grow: 1;" />
     </engine:VisualElement>
     <engine:VisualElement picking-mode="Ignore" style="flex-grow: 1; position: absolute; height: 100%; width: 100%; align-items: center; justify-content: center;">
-        <engine:Label name="points-label" />
+        <engine:Label name="points-label" style="font-size: 22px;" />
     </engine:VisualElement>
 </engine:UXML>
