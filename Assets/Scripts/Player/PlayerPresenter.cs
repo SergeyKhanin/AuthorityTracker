@@ -12,25 +12,19 @@ namespace Player
         {
             _view = view;
             _model = model;
+            view.Init();
         }
 
-        public void Init()
+        private void OnX1PlusButtonClicked() => PlusX1();
+
+        private void OnX5PlusButtonClicked() => PlusX5();
+
+        private void OnX1MinusButtonClicked() => MinusX1();
+
+        private void OnX5MinusButtonClicked() => MinusX5();
+
+        public void Subscribe()
         {
-            _view.Init();
-            Subscribe();
-        }
-
-        private void OnX1PlusButtonClicked() => UpdatePointsLabel();
-
-        private void OnX5PlusButtonClicked() => UpdatePointsLabel();
-
-        private void OnX1MinusButtonClicked() => UpdatePointsLabel();
-
-        private void OnX5MinusButtonClicked() => UpdatePointsLabel();
-
-        private void Subscribe()
-        {
-            _view.Init();
             _view.X1PlusButton.clicked += OnX1PlusButtonClicked;
             _view.X5PlusButton.clicked += OnX5PlusButtonClicked;
             _view.X1MinusButton.clicked += OnX1MinusButtonClicked;
@@ -45,6 +39,31 @@ namespace Player
             _view.X5MinusButton.clicked -= OnX5MinusButtonClicked;
         }
 
-        private void UpdatePointsLabel() => Debug.Log($"{_view.Container.name}: Clicked");
+        private void PlusX1()
+        {
+            _model.X1Plus();
+            UpdatePointsLabel();
+        }
+
+        private void PlusX5()
+        {
+            _model.X5Plus();
+            UpdatePointsLabel();
+        }
+
+        private void MinusX5()
+        {
+            _model.X5Minus();
+            UpdatePointsLabel();
+        }
+
+        private void MinusX1()
+        {
+            _model.X1Minus();
+            UpdatePointsLabel();
+        }
+
+        private void UpdatePointsLabel() =>
+            Debug.Log($"{_view.Container.name}: Clicked - Score is: {_model.Points}");
     }
 }

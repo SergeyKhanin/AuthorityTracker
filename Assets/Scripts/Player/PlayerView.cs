@@ -1,4 +1,3 @@
-using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace Player
@@ -7,7 +6,6 @@ namespace Player
     {
         private readonly UIDocument _uiDocument;
         private readonly string _pathToParent;
-
         public VisualElement Container { get; private set; }
         public Label PointsLabel { get; private set; }
         public Button X1PlusButton { get; private set; }

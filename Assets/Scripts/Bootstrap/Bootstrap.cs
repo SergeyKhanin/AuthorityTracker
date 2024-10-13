@@ -4,26 +4,34 @@ using UnityEngine.UIElements;
 
 namespace Bootstrap
 {
-    public class Bootstrap : MonoBehaviour
+    [RequireComponent(typeof(UIDocument))]
+    public sealed class Bootstrap : MonoBehaviour
     {
-        [SerializeField]
+        private const string PlayerName = "player-";
         private UIDocument _uiDocument;
 
         private void Start()
         {
             _uiDocument = GetComponent<UIDocument>();
 
-            var player1 = new PlayerPresenter(
-                new PlayerView(_uiDocument, "player-1"),
-                new PlayerModel()
-            );
-            player1.Init();
+            CreatePlayers(PlayersAmount.Player2);
+        }
 
-            var player2 = new PlayerPresenter(
-                new PlayerView(_uiDocument, "player-2"),
-                new PlayerModel()
-            );
-            player2.Init();
+        private void CreatePlayers(PlayersAmount playersAmount)
+        {
+            var counts = (int)playersAmount;
+
+            if (counts == 0)
+            {
+                Debug.LogError("Players amount cannot be zero.");
+            }
+            else
+            {
+                for (int i = 1; i <= counts; i++)
+                {
+                    var player = new PlayerEntity(_uiDocument, PlayerName + i);
+                }
+            }
         }
     }
 }
