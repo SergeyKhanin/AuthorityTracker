@@ -22,6 +22,8 @@ namespace Player
             _view.PointsLabel.text = _model.Points.ToString();
         }
 
+        public void Apply() { }
+
         private void OnX1PlusButtonClicked() => PlusX1();
 
         private void OnX5PlusButtonClicked() => PlusX5();

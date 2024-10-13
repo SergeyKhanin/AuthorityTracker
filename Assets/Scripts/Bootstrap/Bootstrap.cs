@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Player;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -14,18 +15,28 @@ namespace Bootstrap
         {
             _uiDocument = GetComponent<UIDocument>();
 
-            CreatePlayers(PlayersAmount.Player2);
+            var players = CreatePlayers(PlayersAmount.Player2);
+
+            foreach (var player in players)
+            {
+                player.Apply();
+            }
         }
 
-        private void CreatePlayers(PlayersAmount playersAmount)
+        private List<PlayerPresenter> CreatePlayers(PlayersAmount playersAmount)
         {
+            var players = new List<PlayerPresenter>();
+
             for (int i = 1; i <= (int)playersAmount; i++)
             {
                 var player = new PlayerPresenter(
                     new PlayerView(_uiDocument, PlayerName + i),
                     new PlayerModel()
                 );
+                players.Add(player);
             }
+
+            return players;
         }
     }
 }
