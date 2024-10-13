@@ -45,6 +45,6 @@ namespace Player
             _view.X5MinusButton.clicked -= OnX5MinusButtonClicked;
         }
 
-        private void UpdatePointsLabel() => Debug.Log("Сlicked");
+        private void UpdatePointsLabel() => Debug.Log($"{_view.Container.name}: Clicked");
     }
 }
