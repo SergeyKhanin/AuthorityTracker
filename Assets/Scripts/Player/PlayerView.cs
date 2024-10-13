@@ -5,8 +5,6 @@ namespace Player
 {
     public sealed class PlayerView
     {
-        private readonly UIDocument _uiDocument;
-        private readonly string _pathToParent;
         public VisualElement Container { get; private set; }
         public Label PointsLabel { get; private set; }
         public Button X1PlusButton { get; private set; }
@@ -16,10 +14,7 @@ namespace Player
 
         public PlayerView(UIDocument uiDocument, string pathToParent)
         {
-            _uiDocument = uiDocument;
-            _pathToParent = pathToParent;
-
-            Container = _uiDocument.rootVisualElement.Q(_pathToParent);
+            Container = uiDocument.rootVisualElement.Q<VisualElement>(pathToParent);
             PointsLabel = Container.Q<Label>("points-label");
             X1PlusButton = Container.Q<Button>("x1-plus-button");
             X5PlusButton = Container.Q<Button>("x5-plus-button");
