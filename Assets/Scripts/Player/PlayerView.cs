@@ -19,11 +19,6 @@ namespace Player
             _uiDocument = uiDocument;
             _pathToParent = pathToParent;
 
-            Init();
-        }
-
-        private void Init()
-        {
             Container = _uiDocument.rootVisualElement.Q(_pathToParent);
             PointsLabel = Container.Q<Label>("points-label");
             X1PlusButton = Container.Q<Button>("x1-plus-button");

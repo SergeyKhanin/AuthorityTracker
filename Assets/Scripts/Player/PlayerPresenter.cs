@@ -13,13 +13,12 @@ namespace Player
             _view = view;
             _model = model;
 
+            Subscribe();
             Init();
         }
 
         private void Init()
         {
-            Subscribe();
-
             _view.PointsLabel.text = _model.Points.ToString();
         }
 

@@ -21,7 +21,10 @@ namespace Bootstrap
         {
             for (int i = 1; i <= (int)playersAmount; i++)
             {
-                var player = new PlayerEntity(_uiDocument, PlayerName + i);
+                var player = new PlayerPresenter(
+                    new PlayerView(_uiDocument, PlayerName + i),
+                    new PlayerModel()
+                );
             }
         }
     }
