@@ -19,18 +19,9 @@ namespace Bootstrap
 
         private void CreatePlayers(PlayersAmount playersAmount)
         {
-            var counts = (int)playersAmount;
-
-            if (counts == 0)
+            for (int i = 1; i <= (int)playersAmount; i++)
             {
-                Debug.LogError("Players amount cannot be zero.");
-            }
-            else
-            {
-                for (int i = 1; i <= counts; i++)
-                {
-                    var player = new PlayerEntity(_uiDocument, PlayerName + i);
-                }
+                var player = new PlayerEntity(_uiDocument, PlayerName + i);
             }
         }
     }
