@@ -8,7 +8,8 @@ namespace Bootstrap
     [RequireComponent(typeof(UIDocument))]
     public sealed class Bootstrap : MonoBehaviour
     {
-        private const string PlayerName = "player-";
+        private const string PlayerTemplatePath = "UXML/PlayerView";
+        private const string PlayerNamePrefix = "player-";
         private UIDocument _uiDocument;
 
         private void Start()
@@ -16,23 +17,28 @@ namespace Bootstrap
             _uiDocument = GetComponent<UIDocument>();
 
             var players = CreatePlayers(PlayersAmount.Player2);
-
-            foreach (var player in players)
-            {
-                player.Apply();
-            }
         }
 
         private List<PlayerPresenter> CreatePlayers(PlayersAmount playersAmount)
         {
+            var uiDocument = _uiDocument;
+            var root = uiDocument.rootVisualElement;
             var players = new List<PlayerPresenter>();
+            var playerTemplate = Resources.Load<VisualTreeAsset>(PlayerTemplatePath);
 
             for (int i = 1; i <= (int)playersAmount; i++)
             {
+                var playerName = PlayerNamePrefix + i;
+                var playerElement = playerTemplate.Instantiate();
+
+                playerElement.name = playerName;
+                root.Add(playerElement);
+
                 var player = new PlayerPresenter(
-                    new PlayerView(_uiDocument, PlayerName + i),
+                    new PlayerView(uiDocument, playerName),
                     new PlayerModel()
                 );
+
                 players.Add(player);
             }
 
