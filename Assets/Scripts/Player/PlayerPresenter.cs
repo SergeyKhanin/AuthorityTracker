@@ -58,7 +58,6 @@ namespace Player
 
         private void UpdatePointsLabel()
         {
-            Debug.Log($"{_view.Container.name}: Clicked - Score is: {_model.Points}");
             _view.PointsLabel.text = _model.Points.ToString();
         }
 

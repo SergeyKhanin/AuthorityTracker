@@ -1,5 +1,6 @@
-using System.Collections.Generic;
+using Common;
 using Player;
+using Popup;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -8,41 +9,53 @@ namespace Bootstrap
     [RequireComponent(typeof(UIDocument))]
     public sealed class GameManager : MonoBehaviour
     {
-        private const string PlayerTemplatePath = "PlayerView";
-        private const string PlayerNamePrefix = "player-";
         private UIDocument _uiDocument;
 
         private void Start()
         {
             _uiDocument = GetComponent<UIDocument>();
 
-            var players = CreatePlayers(PlayersAmount.Player2);
+            CreateConfirmPopup();
+            CreatePlayers(PlayersAmount.Player2);
         }
 
-        private List<PlayerPresenter> CreatePlayers(PlayersAmount playersAmount)
+        private void CreateConfirmPopup()
+        {
+            var root = _uiDocument.rootVisualElement;
+            var confirmPopupTemplate = Resources
+                .Load<VisualTreeAsset>(CommonTemplatePath.ConfirmPopupPlatePath)
+                .Instantiate();
+
+            confirmPopupTemplate.name = CommonNames.ConfirmPopupName;
+            root.Add(confirmPopupTemplate);
+
+            var confirmPopup = new ConfirmPopupPresenter(
+                new ConfirmPopupView(_uiDocument, CommonNames.ConfirmPopupName),
+                new ConfirmPopupModel()
+            );
+        }
+
+        private void CreatePlayers(PlayersAmount amount)
         {
             var uiDocument = _uiDocument;
             var root = uiDocument.rootVisualElement;
-            var players = new List<PlayerPresenter>();
-            var playerTemplate = Resources.Load<VisualTreeAsset>(PlayerTemplatePath);
+            var playerTemplate = Resources.Load<VisualTreeAsset>(
+                CommonTemplatePath.PlayerTemplatePath
+            );
 
-            for (int i = 1; i <= (int)playersAmount; i++)
+            for (int i = 1; i <= (int)amount; i++)
             {
-                var playerName = PlayerNamePrefix + i;
-                var playerElement = playerTemplate.Instantiate();
+                var templateName = CommonNames.PlayerName + i;
+                var template = playerTemplate.Instantiate();
 
-                playerElement.name = playerName;
-                root.Add(playerElement);
+                template.name = templateName;
+                root.Add(template);
 
                 var player = new PlayerPresenter(
-                    new PlayerView(uiDocument, playerName),
+                    new PlayerView(uiDocument, templateName),
                     new PlayerModel()
                 );
-
-                players.Add(player);
             }
-
-            return players;
         }
     }
 }

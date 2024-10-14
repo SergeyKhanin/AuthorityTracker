@@ -1,6 +1,7 @@
 ﻿using System;
+using UnityEngine;
 
-namespace PopUp
+namespace Popup
 {
     public sealed class ConfirmPopupPresenter : IDisposable
     {
@@ -11,20 +12,30 @@ namespace PopUp
         {
             _view = view;
             _model = model;
+
+            Subscribe();
         }
 
-        private void DoSome() { }
+        private void ApplyButtonOnClicked()
+        {
+            Debug.LogWarning("ApplyButtonOnClicked");
+        }
+
+        private void ClearButtonOnClicked()
+        {
+            Debug.LogWarning("ClearButtonOnClicked");
+        }
 
         private void Subscribe()
         {
-            _view.ApplyButton.clicked += DoSome;
-            _view.ClearButton.clicked += DoSome;
+            _view.ApplyButton.clicked += ApplyButtonOnClicked;
+            _view.ClearButton.clicked += ClearButtonOnClicked;
         }
 
         public void Dispose()
         {
-            _view.ApplyButton.clicked -= DoSome;
-            _view.ClearButton.clicked -= DoSome;
+            _view.ApplyButton.clicked -= ApplyButtonOnClicked;
+            _view.ClearButton.clicked -= ClearButtonOnClicked;
         }
     }
 }
