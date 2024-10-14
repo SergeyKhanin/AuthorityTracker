@@ -1,5 +1,4 @@
 using System;
-using UnityEngine;
 
 namespace Player
 {
@@ -21,8 +20,6 @@ namespace Player
         {
             _view.PointsLabel.text = _model.Points.ToString();
         }
-
-        public void Apply() { }
 
         private void OnX1PlusButtonClicked() => PlusX1();
 
@@ -58,7 +55,7 @@ namespace Player
 
         private void UpdatePointsLabel()
         {
-            _view.PointsLabel.text = _model.Points.ToString();
+            _view.CounterLabel.text = _model.Points.ToString();
         }
 
         private void Subscribe()
