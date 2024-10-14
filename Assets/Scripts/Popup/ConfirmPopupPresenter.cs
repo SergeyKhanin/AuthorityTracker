@@ -1,4 +1,5 @@
 ﻿using System;
+using Events;
 using UnityEngine;
 
 namespace Popup
@@ -16,15 +17,9 @@ namespace Popup
             Subscribe();
         }
 
-        private void ApplyButtonOnClicked()
-        {
-            Debug.LogWarning("ApplyButtonOnClicked");
-        }
+        private void ApplyButtonOnClicked() => GameEventsManager.ApplyPoints.Invoke();
 
-        private void ClearButtonOnClicked()
-        {
-            Debug.LogWarning("ClearButtonOnClicked");
-        }
+        private void ClearButtonOnClicked() => GameEventsManager.ClearPoints.Invoke();
 
         private void Subscribe()
         {
