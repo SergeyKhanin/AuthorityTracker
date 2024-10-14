@@ -33,12 +33,12 @@ namespace Popup
 
         private void ShowConfirmPopupView()
         {
-            _view.ButtonsContainer.style.visibility = Visibility.Visible;
+            _view.ContentContainer.style.visibility = Visibility.Visible;
         }
 
         private void HideConfirmPopupView()
         {
-            _view.ButtonsContainer.style.visibility = Visibility.Hidden;
+            _view.ContentContainer.style.visibility = Visibility.Hidden;
         }
 
         private void SubscribeToEvents()

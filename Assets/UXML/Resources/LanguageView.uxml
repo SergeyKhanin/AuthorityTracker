@@ -1,2 +1,14 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <engine:VisualElement name="content-container" style="flex-grow: 1;">
+        <engine:Button text="Button" name="english-language-button" />
+        <engine:Button text="Button" name="chinese-language-button" />
+        <engine:Button text="Button" name="hindi-language-button" />
+        <engine:Button text="Button" name="spanish-language-button" />
+        <engine:Button text="Button" name="french-language-button" />
+        <engine:Button text="Button" name="arabic-language-button" />
+        <engine:Button text="Button" name="bangla-language-button" />
+        <engine:Button text="Button" name="portuguese-language-button" />
+        <engine:Button text="Button" name="russian-language-button" />
+        <engine:Button text="Button" name="urdu-language-button" />
+    </engine:VisualElement>
 </engine:UXML>

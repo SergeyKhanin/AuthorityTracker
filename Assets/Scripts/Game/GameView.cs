@@ -4,7 +4,7 @@ namespace Game
 {
     public sealed class GameView
     {
-        public VisualElement PauseContainer { get; private set; }
+        public VisualElement ContentContainer { get; private set; }
         public Button PauseButton { get; private set; }
         public Button BackButton { get; private set; }
         public Button MenuButton { get; private set; }
@@ -14,7 +14,7 @@ namespace Game
         public GameView(UIDocument uiDocument, string pathToParent)
         {
             var root = uiDocument.rootVisualElement.Q<VisualElement>(pathToParent);
-            PauseContainer = root.Q<VisualElement>("pause-container");
+            ContentContainer = root.Q<VisualElement>("content-container");
             PauseButton = root.Q<Button>("pause-button");
             BackButton = root.Q<Button>("back-button");
             MenuButton = root.Q<Button>("menu-button");

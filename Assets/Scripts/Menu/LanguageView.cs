@@ -4,6 +4,7 @@ namespace Menu
 {
     public sealed class LanguageView
     {
+        public VisualElement ContentContainer { get; private set; }
         public Button EnglishLanguageButton { get; private set; }
         public Button ChineseLanguageButton { get; private set; }
         public Button HindiLanguageButton { get; private set; }
@@ -18,6 +19,7 @@ namespace Menu
         public LanguageView(UIDocument uiDocument, string pathToParent)
         {
             var root = uiDocument.rootVisualElement.Q<VisualElement>(pathToParent);
+            ContentContainer = root.Q<VisualElement>("content-container");
             EnglishLanguageButton = root.Q<Button>("english-language-button");
             ChineseLanguageButton = root.Q<Button>("chinese-language-button");
             HindiLanguageButton = root.Q<Button>("hindi-language-button");
