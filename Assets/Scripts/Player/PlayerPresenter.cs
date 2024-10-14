@@ -32,22 +32,6 @@ namespace Player
 
         private void OnX5MinusButtonClicked() => MinusX5();
 
-        private void Subscribe()
-        {
-            _view.X1PlusButton.clicked += OnX1PlusButtonClicked;
-            _view.X5PlusButton.clicked += OnX5PlusButtonClicked;
-            _view.X1MinusButton.clicked += OnX1MinusButtonClicked;
-            _view.X5MinusButton.clicked += OnX5MinusButtonClicked;
-        }
-
-        public void Dispose()
-        {
-            _view.X1PlusButton.clicked -= OnX1PlusButtonClicked;
-            _view.X5PlusButton.clicked -= OnX5PlusButtonClicked;
-            _view.X1MinusButton.clicked -= OnX1MinusButtonClicked;
-            _view.X5MinusButton.clicked -= OnX5MinusButtonClicked;
-        }
-
         private void PlusX1()
         {
             _model.X1Plus();
@@ -76,6 +60,22 @@ namespace Player
         {
             Debug.Log($"{_view.Container.name}: Clicked - Score is: {_model.Points}");
             _view.PointsLabel.text = _model.Points.ToString();
+        }
+
+        private void Subscribe()
+        {
+            _view.X1PlusButton.clicked += OnX1PlusButtonClicked;
+            _view.X5PlusButton.clicked += OnX5PlusButtonClicked;
+            _view.X1MinusButton.clicked += OnX1MinusButtonClicked;
+            _view.X5MinusButton.clicked += OnX5MinusButtonClicked;
+        }
+
+        public void Dispose()
+        {
+            _view.X1PlusButton.clicked -= OnX1PlusButtonClicked;
+            _view.X5PlusButton.clicked -= OnX5PlusButtonClicked;
+            _view.X1MinusButton.clicked -= OnX1MinusButtonClicked;
+            _view.X5MinusButton.clicked -= OnX5MinusButtonClicked;
         }
     }
 }

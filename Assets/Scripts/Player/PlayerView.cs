@@ -1,11 +1,10 @@
-using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace Player
 {
     public sealed class PlayerView
     {
-        public VisualElement Container { get; private set; }
+        public VisualElement Container { get; }
         public Label PointsLabel { get; private set; }
         public Button X1PlusButton { get; private set; }
         public Button X5PlusButton { get; private set; }

@@ -1,0 +1,6 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <engine:VisualElement picking-mode="Ignore" style="flex-grow: 1; flex-direction: row;">
+        <engine:Button name="apply-button" style="flex-shrink: 1; flex-grow: 1; background-color: rgb(68, 164, 30);" />
+        <engine:Button name="clear-button" style="flex-shrink: 1; flex-grow: 1; background-color: rgb(144, 46, 46);" />
+    </engine:VisualElement>
+</engine:UXML>
