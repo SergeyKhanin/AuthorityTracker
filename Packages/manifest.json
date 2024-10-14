@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "com.svermeulen.extenject": "https://github.com/Mathijs-Bakker/Extenject.git?path=UnityProject/Assets/Plugins/Zenject/Source#9.3.1",
     "com.unity.ai.navigation": "2.0.4",
     "com.unity.collab-proxy": "2.5.1",
     "com.unity.device-simulator.devices": "1.0.0",
