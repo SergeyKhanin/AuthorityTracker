@@ -21,18 +21,6 @@ namespace Bootstrap
 
         private void CreateConfirmPopup()
         {
-            var root = _uiDocument.rootVisualElement;
-            var confirmPopupTemplate = Resources
-                .Load<VisualTreeAsset>(CommonTemplatePath.ConfirmPopupPlatePath)
-                .Instantiate();
-
-            confirmPopupTemplate.name = CommonNames.ConfirmPopupName;
-            confirmPopupTemplate.pickingMode = PickingMode.Ignore;
-            confirmPopupTemplate.style.position = Position.Absolute;
-            confirmPopupTemplate.style.height = new StyleLength(Length.Percent(100));
-            confirmPopupTemplate.style.width = new StyleLength(Length.Percent(100));
-            root.Add(confirmPopupTemplate);
-
             var confirmPopup = new ConfirmPopupPresenter(
                 new ConfirmPopupView(_uiDocument, CommonNames.ConfirmPopupName),
                 new ConfirmPopupModel()
