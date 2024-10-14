@@ -25,17 +25,102 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e8822a7a8af4207468d52ec0c7ef28e1, type: 2}
   - {fileID: 11400000, guid: dfeb0b5c54424724db7fb2140c602441, type: 2}
   m_Extensions:
-  - rid: 4063292832630964296
+  - rid: 4063292832630964301
   m_Group: String Table
   references:
     version: 2
     RefIds:
-    - rid: 4063292832630964296
+    - rid: 4063292832630964301
       type: {class: GoogleSheetsExtension, ns: UnityEditor.Localization.Plugins.Google, asm: Unity.Localization.Editor}
       data:
         m_Collection: {fileID: 11400000}
         m_SheetsServiceProvider: {fileID: 11400000, guid: 3b57aafaa3b80df44be765f27abc76ce, type: 2}
-        m_SpreadsheetId: 
-        m_SheetId: 0
-        m_Columns: []
+        m_SpreadsheetId: 1yn21b8v_a02Tox_4SJfjFmTkL60APFUgqkOTHfgeeeA
+        m_SheetId: 597509176
+        m_Columns:
+        - rid: 4063292832630964302
+        - rid: 4063292832630964303
+        - rid: 4063292832630964304
+        - rid: 4063292832630964305
+        - rid: 4063292832630964306
+        - rid: 4063292832630964307
+        - rid: 4063292832630964308
+        - rid: 4063292832630964309
+        - rid: 4063292832630964310
+        - rid: 4063292832630964311
+        - rid: 4063292832630964312
         m_RemoveMissingPulledKeys: 1
+    - rid: 4063292832630964302
+      type: {class: KeyColumn, ns: UnityEditor.Localization.Plugins.Google.Columns, asm: Unity.Localization.Editor}
+      data:
+        m_Column: A
+    - rid: 4063292832630964303
+      type: {class: LocaleColumn, ns: UnityEditor.Localization.Plugins.Google.Columns, asm: Unity.Localization.Editor}
+      data:
+        m_Column: B
+        m_LocaleIdentifier:
+          m_Code: en-US
+        m_IncludeComments: 0
+    - rid: 4063292832630964304
+      type: {class: LocaleColumn, ns: UnityEditor.Localization.Plugins.Google.Columns, asm: Unity.Localization.Editor}
+      data:
+        m_Column: C
+        m_LocaleIdentifier:
+          m_Code: zh-CN
+        m_IncludeComments: 0
+    - rid: 4063292832630964305
+      type: {class: LocaleColumn, ns: UnityEditor.Localization.Plugins.Google.Columns, asm: Unity.Localization.Editor}
+      data:
+        m_Column: D
+        m_LocaleIdentifier:
+          m_Code: hi-IN
+        m_IncludeComments: 0
+    - rid: 4063292832630964306
+      type: {class: LocaleColumn, ns: UnityEditor.Localization.Plugins.Google.Columns, asm: Unity.Localization.Editor}
+      data:
+        m_Column: E
+        m_LocaleIdentifier:
+          m_Code: es-ES
+        m_IncludeComments: 0
+    - rid: 4063292832630964307
+      type: {class: LocaleColumn, ns: UnityEditor.Localization.Plugins.Google.Columns, asm: Unity.Localization.Editor}
+      data:
+        m_Column: F
+        m_LocaleIdentifier:
+          m_Code: fr-FR
+        m_IncludeComments: 0
+    - rid: 4063292832630964308
+      type: {class: LocaleColumn, ns: UnityEditor.Localization.Plugins.Google.Columns, asm: Unity.Localization.Editor}
+      data:
+        m_Column: G
+        m_LocaleIdentifier:
+          m_Code: ar-AE
+        m_IncludeComments: 0
+    - rid: 4063292832630964309
+      type: {class: LocaleColumn, ns: UnityEditor.Localization.Plugins.Google.Columns, asm: Unity.Localization.Editor}
+      data:
+        m_Column: H
+        m_LocaleIdentifier:
+          m_Code: bn-IN
+        m_IncludeComments: 0
+    - rid: 4063292832630964310
+      type: {class: LocaleColumn, ns: UnityEditor.Localization.Plugins.Google.Columns, asm: Unity.Localization.Editor}
+      data:
+        m_Column: I
+        m_LocaleIdentifier:
+          m_Code: pt-BR
+        m_IncludeComments: 0
+    - rid: 4063292832630964311
+      type: {class: LocaleColumn, ns: UnityEditor.Localization.Plugins.Google.Columns, asm: Unity.Localization.Editor}
+      data:
+        m_Column: J
+        m_LocaleIdentifier:
+          m_Code: ru-RU
+        m_IncludeComments: 0
+    - rid: 4063292832630964312
+      type: {class: LocaleColumn, ns: UnityEditor.Localization.Plugins.Google.Columns, asm: Unity.Localization.Editor}
+      data:
+        m_Column: K
+        m_LocaleIdentifier:
+          m_Code: ur-IN
+        m_IncludeComments: 0
