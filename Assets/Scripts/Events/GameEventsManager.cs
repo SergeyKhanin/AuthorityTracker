@@ -4,7 +4,8 @@ namespace Events
 {
     public static class GameEventsManager
     {
-        public static readonly UnityEvent ApplyPoints = new();
-        public static readonly UnityEvent ClearPoints = new();
+        public static readonly UnityEvent PointsApplied = new();
+        public static readonly UnityEvent PointsCleared = new();
+        public static readonly UnityEvent CounterChanged = new();
     }
 }

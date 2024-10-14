@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: AuthorityTracker_es-ES
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: es-ES
+  m_SharedData: {fileID: 11400000, guid: 77b1ef30df61eb842ba46ae79c10ee1b, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 41694519296
+    m_Localized: Aplicar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 281336078336
+    m_Localized: Claro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19375664828416
+    m_Localized: Ajustes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19375694188544
+    m_Localized: Comunidad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19375698382848
+    m_Localized: "Atr\xE1s"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19375698382849
+    m_Localized: Reanudar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19375698382850
+    m_Localized: Reiniciar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19375698382851
+    m_Localized: Comenzar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44937930248192
+    m_Localized: Idioma
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47599648149504
+    m_Localized: Seleccionar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 60677928423424
+    m_Localized: Agregar
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

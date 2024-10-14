@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 namespace Bootstrap
 {
     [RequireComponent(typeof(UIDocument))]
-    public sealed class GameManager : MonoBehaviour
+    public sealed class GameBootstrap : MonoBehaviour
     {
         private UIDocument _uiDocument;
 
@@ -15,8 +15,8 @@ namespace Bootstrap
         {
             _uiDocument = GetComponent<UIDocument>();
 
-            CreateConfirmPopup();
             CreatePlayers(PlayersAmount.Player2);
+            CreateConfirmPopup();
         }
 
         private void CreateConfirmPopup()
@@ -27,6 +27,10 @@ namespace Bootstrap
                 .Instantiate();
 
             confirmPopupTemplate.name = CommonNames.ConfirmPopupName;
+            confirmPopupTemplate.pickingMode = PickingMode.Ignore;
+            confirmPopupTemplate.style.position = Position.Absolute;
+            confirmPopupTemplate.style.height = new StyleLength(Length.Percent(100));
+            confirmPopupTemplate.style.width = new StyleLength(Length.Percent(100));
             root.Add(confirmPopupTemplate);
 
             var confirmPopup = new ConfirmPopupPresenter(

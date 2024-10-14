@@ -1,6 +1,6 @@
 using System;
 using Events;
-using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace Player
 {
@@ -15,13 +15,9 @@ namespace Player
             _model = model;
 
             Subscribe();
-            Init();
-        }
-
-        private void Init()
-        {
-            GameEventsManager.ApplyPoints.AddListener(Apply);
-            GameEventsManager.ClearPoints.AddListener(Clear);
+            SubscribeToEvents();
+            HideCounterLabel();
+            UpdatePointsLabel();
         }
 
         private void OnX1PlusButtonClicked() => PlusX1();
@@ -35,40 +31,66 @@ namespace Player
         private void PlusX1()
         {
             _model.X1Plus();
-            UpdatePointsLabel();
+            UpdateCounterLabel();
         }
 
         private void PlusX5()
         {
             _model.X5Plus();
-            UpdatePointsLabel();
+            UpdateCounterLabel();
         }
 
         private void MinusX5()
         {
             _model.X5Minus();
-            UpdatePointsLabel();
+            UpdateCounterLabel();
         }
 
         private void MinusX1()
         {
             _model.X1Minus();
-            UpdatePointsLabel();
+            UpdateCounterLabel();
         }
 
         private void UpdatePointsLabel()
         {
-            _view.CounterLabel.text = _model.Points.ToString();
+            _view.PointsLabel.text = _model.Points.ToString();
+        }
+
+        private void UpdateCounterLabel()
+        {
+            GameEventsManager.CounterChanged.Invoke();
+            _view.CounterLabel.text = _model.Counter.ToString();
+            ShowCounterLabel();
         }
 
         private void Apply()
         {
-            Debug.LogError("Apply");
+            _model.Apply();
+            UpdatePointsLabel();
+            HideCounterLabel();
         }
 
         private void Clear()
         {
-            Debug.LogError("Clear");
+            _model.Clear();
+            HideCounterLabel();
+        }
+
+        private void ShowCounterLabel()
+        {
+            _view.CounterLabel.style.display = DisplayStyle.Flex;
+        }
+
+        private void HideCounterLabel()
+        {
+            _view.CounterLabel.style.display = DisplayStyle.None;
+        }
+
+        private void SubscribeToEvents()
+        {
+            GameEventsManager.PointsApplied.AddListener(Apply);
+            GameEventsManager.PointsCleared.AddListener(Clear);
         }
 
         private void Subscribe()
@@ -85,6 +107,9 @@ namespace Player
             _view.X5PlusButton.clicked -= OnX5PlusButtonClicked;
             _view.X1MinusButton.clicked -= OnX1MinusButtonClicked;
             _view.X5MinusButton.clicked -= OnX5MinusButtonClicked;
+
+            GameEventsManager.PointsApplied.RemoveListener(Apply);
+            GameEventsManager.PointsCleared.RemoveListener(Clear);
         }
     }
 }
