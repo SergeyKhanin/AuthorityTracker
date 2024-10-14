@@ -6,9 +6,9 @@ using UnityEngine.UIElements;
 namespace Bootstrap
 {
     [RequireComponent(typeof(UIDocument))]
-    public sealed class Bootstrap : MonoBehaviour
+    public sealed class GameManager : MonoBehaviour
     {
-        private const string PlayerTemplatePath = "UXML/PlayerView";
+        private const string PlayerTemplatePath = "PlayerView";
         private const string PlayerNamePrefix = "player-";
         private UIDocument _uiDocument;
 
