@@ -1,5 +1,4 @@
 using Common;
-using Game;
 using Player;
 using Popup;
 using UnityEngine;
@@ -11,12 +10,10 @@ namespace Bootstrap
     public sealed class GameBootstrap : MonoBehaviour
     {
         private UIDocument _uiDocument;
-        private GameModel _model;
 
         private void Start()
         {
             _uiDocument = GetComponent<UIDocument>();
-            _model = new GameModel();
 
             CreatePlayers(CommonPlayers.Player2);
             CreateConfirmPopup();
@@ -25,8 +22,7 @@ namespace Bootstrap
         private void CreateConfirmPopup()
         {
             var confirmPopupPresenter = new ConfirmPopupPresenter(
-                new ConfirmPopupView(_uiDocument, CommonNames.ConfirmPopupViewName),
-                _model
+                new ConfirmPopupView(_uiDocument, CommonNames.ConfirmPopupViewName)
             );
         }
 

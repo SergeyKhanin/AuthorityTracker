@@ -8,12 +8,10 @@ namespace Popup
     public sealed class ConfirmPopupPresenter : IDisposable
     {
         private readonly ConfirmPopupView _view;
-        private readonly GameModel _model;
 
-        public ConfirmPopupPresenter(ConfirmPopupView view, GameModel model)
+        public ConfirmPopupPresenter(ConfirmPopupView view)
         {
             _view = view;
-            _model = model;
 
             Subscribe();
             SubscribeToEvents();
@@ -32,17 +30,11 @@ namespace Popup
             HideConfirmPopupView();
         }
 
-        private void ShowConfirmPopupView()
-        {
+        private void ShowConfirmPopupView() =>
             _view.ContentContainer.style.visibility = Visibility.Visible;
-            _model.ShowConfirmPopup();
-        }
 
-        private void HideConfirmPopupView()
-        {
+        private void HideConfirmPopupView() =>
             _view.ContentContainer.style.visibility = Visibility.Hidden;
-            _model.HideConfirmPopup();
-        }
 
         private void SubscribeToEvents()
         {

@@ -8,9 +8,9 @@ namespace Menu
     public sealed class SettingsPresenter : IDisposable
     {
         private readonly SettingsView _view;
-        private readonly MenuModel _model;
+        private readonly SettingsModel _model;
 
-        public SettingsPresenter(SettingsView view, MenuModel model)
+        public SettingsPresenter(SettingsView view, SettingsModel model)
         {
             _view = view;
             _model = model;

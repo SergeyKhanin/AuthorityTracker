@@ -9,12 +9,12 @@ namespace Bootstrap
     public sealed class MenuBootstrap : MonoBehaviour
     {
         private UIDocument _uiDocument;
-        private MenuModel _model;
+        private SettingsModel _model;
 
         private void Start()
         {
             _uiDocument = GetComponent<UIDocument>();
-            _model = new MenuModel();
+            _model = new SettingsModel();
 
             if (PlayerPrefs.HasKey(CommonNames.LanguageName))
             {

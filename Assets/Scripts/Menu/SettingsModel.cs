@@ -4,7 +4,7 @@ using UnityEngine.Localization.Settings;
 
 namespace Menu
 {
-    public sealed class MenuModel
+    public sealed class SettingsModel
     {
         public void SetLanguage(CommonLanguage language)
         {
