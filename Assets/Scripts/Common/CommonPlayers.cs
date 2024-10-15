@@ -1,6 +1,6 @@
-﻿namespace Player
+﻿namespace Common
 {
-    public enum PlayersAmount
+    public enum CommonPlayers
     {
         None = 0,
         Player1 = 1,

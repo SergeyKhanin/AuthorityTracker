@@ -15,19 +15,19 @@ namespace Bootstrap
         {
             _uiDocument = GetComponent<UIDocument>();
 
-            CreatePlayers(PlayersAmount.Player2);
+            CreatePlayers(CommonPlayers.Player2);
             CreateConfirmPopup();
         }
 
         private void CreateConfirmPopup()
         {
             var confirmPopup = new ConfirmPopupPresenter(
-                new ConfirmPopupView(_uiDocument, CommonNames.ConfirmPopupName),
+                new ConfirmPopupView(_uiDocument, CommonNames.ConfirmPopupViewName),
                 new ConfirmPopupModel()
             );
         }
 
-        private void CreatePlayers(PlayersAmount amount)
+        private void CreatePlayers(CommonPlayers amount)
         {
             var uiDocument = _uiDocument;
             var root = uiDocument.rootVisualElement;
@@ -37,7 +37,7 @@ namespace Bootstrap
 
             for (int i = 1; i <= (int)amount; i++)
             {
-                var templateName = CommonNames.PlayerName + i;
+                var templateName = CommonNames.PlayerViewName + i;
                 var template = playerTemplate.Instantiate();
 
                 template.name = templateName;

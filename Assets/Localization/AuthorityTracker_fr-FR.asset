@@ -38,10 +38,6 @@ MonoBehaviour:
     m_Localized: Dos
     m_Metadata:
       m_Items: []
-  - m_Id: 19375698382849
-    m_Localized: CV
-    m_Metadata:
-      m_Items: []
   - m_Id: 19375698382850
     m_Localized: "R\xE9initialiser"
     m_Metadata:
@@ -54,12 +50,12 @@ MonoBehaviour:
     m_Localized: Langue
     m_Metadata:
       m_Items: []
-  - m_Id: 47599648149504
-    m_Localized: "S\xE9lectionner"
+  - m_Id: 60677928423424
+    m_Localized: Continuer
     m_Metadata:
       m_Items: []
-  - m_Id: 60677928423424
-    m_Localized: Ajouter
+  - m_Id: 279212021682176
+    m_Localized: Quitter
     m_Metadata:
       m_Items: []
   references:

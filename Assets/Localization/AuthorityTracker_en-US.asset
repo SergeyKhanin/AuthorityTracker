@@ -38,10 +38,6 @@ MonoBehaviour:
     m_Localized: Back
     m_Metadata:
       m_Items: []
-  - m_Id: 19375698382849
-    m_Localized: Resume
-    m_Metadata:
-      m_Items: []
   - m_Id: 19375698382850
     m_Localized: Reset
     m_Metadata:
@@ -54,12 +50,12 @@ MonoBehaviour:
     m_Localized: Language
     m_Metadata:
       m_Items: []
-  - m_Id: 47599648149504
-    m_Localized: Select
+  - m_Id: 60677928423424
+    m_Localized: Continue
     m_Metadata:
       m_Items: []
-  - m_Id: 60677928423424
-    m_Localized: Add
+  - m_Id: 279212021682176
+    m_Localized: Quit
     m_Metadata:
       m_Items: []
   references:

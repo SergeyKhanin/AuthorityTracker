@@ -1,3 +1,5 @@
+using Common;
+using Menu;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -11,6 +13,11 @@ namespace Bootstrap
         private void Start()
         {
             _uiDocument = GetComponent<UIDocument>();
+
+            var menuPresenter = new MenuPresenter(
+                new MenuView(_uiDocument, CommonNames.MenuViewName),
+                new MenuModel()
+            );
         }
     }
 }

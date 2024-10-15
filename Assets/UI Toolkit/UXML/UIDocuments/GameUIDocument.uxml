@@ -1,5 +1,5 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
-    <engine:Template name="ConfirmPopupView" src="project://database/Assets/UXML/Resources/ConfirmPopupView.uxml?fileID=9197481963319205126&amp;guid=876d12b29fce0aa45b262715fcb0f9ca&amp;type=3#ConfirmPopupView" />
+    <engine:Template name="ConfirmPopupView" src="project://database/Assets/UI%20Toolkit/UXML/Resources/ConfirmPopupView.uxml?fileID=9197481963319205126&amp;guid=876d12b29fce0aa45b262715fcb0f9ca&amp;type=3#ConfirmPopupView" />
     <engine:VisualElement picking-mode="Ignore" name="content-container" content-container="true" style="flex-grow: 1; flex-direction: row;" />
     <engine:VisualElement name="confirm-popup-view" picking-mode="Ignore" style="flex-grow: 1; position: absolute; width: 100%; height: 100%;">
         <engine:Instance template="ConfirmPopupView" picking-mode="Ignore" style="flex-grow: 1;" />
