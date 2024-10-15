@@ -57,9 +57,9 @@ namespace Menu
 
         private void OnBackButtonClicked() => GameEventsManager.SettingsClosed.Invoke();
 
-        private void HideSettings() => _view.ContentContainer.style.visibility = Visibility.Hidden;
+        private void HideSettings() => _view.Container.style.visibility = Visibility.Hidden;
 
-        private void ShowSettings() => _view.ContentContainer.style.visibility = Visibility.Visible;
+        private void ShowSettings() => _view.Container.style.visibility = Visibility.Visible;
 
         private void SubscribeToEvents()
         {

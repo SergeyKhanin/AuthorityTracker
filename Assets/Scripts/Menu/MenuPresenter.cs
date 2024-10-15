@@ -35,9 +35,9 @@ namespace Menu
 
         private void OnQuitButtonClicked() => Application.Quit();
 
-        private void ShowMenu() => _view.ContentContainer.style.visibility = Visibility.Visible;
+        private void ShowMenu() => _view.Container.style.visibility = Visibility.Visible;
 
-        private void HideMenu() => _view.ContentContainer.style.visibility = Visibility.Hidden;
+        private void HideMenu() => _view.Container.style.visibility = Visibility.Hidden;
 
         private void SubscribeToEvents()
         {

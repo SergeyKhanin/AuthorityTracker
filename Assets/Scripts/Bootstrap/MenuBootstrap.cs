@@ -21,15 +21,9 @@ namespace Bootstrap
                 _model.SetLanguage((CommonLanguage)PlayerPrefs.GetInt(CommonNames.LanguageName));
             }
 
-            var menuPresenter = new MenuPresenter(
-                new MenuView(_uiDocument, CommonNames.MenuViewName),
-                _model
-            );
+            var menuPresenter = new MenuPresenter(new MenuView(_uiDocument), _model);
 
-            var settingsPresenter = new SettingsPresenter(
-                new SettingsView(_uiDocument, CommonNames.SettingsViewName),
-                _model
-            );
+            var settingsPresenter = new SettingsPresenter(new SettingsView(_uiDocument), _model);
         }
     }
 }

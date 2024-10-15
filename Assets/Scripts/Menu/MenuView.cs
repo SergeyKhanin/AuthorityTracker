@@ -1,20 +1,21 @@
-﻿using UnityEngine.UIElements;
+﻿using Common;
+using UnityEngine.UIElements;
 
 namespace Menu
 {
     public sealed class MenuView
     {
-        public VisualElement ContentContainer { get; private set; }
+        public VisualElement Container { get; private set; }
         public Button StartButton { get; private set; }
         public Button SettingsButton { get; private set; }
         public Button ContinueButton { get; private set; }
         public Button ResetButton { get; private set; }
         public Button QuitButton { get; private set; }
 
-        public MenuView(UIDocument uiDocument, string pathToParent)
+        public MenuView(UIDocument uiDocument)
         {
-            var root = uiDocument.rootVisualElement.Q<VisualElement>(pathToParent);
-            ContentContainer = root.Q<VisualElement>("content-container");
+            var root = uiDocument.rootVisualElement.Q<VisualElement>(CommonNames.MenuViewName);
+            Container = root;
             StartButton = root.Q<Button>("start-button");
             SettingsButton = root.Q<Button>("settings-button");
             ContinueButton = root.Q<Button>("continue-button");

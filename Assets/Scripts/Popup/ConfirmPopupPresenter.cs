@@ -31,10 +31,9 @@ namespace Popup
         }
 
         private void ShowConfirmPopupView() =>
-            _view.ContentContainer.style.visibility = Visibility.Visible;
+            _view.Container.style.visibility = Visibility.Visible;
 
-        private void HideConfirmPopupView() =>
-            _view.ContentContainer.style.visibility = Visibility.Hidden;
+        private void HideConfirmPopupView() => _view.Container.style.visibility = Visibility.Hidden;
 
         private void SubscribeToEvents()
         {

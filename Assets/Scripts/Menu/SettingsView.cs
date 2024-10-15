@@ -1,10 +1,11 @@
-﻿using UnityEngine.UIElements;
+﻿using Common;
+using UnityEngine.UIElements;
 
 namespace Menu
 {
     public sealed class SettingsView
     {
-        public VisualElement ContentContainer { get; private set; }
+        public VisualElement Container { get; private set; }
         public Label LanguageLabel { get; private set; }
         public Button EnglishLanguageButton { get; private set; }
         public Button ChineseLanguageButton { get; private set; }
@@ -24,10 +25,10 @@ namespace Menu
         public Button TurkishLanguageButton { get; private set; }
         public Button BackButton { get; private set; }
 
-        public SettingsView(UIDocument uiDocument, string pathToParent)
+        public SettingsView(UIDocument uiDocument)
         {
-            var root = uiDocument.rootVisualElement.Q<VisualElement>(pathToParent);
-            ContentContainer = root.Q<VisualElement>("content-container");
+            var root = uiDocument.rootVisualElement.Q<VisualElement>(CommonNames.SettingsViewName);
+            Container = root;
             LanguageLabel = root.Q<Label>("language-label");
             EnglishLanguageButton = root.Q<Button>("english-language-button");
             ChineseLanguageButton = root.Q<Button>("chinese-language-button");

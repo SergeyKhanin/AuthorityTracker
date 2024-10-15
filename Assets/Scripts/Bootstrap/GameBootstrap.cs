@@ -22,7 +22,7 @@ namespace Bootstrap
         private void CreateConfirmPopup()
         {
             var confirmPopupPresenter = new ConfirmPopupPresenter(
-                new ConfirmPopupView(_uiDocument, CommonNames.ConfirmPopupViewName)
+                new ConfirmPopupView(_uiDocument)
             );
         }
 
