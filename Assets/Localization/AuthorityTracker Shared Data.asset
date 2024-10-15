@@ -27,10 +27,6 @@ MonoBehaviour:
     m_Key: Button.Settings
     m_Metadata:
       m_Items: []
-  - m_Id: 19375694188544
-    m_Key: Button.Community
-    m_Metadata:
-      m_Items: []
   - m_Id: 19375698382848
     m_Key: Button.Back
     m_Metadata:
@@ -39,12 +35,12 @@ MonoBehaviour:
     m_Key: Button.Reset
     m_Metadata:
       m_Items: []
-  - m_Id: 19375698382851
-    m_Key: Button.Start
+  - m_Id: 397300332486656
+    m_Key: Button.Restart
     m_Metadata:
       m_Items: []
-  - m_Id: 44937930248192
-    m_Key: Button.Language
+  - m_Id: 19375698382851
+    m_Key: Button.Start
     m_Metadata:
       m_Items: []
   - m_Id: 60677928423424
@@ -53,6 +49,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 279212021682176
     m_Key: Button.Quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397609129730048
+    m_Key: Label.Language
     m_Metadata:
       m_Items: []
   m_Metadata:

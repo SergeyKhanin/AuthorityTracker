@@ -1,7 +1,9 @@
 ﻿using System;
 using Common;
+using Events;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 namespace Menu
 {
@@ -16,34 +18,52 @@ namespace Menu
             _model = model;
 
             Subscribe();
+            SubscribeToEvents();
         }
 
         private void OnStartButtonClicked() => SceneManager.LoadScene((int)CommonScenes.GameScene);
 
-        private void OnContinueButtonClicked() => _model.OpenSettings();
+        private void OnSettingButtonClicked() => GameEventsManager.SettingsOpened.Invoke();
 
-        private void OnSettingButtonClicked() => _model.OpenSettings();
+        private void OnContinueButtonClicked() => Application.Quit();
 
-        private void OnCommunityButtonClicked() => _model.OpenSettings();
+        private void OnResetButtonClicked()
+        {
+            _model.ResetData();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
 
         private void OnQuitButtonClicked() => Application.Quit();
+
+        private void ShowMenu() => _view.ContentContainer.style.visibility = Visibility.Visible;
+
+        private void HideMenu() => _view.ContentContainer.style.visibility = Visibility.Hidden;
+
+        private void SubscribeToEvents()
+        {
+            GameEventsManager.SettingsOpened.AddListener(HideMenu);
+            GameEventsManager.SettingsClosed.AddListener(ShowMenu);
+        }
 
         private void Subscribe()
         {
             _view.StartButton.clicked += OnStartButtonClicked;
-            _view.ContinueButton.clicked += OnContinueButtonClicked;
             _view.SettingsButton.clicked += OnSettingButtonClicked;
-            _view.CommunityButton.clicked += OnCommunityButtonClicked;
+            _view.ContinueButton.clicked += OnContinueButtonClicked;
+            _view.ResetButton.clicked += OnResetButtonClicked;
             _view.QuitButton.clicked += OnQuitButtonClicked;
         }
 
         public void Dispose()
         {
             _view.StartButton.clicked -= OnStartButtonClicked;
-            _view.ContinueButton.clicked -= OnContinueButtonClicked;
             _view.SettingsButton.clicked -= OnSettingButtonClicked;
-            _view.CommunityButton.clicked -= OnCommunityButtonClicked;
+            _view.ContinueButton.clicked -= OnContinueButtonClicked;
+            _view.ResetButton.clicked -= OnResetButtonClicked;
             _view.QuitButton.clicked -= OnQuitButtonClicked;
+
+            GameEventsManager.SettingsOpened.RemoveListener(HideMenu);
+            GameEventsManager.SettingsClosed.RemoveListener(ShowMenu);
         }
     }
 }

@@ -30,10 +30,6 @@ MonoBehaviour:
     m_Localized: "Configura\xE7\xF5es"
     m_Metadata:
       m_Items: []
-  - m_Id: 19375694188544
-    m_Localized: Comunidade
-    m_Metadata:
-      m_Items: []
   - m_Id: 19375698382848
     m_Localized: Voltar
     m_Metadata:
@@ -46,16 +42,20 @@ MonoBehaviour:
     m_Localized: "Come\xE7ar"
     m_Metadata:
       m_Items: []
-  - m_Id: 44937930248192
-    m_Localized: Linguagem
-    m_Metadata:
-      m_Items: []
   - m_Id: 60677928423424
     m_Localized: Continuar
     m_Metadata:
       m_Items: []
   - m_Id: 279212021682176
     m_Localized: Desistir
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397300332486656
+    m_Localized: Reiniciar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397609129730048
+    m_Localized: Selecione o idioma
     m_Metadata:
       m_Items: []
   references:

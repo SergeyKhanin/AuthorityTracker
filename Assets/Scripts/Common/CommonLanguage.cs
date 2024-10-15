@@ -12,5 +12,11 @@
         Portuguese = 7,
         Russian = 8,
         Urdu = 9,
+        Indonesian = 10,
+        Japanese = 11,
+        German = 12,
+        Telugu = 13,
+        Marathi = 14,
+        Turkish = 15,
     }
 }

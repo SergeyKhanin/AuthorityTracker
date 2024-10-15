@@ -1,4 +1,5 @@
 using Common;
+using Game;
 using Player;
 using Popup;
 using UnityEngine;
@@ -10,10 +11,12 @@ namespace Bootstrap
     public sealed class GameBootstrap : MonoBehaviour
     {
         private UIDocument _uiDocument;
+        private GameModel _model;
 
         private void Start()
         {
             _uiDocument = GetComponent<UIDocument>();
+            _model = new GameModel();
 
             CreatePlayers(CommonPlayers.Player2);
             CreateConfirmPopup();
@@ -21,9 +24,9 @@ namespace Bootstrap
 
         private void CreateConfirmPopup()
         {
-            var confirmPopup = new ConfirmPopupPresenter(
+            var confirmPopupPresenter = new ConfirmPopupPresenter(
                 new ConfirmPopupView(_uiDocument, CommonNames.ConfirmPopupViewName),
-                new ConfirmPopupModel()
+                _model
             );
         }
 
@@ -43,10 +46,18 @@ namespace Bootstrap
                 template.name = templateName;
                 root.Add(template);
 
-                var player = new PlayerPresenter(
+                var playerPresenter = new PlayerPresenter(
                     new PlayerView(uiDocument, templateName),
                     new PlayerModel()
                 );
+
+                playerPresenter.SetName(templateName);
+
+                if (PlayerPrefs.HasKey(templateName))
+                {
+                    playerPresenter.SetPoints(PlayerPrefs.GetInt(templateName));
+                    playerPresenter.UpdatePointsLabel();
+                }
             }
         }
     }

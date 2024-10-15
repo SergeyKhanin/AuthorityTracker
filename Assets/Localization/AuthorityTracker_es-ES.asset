@@ -30,10 +30,6 @@ MonoBehaviour:
     m_Localized: Ajustes
     m_Metadata:
       m_Items: []
-  - m_Id: 19375694188544
-    m_Localized: Comunidad
-    m_Metadata:
-      m_Items: []
   - m_Id: 19375698382848
     m_Localized: "Atr\xE1s"
     m_Metadata:
@@ -46,16 +42,20 @@ MonoBehaviour:
     m_Localized: Comenzar
     m_Metadata:
       m_Items: []
-  - m_Id: 44937930248192
-    m_Localized: Idioma
-    m_Metadata:
-      m_Items: []
   - m_Id: 60677928423424
     m_Localized: Continuar
     m_Metadata:
       m_Items: []
   - m_Id: 279212021682176
     m_Localized: Abandonar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397300332486656
+    m_Localized: Reanudar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397609129730048
+    m_Localized: Seleccionar idioma
     m_Metadata:
       m_Items: []
   references:

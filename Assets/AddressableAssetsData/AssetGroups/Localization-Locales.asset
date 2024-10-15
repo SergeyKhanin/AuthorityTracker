@@ -21,6 +21,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 18cf7ac302f2fd442a33836e7739cc45
+    m_Address: German (Germany) (de-DE)
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 23034cba53a2e6a4e9a63a2dfa8c2f7f
     m_Address: Portuguese (Brazil) (pt-BR)
     m_ReadOnly: 1
@@ -33,8 +39,20 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 35551567671b8e9478ee9ea727147bf0
+    m_Address: Marathi (India) (mr-IN)
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 457dd559686a07444831d00cdb75bc11
     m_Address: Russian (Russia) (ru-RU)
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5b66e11fd160bcc4d8ffd3033b356b3e
+    m_Address: Japanese (Japan) (ja-JP)
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale
@@ -47,6 +65,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 71db37563aaf824428fda1454956afef
     m_Address: Chinese (Simplified) (zh-CN)
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8fc57042a4a2d104bb87dd8a11f18598
+    m_Address: Telugu (India) (te-IN)
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale
@@ -69,8 +93,20 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e1f7f99788433cd4990b2004d4adf419
+    m_Address: Turkish (Turkey) (tr-TR)
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e1fef751c7df0e6439ab49dceb61bd36
     m_Address: Bangla (India) (bn-IN)
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e2daf6945ef011742a2a5c41e2aef06b
+    m_Address: Indonesian (Indonesia) (id-ID)
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale

@@ -30,10 +30,6 @@ MonoBehaviour:
     m_Localized: Settings
     m_Metadata:
       m_Items: []
-  - m_Id: 19375694188544
-    m_Localized: Community
-    m_Metadata:
-      m_Items: []
   - m_Id: 19375698382848
     m_Localized: Back
     m_Metadata:
@@ -46,16 +42,20 @@ MonoBehaviour:
     m_Localized: Start
     m_Metadata:
       m_Items: []
-  - m_Id: 44937930248192
-    m_Localized: Language
-    m_Metadata:
-      m_Items: []
   - m_Id: 60677928423424
     m_Localized: Continue
     m_Metadata:
       m_Items: []
   - m_Id: 279212021682176
     m_Localized: Quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397300332486656
+    m_Localized: Restart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397609129730048
+    m_Localized: Select language
     m_Metadata:
       m_Items: []
   references:

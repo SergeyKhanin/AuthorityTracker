@@ -1,5 +1,6 @@
 ﻿using System;
 using Events;
+using Game;
 using UnityEngine.UIElements;
 
 namespace Popup
@@ -7,9 +8,9 @@ namespace Popup
     public sealed class ConfirmPopupPresenter : IDisposable
     {
         private readonly ConfirmPopupView _view;
-        private readonly ConfirmPopupModel _model;
+        private readonly GameModel _model;
 
-        public ConfirmPopupPresenter(ConfirmPopupView view, ConfirmPopupModel model)
+        public ConfirmPopupPresenter(ConfirmPopupView view, GameModel model)
         {
             _view = view;
             _model = model;
@@ -34,11 +35,13 @@ namespace Popup
         private void ShowConfirmPopupView()
         {
             _view.ContentContainer.style.visibility = Visibility.Visible;
+            _model.ShowConfirmPopup();
         }
 
         private void HideConfirmPopupView()
         {
             _view.ContentContainer.style.visibility = Visibility.Hidden;
+            _model.HideConfirmPopup();
         }
 
         private void SubscribeToEvents()

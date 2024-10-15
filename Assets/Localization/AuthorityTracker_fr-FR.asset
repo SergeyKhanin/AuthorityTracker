@@ -30,10 +30,6 @@ MonoBehaviour:
     m_Localized: "Param\xE8tres"
     m_Metadata:
       m_Items: []
-  - m_Id: 19375694188544
-    m_Localized: "Communaut\xE9"
-    m_Metadata:
-      m_Items: []
   - m_Id: 19375698382848
     m_Localized: Dos
     m_Metadata:
@@ -46,16 +42,20 @@ MonoBehaviour:
     m_Localized: Commencer
     m_Metadata:
       m_Items: []
-  - m_Id: 44937930248192
-    m_Localized: Langue
-    m_Metadata:
-      m_Items: []
   - m_Id: 60677928423424
     m_Localized: Continuer
     m_Metadata:
       m_Items: []
   - m_Id: 279212021682176
     m_Localized: Quitter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397300332486656
+    m_Localized: "Red\xE9marrage"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397609129730048
+    m_Localized: "S\xE9lectionnez la langue"
     m_Metadata:
       m_Items: []
   references:

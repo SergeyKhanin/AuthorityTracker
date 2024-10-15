@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: AuthorityTracker_te-IN
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: te-IN
+  m_SharedData: {fileID: 11400000, guid: 77b1ef30df61eb842ba46ae79c10ee1b, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 41694519296
+    m_Localized: "\u0C26\u0C30\u0C16\u0C3E\u0C38\u0C4D\u0C24\u0C41 \u0C1A\u0C47\u0C38\u0C41\u0C15\u0C4B\u0C02\u0C21\u0C3F"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 281336078336
+    m_Localized: "\u0C15\u0C4D\u0C32\u0C3F\u0C2F\u0C30\u0C4D"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19375664828416
+    m_Localized: "\u0C38\u0C46\u0C1F\u0C4D\u0C1F\u0C3F\u0C02\u0C17\u0C4D\u200C\u0C32\u0C41"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19375698382848
+    m_Localized: "\u0C35\u0C46\u0C28\u0C41\u0C15\u0C15\u0C41"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19375698382850
+    m_Localized: "\u0C30\u0C40\u0C38\u0C46\u0C1F\u0C4D \u0C1A\u0C47\u0C2F\u0C02\u0C21\u0C3F"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397300332486656
+    m_Localized: "\u0C2A\u0C41\u0C28\u0C03\u0C2A\u0C4D\u0C30\u0C3E\u0C30\u0C02\u0C2D\u0C3F\u0C02\u0C1A\u0C02\u0C21\u0C3F"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19375698382851
+    m_Localized: "\u0C2A\u0C4D\u0C30\u0C3E\u0C30\u0C02\u0C2D\u0C3F\u0C02\u0C1A\u0C02\u0C21\u0C3F"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 60677928423424
+    m_Localized: "\u0C15\u0C4A\u0C28\u0C38\u0C3E\u0C17\u0C3F\u0C02\u0C1A\u0C41"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 279212021682176
+    m_Localized: "\u0C28\u0C3F\u0C37\u0C4D\u0C15\u0C4D\u0C30\u0C2E\u0C3F\u0C02\u0C1A\u0C41"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397609129730048
+    m_Localized: "\u0C2D\u0C3E\u0C37\u0C28\u0C41 \u0C0E\u0C02\u0C1A\u0C41\u0C15\u0C4B\u0C02\u0C21\u0C3F"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

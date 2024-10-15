@@ -1,11 +1,26 @@
-﻿namespace Menu
+﻿using Common;
+using UnityEngine;
+using UnityEngine.Localization.Settings;
+
+namespace Menu
 {
     public sealed class MenuModel
     {
-        public bool IsSettingsOpen { get; private set; }
+        public void SetLanguage(CommonLanguage language)
+        {
+            var index = (int)language;
+            LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[
+                index
+            ];
+            SaveLanguage(index);
+        }
 
-        public void OpenSettings() => IsSettingsOpen = true;
+        private void SaveLanguage(int index)
+        {
+            PlayerPrefs.SetInt(CommonNames.LanguageName, index);
+            PlayerPrefs.Save();
+        }
 
-        public void CloseSettings() => IsSettingsOpen = false;
+        public void ResetData() => PlayerPrefs.DeleteAll();
     }
 }

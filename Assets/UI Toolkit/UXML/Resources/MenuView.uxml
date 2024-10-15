@@ -10,14 +10,14 @@
                 <UnityEngine.Localization.LocalizedString property="text" table="GUID:77b1ef30df61eb842ba46ae79c10ee1b" entry="Id(60677928423424)" />
             </Bindings>
         </engine:Button>
-        <engine:Button name="community-button">
-            <Bindings>
-                <UnityEngine.Localization.LocalizedString property="text" table="GUID:77b1ef30df61eb842ba46ae79c10ee1b" entry="Id(19375694188544)" />
-            </Bindings>
-        </engine:Button>
         <engine:Button name="settings-button">
             <Bindings>
                 <UnityEngine.Localization.LocalizedString property="text" table="GUID:77b1ef30df61eb842ba46ae79c10ee1b" entry="Id(19375664828416)" />
+            </Bindings>
+        </engine:Button>
+        <engine:Button name="reset-button">
+            <Bindings>
+                <UnityEngine.Localization.LocalizedString property="text" table="GUID:77b1ef30df61eb842ba46ae79c10ee1b" entry="Id(19375698382850)" />
             </Bindings>
         </engine:Button>
         <engine:Button name="quit-button">

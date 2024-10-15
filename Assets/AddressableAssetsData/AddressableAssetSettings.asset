@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: cc5d1dd7b92a9aa498df6246617a727d
   m_currentHash:
     serializedVersion: 2
-    Hash: 4e1a9949c2a3e02e051b620db61c6924
+    Hash: 28dd31580595642eb355a3425461feaa
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_CatalogRequestsTimeout: 0
@@ -59,17 +59,23 @@ MonoBehaviour:
   m_BuildAddressablesWithPlayerBuild: 0
   m_overridePlayerVersion: '[UnityEditor.PlayerSettings.bundleVersion]'
   m_GroupAssets:
+  - {fileID: 11400000, guid: 744709542883d974fa6f991865ae00d7, type: 2}
+  - {fileID: 11400000, guid: 647af97705c7b5b45aeb1b1f44b30413, type: 2}
   - {fileID: 11400000, guid: 513527c075fe68e47941fbd62ec4e806, type: 2}
   - {fileID: 11400000, guid: 878324c714610524ab582ab3b85453be, type: 2}
   - {fileID: 11400000, guid: 29ba6386a7f087d4b9a5902c81d86581, type: 2}
   - {fileID: 11400000, guid: 771ca80a50789cc47896a7e35ef94256, type: 2}
   - {fileID: 11400000, guid: 7bb0ee49e31d37f4d9b9d1854141b165, type: 2}
   - {fileID: 11400000, guid: e686799e083701249b0684ff21302f5c, type: 2}
+  - {fileID: 11400000, guid: c1cdb6be1c0b9d24ca065e70865c5fe5, type: 2}
+  - {fileID: 11400000, guid: f2347346899dd904db4aec6a03c61fd0, type: 2}
   - {fileID: 11400000, guid: e01dd0fa277b184478e5954c7e405bbe, type: 2}
   - {fileID: 11400000, guid: c41ac1c9c48367240a2cf2ddf8f74dc8, type: 2}
   - {fileID: 11400000, guid: baca1126d45d56a4d8a17a1543d20689, type: 2}
+  - {fileID: 11400000, guid: 2264d5308e510c041bdf9a6f0610e1b4, type: 2}
   - {fileID: 11400000, guid: 04c6939bafd19c149828e6d798d10530, type: 2}
   - {fileID: 11400000, guid: a5e7c8901d2435c4690f20815a607185, type: 2}
+  - {fileID: 11400000, guid: 50b614da6a42b1344825077198febdd5, type: 2}
   - {fileID: 11400000, guid: 97b67c2d2d7d9034fbdc619820299bab, type: 2}
   - {fileID: 11400000, guid: ac280e47911e1794c92e1dbd0ffd35b4, type: 2}
   m_BuildSettings:
@@ -123,6 +129,12 @@ MonoBehaviour:
     - Locale-pt-BR
     - Locale-ur-IN
     - Preload
+    - Locale-de-DE
+    - Locale-ja-JP
+    - Locale-id-ID
+    - Locale-mr-IN
+    - Locale-te-IN
+    - Locale-tr-TR
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 7799b6ed4528fb547aacace3fca3f3f6, type: 2}

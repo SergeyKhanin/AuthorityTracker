@@ -20,6 +20,10 @@ namespace Player
             UpdatePointsLabel();
         }
 
+        public void SetName(string name) => _model.SetName(name);
+
+        public void SetPoints(int points) => _model.SetPoints(points);
+
         private void OnX1PlusButtonClicked() => PlusX1();
 
         private void OnX5PlusButtonClicked() => PlusX5();
@@ -52,7 +56,7 @@ namespace Player
             UpdateCounterLabel();
         }
 
-        private void UpdatePointsLabel()
+        public void UpdatePointsLabel()
         {
             _view.PointsLabel.text = _model.Points.ToString();
         }
