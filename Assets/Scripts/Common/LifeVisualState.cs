@@ -5,6 +5,6 @@
         None = 0,
         Half = 1,
         Quarter = 2,
-        Dead = 3,
+        Zero = 3,
     }
 }

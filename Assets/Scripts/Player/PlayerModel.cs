@@ -56,6 +56,17 @@ namespace Player
             SavePlayerData();
         }
 
+        public LifeVisualState GetLifeVisualState()
+        {
+            return Points switch
+            {
+                var x when x <= 0 => LifeVisualState.Zero,
+                var x when x <= _maxPoints / 4 => LifeVisualState.Quarter,
+                var x when x <= _maxPoints / 2 => LifeVisualState.Half,
+                _ => LifeVisualState.None
+            };
+        }
+
         public void Clear() => Counter = 0;
 
         private void SavePlayerData()
