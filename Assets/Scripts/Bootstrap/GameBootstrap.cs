@@ -1,4 +1,5 @@
 using Common;
+using Game;
 using Player;
 using Popup;
 using UnityEngine;
@@ -15,16 +16,16 @@ namespace Bootstrap
         {
             GetUiDocument();
             CreatePlayers(CommonPlayers.Player2);
-            CreateConfirmPopup();
+            CreateElements();
         }
 
         private void GetUiDocument() => _uiDocument = GetComponent<UIDocument>();
 
-        private void CreateConfirmPopup()
+        private void CreateElements()
         {
-            var confirmPopupPresenter = new ConfirmPopupPresenter(
-                new ConfirmPopupView(_uiDocument)
-            );
+            var popupPresenter = new PopupPresenter(new PopupView(_uiDocument));
+            var gamePresenter = new GamePresenter(new GameView(_uiDocument));
+            var pausePresenter = new PausePresenter(new PauseView(_uiDocument));
         }
 
         private void CreatePlayers(CommonPlayers amount)

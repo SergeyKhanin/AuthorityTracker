@@ -5,11 +5,11 @@ using UnityEngine.UIElements;
 
 namespace Popup
 {
-    public sealed class ConfirmPopupPresenter : IDisposable
+    public sealed class PopupPresenter : IDisposable
     {
-        private readonly ConfirmPopupView _view;
+        private readonly PopupView _view;
 
-        public ConfirmPopupPresenter(ConfirmPopupView view)
+        public PopupPresenter(PopupView view)
         {
             _view = view;
 
