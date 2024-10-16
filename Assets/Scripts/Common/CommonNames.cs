@@ -2,6 +2,8 @@
 {
     public static class CommonNames
     {
+        public const string ContentContainer = "content-container";
+
         public const string PlayerViewName = "player-view-";
         public const string PopupViewName = "popup-view";
         public const string MenuViewName = "menu-view";

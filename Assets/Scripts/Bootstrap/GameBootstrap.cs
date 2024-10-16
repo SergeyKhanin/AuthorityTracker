@@ -32,7 +32,8 @@ namespace Bootstrap
 
         private void CreatePlayers()
         {
-            var root = GetUiDocument().rootVisualElement;
+            var root = GetUiDocument()
+                .rootVisualElement.Q<VisualElement>(CommonNames.ContentContainer);
             var playerTemplate = Resources.Load<VisualTreeAsset>(
                 CommonTemplatePath.PlayerTemplatePath
             );

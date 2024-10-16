@@ -1,42 +1,44 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
-    <engine:VisualElement name="content-container" style="flex-grow: 1; align-items: center; justify-content: center;">
-        <engine:Label name="language-label">
-            <Bindings>
-                <UnityEngine.Localization.LocalizedString property="text" table="GUID:77b1ef30df61eb842ba46ae79c10ee1b" entry="Id(397609129730048)" />
-            </Bindings>
-        </engine:Label>
-        <engine:VisualElement style="flex-grow: 1; align-items: center; justify-content: center;">
-            <engine:VisualElement picking-mode="Ignore" style="width: 131px; height: 51px; justify-content: center; align-items: center;">
-                <engine:VisualElement picking-mode="Ignore" style="flex-grow: 1; flex-direction: row;">
-                    <engine:Button name="english-language-button" />
-                    <engine:Button name="chinese-language-button" />
-                    <engine:Button name="hindi-language-button" />
-                    <engine:Button name="spanish-language-button" />
-                </engine:VisualElement>
-                <engine:VisualElement picking-mode="Ignore" style="flex-direction: row; flex-grow: 1;">
-                    <engine:Button name="french-language-button" />
-                    <engine:Button name="arabic-language-button" />
-                    <engine:Button name="bangla-language-button" />
-                    <engine:Button name="portuguese-language-button" />
-                </engine:VisualElement>
-                <engine:VisualElement picking-mode="Ignore" style="flex-grow: 1; flex-direction: row;">
-                    <engine:Button name="russian-language-button" />
-                    <engine:Button name="urdu-language-button" />
-                    <engine:Button name="indonesian-language-button" />
-                    <engine:Button name="japanese-language-button" />
-                </engine:VisualElement>
-                <engine:VisualElement picking-mode="Ignore" style="flex-grow: 1; flex-direction: row;">
-                    <engine:Button name="german-language-button" />
-                    <engine:Button name="telugu-language-button" />
-                    <engine:Button name="marathi-language-button" />
-                    <engine:Button name="turkish-language-button" />
+    <engine:VisualElement class="full-screen">
+        <engine:VisualElement name="buttons-container">
+            <engine:Label name="language-label">
+                <Bindings>
+                    <UnityEngine.Localization.LocalizedString property="text" table="GUID:77b1ef30df61eb842ba46ae79c10ee1b" entry="Id(397609129730048)" />
+                </Bindings>
+            </engine:Label>
+            <engine:VisualElement>
+                <engine:VisualElement picking-mode="Ignore">
+                    <engine:VisualElement picking-mode="Ignore" style="flex-grow: 1; flex-direction: row;">
+                        <engine:Button name="english-language-button" class="btn btn--square" />
+                        <engine:Button name="chinese-language-button" class="btn btn--square" />
+                        <engine:Button name="hindi-language-button" class="btn btn--square" />
+                        <engine:Button name="spanish-language-button" class="btn btn--square" />
+                    </engine:VisualElement>
+                    <engine:VisualElement picking-mode="Ignore" style="flex-direction: row; flex-grow: 1;">
+                        <engine:Button name="french-language-button" class="btn btn--square" />
+                        <engine:Button name="arabic-language-button" class="btn btn--square" />
+                        <engine:Button name="bangla-language-button" class="btn btn--square" />
+                        <engine:Button name="portuguese-language-button" class="btn btn--square" />
+                    </engine:VisualElement>
+                    <engine:VisualElement picking-mode="Ignore" style="flex-grow: 1; flex-direction: row;">
+                        <engine:Button name="russian-language-button" class="btn btn--square" />
+                        <engine:Button name="urdu-language-button" class="btn btn--square" />
+                        <engine:Button name="indonesian-language-button" class="btn btn--square" />
+                        <engine:Button name="japanese-language-button" class="btn btn--square" />
+                    </engine:VisualElement>
+                    <engine:VisualElement picking-mode="Ignore" style="flex-grow: 1; flex-direction: row;">
+                        <engine:Button name="german-language-button" class="btn btn--square" />
+                        <engine:Button name="telugu-language-button" class="btn btn--square" />
+                        <engine:Button name="marathi-language-button" class="btn btn--square" />
+                        <engine:Button name="turkish-language-button" class="btn btn--square" />
+                    </engine:VisualElement>
                 </engine:VisualElement>
             </engine:VisualElement>
+            <engine:Button name="back-button" class="btn btn--rectangle btn--green">
+                <Bindings>
+                    <UnityEngine.Localization.LocalizedString property="text" table="GUID:77b1ef30df61eb842ba46ae79c10ee1b" entry="Id(19375698382848)" />
+                </Bindings>
+            </engine:Button>
         </engine:VisualElement>
-        <engine:Button name="back-button">
-            <Bindings>
-                <UnityEngine.Localization.LocalizedString property="text" table="GUID:77b1ef30df61eb842ba46ae79c10ee1b" entry="Id(19375698382848)" />
-            </Bindings>
-        </engine:Button>
     </engine:VisualElement>
 </engine:UXML>

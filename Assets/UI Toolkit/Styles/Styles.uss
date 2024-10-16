@@ -2,3 +2,72 @@ TemplateContainer {
     flex-grow: 1;
     flex-shrink: 1;
 }
+
+.full-screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.unity-button.btn {
+    font-size: var(--font-size-common);
+    margin: var(--base-margin);
+    padding: var(--base-padding);
+    border-width: 0;
+    border-radius: 0;
+    text-overflow: ellipsis
+}
+
+.unity-button.btn.btn--rectangle {
+    width: var(--btn-rectangle-width);
+    height: var(--btn-rectangle-height);
+
+}
+
+.unity-button.btn--rectangle.btn--green {
+    background-color: green;
+}
+
+.unity-button.btn--rectangle.btn--white {
+    background-color: white;
+}
+
+.unity-button.btn--rectangle.btn--red {
+    background-color: red;
+}
+
+.unity-button.btn.btn--rectangle-small {
+    width: var(--btn-rectangle-small-width);
+    height: var(--btn-rectangle-small-heigh);
+}
+
+.unity-button.btn--rectangle-small.btn--green {
+    background-color: green;
+}
+
+.unity-button.btn--rectangle-small.btn--white {
+    background-color: white;
+}
+
+.unity-button.btn--rectangle-small.btn--red {
+    background-color: red;
+}
+
+.unity-button.btn.btn--square {
+    width: var(--btn-square-size);
+    height: var(--btn-square-size);
+}
+
+.unity-button.btn--square.btn--green {
+    background-color: green;
+}
+
+.unity-button.btn--square.btn--white {
+    background-color: white;
+}
+
+.unity-button.btn--square.btn--red {
+    background-color: red;
+}
