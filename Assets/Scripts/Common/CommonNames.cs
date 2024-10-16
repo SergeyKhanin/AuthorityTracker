@@ -7,6 +7,7 @@
         public const string MenuViewName = "menu-view";
         public const string SettingsViewName = "settings-view";
         public const string GameViewName = "game-view";
+        public const string PauseViewName = "pause-view";
 
         public const string PlayerName = "Player";
         public const string LanguageName = "Language";
