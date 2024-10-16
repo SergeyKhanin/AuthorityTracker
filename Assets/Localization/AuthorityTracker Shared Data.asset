@@ -51,6 +51,10 @@ MonoBehaviour:
     m_Key: Button.Quit
     m_Metadata:
       m_Items: []
+  - m_Id: 803105652248576
+    m_Key: Button.Menu
+    m_Metadata:
+      m_Items: []
   - m_Id: 397609129730048
     m_Key: Label.Language
     m_Metadata:

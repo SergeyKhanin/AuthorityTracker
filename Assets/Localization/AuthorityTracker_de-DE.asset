@@ -58,6 +58,10 @@ MonoBehaviour:
     m_Localized: "Sprache ausw\xE4hlen"
     m_Metadata:
       m_Items: []
+  - m_Id: 803105652248576
+    m_Localized: Speisekarte
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
