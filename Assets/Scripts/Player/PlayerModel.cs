@@ -5,13 +5,29 @@ namespace Player
 {
     public sealed class PlayerModel
     {
-        public string Name { get; private set; } = string.Empty;
-        public int Points { get; private set; } = 50;
+        private const int StartPoints = 50;
+        public int Points { get; private set; }
         public int Counter { get; private set; }
 
-        public void SetName(string name) => Name = name;
+        private readonly string _playerName;
+        private int _maxPoints;
 
-        public void SetPoints(int points) => Points = points;
+        public PlayerModel(string playerName)
+        {
+            _playerName = playerName;
+
+            if (PlayerPrefs.HasKey(playerName))
+            {
+                Points = PlayerPrefs.GetInt(playerName);
+                _maxPoints = PlayerPrefs.GetInt(CommonNames.MaxPointsName + playerName);
+            }
+            else
+            {
+                Points = StartPoints;
+                _maxPoints = StartPoints;
+                SavePlayerData();
+            }
+        }
 
         public void X1Plus() => Counter += 1;
 
@@ -25,14 +41,27 @@ namespace Player
         {
             Points += Counter;
             Counter = 0;
-            SavePoints(Points);
+
+            if (_maxPoints <= Points)
+                _maxPoints = Points;
+
+            SavePlayerData();
+        }
+
+        public void RestartPoints()
+        {
+            Points = StartPoints;
+            _maxPoints = StartPoints;
+
+            SavePlayerData();
         }
 
         public void Clear() => Counter = 0;
 
-        private void SavePoints(int points)
+        private void SavePlayerData()
         {
-            PlayerPrefs.SetInt(Name, points);
+            PlayerPrefs.SetInt(_playerName, Points);
+            PlayerPrefs.SetInt(CommonNames.MaxPointsName + _playerName, _maxPoints);
             PlayerPrefs.Save();
         }
     }

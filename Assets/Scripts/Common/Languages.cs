@@ -1,6 +1,6 @@
 ﻿namespace Common
 {
-    public enum CommonLanguage
+    public enum Languages
     {
         English = 0,
         Chinese = 1,

@@ -1,6 +1,7 @@
 ﻿using System;
 using Common;
 using Events;
+using Extensions;
 using UnityEngine.UIElements;
 
 namespace Menu
@@ -20,46 +21,45 @@ namespace Menu
             Hide();
         }
 
-        private void OnEnglishLanguageButtonClicked() => _model.SetLanguage(CommonLanguage.English);
+        private void OnEnglishLanguageButtonClicked() => _model.SetLanguage(Languages.English);
 
-        private void OnChineseLanguageButtonClicked() => _model.SetLanguage(CommonLanguage.Chinese);
+        private void OnChineseLanguageButtonClicked() => _model.SetLanguage(Languages.Chinese);
 
-        private void OnHindiLanguageButtonClicked() => _model.SetLanguage(CommonLanguage.Hindi);
+        private void OnHindiLanguageButtonClicked() => _model.SetLanguage(Languages.Hindi);
 
-        private void OnSpanishLanguageButtonClicked() => _model.SetLanguage(CommonLanguage.Spanish);
+        private void OnSpanishLanguageButtonClicked() => _model.SetLanguage(Languages.Spanish);
 
-        private void OnFrenchLanguageButtonClicked() => _model.SetLanguage(CommonLanguage.French);
+        private void OnFrenchLanguageButtonClicked() => _model.SetLanguage(Languages.French);
 
-        private void OnArabicLanguageButtonClicked() => _model.SetLanguage(CommonLanguage.Arabic);
+        private void OnArabicLanguageButtonClicked() => _model.SetLanguage(Languages.Arabic);
 
-        private void OnBanglaLanguageButtonClicked() => _model.SetLanguage(CommonLanguage.Bangla);
+        private void OnBanglaLanguageButtonClicked() => _model.SetLanguage(Languages.Bangla);
 
         private void OnPortugueseLanguageButtonClicked() =>
-            _model.SetLanguage(CommonLanguage.Portuguese);
+            _model.SetLanguage(Languages.Portuguese);
 
-        private void OnRussianLanguageButtonClicked() => _model.SetLanguage(CommonLanguage.Russian);
+        private void OnRussianLanguageButtonClicked() => _model.SetLanguage(Languages.Russian);
 
-        private void OnUrduLanguageButtonClicked() => _model.SetLanguage(CommonLanguage.Urdu);
+        private void OnUrduLanguageButtonClicked() => _model.SetLanguage(Languages.Urdu);
 
         private void OnIndonesianLanguageButtonClicked() =>
-            _model.SetLanguage(CommonLanguage.Indonesian);
+            _model.SetLanguage(Languages.Indonesian);
 
-        private void OnJapaneseLanguageButtonClicked() =>
-            _model.SetLanguage(CommonLanguage.Japanese);
+        private void OnJapaneseLanguageButtonClicked() => _model.SetLanguage(Languages.Japanese);
 
-        private void OnGermanLanguageButtonClicked() => _model.SetLanguage(CommonLanguage.German);
+        private void OnGermanLanguageButtonClicked() => _model.SetLanguage(Languages.German);
 
-        private void OnTeluguLanguageButtonClicked() => _model.SetLanguage(CommonLanguage.Telugu);
+        private void OnTeluguLanguageButtonClicked() => _model.SetLanguage(Languages.Telugu);
 
-        private void OnMarathiLanguageButtonClicked() => _model.SetLanguage(CommonLanguage.Marathi);
+        private void OnMarathiLanguageButtonClicked() => _model.SetLanguage(Languages.Marathi);
 
-        private void OnTurkishLanguageButtonClicked() => _model.SetLanguage(CommonLanguage.Turkish);
+        private void OnTurkishLanguageButtonClicked() => _model.SetLanguage(Languages.Turkish);
 
         private void OnBackButtonClicked() => EventsManager.SettingsClosed.Invoke();
 
-        private void Hide() => _view.Container.style.visibility = Visibility.Hidden;
+        private void Hide() => _view.Container.Hide();
 
-        private void Show() => _view.Container.style.visibility = Visibility.Visible;
+        private void Show() => _view.Container.Show();
 
         private void SubscribeToEvents()
         {

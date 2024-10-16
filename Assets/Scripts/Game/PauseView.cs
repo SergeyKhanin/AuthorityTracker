@@ -8,7 +8,7 @@ namespace Game
         public VisualElement Container { get; private set; }
         public Button BackButton { get; private set; }
         public Button MenuButton { get; private set; }
-        public Button ResetButton { get; private set; }
+        public Button RestartButton { get; private set; }
         public Button QuitButton { get; private set; }
 
         public PauseView(UIDocument uiDocument)
@@ -17,7 +17,7 @@ namespace Game
             Container = root;
             BackButton = root.Q<Button>("back-button");
             MenuButton = root.Q<Button>("menu-button");
-            ResetButton = root.Q<Button>("reset-button");
+            RestartButton = root.Q<Button>("restart-button");
             QuitButton = root.Q<Button>("quit-button");
         }
     }

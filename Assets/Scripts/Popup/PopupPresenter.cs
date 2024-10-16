@@ -1,7 +1,6 @@
 ﻿using System;
 using Events;
-using Game;
-using UnityEngine.UIElements;
+using Extensions;
 
 namespace Popup
 {
@@ -30,9 +29,9 @@ namespace Popup
             Hide();
         }
 
-        private void Show() => _view.Container.style.visibility = Visibility.Visible;
+        private void Show() => _view.Container.Show();
 
-        private void Hide() => _view.Container.style.visibility = Visibility.Hidden;
+        private void Hide() => _view.Container.Hide();
 
         private void SubscribeToEvents()
         {

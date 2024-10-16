@@ -1,5 +1,6 @@
 ﻿using System;
 using Events;
+using Extensions;
 using UnityEngine.UIElements;
 
 namespace Game
@@ -18,9 +19,9 @@ namespace Game
 
         private void OnPauseButtonClicked() => EventsManager.PauseOpened.Invoke();
 
-        private void Show() => _view.Container.style.visibility = Visibility.Visible;
+        private void Show() => _view.Container.Show();
 
-        private void Hide() => _view.Container.style.visibility = Visibility.Hidden;
+        private void Hide() => _view.Container.Hide();
 
         private void SubscribeToEvents()
         {

@@ -1,6 +1,6 @@
 ﻿namespace Common
 {
-    public enum CommonScenes
+    public enum Scenes
     {
         MenuScene = 0,
         GameScene = 1,

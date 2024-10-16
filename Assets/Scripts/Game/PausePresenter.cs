@@ -1,6 +1,7 @@
 ﻿using System;
 using Common;
 using Events;
+using Extensions;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -22,26 +23,26 @@ namespace Game
 
         private void OnQuitButtonClicked() => Application.Quit();
 
-        private void OnMenuButtonClicked() => SceneManager.LoadScene((int)CommonScenes.MenuScene);
+        private void OnMenuButtonClicked() => SceneManager.LoadScene((int)Scenes.MenuScene);
 
         private void OnBackButtonClicked() => EventsManager.PauseClosed.Invoke();
 
-        private void OnResetButtonClicked() => SceneManager.LoadScene((int)CommonScenes.MenuScene);
+        private void OnRestartButtonClicked() => EventsManager.PointsReseted.Invoke();
 
-        private void Hide() => _view.Container.style.visibility = Visibility.Hidden;
+        private void Hide() => _view.Container.Hide();
 
-        private void Show() => _view.Container.style.visibility = Visibility.Visible;
+        private void Show() => _view.Container.Show();
 
         private void SubscribeToEvents()
         {
-            EventsManager.PauseOpened.AddListener(Hide);
-            EventsManager.PauseClosed.AddListener(Show);
+            EventsManager.PauseOpened.AddListener(Show);
+            EventsManager.PauseClosed.AddListener(Hide);
         }
 
         private void Subscribe()
         {
             _view.BackButton.clicked += OnBackButtonClicked;
-            _view.ResetButton.clicked += OnResetButtonClicked;
+            _view.RestartButton.clicked += OnRestartButtonClicked;
             _view.MenuButton.clicked += OnMenuButtonClicked;
             _view.QuitButton.clicked += OnQuitButtonClicked;
         }
@@ -49,12 +50,12 @@ namespace Game
         public void Dispose()
         {
             _view.BackButton.clicked += OnBackButtonClicked;
-            _view.ResetButton.clicked += OnResetButtonClicked;
+            _view.RestartButton.clicked += OnRestartButtonClicked;
             _view.MenuButton.clicked += OnMenuButtonClicked;
             _view.QuitButton.clicked += OnQuitButtonClicked;
 
-            EventsManager.PauseOpened.RemoveListener(Hide);
-            EventsManager.PauseClosed.RemoveListener(Show);
+            EventsManager.PauseOpened.RemoveListener(Show);
+            EventsManager.PauseClosed.RemoveListener(Hide);
         }
     }
 }

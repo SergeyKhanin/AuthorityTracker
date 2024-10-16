@@ -1,4 +1,3 @@
-using Common;
 using Menu;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -8,22 +7,24 @@ namespace Bootstrap
     [RequireComponent(typeof(UIDocument))]
     public sealed class MenuBootstrap : MonoBehaviour
     {
-        private UIDocument _uiDocument;
-        private SettingsModel _model;
+        private MenuPresenter _menuPresenter;
+        private SettingsPresenter _settingsPresenter;
 
-        private void Start()
+        private void Start() => CreateElements(GetUiDocument());
+
+        private UIDocument GetUiDocument() => GetComponent<UIDocument>();
+
+        private void CreateElements(UIDocument document)
         {
-            _uiDocument = GetComponent<UIDocument>();
-            _model = new SettingsModel();
+            var model = new SettingsModel();
+            _menuPresenter = new MenuPresenter(new MenuView(document), model);
+            _settingsPresenter = new SettingsPresenter(new SettingsView(document), model);
+        }
 
-            if (PlayerPrefs.HasKey(CommonNames.LanguageName))
-            {
-                _model.SetLanguage((CommonLanguage)PlayerPrefs.GetInt(CommonNames.LanguageName));
-            }
-
-            var menuPresenter = new MenuPresenter(new MenuView(_uiDocument), _model);
-
-            var settingsPresenter = new SettingsPresenter(new SettingsView(_uiDocument), _model);
+        private void OnDestroy()
+        {
+            _menuPresenter?.Dispose();
+            _settingsPresenter?.Dispose();
         }
     }
 }

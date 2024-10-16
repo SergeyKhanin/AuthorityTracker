@@ -1,9 +1,9 @@
 ﻿using System;
 using Common;
 using Events;
+using Extensions;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
 
 namespace Menu
 {
@@ -19,13 +19,18 @@ namespace Menu
 
             Subscribe();
             SubscribeToEvents();
+            UpdateContinueButtonVisibility();
         }
 
-        private void OnStartButtonClicked() => SceneManager.LoadScene((int)CommonScenes.GameScene);
+        private void OnStartButtonClicked()
+        {
+            _model.ResetPlayersData();
+            SceneManager.LoadScene((int)Scenes.GameScene);
+        }
 
         private void OnSettingButtonClicked() => EventsManager.SettingsOpened.Invoke();
 
-        private void OnContinueButtonClicked() => Application.Quit();
+        private void OnContinueButtonClicked() => SceneManager.LoadScene((int)Scenes.GameScene);
 
         private void OnResetButtonClicked()
         {
@@ -35,9 +40,12 @@ namespace Menu
 
         private void OnQuitButtonClicked() => Application.Quit();
 
-        private void Show() => _view.Container.style.visibility = Visibility.Visible;
+        private void Show() => _view.Container.Show();
 
-        private void Hide() => _view.Container.style.visibility = Visibility.Hidden;
+        private void Hide() => _view.Container.Hide();
+
+        private void UpdateContinueButtonVisibility() =>
+            _view.ContinueButton.SetVisibility(_model.HasPlayersData());
 
         private void SubscribeToEvents()
         {

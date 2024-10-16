@@ -1,6 +1,6 @@
 using System;
 using Events;
-using UnityEngine.UIElements;
+using Extensions;
 
 namespace Player
 {
@@ -20,9 +20,7 @@ namespace Player
             UpdatePointsLabel();
         }
 
-        public void SetName(string name) => _model.SetName(name);
-
-        public void SetPoints(int points) => _model.SetPoints(points);
+        public void UpdatePointsLabel() => _view.PointsLabel.text = _model.Points.ToString();
 
         private void OnX1PlusButtonClicked() => PlusX1();
 
@@ -56,11 +54,6 @@ namespace Player
             UpdateCounterLabel();
         }
 
-        public void UpdatePointsLabel()
-        {
-            _view.PointsLabel.text = _model.Points.ToString();
-        }
-
         private void UpdateCounterLabel()
         {
             EventsManager.CounterChanged.Invoke();
@@ -81,20 +74,21 @@ namespace Player
             HideCounterLabel();
         }
 
-        private void ShowCounterLabel()
+        private void RestartPoints()
         {
-            _view.CounterLabel.style.display = DisplayStyle.Flex;
+            _model.RestartPoints();
+            UpdatePointsLabel();
         }
 
-        private void HideCounterLabel()
-        {
-            _view.CounterLabel.style.display = DisplayStyle.None;
-        }
+        private void ShowCounterLabel() => _view.CounterLabel.Show();
+
+        private void HideCounterLabel() => _view.CounterLabel.Hide();
 
         private void SubscribeToEvents()
         {
             EventsManager.PointsApplied.AddListener(Apply);
             EventsManager.PointsCleared.AddListener(Clear);
+            EventsManager.PointsReseted.AddListener(RestartPoints);
         }
 
         private void Subscribe()
@@ -114,6 +108,7 @@ namespace Player
 
             EventsManager.PointsApplied.RemoveListener(Apply);
             EventsManager.PointsCleared.RemoveListener(Clear);
+            EventsManager.PointsReseted.RemoveListener(RestartPoints);
         }
     }
 }

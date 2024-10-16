@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using Common;
 using Game;
+using Menu;
 using Player;
 using Popup;
 using UnityEngine;
@@ -10,55 +12,58 @@ namespace Bootstrap
     [RequireComponent(typeof(UIDocument))]
     public sealed class GameBootstrap : MonoBehaviour
     {
-        private UIDocument _uiDocument;
+        private PopupPresenter _popupPresenter;
+        private GamePresenter _gamePresenter;
+        private PausePresenter _pausePresenter;
+        private readonly List<PlayerPresenter> _playerPresenters = new();
 
-        private void Start()
+        private void Start() => CreateElements(GetUiDocument());
+
+        private UIDocument GetUiDocument() => GetComponent<UIDocument>();
+
+        private void CreateElements(UIDocument uiDocument)
         {
-            GetUiDocument();
-            CreatePlayers(CommonPlayers.Player2);
-            CreateElements();
+            _popupPresenter = new PopupPresenter(new PopupView(uiDocument));
+            _gamePresenter = new GamePresenter(new GameView(uiDocument));
+            _pausePresenter = new PausePresenter(new PauseView(uiDocument));
+
+            CreatePlayers();
         }
 
-        private void GetUiDocument() => _uiDocument = GetComponent<UIDocument>();
-
-        private void CreateElements()
+        private void CreatePlayers()
         {
-            var popupPresenter = new PopupPresenter(new PopupView(_uiDocument));
-            var gamePresenter = new GamePresenter(new GameView(_uiDocument));
-            var pausePresenter = new PausePresenter(new PauseView(_uiDocument));
-        }
-
-        private void CreatePlayers(CommonPlayers amount)
-        {
-            var uiDocument = _uiDocument;
-            var root = uiDocument.rootVisualElement;
+            var root = GetUiDocument().rootVisualElement;
             var playerTemplate = Resources.Load<VisualTreeAsset>(
                 CommonTemplatePath.PlayerTemplatePath
             );
+            var playersAmount = new SettingsModel().GetPlayersAmount();
 
-            for (int i = 1; i <= (int)amount; i++)
+            for (int i = 1; i <= playersAmount; i++)
             {
                 var templateName = CommonNames.PlayerViewName + i;
+                var playerName = CommonNames.PlayerName + i;
                 var template = playerTemplate.Instantiate();
 
                 template.name = templateName;
                 root.Add(template);
 
                 var playerPresenter = new PlayerPresenter(
-                    new PlayerView(uiDocument, templateName),
-                    new PlayerModel()
+                    new PlayerView(GetUiDocument(), templateName),
+                    new PlayerModel(playerName)
                 );
 
-                var playerName = CommonNames.PlayerName + i;
-
-                playerPresenter.SetName(playerName);
-
-                if (PlayerPrefs.HasKey(playerName))
-                {
-                    playerPresenter.SetPoints(PlayerPrefs.GetInt(playerName));
-                    playerPresenter.UpdatePointsLabel();
-                }
+                _playerPresenters.Add(playerPresenter);
             }
+        }
+
+        private void OnDestroy()
+        {
+            _popupPresenter?.Dispose();
+            _gamePresenter?.Dispose();
+            _pausePresenter?.Dispose();
+
+            foreach (var playerPresenter in _playerPresenters)
+                playerPresenter?.Dispose();
         }
     }
 }
