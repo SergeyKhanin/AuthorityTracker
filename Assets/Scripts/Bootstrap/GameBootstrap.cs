@@ -13,11 +13,12 @@ namespace Bootstrap
 
         private void Start()
         {
-            _uiDocument = GetComponent<UIDocument>();
-
+            GetUiDocument();
             CreatePlayers(CommonPlayers.Player2);
             CreateConfirmPopup();
         }
+
+        private void GetUiDocument() => _uiDocument = GetComponent<UIDocument>();
 
         private void CreateConfirmPopup()
         {
@@ -47,11 +48,13 @@ namespace Bootstrap
                     new PlayerModel()
                 );
 
-                playerPresenter.SetName(templateName);
+                var playerName = CommonNames.PlayerName + i;
 
-                if (PlayerPrefs.HasKey(templateName))
+                playerPresenter.SetName(playerName);
+
+                if (PlayerPrefs.HasKey(playerName))
                 {
-                    playerPresenter.SetPoints(PlayerPrefs.GetInt(templateName));
+                    playerPresenter.SetPoints(PlayerPrefs.GetInt(playerName));
                     playerPresenter.UpdatePointsLabel();
                 }
             }
