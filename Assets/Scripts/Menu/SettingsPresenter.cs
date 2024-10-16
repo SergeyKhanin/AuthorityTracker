@@ -17,7 +17,7 @@ namespace Menu
 
             Subscribe();
             SubscribeToEvents();
-            HideSettings();
+            Hide();
         }
 
         private void OnEnglishLanguageButtonClicked() => _model.SetLanguage(CommonLanguage.English);
@@ -55,16 +55,16 @@ namespace Menu
 
         private void OnTurkishLanguageButtonClicked() => _model.SetLanguage(CommonLanguage.Turkish);
 
-        private void OnBackButtonClicked() => GameEventsManager.SettingsClosed.Invoke();
+        private void OnBackButtonClicked() => EventsManager.SettingsClosed.Invoke();
 
-        private void HideSettings() => _view.Container.style.visibility = Visibility.Hidden;
+        private void Hide() => _view.Container.style.visibility = Visibility.Hidden;
 
-        private void ShowSettings() => _view.Container.style.visibility = Visibility.Visible;
+        private void Show() => _view.Container.style.visibility = Visibility.Visible;
 
         private void SubscribeToEvents()
         {
-            GameEventsManager.SettingsOpened.AddListener(ShowSettings);
-            GameEventsManager.SettingsClosed.AddListener(HideSettings);
+            EventsManager.SettingsOpened.AddListener(Show);
+            EventsManager.SettingsClosed.AddListener(Hide);
         }
 
         private void Subscribe()
@@ -108,8 +108,8 @@ namespace Menu
             _view.TurkishLanguageButton.clicked -= OnTurkishLanguageButtonClicked;
             _view.BackButton.clicked -= OnBackButtonClicked;
 
-            GameEventsManager.SettingsOpened.RemoveListener(ShowSettings);
-            GameEventsManager.SettingsClosed.RemoveListener(HideSettings);
+            EventsManager.SettingsOpened.RemoveListener(Show);
+            EventsManager.SettingsClosed.RemoveListener(Hide);
         }
     }
 }

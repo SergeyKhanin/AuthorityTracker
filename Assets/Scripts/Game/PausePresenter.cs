@@ -1,5 +1,8 @@
 ﻿using System;
+using Common;
 using Events;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 namespace Game
@@ -17,13 +20,13 @@ namespace Game
             SubscribeToEvents();
         }
 
-        private void OnQuitButtonClicked() => throw new NotImplementedException();
+        private void OnQuitButtonClicked() => Application.Quit();
 
-        private void OnMenuButtonClicked() => throw new NotImplementedException();
+        private void OnMenuButtonClicked() => SceneManager.LoadScene((int)CommonScenes.MenuScene);
 
-        private void OnResetButtonClicked() => throw new NotImplementedException();
+        private void OnBackButtonClicked() => EventsManager.PauseClosed.Invoke();
 
-        private void OnBackButtonClicked() => GameEventsManager.PauseClosed.Invoke();
+        private void OnResetButtonClicked() => SceneManager.LoadScene((int)CommonScenes.MenuScene);
 
         private void Hide() => _view.Container.style.visibility = Visibility.Hidden;
 
@@ -31,8 +34,8 @@ namespace Game
 
         private void SubscribeToEvents()
         {
-            GameEventsManager.PauseOpened.AddListener(Hide);
-            GameEventsManager.PauseClosed.AddListener(Show);
+            EventsManager.PauseOpened.AddListener(Hide);
+            EventsManager.PauseClosed.AddListener(Show);
         }
 
         private void Subscribe()
@@ -50,8 +53,8 @@ namespace Game
             _view.MenuButton.clicked += OnMenuButtonClicked;
             _view.QuitButton.clicked += OnQuitButtonClicked;
 
-            GameEventsManager.PauseOpened.RemoveListener(Hide);
-            GameEventsManager.PauseClosed.RemoveListener(Show);
+            EventsManager.PauseOpened.RemoveListener(Hide);
+            EventsManager.PauseClosed.RemoveListener(Show);
         }
     }
 }

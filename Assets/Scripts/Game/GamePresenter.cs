@@ -16,7 +16,7 @@ namespace Game
             SubscribeToEvents();
         }
 
-        private void OnPauseButtonClicked() => GameEventsManager.PauseOpened.Invoke();
+        private void OnPauseButtonClicked() => EventsManager.PauseOpened.Invoke();
 
         private void Show() => _view.Container.style.visibility = Visibility.Visible;
 
@@ -24,8 +24,8 @@ namespace Game
 
         private void SubscribeToEvents()
         {
-            GameEventsManager.PauseOpened.AddListener(Hide);
-            GameEventsManager.PauseClosed.AddListener(Show);
+            EventsManager.PauseOpened.AddListener(Hide);
+            EventsManager.PauseClosed.AddListener(Show);
         }
 
         private void Subscribe()
@@ -37,8 +37,8 @@ namespace Game
         {
             _view.PauseButton.clicked += OnPauseButtonClicked;
 
-            GameEventsManager.PauseOpened.RemoveListener(Hide);
-            GameEventsManager.PauseClosed.RemoveListener(Show);
+            EventsManager.PauseOpened.RemoveListener(Hide);
+            EventsManager.PauseClosed.RemoveListener(Show);
         }
     }
 }

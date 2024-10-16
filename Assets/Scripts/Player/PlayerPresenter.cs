@@ -63,7 +63,7 @@ namespace Player
 
         private void UpdateCounterLabel()
         {
-            GameEventsManager.CounterChanged.Invoke();
+            EventsManager.CounterChanged.Invoke();
             _view.CounterLabel.text = _model.Counter.ToString();
             ShowCounterLabel();
         }
@@ -93,8 +93,8 @@ namespace Player
 
         private void SubscribeToEvents()
         {
-            GameEventsManager.PointsApplied.AddListener(Apply);
-            GameEventsManager.PointsCleared.AddListener(Clear);
+            EventsManager.PointsApplied.AddListener(Apply);
+            EventsManager.PointsCleared.AddListener(Clear);
         }
 
         private void Subscribe()
@@ -112,8 +112,8 @@ namespace Player
             _view.X1MinusButton.clicked -= OnX1MinusButtonClicked;
             _view.X5MinusButton.clicked -= OnX5MinusButtonClicked;
 
-            GameEventsManager.PointsApplied.RemoveListener(Apply);
-            GameEventsManager.PointsCleared.RemoveListener(Clear);
+            EventsManager.PointsApplied.RemoveListener(Apply);
+            EventsManager.PointsCleared.RemoveListener(Clear);
         }
     }
 }

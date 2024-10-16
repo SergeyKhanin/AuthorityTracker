@@ -23,7 +23,7 @@ namespace Menu
 
         private void OnStartButtonClicked() => SceneManager.LoadScene((int)CommonScenes.GameScene);
 
-        private void OnSettingButtonClicked() => GameEventsManager.SettingsOpened.Invoke();
+        private void OnSettingButtonClicked() => EventsManager.SettingsOpened.Invoke();
 
         private void OnContinueButtonClicked() => Application.Quit();
 
@@ -35,14 +35,14 @@ namespace Menu
 
         private void OnQuitButtonClicked() => Application.Quit();
 
-        private void ShowMenu() => _view.Container.style.visibility = Visibility.Visible;
+        private void Show() => _view.Container.style.visibility = Visibility.Visible;
 
-        private void HideMenu() => _view.Container.style.visibility = Visibility.Hidden;
+        private void Hide() => _view.Container.style.visibility = Visibility.Hidden;
 
         private void SubscribeToEvents()
         {
-            GameEventsManager.SettingsOpened.AddListener(HideMenu);
-            GameEventsManager.SettingsClosed.AddListener(ShowMenu);
+            EventsManager.SettingsOpened.AddListener(Hide);
+            EventsManager.SettingsClosed.AddListener(Show);
         }
 
         private void Subscribe()
@@ -62,8 +62,8 @@ namespace Menu
             _view.ResetButton.clicked -= OnResetButtonClicked;
             _view.QuitButton.clicked -= OnQuitButtonClicked;
 
-            GameEventsManager.SettingsOpened.RemoveListener(HideMenu);
-            GameEventsManager.SettingsClosed.RemoveListener(ShowMenu);
+            EventsManager.SettingsOpened.RemoveListener(Hide);
+            EventsManager.SettingsClosed.RemoveListener(Show);
         }
     }
 }

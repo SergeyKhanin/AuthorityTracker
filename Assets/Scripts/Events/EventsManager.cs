@@ -2,7 +2,7 @@
 
 namespace Events
 {
-    public static class GameEventsManager
+    public static class EventsManager
     {
         public static readonly UnityEvent PointsApplied = new();
         public static readonly UnityEvent PointsCleared = new();

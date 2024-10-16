@@ -15,29 +15,28 @@ namespace Popup
 
             Subscribe();
             SubscribeToEvents();
-            HideConfirmPopupView();
+            Hide();
         }
 
         private void ApplyButtonOnClicked()
         {
-            GameEventsManager.PointsApplied.Invoke();
-            HideConfirmPopupView();
+            EventsManager.PointsApplied.Invoke();
+            Hide();
         }
 
         private void ClearButtonOnClicked()
         {
-            GameEventsManager.PointsCleared.Invoke();
-            HideConfirmPopupView();
+            EventsManager.PointsCleared.Invoke();
+            Hide();
         }
 
-        private void ShowConfirmPopupView() =>
-            _view.Container.style.visibility = Visibility.Visible;
+        private void Show() => _view.Container.style.visibility = Visibility.Visible;
 
-        private void HideConfirmPopupView() => _view.Container.style.visibility = Visibility.Hidden;
+        private void Hide() => _view.Container.style.visibility = Visibility.Hidden;
 
         private void SubscribeToEvents()
         {
-            GameEventsManager.CounterChanged.AddListener(ShowConfirmPopupView);
+            EventsManager.CounterChanged.AddListener(Show);
         }
 
         private void Subscribe()
@@ -51,7 +50,7 @@ namespace Popup
             _view.ApplyButton.clicked -= ApplyButtonOnClicked;
             _view.ClearButton.clicked -= ClearButtonOnClicked;
 
-            GameEventsManager.CounterChanged.RemoveListener(ShowConfirmPopupView);
+            EventsManager.CounterChanged.RemoveListener(Show);
         }
     }
 }
