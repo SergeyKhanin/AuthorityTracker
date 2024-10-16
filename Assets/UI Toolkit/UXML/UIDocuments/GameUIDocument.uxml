@@ -2,7 +2,7 @@
     <engine:Template name="ConfirmPopupView" src="project://database/Assets/UI%20Toolkit/Uxml/Resources/ConfirmPopupView.uxml?fileID=9197481963319205126&amp;guid=876d12b29fce0aa45b262715fcb0f9ca&amp;type=3#ConfirmPopupView" />
     <engine:Template name="GameView" src="project://database/Assets/UI%20Toolkit/Uxml/Resources/GameView.uxml?fileID=9197481963319205126&amp;guid=642de4bff293a6b40a66c1020d3ef35e&amp;type=3#GameView" />
     <engine:Template name="PauseView" src="project://database/Assets/UI%20Toolkit/Uxml/Resources/PauseView.uxml?fileID=9197481963319205126&amp;guid=97a66e086893e714d8d6cabb95ea6af4&amp;type=3#PauseView" />
-    <engine:VisualElement picking-mode="Ignore" name="content-container" content-container="true" style="flex-grow: 1; flex-direction: row; width: 100%; height: 100%; position: absolute;" />
+    <engine:VisualElement picking-mode="Ignore" name="content-container" style="flex-grow: 1;" />
     <engine:Instance template="ConfirmPopupView" picking-mode="Ignore" name="popup-view" style="flex-grow: 1; width: 100%; height: 100%; position: absolute;" />
     <engine:Instance template="GameView" name="game-view" picking-mode="Ignore" style="position: absolute; width: 100%; height: 100%;" />
     <engine:Instance template="PauseView" name="pause-view" picking-mode="Ignore" style="position: absolute; width: 100%; height: 100%;" />
