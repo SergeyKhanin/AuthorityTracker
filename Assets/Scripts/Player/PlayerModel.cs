@@ -9,6 +9,10 @@ namespace Player
         public int Points { get; private set; }
         public int Counter { get; private set; }
 
+        public LifeVisualState LifeVisualState { get; private set; }
+
+        public CounterVisualState CounterVisualState { get; private set; }
+
         private readonly string _playerName;
         private int _maxPoints;
 
@@ -29,23 +33,24 @@ namespace Player
             }
         }
 
-        public void X1Plus() => Counter += 1;
+        public void X1Plus() => IncrementCounterPoints(1);
 
-        public void X5Plus() => Counter += 5;
+        public void X5Plus() => IncrementCounterPoints(5);
 
-        public void X1Minus() => Counter -= 1;
+        public void X1Minus() => DecrementCounterPoints(1);
 
-        public void X5Minus() => Counter -= 5;
+        public void X5Minus() => DecrementCounterPoints(5);
 
         public void Apply()
         {
             Points += Counter;
-            Counter = 0;
 
             if (_maxPoints <= Points)
                 _maxPoints = Points;
 
+            UpdateLifeVisualState();
             SavePlayerData();
+            Clear();
         }
 
         public void RestartPoints()
@@ -56,18 +61,45 @@ namespace Player
             SavePlayerData();
         }
 
-        public LifeVisualState GetLifeVisualState()
+        public void Clear()
         {
-            return Points switch
-            {
-                var x when x <= 0 => LifeVisualState.Zero,
-                var x when x <= _maxPoints / 4 => LifeVisualState.Quarter,
-                var x when x <= _maxPoints / 2 => LifeVisualState.Half,
-                _ => LifeVisualState.None
-            };
+            Counter = 0;
+            UpdateCounterVisualState();
         }
 
-        public void Clear() => Counter = 0;
+        private void IncrementCounterPoints(int points)
+        {
+            Counter += points;
+            UpdateCounterVisualState();
+        }
+
+        private void DecrementCounterPoints(int points)
+        {
+            Counter -= points;
+            UpdateCounterVisualState();
+        }
+
+        private void UpdateLifeVisualState()
+        {
+            if (Points <= 0)
+                LifeVisualState = LifeVisualState.Zero;
+            else if (Points <= _maxPoints / 4)
+                LifeVisualState = LifeVisualState.Quarter;
+            else if (Points <= _maxPoints / 2)
+                LifeVisualState = LifeVisualState.Half;
+            else
+                LifeVisualState = LifeVisualState.Full;
+        }
+
+        private void UpdateCounterVisualState()
+        {
+            if (Counter == 0)
+                CounterVisualState = CounterVisualState.Zero;
+            else if (Counter < 0)
+                CounterVisualState = CounterVisualState.Negative;
+            else
+                CounterVisualState = CounterVisualState.Positive;
+        }
 
         private void SavePlayerData()
         {

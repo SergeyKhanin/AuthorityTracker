@@ -2,7 +2,7 @@
 {
     public enum LifeVisualState
     {
-        None = 0,
+        Full = 0,
         Half = 1,
         Quarter = 2,
         Zero = 3,

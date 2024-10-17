@@ -20,7 +20,7 @@ namespace Player
             UpdatePointsLabel();
         }
 
-        public void UpdatePointsLabel() => _view.PointsLabel.text = _model.Points.ToString();
+        private void UpdatePointsLabel() => _view.PointsLabel.text = _model.Points.ToString();
 
         private void OnX1PlusButtonClicked() => PlusX1();
 
@@ -57,8 +57,13 @@ namespace Player
         private void UpdateCounterLabel()
         {
             EventsManager.CounterChanged.Invoke();
-            _view.CounterLabel.text = _model.Counter.ToString();
             ShowCounterLabel();
+
+            _view.CounterLabel.text = _model.Counter.ToString();
+            _view.CounterLabel.ClearClassList();
+
+            var counterStateClassName = _model.CounterVisualState.ToString().ToLower();
+            _view.CounterLabel.AddToClassList(counterStateClassName);
         }
 
         private void Apply()
@@ -88,7 +93,7 @@ namespace Player
         {
             EventsManager.PointsApplied.AddListener(Apply);
             EventsManager.PointsCleared.AddListener(Clear);
-            EventsManager.PointsReseted.AddListener(RestartPoints);
+            EventsManager.PointsRestarted.AddListener(RestartPoints);
         }
 
         private void Subscribe()
@@ -108,7 +113,7 @@ namespace Player
 
             EventsManager.PointsApplied.RemoveListener(Apply);
             EventsManager.PointsCleared.RemoveListener(Clear);
-            EventsManager.PointsReseted.RemoveListener(RestartPoints);
+            EventsManager.PointsRestarted.RemoveListener(RestartPoints);
         }
     }
 }

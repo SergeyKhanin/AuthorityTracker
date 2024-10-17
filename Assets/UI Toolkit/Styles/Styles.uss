@@ -71,3 +71,16 @@ TemplateContainer {
 .unity-button.btn--square.btn--red {
     background-color: red;
 }
+
+
+.zero {
+    opacity: 0;
+}
+
+.negative {
+    color: red;
+}
+
+.positive {
+    color: green;
+}
