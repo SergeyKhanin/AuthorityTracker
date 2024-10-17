@@ -32,12 +32,6 @@ namespace Menu
 
         private void OnContinueButtonClicked() => SceneManager.LoadScene((int)Scenes.GameScene);
 
-        private void OnResetButtonClicked()
-        {
-            _model.ResetData();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
-
         private void OnQuitButtonClicked() => Application.Quit();
 
         private void Show() => _view.Container.Show();
@@ -58,7 +52,6 @@ namespace Menu
             _view.StartButton.clicked += OnStartButtonClicked;
             _view.SettingsButton.clicked += OnSettingButtonClicked;
             _view.ContinueButton.clicked += OnContinueButtonClicked;
-            _view.ResetButton.clicked += OnResetButtonClicked;
             _view.QuitButton.clicked += OnQuitButtonClicked;
         }
 
@@ -67,7 +60,6 @@ namespace Menu
             _view.StartButton.clicked -= OnStartButtonClicked;
             _view.SettingsButton.clicked -= OnSettingButtonClicked;
             _view.ContinueButton.clicked -= OnContinueButtonClicked;
-            _view.ResetButton.clicked -= OnResetButtonClicked;
             _view.QuitButton.clicked -= OnQuitButtonClicked;
 
             EventsManager.SettingsOpened.RemoveListener(Hide);

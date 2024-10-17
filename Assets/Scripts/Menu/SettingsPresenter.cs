@@ -2,6 +2,7 @@
 using Common;
 using Events;
 using Extensions;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 namespace Menu
@@ -57,6 +58,12 @@ namespace Menu
 
         private void OnBackButtonClicked() => EventsManager.SettingsClosed.Invoke();
 
+        private void OnCleatDataButtonClicked()
+        {
+            _model.ResetData();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
         private void Hide() => _view.Container.Hide();
 
         private void Show() => _view.Container.Show();
@@ -85,6 +92,7 @@ namespace Menu
             _view.TeluguLanguageButton.clicked += OnTeluguLanguageButtonClicked;
             _view.MarathiLanguageButton.clicked += OnMarathiLanguageButtonClicked;
             _view.TurkishLanguageButton.clicked += OnTurkishLanguageButtonClicked;
+            _view.CleatDataButton.clicked += OnCleatDataButtonClicked;
             _view.BackButton.clicked += OnBackButtonClicked;
         }
 
@@ -106,6 +114,7 @@ namespace Menu
             _view.TeluguLanguageButton.clicked -= OnTeluguLanguageButtonClicked;
             _view.MarathiLanguageButton.clicked -= OnMarathiLanguageButtonClicked;
             _view.TurkishLanguageButton.clicked -= OnTurkishLanguageButtonClicked;
+            _view.CleatDataButton.clicked -= OnCleatDataButtonClicked;
             _view.BackButton.clicked -= OnBackButtonClicked;
 
             EventsManager.SettingsOpened.RemoveListener(Show);

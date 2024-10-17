@@ -19,47 +19,51 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 41694519296
-    m_Localized: Appliquer
+    m_Localized: APPLIQUER
     m_Metadata:
       m_Items: []
   - m_Id: 281336078336
-    m_Localized: Clair
+    m_Localized: CLAIR
     m_Metadata:
       m_Items: []
   - m_Id: 19375664828416
-    m_Localized: "Param\xE8tres"
+    m_Localized: "PARAM\xC8TRES"
     m_Metadata:
       m_Items: []
   - m_Id: 19375698382848
-    m_Localized: Dos
-    m_Metadata:
-      m_Items: []
-  - m_Id: 19375698382850
-    m_Localized: "R\xE9initialiser"
+    m_Localized: DOS
     m_Metadata:
       m_Items: []
   - m_Id: 19375698382851
-    m_Localized: Commencer
+    m_Localized: COMMENCER
     m_Metadata:
       m_Items: []
   - m_Id: 60677928423424
-    m_Localized: Continuer
+    m_Localized: CONTINUER
     m_Metadata:
       m_Items: []
   - m_Id: 279212021682176
-    m_Localized: Quitter
+    m_Localized: QUITTER
     m_Metadata:
       m_Items: []
   - m_Id: 397300332486656
-    m_Localized: "Red\xE9marrage"
+    m_Localized: "RED\xC9MARRAGE"
     m_Metadata:
       m_Items: []
   - m_Id: 397609129730048
-    m_Localized: "S\xE9lectionnez la langue"
+    m_Localized: CHOISIR LA LANGUE
     m_Metadata:
       m_Items: []
   - m_Id: 803105652248576
-    m_Localized: Menu
+    m_Localized: MENU
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1029401171976192
+    m_Localized: PAUSE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1031025063878656
+    m_Localized: "EFFACER LES DONN\xC9ES"
     m_Metadata:
       m_Items: []
   references:

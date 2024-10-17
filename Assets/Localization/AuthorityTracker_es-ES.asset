@@ -19,47 +19,51 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 41694519296
-    m_Localized: Aplicar
+    m_Localized: APLICAR
     m_Metadata:
       m_Items: []
   - m_Id: 281336078336
-    m_Localized: Claro
+    m_Localized: CLARO
     m_Metadata:
       m_Items: []
   - m_Id: 19375664828416
-    m_Localized: Ajustes
+    m_Localized: AJUSTES
     m_Metadata:
       m_Items: []
   - m_Id: 19375698382848
-    m_Localized: "Atr\xE1s"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 19375698382850
-    m_Localized: Reiniciar
+    m_Localized: "ATR\xC1S"
     m_Metadata:
       m_Items: []
   - m_Id: 19375698382851
-    m_Localized: Comenzar
+    m_Localized: COMENZAR
     m_Metadata:
       m_Items: []
   - m_Id: 60677928423424
-    m_Localized: Continuar
+    m_Localized: CONTINUAR
     m_Metadata:
       m_Items: []
   - m_Id: 279212021682176
-    m_Localized: Abandonar
+    m_Localized: ABANDONAR
     m_Metadata:
       m_Items: []
   - m_Id: 397300332486656
-    m_Localized: Reanudar
+    m_Localized: REANUDAR
     m_Metadata:
       m_Items: []
   - m_Id: 397609129730048
-    m_Localized: Seleccionar idioma
+    m_Localized: SELECCIONAR IDIOMA
     m_Metadata:
       m_Items: []
   - m_Id: 803105652248576
-    m_Localized: "Men\xFA"
+    m_Localized: "MEN\xDA"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1029401171976192
+    m_Localized: PAUSA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1031025063878656
+    m_Localized: BORRAR DATOS
     m_Metadata:
       m_Items: []
   references:

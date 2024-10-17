@@ -1,18 +1,18 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
     <engine:VisualElement picking-mode="Ignore" style="flex-grow: 1;">
         <engine:VisualElement picking-mode="Ignore" style="flex-grow: 1; flex-direction: row;">
-            <engine:Button name="x1-plus-button" style="flex-shrink: 1; flex-grow: 1; background-color: rgb(1, 132, 15);" />
-            <engine:Button name="x1-minus-button" style="flex-shrink: 1; flex-grow: 1; background-color: rgb(161, 7, 7);" />
+            <engine:Button name="x1-plus-button" style="flex-shrink: 1; flex-grow: 1; background-color: rgba(1, 132, 15, 0.18);" />
+            <engine:Button name="x5-plus-button" style="flex-shrink: 1; flex-grow: 1; background-color: rgba(0, 204, 23, 0.17);" />
         </engine:VisualElement>
         <engine:VisualElement picking-mode="Ignore" style="flex-grow: 1; flex-direction: row;">
-            <engine:Button name="x5-plus-button" style="flex-shrink: 1; flex-grow: 1; background-color: rgb(0, 204, 23);" />
-            <engine:Button name="x5-minus-button" style="flex-shrink: 1; flex-grow: 1; background-color: rgb(221, 0, 0);" />
+            <engine:Button name="x1-minus-button" style="flex-shrink: 1; flex-grow: 1; background-color: rgba(161, 7, 7, 0.24);" />
+            <engine:Button name="x5-minus-button" style="flex-shrink: 1; flex-grow: 1; background-color: rgba(221, 0, 0, 0.21);" />
         </engine:VisualElement>
     </engine:VisualElement>
     <engine:VisualElement picking-mode="Ignore" style="flex-grow: 1; position: absolute; height: 100%; width: 100%; align-items: center; justify-content: center;">
-        <engine:Label name="points-label" style="font-size: 36px; -unity-font-style: bold;" />
+        <engine:Label name="points-label" style="font-size: 64px; -unity-font-style: bold;" />
     </engine:VisualElement>
     <engine:VisualElement picking-mode="Ignore" style="flex-grow: 1; position: absolute; height: 100%; width: 100%; align-items: center; justify-content: flex-start;">
-        <engine:Label name="counter-label" style="font-size: 22px; color: rgb(255, 0, 0);" />
+        <engine:Label name="counter-label" style="font-size: 78px;" />
     </engine:VisualElement>
 </engine:UXML>

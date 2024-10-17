@@ -36,6 +36,7 @@ namespace Popup
         private void SubscribeToEvents()
         {
             EventsManager.CounterChanged.AddListener(Show);
+            EventsManager.PauseOpened.AddListener(Hide);
         }
 
         private void Subscribe()
@@ -50,6 +51,7 @@ namespace Popup
             _view.ClearButton.clicked -= ClearButtonOnClicked;
 
             EventsManager.CounterChanged.RemoveListener(Show);
+            EventsManager.PauseOpened.RemoveListener(Hide);
         }
     }
 }

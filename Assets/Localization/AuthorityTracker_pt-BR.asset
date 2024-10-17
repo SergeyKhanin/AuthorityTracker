@@ -19,47 +19,51 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 41694519296
-    m_Localized: Aplicar
+    m_Localized: APLICAR
     m_Metadata:
       m_Items: []
   - m_Id: 281336078336
-    m_Localized: Claro
+    m_Localized: CLARO
     m_Metadata:
       m_Items: []
   - m_Id: 19375664828416
-    m_Localized: "Configura\xE7\xF5es"
+    m_Localized: "CONFIGURA\xC7\xD5ES"
     m_Metadata:
       m_Items: []
   - m_Id: 19375698382848
-    m_Localized: Voltar
-    m_Metadata:
-      m_Items: []
-  - m_Id: 19375698382850
-    m_Localized: Reiniciar
+    m_Localized: VOLTAR
     m_Metadata:
       m_Items: []
   - m_Id: 19375698382851
-    m_Localized: "Come\xE7ar"
+    m_Localized: "COME\xC7AR"
     m_Metadata:
       m_Items: []
   - m_Id: 60677928423424
-    m_Localized: Continuar
+    m_Localized: CONTINUAR
     m_Metadata:
       m_Items: []
   - m_Id: 279212021682176
-    m_Localized: Desistir
+    m_Localized: DESISTIR
     m_Metadata:
       m_Items: []
   - m_Id: 397300332486656
-    m_Localized: Reiniciar
+    m_Localized: REINICIAR
     m_Metadata:
       m_Items: []
   - m_Id: 397609129730048
-    m_Localized: Selecione o idioma
+    m_Localized: SELECIONE O IDIOMA
     m_Metadata:
       m_Items: []
   - m_Id: 803105652248576
-    m_Localized: Menu
+    m_Localized: MENU
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1029401171976192
+    m_Localized: PAUSA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1031025063878656
+    m_Localized: LIMPAR DADOS
     m_Metadata:
       m_Items: []
   references:

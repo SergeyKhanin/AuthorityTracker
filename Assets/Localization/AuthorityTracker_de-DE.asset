@@ -19,47 +19,51 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 41694519296
-    m_Localized: Anwenden
+    m_Localized: ANWENDEN
     m_Metadata:
       m_Items: []
   - m_Id: 281336078336
-    m_Localized: Klar
+    m_Localized: KLAR
     m_Metadata:
       m_Items: []
   - m_Id: 19375664828416
-    m_Localized: Einstellungen
+    m_Localized: EINSTELLUNGEN
     m_Metadata:
       m_Items: []
   - m_Id: 19375698382848
-    m_Localized: "Zur\xFCck"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 19375698382850
-    m_Localized: "Zur\xFCcksetzen"
+    m_Localized: "ZUR\xDCCK"
     m_Metadata:
       m_Items: []
   - m_Id: 397300332486656
-    m_Localized: Neustart
+    m_Localized: NEU STARTEN
     m_Metadata:
       m_Items: []
   - m_Id: 19375698382851
-    m_Localized: Start
+    m_Localized: START
     m_Metadata:
       m_Items: []
   - m_Id: 60677928423424
-    m_Localized: Weitermachen
+    m_Localized: WEITERMACHEN
     m_Metadata:
       m_Items: []
   - m_Id: 279212021682176
-    m_Localized: "Aufh\xF6ren"
+    m_Localized: "AUFH\xD6REN"
     m_Metadata:
       m_Items: []
   - m_Id: 397609129730048
-    m_Localized: "Sprache ausw\xE4hlen"
+    m_Localized: "SPRACHE W\xC4HLEN"
     m_Metadata:
       m_Items: []
   - m_Id: 803105652248576
-    m_Localized: Speisekarte
+    m_Localized: SPEISEKARTE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1029401171976192
+    m_Localized: PAUSE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1031025063878656
+    m_Localized: KLARE DATEN
     m_Metadata:
       m_Items: []
   references:

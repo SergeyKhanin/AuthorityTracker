@@ -31,10 +31,6 @@ MonoBehaviour:
     m_Key: Button.Back
     m_Metadata:
       m_Items: []
-  - m_Id: 19375698382850
-    m_Key: Button.Reset
-    m_Metadata:
-      m_Items: []
   - m_Id: 397300332486656
     m_Key: Button.Restart
     m_Metadata:
@@ -55,8 +51,16 @@ MonoBehaviour:
     m_Key: Button.Menu
     m_Metadata:
       m_Items: []
+  - m_Id: 1031025063878656
+    m_Key: Button.Clear.Data
+    m_Metadata:
+      m_Items: []
   - m_Id: 397609129730048
     m_Key: Label.Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1029401171976192
+    m_Key: Label.Pause
     m_Metadata:
       m_Items: []
   m_Metadata:

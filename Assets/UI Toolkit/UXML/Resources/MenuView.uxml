@@ -6,7 +6,7 @@
                     <UnityEngine.Localization.LocalizedString property="text" table="GUID:77b1ef30df61eb842ba46ae79c10ee1b" entry="Id(19375698382851)" />
                 </Bindings>
             </engine:Button>
-            <engine:Button name="continue-button" class="btn btn--rectangle btn--green">
+            <engine:Button name="continue-button" class="btn btn--rectangle btn--gray">
                 <Bindings>
                     <UnityEngine.Localization.LocalizedString property="text" table="GUID:77b1ef30df61eb842ba46ae79c10ee1b" entry="Id(60677928423424)" />
                 </Bindings>
@@ -14,11 +14,6 @@
             <engine:Button name="settings-button" class="btn btn--rectangle btn--green">
                 <Bindings>
                     <UnityEngine.Localization.LocalizedString property="text" table="GUID:77b1ef30df61eb842ba46ae79c10ee1b" entry="Id(19375664828416)" />
-                </Bindings>
-            </engine:Button>
-            <engine:Button name="reset-button" class="btn btn--rectangle btn--white">
-                <Bindings>
-                    <UnityEngine.Localization.LocalizedString property="text" table="GUID:77b1ef30df61eb842ba46ae79c10ee1b" entry="Id(19375698382850)" />
                 </Bindings>
             </engine:Button>
             <engine:Button name="quit-button" class="btn btn--rectangle btn--red">

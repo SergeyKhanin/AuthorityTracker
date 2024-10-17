@@ -19,47 +19,51 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 41694519296
-    m_Localized: Uygula
+    m_Localized: UYGULA
     m_Metadata:
       m_Items: []
   - m_Id: 281336078336
-    m_Localized: Temizlemek
+    m_Localized: "TEM\u0130ZLEMEK"
     m_Metadata:
       m_Items: []
   - m_Id: 19375664828416
-    m_Localized: Ayarlar
+    m_Localized: AYARLAR
     m_Metadata:
       m_Items: []
   - m_Id: 19375698382848
-    m_Localized: Geri
-    m_Metadata:
-      m_Items: []
-  - m_Id: 19375698382850
-    m_Localized: "S\u0131f\u0131rla"
+    m_Localized: "GER\u0130"
     m_Metadata:
       m_Items: []
   - m_Id: 397300332486656
-    m_Localized: "Tekrar ba\u015Flat"
+    m_Localized: "TEKRAR BA\u015ELAT"
     m_Metadata:
       m_Items: []
   - m_Id: 19375698382851
-    m_Localized: "Ba\u015Flang\u0131\xE7"
+    m_Localized: "BA\u015ELANGI\xC7"
     m_Metadata:
       m_Items: []
   - m_Id: 60677928423424
-    m_Localized: Devam etmek
+    m_Localized: DEVAM ETMEK
     m_Metadata:
       m_Items: []
   - m_Id: 279212021682176
-    m_Localized: "\xC7\u0131k\u0131\u015F yapmak"
+    m_Localized: "\xC7IKI\u015E YAPMAK"
     m_Metadata:
       m_Items: []
   - m_Id: 397609129730048
-    m_Localized: "Dil se\xE7in"
+    m_Localized: "D\u0130L\u0130 SE\xC7\u0130N"
     m_Metadata:
       m_Items: []
   - m_Id: 803105652248576
-    m_Localized: "Men\xFC"
+    m_Localized: "MEN\xDC"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1029401171976192
+    m_Localized: DURAKLAT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1031025063878656
+    m_Localized: "VER\u0130LER\u0130 TEM\u0130ZLE"
     m_Metadata:
       m_Items: []
   references:

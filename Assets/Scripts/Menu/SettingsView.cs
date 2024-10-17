@@ -6,7 +6,6 @@ namespace Menu
     public sealed class SettingsView
     {
         public VisualElement Container { get; private set; }
-        public Label LanguageLabel { get; private set; }
         public Button EnglishLanguageButton { get; private set; }
         public Button ChineseLanguageButton { get; private set; }
         public Button HindiLanguageButton { get; private set; }
@@ -23,13 +22,13 @@ namespace Menu
         public Button TeluguLanguageButton { get; private set; }
         public Button MarathiLanguageButton { get; private set; }
         public Button TurkishLanguageButton { get; private set; }
+        public Button CleatDataButton { get; private set; }
         public Button BackButton { get; private set; }
 
         public SettingsView(UIDocument uiDocument)
         {
             var root = uiDocument.rootVisualElement.Q<VisualElement>(CommonNames.SettingsViewName);
             Container = root;
-            LanguageLabel = root.Q<Label>("language-label");
             EnglishLanguageButton = root.Q<Button>("english-language-button");
             ChineseLanguageButton = root.Q<Button>("chinese-language-button");
             HindiLanguageButton = root.Q<Button>("hindi-language-button");
@@ -46,6 +45,7 @@ namespace Menu
             TeluguLanguageButton = root.Q<Button>("telugu-language-button");
             MarathiLanguageButton = root.Q<Button>("marathi-language-button");
             TurkishLanguageButton = root.Q<Button>("turkish-language-button");
+            CleatDataButton = root.Q<Button>("clear-data-button");
             BackButton = root.Q<Button>("back-button");
         }
     }

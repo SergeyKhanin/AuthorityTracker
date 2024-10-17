@@ -22,9 +22,8 @@
 
 :root {
     --base-separator-height: 4px;
-    --base-with: 16px;
     --base-margin: 16px;
-    --base-padding: 16px;
+    --base-padding: 44px;
     --base-image-resolution: 1024px;
     --base-image-resolution-var: 704px;
     --base-image-resolution-half: 512px;
@@ -46,11 +45,13 @@
 
 :root {
     --btn-points-icon: 96px;
-    --btn-square-size: 180px;
+    --btn-rhombus-size: 180px;
+    --btn-square-size: 204px;
+    --btn-square-iocn-size: 120px;
     --btn-rectangle-height: 234px;
     --btn-rectangle-width: 938px;
     --btn-rectangle-small-heigh: 204px;
-    --btn-rectangle-small-width: 448px;
+    --btn-rectangle-small-width: 528px;
 }
 
 :root {
@@ -61,10 +62,8 @@
 }
 
 :root {
-    /*--font-authority-definition: resource('Fonts/Authority SDF');*/
-    /*--font-authority: resource('Fonts/DIN Pro Bold');*/
-    /*--font-common-definition: resource('Fonts/Common SDF');*/
-    /*--font-common: resource('Fonts/Handel Gothic Regular');*/
+    --font-main-asset: resource('FA_Main');
+    --font-common-asset: resource('FA_Common');
 }
 
 :root {
@@ -92,12 +91,29 @@
     /*--ic-gear-color-green: resource('Icons/IC_Gear_Color-green');*/
     /*--ic-player-1-color-green: resource('Icons/IC_Player-1_Color-green');*/
     /*--ic-player-2-color-green: resource('Icons/IC_Player-2_Color-green');*/
-    /*--ic-btn-square-color-green: resource('Icons/IC_Button-square_Color-green');*/
-    /*--ic-btn-rectangle-color-red: resource('Icons/IC_Button-rectangle_Color-red');*/
-    /*--ic-btn-rectangle-color-green: resource('Icons/IC_Button-rectangle_Color-green');*/
-    /*--ic-btn-rectangle-color-gray: resource('Icons/IC_Button-rectangle_Color-gray');*/
-    /*--ic-btn-rectangle-small-color-gray: resource('Icons/IC_Button-rectangle-small_Color-gray');*/
-    /*--ic-btn-rectangle-small-color-green: resource('Icons/IC_Button-rectangle-small_Color-green');*/
+    --ic-btn-rhombus-color-green: resource('IC_Button-rhombus_Color-green');
+    --ic-btn-square-color-green: resource('IC_Button-square_Color-green');
+    --ic-btn-rectangle-color-red: resource('IC_Button-rectangle_Color-red');
+    --ic-btn-rectangle-color-green: resource('IC_Button-rectangle_Color-green');
+    --ic-btn-rectangle-color-gray: resource('IC_Button-rectangle_Color-gray');
+    --ic-btn-rectangle-small-color-gray: resource('IC_Button-rectangle-small_Color-gray');
+    --ic-btn-rectangle-small-color-green: resource('IC_Button-rectangle-small_Color-green');
+    --ic-btn-english-lang: resource('IC_English_Lang');
+    --ic-btn-chinese-lang: resource('IC_Chinese_Lang');
+    --ic-btn-hindi-lang: resource('IC_Hindi_Lang');
+    --ic-btn-spanish-lang: resource('IC_Spanish_Lang');
+    --ic-btn-french-lang: resource('IC_French_Lang');
+    --ic-btn-arabic-lang: resource('IC_Arabic_Lang');
+    --ic-btn-bangla-lang: resource('IC_Bangla_Lang');
+    --ic-btn-portuguese-lang: resource('IC_Portuguese_Lang');
+    --ic-btn-russian-lang: resource('IC_Russian_Lang');
+    --ic-btn-urdu-lang: resource('IC_Urdu_Lang');
+    --ic-btn-indonesian-lang: resource('IC_Indonesian_Lang');
+    --ic-btn-japanese-lang: resource('IC_Japanese_Lang');
+    --ic-btn-german-lang: resource('IC_German_Lang');
+    --ic-btn-telugu-lang: resource('IC_Telugu_Lang');
+    --ic-btn-marathi-lang: resource('IC_Marathi_Lang');
+    --ic-btn-turkish-lang: resource('IC_Turkish_Lang');
     /*--ic-slider-dragger-color-green: resource('Icons/IC_Slider-Dragger_Color-green');*/
     /*--ic-slider-tracker-color-green: resource('Icons/IC_Slider-Tracker_Color-green');*/
     /*--ic-update-color-gray: resource('Icons/IC_Update_Color-gray');*/

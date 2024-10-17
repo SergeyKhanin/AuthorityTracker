@@ -19,47 +19,51 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 41694519296
-    m_Localized: Menerapkan
+    m_Localized: MENERAPKAN
     m_Metadata:
       m_Items: []
   - m_Id: 281336078336
-    m_Localized: Jernih
+    m_Localized: JERNIH
     m_Metadata:
       m_Items: []
   - m_Id: 19375664828416
-    m_Localized: Pengaturan
+    m_Localized: PENGATURAN
     m_Metadata:
       m_Items: []
   - m_Id: 19375698382848
-    m_Localized: Kembali
-    m_Metadata:
-      m_Items: []
-  - m_Id: 19375698382850
-    m_Localized: Mengatur ulang
+    m_Localized: KEMBALI
     m_Metadata:
       m_Items: []
   - m_Id: 397300332486656
-    m_Localized: Mulai ulang
+    m_Localized: MULAI ULANG
     m_Metadata:
       m_Items: []
   - m_Id: 19375698382851
-    m_Localized: Awal
+    m_Localized: AWAL
     m_Metadata:
       m_Items: []
   - m_Id: 60677928423424
-    m_Localized: Melanjutkan
+    m_Localized: MELANJUTKAN
     m_Metadata:
       m_Items: []
   - m_Id: 279212021682176
-    m_Localized: Berhenti
+    m_Localized: BERHENTI
     m_Metadata:
       m_Items: []
   - m_Id: 397609129730048
-    m_Localized: Pilih bahasa
+    m_Localized: PILIH BAHASA
     m_Metadata:
       m_Items: []
   - m_Id: 803105652248576
-    m_Localized: Menu
+    m_Localized: MENU
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1029401171976192
+    m_Localized: BERHENTI SEBENTAR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1031025063878656
+    m_Localized: HAPUS DATA
     m_Metadata:
       m_Items: []
   references:

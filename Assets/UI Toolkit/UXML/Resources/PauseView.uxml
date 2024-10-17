@@ -1,6 +1,13 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
-    <engine:VisualElement class="full-screen">
-        <engine:VisualElement name="buttons-container" picking-mode="Ignore" style="rotate: 90deg;">
+    <engine:VisualElement class="full-screen" style="background-color: rgba(0, 0, 0, 0.55); justify-content: flex-start;">
+        <engine:Label class="unity-label--green unity-label--main">
+            <Bindings>
+                <UnityEngine.Localization.LocalizedString property="text" table="GUID:77b1ef30df61eb842ba46ae79c10ee1b" entry="Id(1029401171976192)" />
+            </Bindings>
+        </engine:Label>
+    </engine:VisualElement>
+    <engine:VisualElement picking-mode="Ignore" class="full-screen">
+        <engine:VisualElement name="buttons-container" picking-mode="Ignore">
             <engine:Button name="back-button" class="btn btn--rectangle btn--green">
                 <Bindings>
                     <UnityEngine.Localization.LocalizedString property="text" table="GUID:77b1ef30df61eb842ba46ae79c10ee1b" entry="Id(19375698382848)" />
@@ -11,7 +18,7 @@
                     <UnityEngine.Localization.LocalizedString property="text" table="GUID:77b1ef30df61eb842ba46ae79c10ee1b" entry="Id(803105652248576)" />
                 </Bindings>
             </engine:Button>
-            <engine:Button name="restart-button" class="btn btn--rectangle btn--white">
+            <engine:Button name="restart-button" class="btn btn--rectangle btn--gray">
                 <Bindings>
                     <UnityEngine.Localization.LocalizedString property="text" table="GUID:77b1ef30df61eb842ba46ae79c10ee1b" entry="Id(397300332486656)" />
                 </Bindings>

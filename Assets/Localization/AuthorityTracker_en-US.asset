@@ -19,47 +19,51 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 41694519296
-    m_Localized: Apply
+    m_Localized: APPLY
     m_Metadata:
       m_Items: []
   - m_Id: 281336078336
-    m_Localized: Clear
+    m_Localized: CLEAR
     m_Metadata:
       m_Items: []
   - m_Id: 19375664828416
-    m_Localized: Settings
+    m_Localized: SETTINGS
     m_Metadata:
       m_Items: []
   - m_Id: 19375698382848
-    m_Localized: Back
-    m_Metadata:
-      m_Items: []
-  - m_Id: 19375698382850
-    m_Localized: Reset
+    m_Localized: BACK
     m_Metadata:
       m_Items: []
   - m_Id: 19375698382851
-    m_Localized: Start
+    m_Localized: START
     m_Metadata:
       m_Items: []
   - m_Id: 60677928423424
-    m_Localized: Continue
+    m_Localized: CONTINUE
     m_Metadata:
       m_Items: []
   - m_Id: 279212021682176
-    m_Localized: Quit
+    m_Localized: QUIT
     m_Metadata:
       m_Items: []
   - m_Id: 397300332486656
-    m_Localized: Restart
+    m_Localized: RESTART
     m_Metadata:
       m_Items: []
   - m_Id: 397609129730048
-    m_Localized: Select language
+    m_Localized: SELECT LANGUAGE
     m_Metadata:
       m_Items: []
   - m_Id: 803105652248576
-    m_Localized: Menu
+    m_Localized: MENU
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1029401171976192
+    m_Localized: PAUSE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1031025063878656
+    m_Localized: CLEAR DATA
     m_Metadata:
       m_Items: []
   references:

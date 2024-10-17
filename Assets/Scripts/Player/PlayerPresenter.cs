@@ -82,6 +82,7 @@ namespace Player
         private void RestartPoints()
         {
             _model.RestartPoints();
+            Clear();
             UpdatePointsLabel();
         }
 
@@ -94,6 +95,7 @@ namespace Player
             EventsManager.PointsApplied.AddListener(Apply);
             EventsManager.PointsCleared.AddListener(Clear);
             EventsManager.PointsRestarted.AddListener(RestartPoints);
+            EventsManager.PauseOpened.AddListener(Clear);
         }
 
         private void Subscribe()
@@ -114,6 +116,7 @@ namespace Player
             EventsManager.PointsApplied.RemoveListener(Apply);
             EventsManager.PointsCleared.RemoveListener(Clear);
             EventsManager.PointsRestarted.RemoveListener(RestartPoints);
+            EventsManager.PauseOpened.RemoveListener(Clear);
         }
     }
 }
