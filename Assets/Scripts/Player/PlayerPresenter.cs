@@ -1,4 +1,5 @@
 using System;
+using Common;
 using Events;
 using Extensions;
 
@@ -20,7 +21,15 @@ namespace Player
             UpdatePointsLabel();
         }
 
-        private void UpdatePointsLabel() => _view.PointsLabel.text = _model.Points.ToString();
+        private void UpdatePointsLabel()
+        {
+            _view.PointsImage.Clear();
+            _view.PointsImage.AddToClassList(
+                CommonUssClassNames.UssPointsImageName
+                    + _model.PointsVisualState.ToString().ToLower()
+            );
+            _view.PointsLabel.text = _model.Points.ToString();
+        }
 
         private void OnX1PlusButtonClicked() => PlusX1();
 

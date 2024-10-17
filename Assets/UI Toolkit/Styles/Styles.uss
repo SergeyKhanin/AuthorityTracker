@@ -1,6 +1,6 @@
 TemplateContainer {
-    flex-grow: 1;
-    flex-shrink: 1;
+    width: 100%;
+    height: 100%;
 }
 
 .full-screen {
@@ -167,6 +167,40 @@ TemplateContainer {
 
 .unity-button.btn--rhombus.btn--green {
     background-image: var(--ic-btn-rhombus-color-green);
+}
+
+.points__image {
+    width: var(--points-image-size);
+    height: var(--points-image-size);
+    align-items: center;
+    justify-content: center;
+}
+
+.points__image > VisualElement {
+    width: 100%;
+    height: 100%;
+}
+
+.points__image > VisualElement.points__image--full {
+    background-image: var(--ic-authority-color-green);
+}
+
+.points__image > VisualElement.points__image--half {
+    background-image: var(--ic-authority-color-orange);
+}
+
+.points__image > VisualElement.points__image--quarter {
+    background-image: var(--ic-authority-color-red);
+}
+
+.points__image > VisualElement.points__image--zero {
+    background-image: var(--ic-authority-color-black);
+}
+
+.points__image > Label {
+    font-size: var(--font-size-authority-big);
+    top: var(--points-label-top-offset);
+    position: absolute;
 }
 
 .zero {

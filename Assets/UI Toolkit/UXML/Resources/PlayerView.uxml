@@ -9,10 +9,14 @@
             <engine:Button name="x5-minus-button" style="flex-shrink: 1; flex-grow: 1; background-color: rgba(221, 0, 0, 0.21);" />
         </engine:VisualElement>
     </engine:VisualElement>
-    <engine:VisualElement picking-mode="Ignore" style="flex-grow: 1; position: absolute; height: 100%; width: 100%; align-items: center; justify-content: center;">
-        <engine:Label name="points-label" style="font-size: 64px; -unity-font-style: bold;" />
+    <engine:VisualElement picking-mode="Ignore" class="full-screen">
+        <engine:VisualElement picking-mode="Ignore" class="points__image">
+            <engine:VisualElement name="points-image" picking-mode="Ignore" />
+            <engine:Label name="points-label" picking-mode="Ignore" />
+        </engine:VisualElement>
     </engine:VisualElement>
     <engine:VisualElement picking-mode="Ignore" style="flex-grow: 1; position: absolute; height: 100%; width: 100%; align-items: center; justify-content: flex-start;">
-        <engine:Label name="counter-label" style="font-size: 78px;" />
+        <engine:VisualElement name="counter-image" picking-mode="Ignore" style="flex-grow: 1; display: none; visibility: hidden;" />
+        <engine:Label name="counter-label" picking-mode="Ignore" style="font-size: 78px;" />
     </engine:VisualElement>
 </engine:UXML>

@@ -4,6 +4,7 @@ namespace Player
 {
     public sealed class PlayerView
     {
+        public VisualElement PointsImage { get; set; }
         public Label PointsLabel { get; private set; }
         public Label CounterLabel { get; private set; }
         public Button X1PlusButton { get; private set; }
@@ -14,6 +15,7 @@ namespace Player
         public PlayerView(UIDocument uiDocument, string pathToParent)
         {
             var root = uiDocument.rootVisualElement.Q<VisualElement>(pathToParent);
+            PointsImage = root.Q<VisualElement>("points-image");
             PointsLabel = root.Q<Label>("points-label");
             CounterLabel = root.Q<Label>("counter-label");
             X1PlusButton = root.Q<Button>("x1-plus-button");

@@ -9,7 +9,7 @@ namespace Player
         public int Points { get; private set; }
         public int Counter { get; private set; }
 
-        public LifeVisualState LifeVisualState { get; private set; }
+        public LifeVisualState PointsVisualState { get; private set; }
 
         public CounterVisualState CounterVisualState { get; private set; }
 
@@ -82,13 +82,13 @@ namespace Player
         private void UpdateLifeVisualState()
         {
             if (Points <= 0)
-                LifeVisualState = LifeVisualState.Zero;
-            else if (Points <= _maxPoints / 4)
-                LifeVisualState = LifeVisualState.Quarter;
-            else if (Points <= _maxPoints / 2)
-                LifeVisualState = LifeVisualState.Half;
+                PointsVisualState = LifeVisualState.Zero;
+            else if (Points < _maxPoints / 4)
+                PointsVisualState = LifeVisualState.Quarter;
+            else if (Points < _maxPoints / 2)
+                PointsVisualState = LifeVisualState.Half;
             else
-                LifeVisualState = LifeVisualState.Full;
+                PointsVisualState = LifeVisualState.Full;
         }
 
         private void UpdateCounterVisualState()
