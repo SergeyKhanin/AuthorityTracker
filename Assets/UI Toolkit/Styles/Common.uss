@@ -98,6 +98,12 @@
     --ic-btn-rectangle-color-gray: resource('IC_Button-rectangle_Color-gray');
     --ic-btn-rectangle-small-color-gray: resource('IC_Button-rectangle-small_Color-gray');
     --ic-btn-rectangle-small-color-green: resource('IC_Button-rectangle-small_Color-green');
+    --ic-authority-color-green: resource('IC_Authority_Color-green');
+    --ic-authority-color-red: resource('IC_Authority_Color-red');
+    --ic-authority-color-orange: resource('IC_Authority_Color-orange');
+    --ic-authority-color-black: resource('IC_Authority_Color-black');
+    --ic-authority-small-color-green: resource('IC_Authority-small_Color-green');
+    --ic-combat-small-color-red: resource('IC_Combat-small_Color-red');
     --ic-btn-english-lang: resource('IC_English_Lang');
     --ic-btn-chinese-lang: resource('IC_Chinese_Lang');
     --ic-btn-hindi-lang: resource('IC_Hindi_Lang');
