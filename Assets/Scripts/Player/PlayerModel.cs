@@ -93,10 +93,10 @@ namespace Player
 
         private void UpdateCounterVisualState()
         {
-            if (Counter == 0)
-                CounterVisualState = CounterVisualState.Zero;
-            else if (Counter < 0)
+            if (Counter < 0)
                 CounterVisualState = CounterVisualState.Negative;
+            else if (Counter == 0)
+                CounterVisualState = CounterVisualState.Zero;
             else
                 CounterVisualState = CounterVisualState.Positive;
         }

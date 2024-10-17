@@ -23,7 +23,7 @@ namespace Player
 
         private void UpdatePointsLabel()
         {
-            _view.PointsImage.Clear();
+            _view.PointsImage.ClearClassList();
             _view.PointsImage.AddToClassList(
                 CommonUssClassNames.UssPointsImageName
                     + _model.PointsVisualState.ToString().ToLower()
