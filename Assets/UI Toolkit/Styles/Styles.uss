@@ -14,6 +14,8 @@ TemplateContainer {
 .unity-label {
     -unity-font-definition: var(--font-common-asset);
     font-size: var(--font-size-common);
+    padding: 0;
+    margin: 0;
 }
 
 .unity-label--green {
@@ -51,8 +53,8 @@ TemplateContainer {
 .unity-button.btn.btn--rectangle {
     width: var(--btn-rectangle-width);
     height: var(--btn-rectangle-height);
-    padding-right: var(--base-padding);
-    padding-left: var(--base-padding);
+    padding-right: var(--base-padding-double);
+    padding-left: var(--base-padding-double);
 }
 
 .unity-button.btn--rectangle.btn--green {
@@ -70,8 +72,8 @@ TemplateContainer {
 .unity-button.btn.btn--rectangle-small {
     width: var(--btn-rectangle-small-width);
     height: var(--btn-rectangle-small-heigh);
-    padding-right: var(--base-padding);
-    padding-left: var(--base-padding);
+    padding-right: var(--base-padding-double);
+    padding-left: var(--base-padding-double);
 }
 
 .unity-button.btn--rectangle-small.btn--green {
@@ -165,8 +167,110 @@ TemplateContainer {
     height: var(--btn-rhombus-size);
 }
 
-.unity-button.btn--rhombus.btn--green {
+.unity-button.btn.btn--rhombus.btn--green {
     background-image: var(--ic-btn-rhombus-color-green);
+}
+
+.unity-button.btn.btn--player {
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.unity-button.btn.btn--player > VisualElement {
+    width: var(--btn-square-size);
+    height: var(--btn-square-size);
+}
+
+.unity-button.btn.btn--player > Label {
+    width: var(--btn-square-size);
+    height: var(--btn-square-size);
+    font-size: var(--font-palyer-btn-icon);
+    position: absolute;
+    -unity-text-align: middle-center;
+}
+
+.player__container {
+    flex-grow: 1;
+    padding: var(--base-padding);
+}
+
+.player__container-btn {
+    flex-grow: 1;
+    flex-direction: row;
+}
+
+.player__container-btn.player__container-btn--plus > .unity-button.btn.btn--player {
+    justify-content: flex-start;
+}
+
+.player__container-btn.player__container-btn--minus > .unity-button.btn.btn--player {
+    justify-content: flex-end;
+}
+
+.player__container-btn > .unity-button.btn.btn--player.btn--left {
+    align-items: flex-start;
+}
+
+.player__container-btn > .unity-button.btn.btn--player.btn--right {
+    align-items: flex-end;
+}
+
+.player__container-btn.player__container-btn--plus > .unity-button.btn.btn--player > VisualElement {
+    background-image: var(--ic-authority-small-color-green);
+}
+
+.player__container-btn.player__container-btn--minus > .unity-button.btn.btn--player > VisualElement {
+    background-image: var(--ic-combat-small-color-red);
+}
+
+.counter__container {
+    padding: var(--base-padding);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.counter__container > VisualElement {
+    align-items: center;
+    justify-content: center;
+}
+
+.counter__container > VisualElement > VisualElement {
+    width: var(--btn-square-size);
+    height: var(--btn-square-size);
+}
+
+.counter__container > VisualElement > Label {
+    width: var(--btn-square-size);
+    height: var(--btn-square-size);
+    font-size: var(--font-palyer-btn-icon);
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    -unity-text-align: middle-center;
+}
+
+.counter__container > .zero {
+    background-image: var(--ic-authority-small-color-gray);
+}
+
+.counter__container > .negative > VisualElement {
+    background-image: var(--ic-combat-small-color-red);
+}
+
+.counter__container > .positive > VisualElement {
+    background-image: var(--ic-authority-small-color-green);
+}
+
+.points__container {
+    padding: var(--base-padding);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
 }
 
 .points__image {
@@ -201,16 +305,4 @@ TemplateContainer {
     font-size: var(--font-size-authority-big);
     top: var(--points-label-top-offset);
     position: absolute;
-}
-
-.zero {
-    opacity: 0;
-}
-
-.negative {
-    color: red;
-}
-
-.positive {
-    color: green;
 }

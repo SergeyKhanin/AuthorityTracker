@@ -17,18 +17,8 @@ namespace Player
 
             Subscribe();
             SubscribeToEvents();
-            HideCounterLabel();
+            HideCounterContainer();
             UpdatePointsLabel();
-        }
-
-        private void UpdatePointsLabel()
-        {
-            _view.PointsImage.ClearClassList();
-            _view.PointsImage.AddToClassList(
-                CommonUssClassNames.UssPointsImageName
-                    + _model.PointsVisualState.ToString().ToLower()
-            );
-            _view.PointsLabel.text = _model.Points.ToString();
         }
 
         private void OnX1PlusButtonClicked() => PlusX1();
@@ -63,29 +53,41 @@ namespace Player
             UpdateCounterLabel();
         }
 
+        private void UpdatePointsLabel()
+        {
+            _view.PointsImage.ClearClassList();
+            _view.PointsImage.AddToClassList(
+                CommonUssClassNames.UssPointsImageName
+                    + _model.PointsVisualState.ToString().ToLower()
+            );
+            _view.PointsLabel.text = _model.Points.ToString();
+        }
+
         private void UpdateCounterLabel()
         {
             EventsManager.CounterChanged.Invoke();
-            ShowCounterLabel();
+            ShowCounterContainer();
 
-            _view.CounterLabel.text = _model.Counter.ToString();
-            _view.CounterLabel.ClearClassList();
+            var value = Math.Abs(_model.Counter);
+
+            _view.CounterLabel.text = value.ToString();
+            _view.CounterContainer.ClearClassList();
 
             var counterStateClassName = _model.CounterVisualState.ToString().ToLower();
-            _view.CounterLabel.AddToClassList(counterStateClassName);
+            _view.CounterContainer.AddToClassList(counterStateClassName);
         }
 
         private void Apply()
         {
             _model.Apply();
             UpdatePointsLabel();
-            HideCounterLabel();
+            HideCounterContainer();
         }
 
         private void Clear()
         {
             _model.Clear();
-            HideCounterLabel();
+            HideCounterContainer();
         }
 
         private void RestartPoints()
@@ -95,9 +97,9 @@ namespace Player
             UpdatePointsLabel();
         }
 
-        private void ShowCounterLabel() => _view.CounterLabel.Show();
+        private void ShowCounterContainer() => _view.CounterContainer.Show();
 
-        private void HideCounterLabel() => _view.CounterLabel.Hide();
+        private void HideCounterContainer() => _view.CounterContainer.Hide();
 
         private void SubscribeToEvents()
         {

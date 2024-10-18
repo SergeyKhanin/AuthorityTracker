@@ -22,7 +22,8 @@
 
 :root {
     --base-margin: 16px;
-    --base-padding: 44px;
+    --base-padding: 16px;
+    --base-padding-double: 44px;
 }
 
 :root {
@@ -45,6 +46,7 @@
 }
 
 :root {
+    --font-palyer-btn-icon: 60px;
     --font-size-common: 100px;
     --font-size-authority: 120px;
     --font-size-authority-big: 260px;
@@ -78,6 +80,7 @@
     --ic-authority-color-orange: resource('IC_Authority_Color-orange');
     --ic-authority-color-black: resource('IC_Authority_Color-black');
     --ic-authority-small-color-green: resource('IC_Authority-small_Color-green');
+    --ic-authority-small-color-gray: resource('IC_Authority-small_Color-gray');
     --ic-combat-small-color-red: resource('IC_Combat-small_Color-red');
     --ic-btn-english-lang: resource('IC_English_Lang');
     --ic-btn-chinese-lang: resource('IC_Chinese_Lang');
