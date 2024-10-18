@@ -8,9 +8,7 @@ namespace Player
         private const int StartPoints = 50;
         public int Points { get; private set; }
         public int Counter { get; private set; }
-
-        public LifeVisualState PointsVisualState { get; private set; }
-
+        public PointsVisualState PointsVisualState { get; private set; }
         public CounterVisualState CounterVisualState { get; private set; }
 
         private readonly string _playerName;
@@ -82,13 +80,13 @@ namespace Player
         private void UpdateLifeVisualState()
         {
             if (Points <= 0)
-                PointsVisualState = LifeVisualState.Zero;
+                PointsVisualState = PointsVisualState.Zero;
             else if (Points < _maxPoints / 4)
-                PointsVisualState = LifeVisualState.Quarter;
+                PointsVisualState = PointsVisualState.Quarter;
             else if (Points < _maxPoints / 2)
-                PointsVisualState = LifeVisualState.Half;
+                PointsVisualState = PointsVisualState.Half;
             else
-                PointsVisualState = LifeVisualState.Full;
+                PointsVisualState = PointsVisualState.Full;
         }
 
         private void UpdateCounterVisualState()

@@ -16,8 +16,6 @@
 :root {
     --color-player-1: rgba(50, 0, 0, 0.25);
     --color-player-2: rgba(0, 50, 0, 0.25);
-    --color-player-3: rgba(0, 0, 50, 0.25);
-    --color-player-4: rgba(25, 25, 25, 0.25);
 }
 
 :root {
@@ -68,6 +66,16 @@
 }
 
 :root {
+    --ic-counter-positive-color-green: resource('IC_Counter-positive_Color-green');
+    --ic-counter-zero-color-gray: resource('IC_Counter-zero_Color-gray');
+    --ic-counter-negative-color-red: resource('IC_Counter-negative_Color-red');
+    --ic-point-full-color-green: resource('IC_Point-full_Color-green');
+    --ic-point-half-color-orange: resource('IC_Point-half_Color-orange');
+    --ic-point-quarter-color-red: resource('IC_Point-quarter_Color-red');
+    --ic-point-zero-color-black: resource('IC_Point-zero_Color-black');
+}
+
+:root {
     --ic-btn-rhombus-color-green: resource('IC_Button-rhombus_Color-green');
     --ic-btn-square-color-green: resource('IC_Button-square_Color-green');
     --ic-btn-rectangle-color-red: resource('IC_Button-rectangle_Color-red');
@@ -75,13 +83,9 @@
     --ic-btn-rectangle-color-gray: resource('IC_Button-rectangle_Color-gray');
     --ic-btn-rectangle-small-color-gray: resource('IC_Button-rectangle-small_Color-gray');
     --ic-btn-rectangle-small-color-green: resource('IC_Button-rectangle-small_Color-green');
-    --ic-authority-color-green: resource('IC_Authority_Color-green');
-    --ic-authority-color-red: resource('IC_Authority_Color-red');
-    --ic-authority-color-orange: resource('IC_Authority_Color-orange');
-    --ic-authority-color-black: resource('IC_Authority_Color-black');
-    --ic-authority-small-color-green: resource('IC_Authority-small_Color-green');
-    --ic-authority-small-color-gray: resource('IC_Authority-small_Color-gray');
-    --ic-combat-small-color-red: resource('IC_Combat-small_Color-red');
+}
+
+:root {
     --ic-btn-english-lang: resource('IC_English_Lang');
     --ic-btn-chinese-lang: resource('IC_Chinese_Lang');
     --ic-btn-hindi-lang: resource('IC_Hindi_Lang');

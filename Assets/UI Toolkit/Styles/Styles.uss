@@ -216,11 +216,11 @@ TemplateContainer {
 }
 
 .player__container-btn.player__container-btn--plus > .unity-button.btn.btn--player > VisualElement {
-    background-image: var(--ic-authority-small-color-green);
+    background-image: var(--ic-counter-positive-color-green);
 }
 
 .player__container-btn.player__container-btn--minus > .unity-button.btn.btn--player > VisualElement {
-    background-image: var(--ic-combat-small-color-red);
+    background-image: var(--ic-counter-negative-color-red);
 }
 
 .counter__container {
@@ -253,15 +253,15 @@ TemplateContainer {
 }
 
 .counter__container > .zero {
-    background-image: var(--ic-authority-small-color-gray);
+    background-image: var(--ic-counter-zero-color-gray);
 }
 
 .counter__container > .negative > VisualElement {
-    background-image: var(--ic-combat-small-color-red);
+    background-image: var(--ic-counter-negative-color-red);
 }
 
 .counter__container > .positive > VisualElement {
-    background-image: var(--ic-authority-small-color-green);
+    background-image: var(--ic-counter-positive-color-green);
 }
 
 .points__container {
@@ -286,19 +286,19 @@ TemplateContainer {
 }
 
 .points__image > VisualElement.points__image--full {
-    background-image: var(--ic-authority-color-green);
+    background-image: var(--ic-point-full-color-green);
 }
 
 .points__image > VisualElement.points__image--half {
-    background-image: var(--ic-authority-color-orange);
+    background-image: var(--ic-point-half-color-orange);
 }
 
 .points__image > VisualElement.points__image--quarter {
-    background-image: var(--ic-authority-color-red);
+    background-image: var(--ic-point-quarter-color-red);
 }
 
 .points__image > VisualElement.points__image--zero {
-    background-image: var(--ic-authority-color-black);
+    background-image: var(--ic-point-zero-color-black);
 }
 
 .points__image > Label {

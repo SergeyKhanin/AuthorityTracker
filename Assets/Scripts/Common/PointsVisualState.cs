@@ -1,6 +1,6 @@
 ﻿namespace Common
 {
-    public enum LifeVisualState
+    public enum PointsVisualState
     {
         Full = 0,
         Half = 1,
