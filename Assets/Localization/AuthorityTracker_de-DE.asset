@@ -50,20 +50,24 @@ MonoBehaviour:
     m_Localized: "AUFH\xD6REN"
     m_Metadata:
       m_Items: []
-  - m_Id: 397609129730048
-    m_Localized: "SPRACHE W\xC4HLEN"
-    m_Metadata:
-      m_Items: []
   - m_Id: 803105652248576
     m_Localized: SPEISEKARTE
     m_Metadata:
       m_Items: []
-  - m_Id: 1029401171976192
+  - m_Id: 1031025063878656
+    m_Localized: KLARE DATEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1789923671576576
+    m_Localized: "SPRACHE W\xC4HLEN"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1789923696742400
     m_Localized: PAUSE
     m_Metadata:
       m_Items: []
-  - m_Id: 1031025063878656
-    m_Localized: KLARE DATEN
+  - m_Id: 1789923696742401
+    m_Localized: GESCHICHTE
     m_Metadata:
       m_Items: []
   references:

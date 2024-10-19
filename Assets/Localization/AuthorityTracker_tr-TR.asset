@@ -50,20 +50,24 @@ MonoBehaviour:
     m_Localized: "\xC7IKI\u015E YAPMAK"
     m_Metadata:
       m_Items: []
-  - m_Id: 397609129730048
-    m_Localized: "D\u0130L\u0130 SE\xC7\u0130N"
-    m_Metadata:
-      m_Items: []
   - m_Id: 803105652248576
     m_Localized: "MEN\xDC"
     m_Metadata:
       m_Items: []
-  - m_Id: 1029401171976192
+  - m_Id: 1031025063878656
+    m_Localized: "VER\u0130LER\u0130 TEM\u0130ZLE"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1789923671576576
+    m_Localized: "D\u0130L\u0130 SE\xC7\u0130N"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1789923696742400
     m_Localized: DURAKLAT
     m_Metadata:
       m_Items: []
-  - m_Id: 1031025063878656
-    m_Localized: "VER\u0130LER\u0130 TEM\u0130ZLE"
+  - m_Id: 1789923696742401
+    m_Localized: "TAR\u0130H"
     m_Metadata:
       m_Items: []
   references:

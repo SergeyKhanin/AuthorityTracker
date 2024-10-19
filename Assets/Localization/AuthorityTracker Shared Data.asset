@@ -55,12 +55,16 @@ MonoBehaviour:
     m_Key: Button.Clear.Data
     m_Metadata:
       m_Items: []
-  - m_Id: 397609129730048
-    m_Key: Label.Language
+  - m_Id: 1789923671576576
+    m_Key: Header.Language
     m_Metadata:
       m_Items: []
-  - m_Id: 1029401171976192
-    m_Key: Label.Pause
+  - m_Id: 1789923696742400
+    m_Key: Header.Pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1789923696742401
+    m_Key: Header.History
     m_Metadata:
       m_Items: []
   m_Metadata:
