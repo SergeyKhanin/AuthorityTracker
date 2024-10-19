@@ -2,6 +2,6 @@
     <engine:Template name="MenuView" src="project://database/Assets/UI%20Toolkit/Uxml/Templates/Resources/MenuView.uxml?fileID=9197481963319205126&amp;guid=feb1de642a411d84194268f5bc0bec79&amp;type=3#MenuView" />
     <engine:Template name="SettingsView" src="project://database/Assets/UI%20Toolkit/Uxml/Templates/Resources/SettingsView.uxml?fileID=9197481963319205126&amp;guid=3919de6ea53f34e42a46e488414672c4&amp;type=3#SettingsView" />
     <engine:VisualElement picking-mode="Ignore" class="frame frame--menu" />
-    <engine:Instance template="MenuView" picking-mode="Ignore" name="menu-view" class="menu-container menu__container" />
+    <engine:Instance template="MenuView" picking-mode="Ignore" name="menu-view" class="menu__container" />
     <engine:Instance template="SettingsView" name="settings-view" picking-mode="Ignore" class="settings__container" />
 </engine:UXML>

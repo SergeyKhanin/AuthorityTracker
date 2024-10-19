@@ -3,8 +3,8 @@
     <engine:Template name="GameView" src="project://database/Assets/UI%20Toolkit/Uxml/Templates/Resources/GameView.uxml?fileID=9197481963319205126&amp;guid=642de4bff293a6b40a66c1020d3ef35e&amp;type=3#GameView" />
     <engine:Template name="PauseView" src="project://database/Assets/UI%20Toolkit/Uxml/Templates/Resources/PauseView.uxml?fileID=9197481963319205126&amp;guid=97a66e086893e714d8d6cabb95ea6af4&amp;type=3#PauseView" />
     <engine:VisualElement class="frame frame--game" />
-    <engine:VisualElement picking-mode="Ignore" name="content-container" class="players-container" />
-    <engine:Instance template="ConfirmPopupView" picking-mode="Ignore" name="popup-view" class="popup-container" />
+    <engine:VisualElement picking-mode="Ignore" name="content-container" class="players__container" />
+    <engine:Instance template="ConfirmPopupView" picking-mode="Ignore" name="popup-view" class="popup__container" />
     <engine:Instance template="GameView" name="game-view" picking-mode="Ignore" class="game__container" />
     <engine:Instance template="PauseView" name="pause-view" class="pause__container" />
 </engine:UXML>
