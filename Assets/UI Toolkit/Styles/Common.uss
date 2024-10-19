@@ -24,6 +24,7 @@
     --base-opacity: 0.025;
     --base-opacity-label: 0.8;
     --base-border-width: 1px;
+    --base-transition-duration: 25ms;
 }
 
 :root {
