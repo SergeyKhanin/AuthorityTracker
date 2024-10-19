@@ -1,36 +1,46 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
-    <engine:VisualElement picking-mode="Ignore" class="player__container">
-        <engine:VisualElement picking-mode="Ignore" class="player__container-btn player__container-btn--plus">
-            <engine:Button name="x1-plus-button" class="btn btn--player btn--left">
-                <engine:VisualElement picking-mode="Ignore" />
-                <engine:Label picking-mode="Ignore" text="1" />
-            </engine:Button>
-            <engine:Button name="x5-plus-button" class="btn btn--player btn--right">
-                <engine:VisualElement picking-mode="Ignore" />
-                <engine:Label picking-mode="Ignore" text="5" />
-            </engine:Button>
+    <engine:VisualElement picking-mode="Ignore" style="flex-grow: 1;">
+        <engine:VisualElement picking-mode="Ignore" class="player__container">
+            <engine:VisualElement picking-mode="Ignore" class="player__container-btn player__container-btn--plus">
+                <engine:Button name="x1-plus-button" class="btn btn--player btn--left">
+                    <engine:VisualElement picking-mode="Ignore">
+                        <engine:VisualElement picking-mode="Ignore" />
+                        <engine:Label picking-mode="Ignore" text="1" />
+                    </engine:VisualElement>
+                </engine:Button>
+                <engine:Button name="x5-plus-button" class="btn btn--player btn--right">
+                    <engine:VisualElement picking-mode="Ignore">
+                        <engine:VisualElement picking-mode="Ignore" />
+                        <engine:Label picking-mode="Ignore" text="5" />
+                    </engine:VisualElement>
+                </engine:Button>
+            </engine:VisualElement>
+            <engine:VisualElement picking-mode="Ignore" class="player__container-btn player__container-btn--minus">
+                <engine:Button name="x1-minus-button" class="btn btn--player btn--left">
+                    <engine:VisualElement picking-mode="Ignore">
+                        <engine:VisualElement picking-mode="Ignore" />
+                        <engine:Label picking-mode="Ignore" text="1" />
+                    </engine:VisualElement>
+                </engine:Button>
+                <engine:Button name="x5-minus-button" class="btn btn--player btn--right">
+                    <engine:VisualElement picking-mode="Ignore">
+                        <engine:VisualElement picking-mode="Ignore" />
+                        <engine:Label picking-mode="Ignore" text="5" />
+                    </engine:VisualElement>
+                </engine:Button>
+            </engine:VisualElement>
         </engine:VisualElement>
-        <engine:VisualElement picking-mode="Ignore" class="player__container-btn player__container-btn--minus">
-            <engine:Button name="x1-minus-button" class="btn btn--player btn--left">
-                <engine:VisualElement picking-mode="Ignore" />
-                <engine:Label picking-mode="Ignore" text="1" />
-            </engine:Button>
-            <engine:Button name="x5-minus-button" class="btn btn--player btn--right">
-                <engine:VisualElement picking-mode="Ignore" />
-                <engine:Label picking-mode="Ignore" text="5" />
-            </engine:Button>
+        <engine:VisualElement picking-mode="Ignore" class="points__container">
+            <engine:VisualElement picking-mode="Ignore" class="points__image">
+                <engine:VisualElement name="points-image" picking-mode="Ignore" />
+                <engine:Label name="points-label" picking-mode="Ignore" />
+            </engine:VisualElement>
         </engine:VisualElement>
-    </engine:VisualElement>
-    <engine:VisualElement picking-mode="Ignore" class="points__container">
-        <engine:VisualElement picking-mode="Ignore" class="points__image">
-            <engine:VisualElement name="points-image" picking-mode="Ignore" />
-            <engine:Label name="points-label" picking-mode="Ignore" />
-        </engine:VisualElement>
-    </engine:VisualElement>
-    <engine:VisualElement picking-mode="Ignore" class="counter__container">
-        <engine:VisualElement name="counter-container" picking-mode="Ignore">
-            <engine:VisualElement picking-mode="Ignore" />
-            <engine:Label name="counter-label" picking-mode="Ignore" />
+        <engine:VisualElement picking-mode="Ignore" class="counter__container">
+            <engine:VisualElement name="counter-container" picking-mode="Ignore">
+                <engine:VisualElement picking-mode="Ignore" />
+                <engine:Label name="counter-label" picking-mode="Ignore" />
+            </engine:VisualElement>
         </engine:VisualElement>
     </engine:VisualElement>
 </engine:UXML>

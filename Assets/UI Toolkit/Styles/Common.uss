@@ -1,9 +1,8 @@
 :root {
-    --color-black: rgb(0, 0, 0);
-    --color-white: rgb(255, 255, 255);
-    --color-red: rgb(236, 59, 54);
+    --color-black: rgb(4, 4, 4);
     --color-green: rgb(89, 168, 90);
-    --color-gray: rgb(190, 190, 190);
+    --color-gray: rgb(148, 148, 148);
+    --color-gray-transperent: rgba(148, 148, 148, 0.25);
     --color-transperent: rgba(0, 0, 0, 0);
 }
 
@@ -15,14 +14,14 @@
 
 :root {
     --color-player-1: rgba(50, 0, 0, 0.25);
-    --color-player-2: rgba(0, 50, 0, 0.25);
+    --color-player-2: rgba(0, 0, 50, 0.25);
 }
 
 :root {
     --base-margin: 16px;
-    --base-padding: 16px;
-    --base-opacity: 0.8;
-    --base-opacity-half: 0.2;
+    --base-padding: 44px;
+    --base-opacity: 0.05;
+    --base-opacity-label: 0.8;
 }
 
 :root {
@@ -37,7 +36,6 @@
     --btn-rectangle-small-width: 408px;
     --btn-rectangle-height: 234px;
     --btn-rectangle-width: 938px;
-    --btn-rectangle-padding: 44px;
 }
 
 :root {

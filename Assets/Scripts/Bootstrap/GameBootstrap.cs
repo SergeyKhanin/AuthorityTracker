@@ -43,9 +43,11 @@ namespace Bootstrap
             {
                 var templateName = CommonNames.PlayerViewName + i;
                 var playerName = CommonNames.PlayerName + i;
+                var playerClassName = CommonNames.PlayerName.ToLower() + "-" + i;
                 var template = playerTemplate.Instantiate();
 
                 template.name = templateName;
+                template.AddToClassList(playerClassName);
                 root.Add(template);
 
                 var playerPresenter = new PlayerPresenter(

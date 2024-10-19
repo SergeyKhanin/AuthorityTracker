@@ -43,15 +43,21 @@ TemplateContainer {
     translate: 0 50%
 }
 
+.player-1 {
+    background-color: var(--color-player-1);
+}
+
+.player-2 {
+    background-color: var(--color-player-2);
+}
+
+
 .unity-label {
     -unity-font-definition: var(--font-common-asset);
     font-size: var(--font-size-common);
+    color: var(--color-black);
     padding: 0;
     margin: 0;
-}
-
-.unity-label--green {
-    color: var(--color-green);
 }
 
 .unity-label--main {
@@ -63,6 +69,7 @@ TemplateContainer {
     -unity-font-definition: var(--font-common-asset);
     font-size: var(--font-size-common);
     text-shadow: -1px -1px 0 var(--color-gray);
+    color: var(--color-black);
     padding: 0;
     margin: 0;
     border-width: 0;
@@ -73,20 +80,20 @@ TemplateContainer {
 }
 
 .unity-button.btn:hover {
-    background-color: transparent;
-    -unity-background-image-tint-color: red;
+    background-color: var(--color-transperent);
+    -unity-background-image-tint-color: var(--color-transperent);
 }
 
 .unity-button.btn:active {
-    background-color: transparent;
-    -unity-background-image-tint-color: green;
+    background-color: var(--color-transperent);
+    -unity-background-image-tint-color: var(--color-active);
 }
 
 .unity-button.btn.btn--rectangle {
     width: var(--btn-rectangle-width);
     height: var(--btn-rectangle-height);
-    padding-right: var(--btn-rectangle-padding);
-    padding-left: var(--btn-rectangle-padding);
+    padding-right: var(--base-padding);
+    padding-left: var(--base-padding);
 }
 
 .unity-button.btn--rectangle.btn--green {
@@ -104,8 +111,8 @@ TemplateContainer {
 .unity-button.btn.btn--rectangle-small {
     width: var(--btn-rectangle-small-width);
     height: var(--btn-rectangle-small-heigh);
-    padding-right: var(--btn-rectangle-padding);
-    padding-left: var(--btn-rectangle-padding);
+    padding-right: var(--base-padding);
+    padding-left: var(--base-padding);
 }
 
 .unity-button.btn--rectangle-small.btn--green {
@@ -208,6 +215,7 @@ TemplateContainer {
 }
 
 .unity-button.btn.btn--player {
+    padding: var(--base-padding);
     flex-grow: 1;
     flex-shrink: 1;
 }
@@ -215,22 +223,25 @@ TemplateContainer {
 .unity-button.btn.btn--player > VisualElement {
     width: var(--btn-square-size);
     height: var(--btn-square-size);
-    opacity: var(--base-opacity-half);
 }
 
-.unity-button.btn.btn--player > Label {
-    width: var(--btn-square-size);
-    height: var(--btn-square-size);
-    font-size: var(--font-palyer-btn-icon);
+.unity-button.btn.btn--player > VisualElement > VisualElement {
     opacity: var(--base-opacity);
+    flex-grow: 1;
+}
+
+.unity-button.btn.btn--player > VisualElement > Label {
+    font-size: var(--font-palyer-btn-icon);
+    opacity: var(--base-opacity-label);
+    text-shadow: -1px -1px 0 var(--color-transperent);
+    width: 100%;
+    height: 100%;
     position: absolute;
     -unity-text-align: middle-center;
-    text-shadow: 0 0 0 var(--color-transperent);
 }
 
 .player__container {
     flex-grow: 1;
-    padding: var(--base-padding);
 }
 
 .player__container-btn {
@@ -238,12 +249,25 @@ TemplateContainer {
     flex-direction: row;
 }
 
+.player__container-btn.player__container-btn > .unity-button.btn.btn--player {
+    border-color: var(--color-black);
+    border-width: 1px;
+}
+
 .player__container-btn.player__container-btn--plus > .unity-button.btn.btn--player {
     justify-content: flex-start;
 }
 
+.player__container-btn.player__container-btn--plus > .unity-button.btn.btn--player:active {
+    background-color: var(--color-active-plus);
+}
+
 .player__container-btn.player__container-btn--minus > .unity-button.btn.btn--player {
     justify-content: flex-end;
+}
+
+.player__container-btn.player__container-btn--minus > .unity-button.btn.btn--player:active {
+    background-color: var(--color-active-minus);
 }
 
 .player__container-btn > .unity-button.btn.btn--player.btn--left {
@@ -254,11 +278,11 @@ TemplateContainer {
     align-items: flex-end;
 }
 
-.player__container-btn.player__container-btn--plus > .unity-button.btn.btn--player > VisualElement {
+.player__container-btn.player__container-btn--plus > .unity-button.btn.btn--player > VisualElement > VisualElement {
     background-image: var(--ic-counter-positive-color-green);
 }
 
-.player__container-btn.player__container-btn--minus > .unity-button.btn.btn--player > VisualElement {
+.player__container-btn.player__container-btn--minus > .unity-button.btn.btn--player > VisualElement > VisualElement {
     background-image: var(--ic-counter-negative-color-red);
 }
 
@@ -285,6 +309,7 @@ TemplateContainer {
     width: var(--btn-square-size);
     height: var(--btn-square-size);
     font-size: var(--font-palyer-btn-icon);
+    text-shadow: -1px -1px 0 var(--color-gray-transperent);
     position: absolute;
     align-items: center;
     justify-content: center;
@@ -343,5 +368,6 @@ TemplateContainer {
 .points__image > Label {
     font-size: var(--font-size-authority-big);
     top: var(--points-label-top-offset);
+    text-shadow: -2px -2px 0 var(--color-gray);
     position: absolute;
 }
