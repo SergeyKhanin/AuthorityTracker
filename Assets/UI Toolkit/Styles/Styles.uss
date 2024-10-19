@@ -19,7 +19,7 @@ TemplateContainer {
     background-image: var(--im-game-frame);
 }
 
-.game-container {
+.game__container {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -27,15 +27,15 @@ TemplateContainer {
     justify-content: space-between;
 }
 
-.game-container > .btn.btn--rhombus.btn--green {
+.game__container > .btn.btn--rhombus.btn--green {
     translate: 0 -50%;
 }
 
-.game-container > .btn.btn--rhombus.btn--gray {
+.game__container > .btn.btn--rhombus.btn--gray {
     translate: 0 50%;
 }
 
-.pause-container {
+.pause__container {
     background-color: var(--color-black-transperent);
     width: 100%;
     height: 100%;
@@ -44,7 +44,7 @@ TemplateContainer {
     justify-content: space-between;
 }
 
-.players-container {
+.players__container {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -94,7 +94,7 @@ TemplateContainer {
 .unity-button.btn {
     color: var(--color-black);
     background-color: var(--color-transperent);
-    text-shadow: var(--base-text-shadow-size) var(--base-text-shadow-size) 0 var(--color-gray);
+    text-shadow: -1px -1px 0 var(--color-gray);
     -unity-font-definition: var(--font-common-asset);
     font-size: var(--font-size-common);
     padding: 0;
@@ -258,7 +258,7 @@ TemplateContainer {
 }
 
 .unity-button.btn.btn--player > VisualElement > Label {
-    text-shadow: var(--base-text-shadow-size) var(--base-text-shadow-size) 0 var(--color-transperent);
+    text-shadow: -1px -1px 0 var(--color-transperent);
     font-size: var(--font-palyer-btn-icon);
     opacity: var(--base-opacity-label);
     width: 100%;
@@ -337,7 +337,7 @@ TemplateContainer {
 }
 
 .player__container-counter > VisualElement > Label {
-    text-shadow: var(--base-text-shadow-size) var(--base-text-shadow-size) 0 var(--color-gray-transperent);
+    text-shadow: -1px -1px 0 var(--color-gray-transperent);
     width: var(--btn-square-size);
     height: var(--btn-square-size);
     font-size: var(--font-palyer-btn-icon);
@@ -396,7 +396,7 @@ TemplateContainer {
 }
 
 .points__image > Label {
-    text-shadow: var(--base-text-shadow-big-size) var(--base-text-shadow-big-size) 0 var(--color-gray);
+    text-shadow: -2px -2px 0 var(--color-gray);
     font-size: var(--font-size-points-image);
     top: var(--points-label-top-offset);
     position: absolute;

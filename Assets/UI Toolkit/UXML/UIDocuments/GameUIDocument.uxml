@@ -5,6 +5,6 @@
     <engine:VisualElement class="frame frame--game" />
     <engine:VisualElement picking-mode="Ignore" name="content-container" class="players-container" />
     <engine:Instance template="ConfirmPopupView" picking-mode="Ignore" name="popup-view" class="popup-container" />
-    <engine:Instance template="GameView" name="game-view" picking-mode="Ignore" class="game-container" />
-    <engine:Instance template="PauseView" name="pause-view" class="pause-container" />
+    <engine:Instance template="GameView" name="game-view" picking-mode="Ignore" class="game__container" />
+    <engine:Instance template="PauseView" name="pause-view" class="pause__container" />
 </engine:UXML>
