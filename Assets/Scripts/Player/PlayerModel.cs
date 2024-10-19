@@ -35,11 +35,11 @@ namespace Player
 
         public void X1Plus() => IncrementCounterPoints(1);
 
-        public void X5Plus() => IncrementCounterPoints(5);
+        public void X5Plus() => IncrementCounterPoints(15);
 
         public void X1Minus() => DecrementCounterPoints(1);
 
-        public void X5Minus() => DecrementCounterPoints(5);
+        public void X5Minus() => DecrementCounterPoints(15);
 
         public void Apply()
         {
@@ -71,12 +71,14 @@ namespace Player
         private void IncrementCounterPoints(int points)
         {
             Counter += points;
+            ValidateCounterValue();
             UpdateCounterVisualState();
         }
 
         private void DecrementCounterPoints(int points)
         {
             Counter -= points;
+            ValidateCounterValue();
             UpdateCounterVisualState();
         }
 
@@ -100,6 +102,16 @@ namespace Player
                 CounterVisualState = CounterVisualState.Zero;
             else
                 CounterVisualState = CounterVisualState.Positive;
+        }
+
+        private void ValidateCounterValue()
+        {
+            Counter = Counter switch
+            {
+                > 99 => 99,
+                < -99 => -99,
+                _ => Counter
+            };
         }
 
         private void SavePlayerData()
