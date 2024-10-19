@@ -22,6 +22,7 @@
     --base-margin: 16px;
     --base-padding: 16px;
     --base-opacity: 0.8;
+    --base-opacity-half: 0.2;
 }
 
 :root {
@@ -74,6 +75,7 @@
 
 :root {
     --ic-btn-rhombus-color-green: resource('IC_Button-rhombus_Color-green');
+    --ic-btn-rhombus-color-gray: resource('IC_Button-rhombus_Color-gray');
     --ic-btn-square-color-green: resource('IC_Button-square_Color-green');
     --ic-btn-rectangle-color-red: resource('IC_Button-rectangle_Color-red');
     --ic-btn-rectangle-color-green: resource('IC_Button-rectangle_Color-green');

@@ -27,6 +27,22 @@ TemplateContainer {
     background-image: var(--im-game-frame);
 }
 
+.game-screen {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.game-screen > .btn.btn--rhombus.btn--green {
+    translate: 0 -50%
+}
+
+.game-screen > .btn.btn--rhombus.btn--gray {
+    translate: 0 50%
+}
+
 .unity-label {
     -unity-font-definition: var(--font-common-asset);
     font-size: var(--font-size-common);
@@ -187,6 +203,10 @@ TemplateContainer {
     background-image: var(--ic-btn-rhombus-color-green);
 }
 
+.unity-button.btn.btn--rhombus.btn--gray {
+    background-image: var(--ic-btn-rhombus-color-gray);
+}
+
 .unity-button.btn.btn--player {
     flex-grow: 1;
     flex-shrink: 1;
@@ -195,7 +215,7 @@ TemplateContainer {
 .unity-button.btn.btn--player > VisualElement {
     width: var(--btn-square-size);
     height: var(--btn-square-size);
-    opacity: var(--base-opacity);
+    opacity: var(--base-opacity-half);
 }
 
 .unity-button.btn.btn--player > Label {
@@ -205,6 +225,7 @@ TemplateContainer {
     opacity: var(--base-opacity);
     position: absolute;
     -unity-text-align: middle-center;
+    text-shadow: 0 0 0 var(--color-transperent);
 }
 
 .player__container {
