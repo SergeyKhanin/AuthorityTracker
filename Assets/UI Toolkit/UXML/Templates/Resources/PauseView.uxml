@@ -1,11 +1,4 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
-    <engine:VisualElement picking-mode="Ignore" class="header">
-        <engine:Label picking-mode="Ignore">
-            <Bindings>
-                <UnityEngine.Localization.LocalizedString property="text" table="GUID:77b1ef30df61eb842ba46ae79c10ee1b" entry="Id(1789923696742400)" />
-            </Bindings>
-        </engine:Label>
-    </engine:VisualElement>
     <engine:VisualElement picking-mode="Ignore" class="buttons-container">
         <engine:Button name="back-button" class="btn btn--rectangle btn--green">
             <Bindings>

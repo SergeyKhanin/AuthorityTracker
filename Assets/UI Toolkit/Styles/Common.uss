@@ -21,14 +21,10 @@
 :root {
     --base-margin: 16px;
     --base-padding: 44px;
-    --base-opacity: 0.025;
-    --base-opacity-label: 0.8;
+    --base-opacity: 0.01;
+    --base-opacity-label: 0.6;
     --base-border-width: 1px;
     --base-transition-duration: 25ms;
-}
-
-:root {
-    --header-height: 204px
 }
 
 :root {
@@ -36,9 +32,10 @@
     --btn-square-size: 204px;
     --btn-square-iocn-size: 120px;
     --btn-rectangle-small-heigh: 204px;
-    --btn-rectangle-small-width: 408px;
+    --btn-rectangle-small-width: 468px;
     --btn-rectangle-height: 234px;
     --btn-rectangle-width: 938px;
+    --btn-rectangle-small-top-offcet: 16px;
 }
 
 :root {
@@ -54,8 +51,8 @@
 }
 
 :root {
-    --font-main-asset: resource('FA_Main');
     --font-common-asset: resource('FA_Common');
+    --font-main-asset: resource('FA_Main');
 }
 
 :root {

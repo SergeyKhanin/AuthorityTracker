@@ -58,18 +58,6 @@ MonoBehaviour:
     m_Localized: KLARE DATEN
     m_Metadata:
       m_Items: []
-  - m_Id: 1789923671576576
-    m_Localized: "SPRACHE W\xC4HLEN"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1789923696742400
-    m_Localized: PAUSE
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1789923696742401
-    m_Localized: GESCHICHTE
-    m_Metadata:
-      m_Items: []
   references:
     version: 2
     RefIds: []

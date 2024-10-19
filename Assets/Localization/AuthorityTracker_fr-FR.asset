@@ -58,18 +58,6 @@ MonoBehaviour:
     m_Localized: "EFFACER LES DONN\xC9ES"
     m_Metadata:
       m_Items: []
-  - m_Id: 1789923671576576
-    m_Localized: CHOISIR LA LANGUE
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1789923696742400
-    m_Localized: PAUSE
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1789923696742401
-    m_Localized: HISTOIRE
-    m_Metadata:
-      m_Items: []
   references:
     version: 2
     RefIds: []

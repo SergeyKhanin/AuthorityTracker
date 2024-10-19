@@ -35,6 +35,10 @@ TemplateContainer {
     translate: 0 50%;
 }
 
+.popup__container > VisualElement.buttons-container > .unity-button. {
+    top: var(--btn-rectangle-small-top-offcet);
+}
+
 .pause__container {
     background-color: var(--color-black-transperent);
     width: 100%;
@@ -59,18 +63,6 @@ TemplateContainer {
 
 .player-2 {
     background-color: var(--color-player-2);
-}
-
-.header {
-    height: var(--header-height);
-}
-
-.header > .unity-label {
-    color: var(--color-green);
-    font-size: var(--font-size-header);
-    -unity-font-definition: var(--font-main-asset);
-    flex-grow: 1;
-    -unity-text-align: middle-center;
 }
 
 .buttons-container {
@@ -270,6 +262,7 @@ TemplateContainer {
 
 .unity-button.btn.btn--player > VisualElement > Label {
     text-shadow: -1px -1px 0 var(--color-transperent);
+    -unity-font-definition: var(--font-main-asset);
     font-size: var(--font-palyer-btn-icon);
     opacity: var(--base-opacity-label);
     width: 100%;
@@ -352,9 +345,10 @@ TemplateContainer {
 
 .player__container-counter > VisualElement > Label {
     text-shadow: -1px -1px 0 var(--color-gray-transperent);
+    -unity-font-definition: var(--font-main-asset);
+    font-size: var(--font-palyer-btn-icon);
     width: var(--btn-square-size);
     height: var(--btn-square-size);
-    font-size: var(--font-palyer-btn-icon);
     position: absolute;
     align-items: center;
     justify-content: center;
@@ -414,6 +408,7 @@ TemplateContainer {
 
 .points__image > Label {
     text-shadow: -2px -2px 0 var(--color-gray);
+    -unity-font-definition: var(--font-main-asset);
     font-size: var(--font-size-points-image);
     top: var(--points-label-top-offset);
     position: absolute;

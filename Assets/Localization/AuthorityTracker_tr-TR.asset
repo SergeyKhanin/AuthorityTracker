@@ -58,18 +58,6 @@ MonoBehaviour:
     m_Localized: "VER\u0130LER\u0130 TEM\u0130ZLE"
     m_Metadata:
       m_Items: []
-  - m_Id: 1789923671576576
-    m_Localized: "D\u0130L\u0130 SE\xC7\u0130N"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1789923696742400
-    m_Localized: DURAKLAT
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1789923696742401
-    m_Localized: "TAR\u0130H"
-    m_Metadata:
-      m_Items: []
   references:
     version: 2
     RefIds: []

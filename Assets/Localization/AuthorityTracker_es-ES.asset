@@ -58,18 +58,6 @@ MonoBehaviour:
     m_Localized: BORRAR DATOS
     m_Metadata:
       m_Items: []
-  - m_Id: 1789923671576576
-    m_Localized: SELECCIONAR IDIOMA
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1789923696742400
-    m_Localized: PAUSA
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1789923696742401
-    m_Localized: HISTORIA
-    m_Metadata:
-      m_Items: []
   references:
     version: 2
     RefIds: []

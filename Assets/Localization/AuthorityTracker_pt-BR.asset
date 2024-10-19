@@ -58,18 +58,6 @@ MonoBehaviour:
     m_Localized: LIMPAR DADOS
     m_Metadata:
       m_Items: []
-  - m_Id: 1789923671576576
-    m_Localized: SELECIONE O IDIOMA
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1789923696742400
-    m_Localized: PAUSA
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1789923696742401
-    m_Localized: "HIST\xD3RIA"
-    m_Metadata:
-      m_Items: []
   references:
     version: 2
     RefIds: []
