@@ -6,11 +6,12 @@ namespace Player
     public sealed class PlayerModel
     {
         private const int StartPoints = 50;
+        private const int CounterLimit = 99;
+        private const int PointsLimit = 999;
         public int Points { get; private set; }
         public int Counter { get; private set; }
         public PointsVisualState PointsVisualState { get; private set; }
         public CounterVisualState CounterVisualState { get; private set; }
-
         private readonly string _playerName;
         private int _maxPoints;
 
@@ -45,9 +46,7 @@ namespace Player
         {
             Points += Counter;
 
-            if (_maxPoints <= Points)
-                _maxPoints = Points;
-
+            SetMaxPoints();
             ValidatePointsValue();
             UpdatePointsVisualState();
             SavePlayerData();
@@ -83,6 +82,12 @@ namespace Player
             UpdateCounterVisualState();
         }
 
+        private void SetMaxPoints()
+        {
+            if (_maxPoints <= Points)
+                _maxPoints = Points;
+        }
+
         private void UpdatePointsVisualState()
         {
             if (Points <= 0)
@@ -109,8 +114,8 @@ namespace Player
         {
             Counter = Counter switch
             {
-                > 99 => 99,
-                < -99 => -99,
+                > CounterLimit => CounterLimit,
+                < -CounterLimit => -CounterLimit,
                 _ => Counter
             };
         }
@@ -119,8 +124,8 @@ namespace Player
         {
             Points = Points switch
             {
-                > 999 => 999,
-                < -999 => -999,
+                > PointsLimit => PointsLimit,
+                < -PointsLimit => -PointsLimit,
                 _ => Points
             };
         }

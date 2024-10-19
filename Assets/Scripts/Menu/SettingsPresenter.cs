@@ -3,7 +3,6 @@ using Common;
 using Events;
 using Extensions;
 using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
 
 namespace Menu
 {

@@ -1,7 +1,6 @@
 ﻿using System;
 using Events;
 using Extensions;
-using UnityEngine.UIElements;
 
 namespace Game
 {

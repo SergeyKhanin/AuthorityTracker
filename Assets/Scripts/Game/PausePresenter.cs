@@ -4,7 +4,6 @@ using Events;
 using Extensions;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
 
 namespace Game
 {
