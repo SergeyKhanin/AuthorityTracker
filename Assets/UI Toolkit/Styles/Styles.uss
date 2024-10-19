@@ -53,8 +53,8 @@ TemplateContainer {
 .unity-button.btn.btn--rectangle {
     width: var(--btn-rectangle-width);
     height: var(--btn-rectangle-height);
-    padding-right: var(--base-padding-double);
-    padding-left: var(--base-padding-double);
+    padding-right: var(--btn-rectangle-padding);
+    padding-left: var(--btn-rectangle-padding);
 }
 
 .unity-button.btn--rectangle.btn--green {
@@ -72,8 +72,8 @@ TemplateContainer {
 .unity-button.btn.btn--rectangle-small {
     width: var(--btn-rectangle-small-width);
     height: var(--btn-rectangle-small-heigh);
-    padding-right: var(--base-padding-double);
-    padding-left: var(--base-padding-double);
+    padding-right: var(--btn-rectangle-padding);
+    padding-left: var(--btn-rectangle-padding);
 }
 
 .unity-button.btn--rectangle-small.btn--green {
@@ -179,12 +179,14 @@ TemplateContainer {
 .unity-button.btn.btn--player > VisualElement {
     width: var(--btn-square-size);
     height: var(--btn-square-size);
+    opacity: var(--base-opacity);
 }
 
 .unity-button.btn.btn--player > Label {
     width: var(--btn-square-size);
     height: var(--btn-square-size);
     font-size: var(--font-palyer-btn-icon);
+    opacity: var(--base-opacity);
     position: absolute;
     -unity-text-align: middle-center;
 }

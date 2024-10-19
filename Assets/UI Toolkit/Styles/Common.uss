@@ -21,7 +21,7 @@
 :root {
     --base-margin: 16px;
     --base-padding: 16px;
-    --base-padding-double: 44px;
+    --base-opacity: 0.8;
 }
 
 :root {
@@ -32,10 +32,11 @@
     --btn-rhombus-size: 180px;
     --btn-square-size: 204px;
     --btn-square-iocn-size: 120px;
-    --btn-rectangle-height: 234px;
-    --btn-rectangle-width: 938px;
     --btn-rectangle-small-heigh: 204px;
     --btn-rectangle-small-width: 408px;
+    --btn-rectangle-height: 234px;
+    --btn-rectangle-width: 938px;
+    --btn-rectangle-padding: 44px;
 }
 
 :root {

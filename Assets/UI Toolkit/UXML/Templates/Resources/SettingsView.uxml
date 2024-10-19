@@ -21,8 +21,6 @@
                         <engine:Button name="telugu-language-button" class="btn btn--square btn--green btn--telugu">
                             <engine:VisualElement />
                         </engine:Button>
-                    </engine:VisualElement>
-                    <engine:VisualElement picking-mode="Ignore" style="flex-direction: row; flex-grow: 1;">
                         <engine:Button name="spanish-language-button" class="btn btn--square btn--green btn--spanish">
                             <engine:VisualElement />
                         </engine:Button>
@@ -49,12 +47,10 @@
                         <engine:Button name="indonesian-language-button" class="btn btn--square btn--green btn--indonesian">
                             <engine:VisualElement />
                         </engine:Button>
-                    </engine:VisualElement>
-                    <engine:VisualElement picking-mode="Ignore" style="flex-grow: 1; flex-direction: row;">
-                        <engine:Button name="japanese-language-button" class="btn btn--square btn--green btn--japanese">
+                        <engine:Button name="german-language-button" class="btn btn--square btn--green btn--german">
                             <engine:VisualElement />
                         </engine:Button>
-                        <engine:Button name="german-language-button" class="btn btn--square btn--green btn--german">
+                        <engine:Button name="japanese-language-button" class="btn btn--square btn--green btn--japanese">
                             <engine:VisualElement />
                         </engine:Button>
                         <engine:Button name="marathi-language-button" class="btn btn--square btn--green btn--marathi">
