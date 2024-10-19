@@ -106,10 +106,6 @@ TemplateContainer {
     justify-content: center;
 }
 
-.unity-button.btn.selected {
-    background-color: red;
-}
-
 .unity-button.btn:hover {
     background-color: var(--color-transperent);
     -unity-background-image-tint-color: var(--color-transperent);
@@ -230,6 +226,14 @@ TemplateContainer {
 
 .unity-button.btn--square.btn--green {
     background-image: var(--ic-btn-square-color-green);
+}
+
+.unity-button.btn--square.btn--gray {
+    background-image: var(--ic-btn-square-color-gray);
+}
+
+.unity-button.btn--square.btn--green.selected {
+    background-image: var(--ic-btn-square-color-gray);
 }
 
 .unity-button.btn.btn--rhombus {
