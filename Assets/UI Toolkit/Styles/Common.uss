@@ -58,12 +58,12 @@
 }
 
 :root {
-    /*--im-main-menu-frame: resource('Images/IM_Menu-frame_Color');*/
-    /*--im-pause-frame: resource('Images/IM_Pause-frame_Color');*/
-    /*--im-game-1-frame: resource('Images/IM_Game-1-frame_Color');*/
-    /*--im-game-2-frame: resource('Images/IM_Game-2-frame_Color');*/
-    /*--im-game-3-frame: resource('Images/IM_Game-3-frame_Color');*/
-    /*--im-game-4-frame: resource('Images/IM_Game-4-frame_Color');*/
+    --im-main-menu-frame: resource('IM_Menu-frame_Color');
+    --im-game-1-frame: resource('IM_Game-1-frame_Color');
+    --im-game-2-frame: resource('IM_Game-2-frame_Color');
+    --im-game-3-frame: resource('IM_Game-3-frame_Color');
+    --im-game-4-frame: resource('IM_Game-4-frame_Color');
+    --im-game-5-frame: resource('IM_Game-5-frame_Color');
 }
 
 :root {
