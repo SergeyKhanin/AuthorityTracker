@@ -20,12 +20,12 @@
 :root {
     --base-margin: 16px;
     --base-padding: 44px;
-    --base-opacity: 0.05;
+    --base-opacity: 0.025;
     --base-opacity-label: 0.8;
 }
 
 :root {
-    --space-apply-button-horizontal: 150px
+    --header-height: 204px
 }
 
 :root {
@@ -46,7 +46,7 @@
 :root {
     --font-palyer-btn-icon: 60px;
     --font-size-common: 100px;
-    --font-size-authority: 120px;
+    --font-size-header: 120px;
     --font-size-authority-big: 260px;
     --font-size-authority-small: 200px;
 }

@@ -36,11 +36,11 @@ TemplateContainer {
 }
 
 .game-screen > .btn.btn--rhombus.btn--green {
-    translate: 0 -50%
+    translate: 0 -50%;
 }
 
 .game-screen > .btn.btn--rhombus.btn--gray {
-    translate: 0 50%
+    translate: 0 50%;
 }
 
 .player-1 {
@@ -51,6 +51,23 @@ TemplateContainer {
     background-color: var(--color-player-2);
 }
 
+.header {
+    height: var(--header-height);
+}
+
+.header > .unity-label {
+    color: var(--color-green);
+    font-size: var(--font-size-header);
+    -unity-font-definition: var(--font-main-asset);
+    flex-grow: 1;
+    -unity-text-align: middle-center;
+}
+
+.buttons-container {
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+}
 
 .unity-label {
     -unity-font-definition: var(--font-common-asset);
@@ -58,10 +75,6 @@ TemplateContainer {
     color: var(--color-black);
     padding: 0;
     margin: 0;
-}
-
-.unity-label--main {
-    -unity-font-definition: var(--font-main-asset);
 }
 
 .unity-button.btn {
