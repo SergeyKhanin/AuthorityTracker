@@ -3,14 +3,6 @@ TemplateContainer {
     height: 100%;
 }
 
-.full-screen {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    align-items: center;
-    justify-content: center;
-}
-
 .frame {
     width: 100%;
     height: 100%;
@@ -27,7 +19,7 @@ TemplateContainer {
     background-image: var(--im-game-frame);
 }
 
-.game-screen {
+.game-container {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -35,12 +27,30 @@ TemplateContainer {
     justify-content: space-between;
 }
 
-.game-screen > .btn.btn--rhombus.btn--green {
+.game-container > .btn.btn--rhombus.btn--green {
     translate: 0 -50%;
 }
 
-.game-screen > .btn.btn--rhombus.btn--gray {
+.game-container > .btn.btn--rhombus.btn--gray {
     translate: 0 50%;
+}
+
+.pause-container {
+    background-color: var(--color-black-transperent);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.players-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
 }
 
 .player-1 {
@@ -67,6 +77,10 @@ TemplateContainer {
     align-items: center;
     flex-grow: 1;
     justify-content: center;
+}
+
+.buttons-container > .lang__container {
+    flex-direction: row;
 }
 
 .unity-label {
@@ -257,49 +271,53 @@ TemplateContainer {
     flex-grow: 1;
 }
 
-.player__container-btn {
+.player__container-buttons {
+    flex-grow: 1;
+}
+
+.player__container-buttons__btn {
     flex-grow: 1;
     flex-direction: row;
 }
 
-.player__container-btn.player__container-btn > .unity-button.btn.btn--player {
+.player__container-buttons__btn.player__container-buttons__btn > .unity-button.btn.btn--player {
     border-color: var(--color-black);
     border-width: 1px;
 }
 
-.player__container-btn.player__container-btn--plus > .unity-button.btn.btn--player {
+.player__container-buttons__btn.player__container-buttons__btn--plus > .unity-button.btn.btn--player {
     justify-content: flex-start;
 }
 
-.player__container-btn.player__container-btn--plus > .unity-button.btn.btn--player:active {
+.player__container-buttons__btn.player__container-buttons__btn--plus > .unity-button.btn.btn--player:active {
     background-color: var(--color-active-plus);
 }
 
-.player__container-btn.player__container-btn--minus > .unity-button.btn.btn--player {
+.player__container-buttons__btn.player__container-buttons__btn--minus > .unity-button.btn.btn--player {
     justify-content: flex-end;
 }
 
-.player__container-btn.player__container-btn--minus > .unity-button.btn.btn--player:active {
+.player__container-buttons__btn.player__container-buttons__btn--minus > .unity-button.btn.btn--player:active {
     background-color: var(--color-active-minus);
 }
 
-.player__container-btn > .unity-button.btn.btn--player.btn--left {
+.player__container-buttons__btn > .unity-button.btn.btn--player.btn--left {
     align-items: flex-start;
 }
 
-.player__container-btn > .unity-button.btn.btn--player.btn--right {
+.player__container-buttons__btn > .unity-button.btn.btn--player.btn--right {
     align-items: flex-end;
 }
 
-.player__container-btn.player__container-btn--plus > .unity-button.btn.btn--player > VisualElement > VisualElement {
+.player__container-buttons__btn.player__container-buttons__btn--plus > .unity-button.btn.btn--player > VisualElement > VisualElement {
     background-image: var(--ic-counter-positive-color-green);
 }
 
-.player__container-btn.player__container-btn--minus > .unity-button.btn.btn--player > VisualElement > VisualElement {
+.player__container-buttons__btn.player__container-buttons__btn--minus > .unity-button.btn.btn--player > VisualElement > VisualElement {
     background-image: var(--ic-counter-negative-color-red);
 }
 
-.counter__container {
+.player__container-counter {
     padding: var(--base-padding);
     width: 100%;
     height: 100%;
@@ -308,17 +326,17 @@ TemplateContainer {
     justify-content: flex-start;
 }
 
-.counter__container > VisualElement {
+.player__container-counter > VisualElement {
     align-items: center;
     justify-content: center;
 }
 
-.counter__container > VisualElement > VisualElement {
+.player__container-counter > VisualElement > VisualElement {
     width: var(--btn-square-size);
     height: var(--btn-square-size);
 }
 
-.counter__container > VisualElement > Label {
+.player__container-counter > VisualElement > Label {
     width: var(--btn-square-size);
     height: var(--btn-square-size);
     font-size: var(--font-palyer-btn-icon);
@@ -329,20 +347,19 @@ TemplateContainer {
     -unity-text-align: middle-center;
 }
 
-.counter__container > .zero {
+.player__container-counter > .zero {
     background-image: var(--ic-counter-zero-color-gray);
 }
 
-.counter__container > .negative > VisualElement {
+.player__container-counter > .negative > VisualElement {
     background-image: var(--ic-counter-negative-color-red);
 }
 
-.counter__container > .positive > VisualElement {
+.player__container-counter > .positive > VisualElement {
     background-image: var(--ic-counter-positive-color-green);
 }
 
-.points__container {
-    padding: var(--base-padding);
+.player__container-image {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -379,7 +396,7 @@ TemplateContainer {
 }
 
 .points__image > Label {
-    font-size: var(--font-size-authority-big);
+    font-size: var(--font-size-points-image);
     top: var(--points-label-top-offset);
     text-shadow: -2px -2px 0 var(--color-gray);
     position: absolute;

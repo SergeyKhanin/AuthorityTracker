@@ -1,34 +1,31 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
-    <engine:VisualElement style="position: absolute; height: 100%; width: 100%; background-color: rgba(0, 0, 0, 0.99); top: 0; left: -4px;" />
-    <engine:VisualElement picking-mode="Ignore" style="flex-grow: 1; align-items: center; justify-content: flex-start;">
-        <engine:VisualElement picking-mode="Ignore" class="header">
-            <engine:Label picking-mode="Ignore">
-                <Bindings>
-                    <UnityEngine.Localization.LocalizedString property="text" table="GUID:77b1ef30df61eb842ba46ae79c10ee1b" entry="Id(1789923696742400)" />
-                </Bindings>
-            </engine:Label>
-        </engine:VisualElement>
-        <engine:VisualElement picking-mode="Ignore" class="buttons-container">
-            <engine:Button name="back-button" class="btn btn--rectangle btn--green">
-                <Bindings>
-                    <UnityEngine.Localization.LocalizedString property="text" table="GUID:77b1ef30df61eb842ba46ae79c10ee1b" entry="Id(19375698382848)" />
-                </Bindings>
-            </engine:Button>
-            <engine:Button name="menu-button" class="btn btn--rectangle btn--green">
-                <Bindings>
-                    <UnityEngine.Localization.LocalizedString property="text" table="GUID:77b1ef30df61eb842ba46ae79c10ee1b" entry="Id(803105652248576)" />
-                </Bindings>
-            </engine:Button>
-            <engine:Button name="restart-button" class="btn btn--rectangle btn--gray">
-                <Bindings>
-                    <UnityEngine.Localization.LocalizedString property="text" table="GUID:77b1ef30df61eb842ba46ae79c10ee1b" entry="Id(397300332486656)" />
-                </Bindings>
-            </engine:Button>
-            <engine:Button name="quit-button" class="btn btn--rectangle btn--red">
-                <Bindings>
-                    <UnityEngine.Localization.LocalizedString property="text" table="GUID:77b1ef30df61eb842ba46ae79c10ee1b" entry="Id(279212021682176)" />
-                </Bindings>
-            </engine:Button>
-        </engine:VisualElement>
+    <engine:VisualElement picking-mode="Ignore" class="header">
+        <engine:Label picking-mode="Ignore">
+            <Bindings>
+                <UnityEngine.Localization.LocalizedString property="text" table="GUID:77b1ef30df61eb842ba46ae79c10ee1b" entry="Id(1789923696742400)" />
+            </Bindings>
+        </engine:Label>
+    </engine:VisualElement>
+    <engine:VisualElement picking-mode="Ignore" class="buttons-container">
+        <engine:Button name="back-button" class="btn btn--rectangle btn--green">
+            <Bindings>
+                <UnityEngine.Localization.LocalizedString property="text" table="GUID:77b1ef30df61eb842ba46ae79c10ee1b" entry="Id(19375698382848)" />
+            </Bindings>
+        </engine:Button>
+        <engine:Button name="menu-button" class="btn btn--rectangle btn--green">
+            <Bindings>
+                <UnityEngine.Localization.LocalizedString property="text" table="GUID:77b1ef30df61eb842ba46ae79c10ee1b" entry="Id(803105652248576)" />
+            </Bindings>
+        </engine:Button>
+        <engine:Button name="restart-button" class="btn btn--rectangle btn--gray">
+            <Bindings>
+                <UnityEngine.Localization.LocalizedString property="text" table="GUID:77b1ef30df61eb842ba46ae79c10ee1b" entry="Id(397300332486656)" />
+            </Bindings>
+        </engine:Button>
+        <engine:Button name="quit-button" class="btn btn--rectangle btn--red">
+            <Bindings>
+                <UnityEngine.Localization.LocalizedString property="text" table="GUID:77b1ef30df61eb842ba46ae79c10ee1b" entry="Id(279212021682176)" />
+            </Bindings>
+        </engine:Button>
     </engine:VisualElement>
 </engine:UXML>

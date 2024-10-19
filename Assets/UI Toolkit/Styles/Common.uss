@@ -1,6 +1,7 @@
 :root {
-    --color-black: rgb(4, 4, 4);
     --color-green: rgb(89, 168, 90);
+    --color-black: rgb(4, 4, 4);
+    --color-black-transperent: rgba(4, 4, 4, 0.99);
     --color-gray: rgb(148, 148, 148);
     --color-gray-transperent: rgba(148, 148, 148, 0.25);
     --color-transperent: rgba(0, 0, 0, 0);
@@ -47,8 +48,7 @@
     --font-palyer-btn-icon: 60px;
     --font-size-common: 100px;
     --font-size-header: 120px;
-    --font-size-authority-big: 260px;
-    --font-size-authority-small: 200px;
+    --font-size-points-image: 260px;
 }
 
 :root {
