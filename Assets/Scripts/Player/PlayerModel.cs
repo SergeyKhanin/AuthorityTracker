@@ -35,11 +35,11 @@ namespace Player
 
         public void X1Plus() => IncrementCounterPoints(1);
 
-        public void X5Plus() => IncrementCounterPoints(15);
+        public void X5Plus() => IncrementCounterPoints(5);
 
         public void X1Minus() => DecrementCounterPoints(1);
 
-        public void X5Minus() => DecrementCounterPoints(15);
+        public void X5Minus() => DecrementCounterPoints(5);
 
         public void Apply()
         {
@@ -48,6 +48,7 @@ namespace Player
             if (_maxPoints <= Points)
                 _maxPoints = Points;
 
+            ValidatePointsValue();
             UpdatePointsVisualState();
             SavePlayerData();
             Clear();
@@ -111,6 +112,16 @@ namespace Player
                 > 99 => 99,
                 < -99 => -99,
                 _ => Counter
+            };
+        }
+
+        private void ValidatePointsValue()
+        {
+            Points = Points switch
+            {
+                > 999 => 999,
+                < -999 => -999,
+                _ => Points
             };
         }
 
