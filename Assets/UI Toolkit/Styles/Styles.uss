@@ -84,19 +84,19 @@ TemplateContainer {
 }
 
 .unity-label {
+    color: var(--color-black);
     -unity-font-definition: var(--font-common-asset);
     font-size: var(--font-size-common);
-    color: var(--color-black);
     padding: 0;
     margin: 0;
 }
 
 .unity-button.btn {
-    background-color: transparent;
+    color: var(--color-black);
+    background-color: var(--color-transperent);
+    text-shadow: var(--base-text-shadow-size) var(--base-text-shadow-size) 0 var(--color-gray);
     -unity-font-definition: var(--font-common-asset);
     font-size: var(--font-size-common);
-    text-shadow: -1px -1px 0 var(--color-gray);
-    color: var(--color-black);
     padding: 0;
     margin: 0;
     border-width: 0;
@@ -258,9 +258,9 @@ TemplateContainer {
 }
 
 .unity-button.btn.btn--player > VisualElement > Label {
+    text-shadow: var(--base-text-shadow-size) var(--base-text-shadow-size) 0 var(--color-transperent);
     font-size: var(--font-palyer-btn-icon);
     opacity: var(--base-opacity-label);
-    text-shadow: -1px -1px 0 var(--color-transperent);
     width: 100%;
     height: 100%;
     position: absolute;
@@ -282,7 +282,7 @@ TemplateContainer {
 
 .player__container-buttons__btn.player__container-buttons__btn > .unity-button.btn.btn--player {
     border-color: var(--color-black);
-    border-width: 1px;
+    border-width: var(--base-border-width);
 }
 
 .player__container-buttons__btn.player__container-buttons__btn--plus > .unity-button.btn.btn--player {
@@ -337,10 +337,10 @@ TemplateContainer {
 }
 
 .player__container-counter > VisualElement > Label {
+    text-shadow: var(--base-text-shadow-size) var(--base-text-shadow-size) 0 var(--color-gray-transperent);
     width: var(--btn-square-size);
     height: var(--btn-square-size);
     font-size: var(--font-palyer-btn-icon);
-    text-shadow: -1px -1px 0 var(--color-gray-transperent);
     position: absolute;
     align-items: center;
     justify-content: center;
@@ -396,8 +396,8 @@ TemplateContainer {
 }
 
 .points__image > Label {
+    text-shadow: var(--base-text-shadow-big-size) var(--base-text-shadow-big-size) 0 var(--color-gray);
     font-size: var(--font-size-points-image);
     top: var(--points-label-top-offset);
-    text-shadow: -2px -2px 0 var(--color-gray);
     position: absolute;
 }

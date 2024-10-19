@@ -23,6 +23,9 @@
     --base-padding: 44px;
     --base-opacity: 0.025;
     --base-opacity-label: 0.8;
+    --base-border-width: 1px;
+    --base-text-shadow-size: -1px;
+    --base-text-shadow-big-size: -2px;
 }
 
 :root {
