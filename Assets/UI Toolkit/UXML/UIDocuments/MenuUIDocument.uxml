@@ -1,6 +1,7 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
     <engine:Template name="MenuView" src="project://database/Assets/UI%20Toolkit/Uxml/Templates/Resources/MenuView.uxml?fileID=9197481963319205126&amp;guid=feb1de642a411d84194268f5bc0bec79&amp;type=3#MenuView" />
     <engine:Template name="SettingsView" src="project://database/Assets/UI%20Toolkit/Uxml/Templates/Resources/SettingsView.uxml?fileID=9197481963319205126&amp;guid=3919de6ea53f34e42a46e488414672c4&amp;type=3#SettingsView" />
-    <engine:Instance template="MenuView" picking-mode="Ignore" name="menu-view" style="position: absolute; width: 100%; height: 100%;" />
-    <engine:Instance template="SettingsView" name="settings-view" picking-mode="Ignore" style="width: 100%; height: 100%; position: absolute;" />
+    <engine:VisualElement picking-mode="Ignore" class="frame frame--menu" />
+    <engine:Instance template="MenuView" picking-mode="Ignore" name="menu-view" />
+    <engine:Instance template="SettingsView" name="settings-view" picking-mode="Ignore" />
 </engine:UXML>

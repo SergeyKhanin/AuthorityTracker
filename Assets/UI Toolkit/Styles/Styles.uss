@@ -11,6 +11,22 @@ TemplateContainer {
     justify-content: center;
 }
 
+.frame {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+}
+
+.frame--menu {
+    background-image: var(--im-main-menu-frame);
+}
+
+.frame--game {
+    background-image: var(--im-game-frame);
+}
+
 .unity-label {
     -unity-font-definition: var(--font-common-asset);
     font-size: var(--font-size-common);
