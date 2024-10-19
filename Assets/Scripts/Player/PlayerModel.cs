@@ -29,6 +29,8 @@ namespace Player
                 _maxPoints = StartPoints;
                 SavePlayerData();
             }
+
+            UpdatePointsVisualState();
         }
 
         public void X1Plus() => IncrementCounterPoints(1);
@@ -46,7 +48,7 @@ namespace Player
             if (_maxPoints <= Points)
                 _maxPoints = Points;
 
-            UpdateLifeVisualState();
+            UpdatePointsVisualState();
             SavePlayerData();
             Clear();
         }
@@ -56,6 +58,7 @@ namespace Player
             Points = StartPoints;
             _maxPoints = StartPoints;
 
+            UpdatePointsVisualState();
             SavePlayerData();
         }
 
@@ -77,7 +80,7 @@ namespace Player
             UpdateCounterVisualState();
         }
 
-        private void UpdateLifeVisualState()
+        private void UpdatePointsVisualState()
         {
             if (Points <= 0)
                 PointsVisualState = PointsVisualState.Zero;
