@@ -106,6 +106,10 @@ TemplateContainer {
     justify-content: center;
 }
 
+.unity-button.btn.selected {
+    background-color: red;
+}
+
 .unity-button.btn:hover {
     background-color: var(--color-transperent);
     -unity-background-image-tint-color: var(--color-transperent);

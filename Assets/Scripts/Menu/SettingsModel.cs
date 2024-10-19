@@ -7,6 +7,7 @@ namespace Menu
     public sealed class SettingsModel
     {
         private const int PlayerAmount = (int)Players.Player2;
+        public Languages Languages { get; private set; }
 
         public SettingsModel()
         {
@@ -25,6 +26,7 @@ namespace Menu
 
         public void SetLanguage(Languages language)
         {
+            Languages = language;
             var index = (int)language;
             LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[
                 index

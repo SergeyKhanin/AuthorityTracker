@@ -6,6 +6,7 @@ namespace Menu
     public sealed class SettingsView
     {
         public VisualElement Container { get; private set; }
+        public VisualElement LangContainer { get; private set; }
         public Button EnglishLanguageButton { get; private set; }
         public Button ChineseLanguageButton { get; private set; }
         public Button HindiLanguageButton { get; private set; }
@@ -29,6 +30,7 @@ namespace Menu
         {
             var root = uiDocument.rootVisualElement.Q<VisualElement>(CommonNames.SettingsViewName);
             Container = root;
+            LangContainer = root.Q<VisualElement>("lang-container");
             EnglishLanguageButton = root.Q<Button>("english-language-button");
             ChineseLanguageButton = root.Q<Button>("chinese-language-button");
             HindiLanguageButton = root.Q<Button>("hindi-language-button");
