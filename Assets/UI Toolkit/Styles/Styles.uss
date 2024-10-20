@@ -232,11 +232,21 @@ TemplateContainer {
     background-image: var(--ic-btn-square-color-gray);
 }
 
-.unity-button.btn--square.btn--green.selected {
+.lang__container .unity-button.btn--square.btn--green {
+    -unity-background-image-tint-color: var(--color-gray);
+}
+
+.lang__container .unity-button.btn--square.btn--green > VisualElement {
+    -unity-background-image-tint-color: var(--color-gray);
+}
+
+.lang__container .unity-button.btn--square.btn--green.selected {
     background-image: var(--ic-btn-square-color-gray);
-    transition-duration: var(--base-transition-duration);
-    transition-property: background-image;
-    transition-timing-function: ease;
+    -unity-background-image-tint-color: var(--color-white);
+}
+
+.lang__container .unity-button.btn--square.btn--green.selected > VisualElement {
+    -unity-background-image-tint-color: var(--color-white);
 }
 
 .unity-button.btn.btn--rhombus {
@@ -331,14 +341,11 @@ TemplateContainer {
 
 .player__container-counter {
     padding: var(--base-padding);
-    transition-duration: var(--base-transition-duration);
-    transition-property: background-image;
     width: 100%;
     height: 100%;
     position: absolute;
     align-items: center;
     justify-content: flex-start;
-    transition-timing-function: ease;
 }
 
 .player__container-counter > VisualElement {
@@ -393,9 +400,6 @@ TemplateContainer {
 .points__image > VisualElement {
     width: 100%;
     height: 100%;
-    transition-duration: var(--base-transition-duration);
-    transition-property: background-image;
-    transition-timing-function: ease;
 }
 
 .points__image > VisualElement.points__image--full {

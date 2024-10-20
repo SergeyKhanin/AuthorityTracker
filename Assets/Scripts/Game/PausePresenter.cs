@@ -26,7 +26,11 @@ namespace Game
 
         private void OnBackButtonClicked() => EventsManager.PauseClosed.Invoke();
 
-        private void OnRestartButtonClicked() => EventsManager.PointsRestarted.Invoke();
+        private void OnRestartButtonClicked()
+        {
+            EventsManager.PointsRestarted.Invoke();
+            EventsManager.PauseClosed.Invoke();
+        }
 
         private void Hide() => _view.Container.Hide();
 

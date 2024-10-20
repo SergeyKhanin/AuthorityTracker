@@ -1,10 +1,11 @@
 :root {
-    --color-green: rgb(89, 168, 90);
+    --color-white: rgb(252, 252, 252);
     --color-black: rgb(4, 4, 4);
     --color-black-transperent: rgba(4, 4, 4, 0.99);
     --color-gray: rgb(148, 148, 148);
     --color-gray-transperent: rgba(148, 148, 148, 0.25);
     --color-transperent: rgba(0, 0, 0, 0);
+    --color-green: rgb(89, 168, 90);
 }
 
 :root {
@@ -24,7 +25,6 @@
     --base-opacity: 0.1;
     --base-opacity-label: 0.6;
     --base-border-width: 1px;
-    --base-transition-duration: 25ms;
 }
 
 :root {
