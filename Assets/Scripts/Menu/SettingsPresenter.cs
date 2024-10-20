@@ -12,119 +12,24 @@ namespace Menu
     {
         private readonly SettingsView _view;
         private readonly SettingsModel _model;
-        private List<Button> _languagesButtons = new();
+        private readonly Dictionary<Button, Languages> _languageButtons = new();
+        private readonly Dictionary<Button, Action> _languageButtonsClickHandlers = new();
 
         public SettingsPresenter(SettingsView view, SettingsModel model)
         {
             _view = view;
             _model = model;
 
+            InitializeLanguageButtons();
             Subscribe();
             SubscribeToEvents();
-            GetLanguagesButtonsList();
             UpdateLanguageButtonStates();
             Hide();
         }
 
-        private void OnEnglishLanguageButtonClicked()
-        {
-            _model.SetLanguage(Languages.English);
-            UpdateLanguageButtonStates();
-        }
-
-        private void OnChineseLanguageButtonClicked()
-        {
-            _model.SetLanguage(Languages.Chinese);
-            UpdateLanguageButtonStates();
-        }
-
-        private void OnHindiLanguageButtonClicked()
-        {
-            _model.SetLanguage(Languages.Hindi);
-            UpdateLanguageButtonStates();
-        }
-
-        private void OnSpanishLanguageButtonClicked()
-        {
-            _model.SetLanguage(Languages.Spanish);
-            UpdateLanguageButtonStates();
-        }
-
-        private void OnFrenchLanguageButtonClicked()
-        {
-            _model.SetLanguage(Languages.French);
-            UpdateLanguageButtonStates();
-        }
-
-        private void OnArabicLanguageButtonClicked()
-        {
-            _model.SetLanguage(Languages.Arabic);
-            UpdateLanguageButtonStates();
-        }
-
-        private void OnBanglaLanguageButtonClicked()
-        {
-            _model.SetLanguage(Languages.Bangla);
-            UpdateLanguageButtonStates();
-        }
-
-        private void OnPortugueseLanguageButtonClicked()
-        {
-            _model.SetLanguage(Languages.Portuguese);
-            UpdateLanguageButtonStates();
-        }
-
-        private void OnRussianLanguageButtonClicked()
-        {
-            _model.SetLanguage(Languages.Russian);
-            UpdateLanguageButtonStates();
-        }
-
-        private void OnUrduLanguageButtonClicked()
-        {
-            _model.SetLanguage(Languages.Urdu);
-            UpdateLanguageButtonStates();
-        }
-
-        private void OnIndonesianLanguageButtonClicked()
-        {
-            _model.SetLanguage(Languages.Indonesian);
-            UpdateLanguageButtonStates();
-        }
-
-        private void OnJapaneseLanguageButtonClicked()
-        {
-            _model.SetLanguage(Languages.Japanese);
-            UpdateLanguageButtonStates();
-        }
-
-        private void OnGermanLanguageButtonClicked()
-        {
-            _model.SetLanguage(Languages.German);
-            UpdateLanguageButtonStates();
-        }
-
-        private void OnTeluguLanguageButtonClicked()
-        {
-            _model.SetLanguage(Languages.Telugu);
-            UpdateLanguageButtonStates();
-        }
-
-        private void OnMarathiLanguageButtonClicked()
-        {
-            _model.SetLanguage(Languages.Marathi);
-            UpdateLanguageButtonStates();
-        }
-
-        private void OnTurkishLanguageButtonClicked()
-        {
-            _model.SetLanguage(Languages.Turkish);
-            UpdateLanguageButtonStates();
-        }
-
         private void OnBackButtonClicked() => EventsManager.SettingsClosed.Invoke();
 
-        private void OnCleatDataButtonClicked()
+        private void OnClearDataButtonClicked()
         {
             _model.ResetData();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -134,18 +39,41 @@ namespace Menu
 
         private void Show() => _view.Container.Show();
 
-        private void GetLanguagesButtonsList() =>
-            _languagesButtons = _view.LangContainer.Query<Button>().ToList();
-
         private void UpdateLanguageButtonStates()
         {
-            foreach (var button in _languagesButtons)
+            foreach (var button in _languageButtons)
             {
-                button.EnableInClassList(
+                button.Key.EnableInClassList(
                     CommonUssClassNames.UssSelectedName,
-                    button.name.Contains(_model.Languages.ToString().ToLower())
+                    button.Value == _model.Languages
                 );
             }
+        }
+
+        private void InitializeLanguageButtons()
+        {
+            _languageButtons.Add(_view.EnglishLanguageButton, Languages.English);
+            _languageButtons.Add(_view.ChineseLanguageButton, Languages.Chinese);
+            _languageButtons.Add(_view.HindiLanguageButton, Languages.Hindi);
+            _languageButtons.Add(_view.SpanishLanguageButton, Languages.Spanish);
+            _languageButtons.Add(_view.FrenchLanguageButton, Languages.French);
+            _languageButtons.Add(_view.ArabicLanguageButton, Languages.Arabic);
+            _languageButtons.Add(_view.BanglaLanguageButton, Languages.Bangla);
+            _languageButtons.Add(_view.PortugueseLanguageButton, Languages.Portuguese);
+            _languageButtons.Add(_view.RussianLanguageButton, Languages.Russian);
+            _languageButtons.Add(_view.UrduLanguageButton, Languages.Urdu);
+            _languageButtons.Add(_view.IndonesianLanguageButton, Languages.Indonesian);
+            _languageButtons.Add(_view.JapaneseLanguageButton, Languages.Japanese);
+            _languageButtons.Add(_view.GermanLanguageButton, Languages.German);
+            _languageButtons.Add(_view.TeluguLanguageButton, Languages.Telugu);
+            _languageButtons.Add(_view.MarathiLanguageButton, Languages.Marathi);
+            _languageButtons.Add(_view.TurkishLanguageButton, Languages.Turkish);
+        }
+
+        private void OnLanguageButtonClicked(Languages language)
+        {
+            _model.SetLanguage(language);
+            UpdateLanguageButtonStates();
         }
 
         private void SubscribeToEvents()
@@ -156,45 +84,29 @@ namespace Menu
 
         private void Subscribe()
         {
-            _view.EnglishLanguageButton.clicked += OnEnglishLanguageButtonClicked;
-            _view.ChineseLanguageButton.clicked += OnChineseLanguageButtonClicked;
-            _view.HindiLanguageButton.clicked += OnHindiLanguageButtonClicked;
-            _view.SpanishLanguageButton.clicked += OnSpanishLanguageButtonClicked;
-            _view.FrenchLanguageButton.clicked += OnFrenchLanguageButtonClicked;
-            _view.ArabicLanguageButton.clicked += OnArabicLanguageButtonClicked;
-            _view.BanglaLanguageButton.clicked += OnBanglaLanguageButtonClicked;
-            _view.PortugueseLanguageButton.clicked += OnPortugueseLanguageButtonClicked;
-            _view.RussianLanguageButton.clicked += OnRussianLanguageButtonClicked;
-            _view.UrduLanguageButton.clicked += OnUrduLanguageButtonClicked;
-            _view.IndonesianLanguageButton.clicked += OnIndonesianLanguageButtonClicked;
-            _view.JapaneseLanguageButton.clicked += OnJapaneseLanguageButtonClicked;
-            _view.GermanLanguageButton.clicked += OnGermanLanguageButtonClicked;
-            _view.TeluguLanguageButton.clicked += OnTeluguLanguageButtonClicked;
-            _view.MarathiLanguageButton.clicked += OnMarathiLanguageButtonClicked;
-            _view.TurkishLanguageButton.clicked += OnTurkishLanguageButtonClicked;
-            _view.CleatDataButton.clicked += OnCleatDataButtonClicked;
+            foreach (var button in _languageButtons)
+            {
+                var language = button.Value;
+                Action clickHandler = () => OnLanguageButtonClicked(language);
+                _languageButtonsClickHandlers[button.Key] = clickHandler;
+                button.Key.clicked += clickHandler;
+            }
+
+            _view.ClearDataButton.clicked += OnClearDataButtonClicked;
             _view.BackButton.clicked += OnBackButtonClicked;
         }
 
         public void Dispose()
         {
-            _view.EnglishLanguageButton.clicked -= OnEnglishLanguageButtonClicked;
-            _view.ChineseLanguageButton.clicked -= OnChineseLanguageButtonClicked;
-            _view.HindiLanguageButton.clicked -= OnHindiLanguageButtonClicked;
-            _view.SpanishLanguageButton.clicked -= OnSpanishLanguageButtonClicked;
-            _view.FrenchLanguageButton.clicked -= OnFrenchLanguageButtonClicked;
-            _view.ArabicLanguageButton.clicked -= OnArabicLanguageButtonClicked;
-            _view.BanglaLanguageButton.clicked -= OnBanglaLanguageButtonClicked;
-            _view.PortugueseLanguageButton.clicked -= OnPortugueseLanguageButtonClicked;
-            _view.RussianLanguageButton.clicked -= OnRussianLanguageButtonClicked;
-            _view.UrduLanguageButton.clicked -= OnUrduLanguageButtonClicked;
-            _view.IndonesianLanguageButton.clicked -= OnIndonesianLanguageButtonClicked;
-            _view.JapaneseLanguageButton.clicked -= OnJapaneseLanguageButtonClicked;
-            _view.GermanLanguageButton.clicked -= OnGermanLanguageButtonClicked;
-            _view.TeluguLanguageButton.clicked -= OnTeluguLanguageButtonClicked;
-            _view.MarathiLanguageButton.clicked -= OnMarathiLanguageButtonClicked;
-            _view.TurkishLanguageButton.clicked -= OnTurkishLanguageButtonClicked;
-            _view.CleatDataButton.clicked -= OnCleatDataButtonClicked;
+            foreach (var button in _languageButtons)
+            {
+                if (_languageButtonsClickHandlers.TryGetValue(button.Key, out var clickHandler))
+                {
+                    button.Key.clicked -= clickHandler;
+                }
+            }
+
+            _view.ClearDataButton.clicked -= OnClearDataButtonClicked;
             _view.BackButton.clicked -= OnBackButtonClicked;
 
             EventsManager.SettingsOpened.RemoveListener(Show);

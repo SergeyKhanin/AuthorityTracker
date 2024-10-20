@@ -23,7 +23,7 @@ namespace Menu
         public Button TeluguLanguageButton { get; private set; }
         public Button MarathiLanguageButton { get; private set; }
         public Button TurkishLanguageButton { get; private set; }
-        public Button CleatDataButton { get; private set; }
+        public Button ClearDataButton { get; private set; }
         public Button BackButton { get; private set; }
 
         public SettingsView(UIDocument uiDocument)
@@ -47,7 +47,7 @@ namespace Menu
             TeluguLanguageButton = root.Q<Button>("telugu-language-button");
             MarathiLanguageButton = root.Q<Button>("marathi-language-button");
             TurkishLanguageButton = root.Q<Button>("turkish-language-button");
-            CleatDataButton = root.Q<Button>("clear-data-button");
+            ClearDataButton = root.Q<Button>("clear-data-button");
             BackButton = root.Q<Button>("back-button");
         }
     }
