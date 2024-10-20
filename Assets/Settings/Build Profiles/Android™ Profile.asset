@@ -30,7 +30,7 @@ MonoBehaviour:
     - line: '|   AndroidProfiler: 0'
     - line: '|   AndroidFilterTouchesWhenObscured: 0'
     - line: '|   AndroidEnableSustainedPerformanceMode: 0'
-    - line: '|   defaultScreenOrientation: 2'
+    - line: '|   defaultScreenOrientation: 4'
     - line: '|   targetDevice: 2'
     - line: '|   useOnDemandResources: 0'
     - line: '|   accelerometerFrequency: 60'
@@ -196,7 +196,7 @@ MonoBehaviour:
     - line: '|     tvOS: 0'
     - line: '|   overrideDefaultApplicationIdentifier: 1'
     - line: '|   AndroidBundleVersionCode: 1'
-    - line: '|   AndroidMinSdkVersion: 23'
+    - line: '|   AndroidMinSdkVersion: 29'
     - line: '|   AndroidTargetSdkVersion: 0'
     - line: '|   AndroidPreferredInstallLocation: 1'
     - line: '|   aotOptions: '
@@ -291,9 +291,9 @@ MonoBehaviour:
     - line: '|   androidSplashScreen: {instanceID: 0}'
     - line: '|   AndroidKeystoreName: '
     - line: '|   AndroidKeyaliasName: '
-    - line: '|   AndroidEnableArmv9SecurityFeatures: 0'
+    - line: '|   AndroidEnableArmv9SecurityFeatures: 1'
     - line: '|   AndroidEnableArm64MTE: 0'
-    - line: '|   AndroidBuildApkPerCpuArchitecture: 0'
+    - line: '|   AndroidBuildApkPerCpuArchitecture: 1'
     - line: '|   AndroidTVCompatibility: 0'
     - line: '|   AndroidIsGame: 1'
     - line: '|   AndroidEnableTango: 0'
@@ -580,7 +580,7 @@ MonoBehaviour:
     - line: '|   m_BuildTargetGroupLightmapEncodingQuality:'
     - line: '|   - serializedVersion: 2'
     - line: '|     m_BuildTarget: Android'
-    - line: '|     m_EncodingQuality: 1'
+    - line: '|     m_EncodingQuality: 0'
     - line: '|   m_BuildTargetGroupLightmapSettings: []'
     - line: '|   m_BuildTargetGroupLoadStoreDebugModeSettings: []'
     - line: '|   m_BuildTargetNormalMapEncoding:'
@@ -969,7 +969,7 @@ MonoBehaviour:
     - line: '|   qnxGraphicConfPath: '
     - line: '|   apiCompatibilityLevel: 6'
     - line: '|   captureStartupLogs: {}'
-    - line: '|   activeInputHandler: 2'
+    - line: '|   activeInputHandler: 1'
     - line: '|   windowsGamepadBackendHint: 0'
     - line: '|   cloudProjectId: a7ad2872-f7b6-491a-b3cc-da7869181411'
     - line: '|   framebufferDepthMemorylessMode: 0'
@@ -1002,7 +1002,7 @@ MonoBehaviour:
         m_ExplicitArrayBoundsChecks: 0
         m_CompressionType: 3
         m_InstallInBuildFolder: 0
-        m_BuildSubtarget: 0
+        m_BuildSubtarget: 6
         m_BuildSystem: 1
         m_ExportAsGoogleAndroidProject: 0
         m_DebugSymbolLevel: 1
