@@ -2,6 +2,7 @@ using System;
 using Common;
 using Events;
 using Extensions;
+using UnityEngine;
 
 namespace Player
 {
@@ -18,7 +19,7 @@ namespace Player
             Subscribe();
             SubscribeToEvents();
             HideCounterContainer();
-            UpdatePointsLabel();
+            UpdatePointsVisualState();
         }
 
         private void OnX1PlusButtonClicked() => PlusX1();
@@ -32,38 +33,47 @@ namespace Player
         private void PlusX1()
         {
             _model.X1Plus();
-            UpdateCounterLabel();
+            UpdateCounterVisualState();
         }
 
         private void PlusX5()
         {
             _model.X5Plus();
-            UpdateCounterLabel();
+            UpdateCounterVisualState();
         }
 
         private void MinusX5()
         {
             _model.X5Minus();
-            UpdateCounterLabel();
+            UpdateCounterVisualState();
         }
 
         private void MinusX1()
         {
             _model.X1Minus();
-            UpdateCounterLabel();
+            UpdateCounterVisualState();
         }
 
-        private void UpdatePointsLabel()
+        private void UpdatePointsVisualState()
         {
             _view.PointsImage.ClearClassList();
             _view.PointsImage.AddToClassList(
                 CommonUssClassNames.UssPointsImageName
-                    + _model.PointsVisualState.ToString().ToLower()
+                    + _model.PointsImageVisualState.ToString().ToLower()
             );
+
+            _view.PointsLabel.ClearClassList();
+            _view.PointsLabel.AddToClassList(
+                CommonUssClassNames.UssPointsLabelName
+                    + _model.PointsLabelVisualState.ToString().ToLower()
+            );
+
+            Debug.Log(_model.PointsLabelVisualState);
+
             _view.PointsLabel.text = _model.Points.ToString();
         }
 
-        private void UpdateCounterLabel()
+        private void UpdateCounterVisualState()
         {
             EventsManager.CounterChanged.Invoke();
             ShowCounterContainer();
@@ -80,7 +90,7 @@ namespace Player
         private void Apply()
         {
             _model.Apply();
-            UpdatePointsLabel();
+            UpdatePointsVisualState();
             HideCounterContainer();
         }
 
@@ -94,7 +104,7 @@ namespace Player
         {
             _model.RestartPoints();
             Clear();
-            UpdatePointsLabel();
+            UpdatePointsVisualState();
         }
 
         private void ShowCounterContainer() => _view.CounterContainer.Show();

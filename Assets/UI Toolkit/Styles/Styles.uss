@@ -402,6 +402,16 @@ TemplateContainer {
     height: 100%;
 }
 
+.points__image > Label {
+    -unity-font-definition: var(--font-main-asset);
+    text-shadow: -2px -2px 0 var(--color-gray);
+    bottom: var(--points-label-bottom-offset);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -unity-text-align: middle-center;
+}
+
 .points__image > VisualElement.points__image--full {
     background-image: var(--ic-point-full-color-green);
 }
@@ -418,10 +428,10 @@ TemplateContainer {
     background-image: var(--ic-point-zero-color-black);
 }
 
-.points__image > Label {
-    text-shadow: -2px -2px 0 var(--color-gray);
-    -unity-font-definition: var(--font-main-asset);
-    font-size: var(--font-size-points-image);
-    top: var(--points-label-top-offset);
-    position: absolute;
+.points__image > Label.points__label--small {
+    font-size: var(--font-size-points-label-small);
+}
+
+.points__image > Label.points__label--big {
+    font-size: var(--font-size-points-label-big);
 }

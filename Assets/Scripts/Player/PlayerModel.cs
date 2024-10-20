@@ -8,10 +8,11 @@ namespace Player
         private const int StartPoints = 50;
         private const int CounterLimit = 99;
         private const int PointsLimitTopCap = 999;
-        private const int PointsLimitBottomCap = -99;
+        private const int PointsLimitBottomCap = 99;
         public int Points { get; private set; }
         public int Counter { get; private set; }
-        public PointsVisualState PointsVisualState { get; private set; }
+        public PointsImageVisualState PointsImageVisualState { get; private set; }
+        public PointsLabelVisualState PointsLabelVisualState { get; private set; }
         public CounterVisualState CounterVisualState { get; private set; }
         private readonly string _playerName;
         private int _maxPoints;
@@ -32,7 +33,8 @@ namespace Player
                 SavePlayerData();
             }
 
-            UpdatePointsVisualState();
+            UpdatePointsImageVisualState();
+            UpdatePointsLabelVisualState();
         }
 
         public void X1Plus() => IncrementCounterPoints(1);
@@ -49,7 +51,8 @@ namespace Player
 
             SetMaxPoints();
             ValidatePointsValue();
-            UpdatePointsVisualState();
+            UpdatePointsImageVisualState();
+            UpdatePointsLabelVisualState();
             SavePlayerData();
             Clear();
         }
@@ -59,7 +62,8 @@ namespace Player
             Points = StartPoints;
             _maxPoints = StartPoints;
 
-            UpdatePointsVisualState();
+            UpdatePointsImageVisualState();
+            UpdatePointsLabelVisualState();
             SavePlayerData();
         }
 
@@ -89,26 +93,35 @@ namespace Player
                 _maxPoints = Points;
         }
 
-        private void UpdatePointsVisualState()
+        private void UpdatePointsImageVisualState()
         {
             if (Points <= 0)
-                PointsVisualState = PointsVisualState.Zero;
+                PointsImageVisualState = PointsImageVisualState.Zero;
             else if (Points < _maxPoints / 4)
-                PointsVisualState = PointsVisualState.Quarter;
+                PointsImageVisualState = PointsImageVisualState.Quarter;
             else if (Points < _maxPoints / 2)
-                PointsVisualState = PointsVisualState.Half;
+                PointsImageVisualState = PointsImageVisualState.Half;
             else
-                PointsVisualState = PointsVisualState.Full;
+                PointsImageVisualState = PointsImageVisualState.Full;
+        }
+
+        private void UpdatePointsLabelVisualState()
+        {
+            PointsLabelVisualState = Points switch
+            {
+                < 0 or > PointsLimitBottomCap => PointsLabelVisualState.Small,
+                _ => PointsLabelVisualState.Big
+            };
         }
 
         private void UpdateCounterVisualState()
         {
-            if (Counter < 0)
-                CounterVisualState = CounterVisualState.Negative;
-            else if (Counter == 0)
-                CounterVisualState = CounterVisualState.Zero;
-            else
-                CounterVisualState = CounterVisualState.Positive;
+            CounterVisualState = Counter switch
+            {
+                < 0 => CounterVisualState.Negative,
+                0 => CounterVisualState.Zero,
+                _ => CounterVisualState.Positive
+            };
         }
 
         private void ValidateCounterValue()
@@ -126,7 +139,7 @@ namespace Player
             Points = Points switch
             {
                 > PointsLimitTopCap => PointsLimitTopCap,
-                < PointsLimitBottomCap => PointsLimitBottomCap,
+                < -PointsLimitBottomCap => -PointsLimitBottomCap,
                 _ => Points
             };
         }
