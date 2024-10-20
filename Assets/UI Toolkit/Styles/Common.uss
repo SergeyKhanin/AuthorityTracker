@@ -23,7 +23,7 @@
     --base-margin: 16px;
     --base-padding: 44px;
     --base-opacity: 0.1;
-    --base-opacity-label: 0.6;
+    --base-opacity-label: 0.8;
     --base-border-width: 1px;
 }
 
