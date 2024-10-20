@@ -35,10 +35,6 @@ TemplateContainer {
     translate: 0 50%;
 }
 
-.popup__container > VisualElement.buttons-container > .unity-button. {
-    top: var(--btn-rectangle-small-top-offcet);
-}
-
 .pause__container {
     background-color: var(--color-black-transperent);
     width: 100%;
@@ -63,6 +59,18 @@ TemplateContainer {
 
 .player-2 {
     background-color: var(--color-player-2);
+}
+
+.player-1 > .player__container > .player__container-buttons > .player__container-buttons__btn {
+    flex-direction: row-reverse;
+}
+
+.player-1 > .player__container > .player__container-buttons > .player__container-buttons__btn > .unity-button.btn.btn--player.btn--left {
+    align-items: flex-end;
+}
+
+.player-1 > .player__container > .player__container-buttons > .player__container-buttons__btn > .unity-button.btn.btn--player.btn--right {
+    align-items: flex-start;
 }
 
 .buttons-container {

@@ -14,14 +14,14 @@
 }
 
 :root {
-    --color-player-1: rgba(50, 0, 0, 0.25);
-    --color-player-2: rgba(0, 0, 50, 0.25);
+    --color-player-1: rgba(50, 0, 0, 0.15);
+    --color-player-2: rgba(0, 0, 50, 0.15);
 }
 
 :root {
     --base-margin: 16px;
     --base-padding: 44px;
-    --base-opacity: 0.01;
+    --base-opacity: 0.1;
     --base-opacity-label: 0.6;
     --base-border-width: 1px;
     --base-transition-duration: 25ms;
@@ -35,7 +35,6 @@
     --btn-rectangle-small-width: 468px;
     --btn-rectangle-height: 234px;
     --btn-rectangle-width: 938px;
-    --btn-rectangle-small-top-offcet: 16px;
 }
 
 :root {
