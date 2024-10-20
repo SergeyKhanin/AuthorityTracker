@@ -15,6 +15,10 @@ MonoBehaviour:
   m_TableCollectionName: AuthorityTracker
   m_TableCollectionNameGuidString: 77b1ef30df61eb842ba46ae79c10ee1b
   m_Entries:
+  - m_Id: 2253785495670784
+    m_Key: App.AuthorityTracker
+    m_Metadata:
+      m_Items: []
   - m_Id: 41694519296
     m_Key: Button.Apply
     m_Metadata:

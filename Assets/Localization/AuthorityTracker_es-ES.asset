@@ -58,6 +58,10 @@ MonoBehaviour:
     m_Localized: BORRAR DATOS
     m_Metadata:
       m_Items: []
+  - m_Id: 2253785495670784
+    m_Localized: Rastreador de autoridad SR
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
