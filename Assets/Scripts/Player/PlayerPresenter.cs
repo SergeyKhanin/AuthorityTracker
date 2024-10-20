@@ -2,7 +2,6 @@ using System;
 using Common;
 using Events;
 using Extensions;
-using UnityEngine;
 
 namespace Player
 {
@@ -67,8 +66,6 @@ namespace Player
                 CommonUssClassNames.UssPointsLabelName
                     + _model.PointsLabelVisualState.ToString().ToLower()
             );
-
-            Debug.Log(_model.PointsLabelVisualState);
 
             _view.PointsLabel.text = _model.Points.ToString();
         }
