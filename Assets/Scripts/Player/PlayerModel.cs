@@ -7,7 +7,8 @@ namespace Player
     {
         private const int StartPoints = 50;
         private const int CounterLimit = 99;
-        private const int PointsLimit = 999;
+        private const int PointsLimitTopCap = 999;
+        private const int PointsLimitBottomCap = -99;
         public int Points { get; private set; }
         public int Counter { get; private set; }
         public PointsVisualState PointsVisualState { get; private set; }
@@ -124,8 +125,8 @@ namespace Player
         {
             Points = Points switch
             {
-                > PointsLimit => PointsLimit,
-                < -PointsLimit => -PointsLimit,
+                > PointsLimitTopCap => PointsLimitTopCap,
+                < PointsLimitBottomCap => PointsLimitBottomCap,
                 _ => Points
             };
         }
