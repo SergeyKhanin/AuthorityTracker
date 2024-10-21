@@ -15,15 +15,15 @@
 }
 
 :root {
-    --color-player-1: rgba(50, 0, 0, 0.15);
-    --color-player-2: rgba(0, 0, 50, 0.15);
+    --color-player-1: rgba(50, 0, 0, 0.2);
+    --color-player-2: rgba(0, 0, 50, 0.2);
 }
 
 :root {
     --base-margin: 16px;
     --base-padding: 44px;
-    --base-opacity: 0.1;
-    --base-opacity-label: 0.8;
+    --base-opacity: 0.025;
+    --base-opacity-label: 0.5;
     --base-border-width: 1px;
 }
 
