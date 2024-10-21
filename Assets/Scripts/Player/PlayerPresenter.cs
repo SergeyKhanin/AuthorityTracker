@@ -17,7 +17,6 @@ namespace Player
             _model = model;
 
             ChangeButtonsToLongPress();
-            Subscribe();
             SubscribeToEvents();
             HideCounter();
             UpdatePointsVisualState();
@@ -113,12 +112,12 @@ namespace Player
         private void ChangeButtonsToLongPress()
         {
             const long delay = 500;
-            const long interval = 50;
+            const long interval = 100;
 
-            _view.X1PlusButton.clickable = new Clickable(null, delay, interval);
-            _view.X5PlusButton.clickable = new Clickable(null, delay, interval);
-            _view.X1MinusButton.clickable = new Clickable(null, delay, interval);
-            _view.X5MinusButton.clickable = new Clickable(null, delay, interval);
+            _view.X1PlusButton.clickable = new Clickable(OnX1PlusButtonClicked, delay, interval);
+            _view.X5PlusButton.clickable = new Clickable(OnX5PlusButtonClicked, delay, interval);
+            _view.X1MinusButton.clickable = new Clickable(OnX1MinusButtonClicked, delay, interval);
+            _view.X5MinusButton.clickable = new Clickable(OnX5MinusButtonClicked, delay, interval);
         }
 
         private void SubscribeToEvents()
@@ -129,21 +128,8 @@ namespace Player
             EventsManager.PauseOpened.AddListener(Clear);
         }
 
-        private void Subscribe()
-        {
-            _view.X1PlusButton.clicked += OnX1PlusButtonClicked;
-            _view.X5PlusButton.clicked += OnX5PlusButtonClicked;
-            _view.X1MinusButton.clicked += OnX1MinusButtonClicked;
-            _view.X5MinusButton.clicked += OnX5MinusButtonClicked;
-        }
-
         public void Dispose()
         {
-            _view.X1PlusButton.clicked -= OnX1PlusButtonClicked;
-            _view.X5PlusButton.clicked -= OnX5PlusButtonClicked;
-            _view.X1MinusButton.clicked -= OnX1MinusButtonClicked;
-            _view.X5MinusButton.clicked -= OnX5MinusButtonClicked;
-
             EventsManager.PointsApplied.RemoveListener(Apply);
             EventsManager.PointsCleared.RemoveListener(Clear);
             EventsManager.PointsRestarted.RemoveListener(RestartPoints);

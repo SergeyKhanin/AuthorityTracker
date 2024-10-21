@@ -303,7 +303,7 @@ TemplateContainer {
 }
 
 .player__container-buttons__btn.player__container-buttons__btn > .unity-button.btn.btn--player {
-    border-color: var(--color-black);
+    border-color: var(--color-dark-gray-transperent);
     border-width: var(--base-border-width);
 }
 
