@@ -62,6 +62,7 @@ sysinfo.txt
 *.unitypackage
 *.txt
 *.utmp
+*.idea
 
 # Crashlytics generated file
 crashlytics-build.properties
