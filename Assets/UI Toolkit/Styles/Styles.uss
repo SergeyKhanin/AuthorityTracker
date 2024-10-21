@@ -108,7 +108,7 @@ TemplateContainer {
 
 .unity-button.btn:hover {
     background-color: var(--color-transperent);
-    -unity-background-image-tint-color: var(--color-transperent);
+    -unity-background-image-tint-color: var(--color-hover);
 }
 
 .unity-button.btn:active {
