@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: AuthorityTracker_bn-IN
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: bn-IN
+  m_SharedData: {fileID: 11400000, guid: 77b1ef30df61eb842ba46ae79c10ee1b, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 41694519296
+    m_Localized: "\u0986\u09AC\u09C7\u09A6\u09A8 \u0995\u09B0\u09C1\u09A8"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 281336078336
+    m_Localized: "\u09AA\u09B0\u09BF\u09B7\u09CD\u0995\u09BE\u09B0"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19375664828416
+    m_Localized: "\u09B8\u09C7\u099F\u09BF\u0982\u09B8"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19375698382848
+    m_Localized: "\u09AA\u09BF\u099B\u09A8\u09C7"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19375698382851
+    m_Localized: "\u09B6\u09C1\u09B0\u09C1"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 60677928423424
+    m_Localized: "\u099A\u09BE\u09B2\u09BF\u09AF\u09BC\u09C7 \u09AF\u09BE\u09A8"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 279212021682176
+    m_Localized: "\u09AA\u09CD\u09B0\u09B8\u09CD\u09A5\u09BE\u09A8 \u0995\u09B0\u09C1\u09A8"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397300332486656
+    m_Localized: "\u09AA\u09C1\u09A8\u09B0\u09BE\u09AF\u09BC \u09B6\u09C1\u09B0\u09C1
+      \u0995\u09B0\u09C1\u09A8"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 803105652248576
+    m_Localized: "\u09AE\u09C7\u09A8\u09C1"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1031025063878656
+    m_Localized: "\u09A1\u09C7\u099F\u09BE \u09B8\u09BE\u09AB \u0995\u09B0\u09C1\u09A8"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2253785495670784
+    m_Localized: "\u098F\u09B8\u0986\u09B0 \u0985\u09A5\u09B0\u09BF\u099F\u09BF \u099F\u09CD\u09B0\u09CD\u09AF\u09BE\u0995\u09BE\u09B0"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

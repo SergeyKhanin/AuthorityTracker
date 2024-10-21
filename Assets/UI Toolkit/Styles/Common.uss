@@ -1,0 +1,104 @@
+:root {
+    --color-white: rgb(252, 252, 252);
+    --color-black: rgb(4, 4, 4);
+    --color-black-transperent: rgba(4, 4, 4, 0.99);
+    --color-gray: rgb(148, 148, 148);
+    --color-gray-transperent: rgba(148, 148, 148, 0.25);
+    --color-dark-gray-transperent: rgba(64, 64, 64, 0.25);
+    --color-transperent: rgba(0, 0, 0, 0);
+    --color-green: rgb(89, 168, 90);
+}
+
+:root {
+    --color-active: rgb(140, 140, 140);
+    --color-hover: rgb(160, 160, 160);
+    --color-active-plus: rgba(0, 100, 0, 0.1);
+    --color-active-minus: rgba(100, 0, 0, 0.1);
+}
+
+:root {
+    --color-player-1: rgba(25, 0, 0, 0.25);
+    --color-player-2: rgba(0, 0, 25, 0.25);
+}
+
+:root {
+    --base-margin: 16px;
+    --base-padding: 44px;
+    --base-opacity: 0.05;
+    --base-opacity-label: 0.7;
+    --base-border-width: 1px;
+}
+
+:root {
+    --btn-rhombus-size: 180px;
+    --btn-square-size: 204px;
+    --btn-square-iocn-size: 120px;
+    --btn-rectangle-small-heigh: 204px;
+    --btn-rectangle-small-width: 468px;
+    --btn-rectangle-height: 234px;
+    --btn-rectangle-width: 938px;
+}
+
+:root {
+    --points-image-size: 1024px;
+    --points-label-bottom-offset: 40px;
+}
+
+:root {
+    --font-palyer-btn-icon: 60px;
+    --font-size-common: 100px;
+    --font-size-header: 120px;
+    --font-size-points-label-small: 260px;
+    --font-size-points-label-big: 320px;
+}
+
+:root {
+    --font-common-asset: resource('FA_Common');
+    --font-main-asset: resource('FA_Main');
+}
+
+:root {
+    --im-main-menu-frame: resource('IM_Menu-frame_Color');
+    --im-game-frame: resource('IM_Game-frame_Color');
+}
+
+:root {
+    --ic-counter-positive-color-green: resource('IC_Counter-positive_Color-green');
+    --ic-counter-zero-color-gray: resource('IC_Counter-zero_Color-gray');
+    --ic-counter-negative-color-red: resource('IC_Counter-negative_Color-red');
+    --ic-point-full-color-green: resource('IC_Point-full_Color-green');
+    --ic-point-half-color-orange: resource('IC_Point-half_Color-orange');
+    --ic-point-quarter-color-red: resource('IC_Point-quarter_Color-red');
+    --ic-point-zero-color-black: resource('IC_Point-zero_Color-black');
+}
+
+:root {
+    --ic-btn-rhombus-color-green: resource('IC_Button-rhombus_Color-green');
+    --ic-btn-rhombus-color-gray: resource('IC_Button-rhombus_Color-gray');
+    --ic-btn-square-color-green: resource('IC_Button-square_Color-green');
+    --ic-btn-square-color-gray: resource('IC_Button-square_Color-gray');
+    --ic-btn-rectangle-color-red: resource('IC_Button-rectangle_Color-red');
+    --ic-btn-rectangle-color-green: resource('IC_Button-rectangle_Color-green');
+    --ic-btn-rectangle-color-gray: resource('IC_Button-rectangle_Color-gray');
+    --ic-btn-rectangle-small-color-gray: resource('IC_Button-rectangle-small_Color-gray');
+    --ic-btn-rectangle-small-color-green: resource('IC_Button-rectangle-small_Color-green');
+}
+
+:root {
+    --ic-btn-english-lang: resource('IC_English_Lang');
+    --ic-btn-chinese-lang: resource('IC_Chinese_Lang');
+    --ic-btn-hindi-lang: resource('IC_Hindi_Lang');
+    --ic-btn-spanish-lang: resource('IC_Spanish_Lang');
+    --ic-btn-french-lang: resource('IC_French_Lang');
+    --ic-btn-arabic-lang: resource('IC_Arabic_Lang');
+    --ic-btn-bangla-lang: resource('IC_Bangla_Lang');
+    --ic-btn-portuguese-lang: resource('IC_Portuguese_Lang');
+    --ic-btn-russian-lang: resource('IC_Russian_Lang');
+    --ic-btn-urdu-lang: resource('IC_Urdu_Lang');
+    --ic-btn-indonesian-lang: resource('IC_Indonesian_Lang');
+    --ic-btn-japanese-lang: resource('IC_Japanese_Lang');
+    --ic-btn-german-lang: resource('IC_German_Lang');
+    --ic-btn-telugu-lang: resource('IC_Telugu_Lang');
+    --ic-btn-marathi-lang: resource('IC_Marathi_Lang');
+    --ic-btn-turkish-lang: resource('IC_Turkish_Lang');
+}

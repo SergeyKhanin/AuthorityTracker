@@ -1,0 +1,14 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <engine:VisualElement picking-mode="Ignore" class="buttons-container">
+        <engine:Button name="apply-button" class="btn btn--rectangle-small btn--green">
+            <Bindings>
+                <UnityEngine.Localization.LocalizedString property="text" table="GUID:77b1ef30df61eb842ba46ae79c10ee1b" entry="Id(41694519296)" />
+            </Bindings>
+        </engine:Button>
+        <engine:Button name="clear-button" class="btn btn--rectangle-small btn--gray">
+            <Bindings>
+                <UnityEngine.Localization.LocalizedString property="text" table="GUID:77b1ef30df61eb842ba46ae79c10ee1b" entry="Id(281336078336)" />
+            </Bindings>
+        </engine:Button>
+    </engine:VisualElement>
+</engine:UXML>

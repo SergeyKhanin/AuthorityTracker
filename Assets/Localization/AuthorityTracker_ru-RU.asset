@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: AuthorityTracker_ru-RU
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: ru-RU
+  m_SharedData: {fileID: 11400000, guid: 77b1ef30df61eb842ba46ae79c10ee1b, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 41694519296
+    m_Localized: "\u041F\u0420\u0418\u041C\u0415\u041D\u0418\u0422\u042C"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 281336078336
+    m_Localized: "\u041E\u0427\u0418\u0421\u0422\u0418\u0422\u042C"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19375664828416
+    m_Localized: "\u041D\u0410\u0421\u0422\u0420\u041E\u0419\u041A\u0418"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19375698382848
+    m_Localized: "\u041D\u0410\u0417\u0410\u0414"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19375698382851
+    m_Localized: "\u041D\u0410\u0427\u0410\u0422\u042C"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 60677928423424
+    m_Localized: "\u041F\u0420\u041E\u0414\u041E\u041B\u0416\u0418\u0422\u042C"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 279212021682176
+    m_Localized: "\u0412\u042B\u0419\u0422\u0418"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397300332486656
+    m_Localized: "\u0420\u0415\u0421\u0422\u0410\u0420\u0422"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 803105652248576
+    m_Localized: "\u041C\u0415\u041D\u042E"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1031025063878656
+    m_Localized: "\u0423\u0414\u0410\u041B\u0418\u0422\u042C \u0414\u0410\u041D\u041D\u042B\u0415"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2253785495670784
+    m_Localized: "SR \u0422\u0440\u0435\u043A\u0435\u0440 \u043E\u0447\u043A\u043E\u0432"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
