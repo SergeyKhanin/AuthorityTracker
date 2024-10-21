@@ -26,8 +26,8 @@ MonoBehaviour:
     m_Items:
     - rid: 4063292967592132630
   m_ProjectLocaleIdentifier:
-    m_Code: en
-  m_PreloadBehavior: 1
+    m_Code: en-US
+  m_PreloadBehavior: 3
   m_InitializeSynchronously: 0
   references:
     version: 2
