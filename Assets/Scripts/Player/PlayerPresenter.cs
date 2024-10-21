@@ -2,6 +2,7 @@ using System;
 using Common;
 using Events;
 using Extensions;
+using UnityEngine.UIElements;
 
 namespace Player
 {
@@ -15,9 +16,10 @@ namespace Player
             _view = view;
             _model = model;
 
+            ChangeButtonsToLongPress();
             Subscribe();
             SubscribeToEvents();
-            HideCounterContainer();
+            HideCounter();
             UpdatePointsVisualState();
         }
 
@@ -73,7 +75,7 @@ namespace Player
         private void UpdateCounterVisualState()
         {
             EventsManager.CounterChanged.Invoke();
-            ShowCounterContainer();
+            ShowCounter();
 
             var value = Math.Abs(_model.Counter);
 
@@ -88,13 +90,13 @@ namespace Player
         {
             _model.Apply();
             UpdatePointsVisualState();
-            HideCounterContainer();
+            HideCounter();
         }
 
         private void Clear()
         {
             _model.Clear();
-            HideCounterContainer();
+            HideCounter();
         }
 
         private void RestartPoints()
@@ -104,9 +106,20 @@ namespace Player
             UpdatePointsVisualState();
         }
 
-        private void ShowCounterContainer() => _view.CounterContainer.Show();
+        private void ShowCounter() => _view.CounterContainer.Show();
 
-        private void HideCounterContainer() => _view.CounterContainer.Hide();
+        private void HideCounter() => _view.CounterContainer.Hide();
+
+        private void ChangeButtonsToLongPress()
+        {
+            const long delay = 500;
+            const long interval = 50;
+
+            _view.X1PlusButton.clickable = new Clickable(null, delay, interval);
+            _view.X5PlusButton.clickable = new Clickable(null, delay, interval);
+            _view.X1MinusButton.clickable = new Clickable(null, delay, interval);
+            _view.X5MinusButton.clickable = new Clickable(null, delay, interval);
+        }
 
         private void SubscribeToEvents()
         {
