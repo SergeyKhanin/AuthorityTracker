@@ -135,6 +135,11 @@ TemplateContainer {
     background-image: var(--ic-btn-rectangle-color-red);
 }
 
+
+.unity-button.btn--rectangle.btn--orange {
+    background-image: var(--ic-btn-rectangle-color-orange);
+}
+
 .unity-button.btn.btn--rectangle-small {
     width: var(--btn-rectangle-small-width);
     height: var(--btn-rectangle-small-heigh);
@@ -260,6 +265,10 @@ TemplateContainer {
 
 .unity-button.btn.btn--rhombus.btn--gray {
     background-image: var(--ic-btn-rhombus-color-gray);
+}
+
+.unity-button.btn.btn--rhombus.btn--orange {
+    background-image: var(--ic-btn-rhombus-color-orange);
 }
 
 .unity-button.btn.btn--player {
