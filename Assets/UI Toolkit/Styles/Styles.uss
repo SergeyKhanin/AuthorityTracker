@@ -28,11 +28,15 @@ TemplateContainer {
 }
 
 .game__container > .btn.btn--rhombus.btn--green {
-    translate: 0 -50%;
+    translate: 0 50%;
+}
+
+.game__container > .btn.btn--rhombus.btn--orange {
+    translate: 0 50%;
 }
 
 .game__container > .btn.btn--rhombus.btn--gray {
-    translate: 0 50%;
+    translate: 0 -50%;
 }
 
 .pause__container {
