@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Text;
 using Common;
 using UnityEngine;
@@ -13,13 +14,27 @@ namespace Player
         private const int PointsLimitBottomCap = 99;
         public int Points { get; private set; }
         public int Counter { get; private set; }
-        public string History { get; private set; }
+
+        public string History
+        {
+            get
+            {
+                var splitHistory = _history.Split(Environment.NewLine);
+                return string.Join(
+                    Environment.NewLine,
+                    splitHistory.Where(line => !string.IsNullOrWhiteSpace(line)).Reverse()
+                );
+            }
+            private set => _history = value;
+        }
+
         public PointsImageVisualState PointsImageVisualState { get; private set; }
         public PointsLabelVisualState PointsLabelVisualState { get; private set; }
         public CounterVisualState CounterVisualState { get; private set; }
         private readonly string _playerName;
         private readonly StringBuilder _historyBuilder;
         private int _maxPoints;
+        private string _history;
 
         public PlayerModel(string playerName)
         {

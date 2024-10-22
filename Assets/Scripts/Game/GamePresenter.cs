@@ -30,6 +30,7 @@ namespace Game
         private void ShowHistoryCloseButton()
         {
             EventsManager.HistoryOpened.Invoke();
+            EventsManager.PointsCleared.Invoke();
             _view.HistoryOpenButton.Hide();
             _view.HistoryCloseButton.Show();
         }

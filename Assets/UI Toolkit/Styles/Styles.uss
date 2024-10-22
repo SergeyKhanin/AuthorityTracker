@@ -61,15 +61,15 @@ TemplateContainer {
     background-color: var(--color-player-2);
 }
 
-.player-1 > .player__container > .player__container-buttons > .player__container-buttons__btn {
+.player-1 > .player__container__control > .player__container__control-buttons > .player__container__control-buttons__btn {
     flex-direction: row-reverse;
 }
 
-.player-1 > .player__container > .player__container-buttons > .player__container-buttons__btn > .unity-button.btn.btn--player.btn--left {
+.player-1 > .player__container__control > .player__container__control-buttons > .player__container__control-buttons__btn > .unity-button.btn.btn--player.btn--left {
     align-items: flex-end;
 }
 
-.player-1 > .player__container > .player__container-buttons > .player__container-buttons__btn > .unity-button.btn.btn--player.btn--right {
+.player-1 > .player__container__control > .player__container__control-buttons > .player__container__control-buttons__btn > .unity-button.btn.btn--player.btn--right {
     align-items: flex-start;
 }
 
@@ -306,57 +306,79 @@ TemplateContainer {
     -unity-text-align: middle-center;
 }
 
-.player__container {
+.player__container__control {
     flex-grow: 1;
 }
 
-.player__container-buttons {
+.player__container__history {
+    background-image: var(--ic-history-color-green);
+    border-color: var(--color-dark-gray-transperent);
+    border-width: var(--base-border-width);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.player__container__history > ScrollView {
+    flex-grow: 1;
+    padding: 88px 128px;
+}
+
+.player__container__history > ScrollView #history-label {
+    flex-grow: 1;
+    color: var(--color-black);
+    font-size: var(--font-size-common);
+    text-shadow: -1px -1px 0 var(--color-gray-transperent);
+    -unity-text-align: upper-center;
+}
+
+.player__container__control-buttons {
     flex-grow: 1;
 }
 
-.player__container-buttons__btn {
+.player__container__control-buttons__btn {
     flex-grow: 1;
     flex-direction: row;
 }
 
-.player__container-buttons__btn.player__container-buttons__btn > .unity-button.btn.btn--player {
+.player__container__control-buttons__btn.player__container__control-buttons__btn > .unity-button.btn.btn--player {
     border-color: var(--color-dark-gray-transperent);
     border-width: var(--base-border-width);
 }
 
-.player__container-buttons__btn.player__container-buttons__btn--plus > .unity-button.btn.btn--player {
+.player__container__control-buttons__btn.player__container__control-buttons__btn--plus > .unity-button.btn.btn--player {
     justify-content: flex-start;
 }
 
-.player__container-buttons__btn.player__container-buttons__btn--plus > .unity-button.btn.btn--player:active {
+.player__container__control-buttons__btn.player__container__control-buttons__btn--plus > .unity-button.btn.btn--player:active {
     background-color: var(--color-active-plus);
 }
 
-.player__container-buttons__btn.player__container-buttons__btn--minus > .unity-button.btn.btn--player {
+.player__container__control-buttons__btn.player__container__control-buttons__btn--minus > .unity-button.btn.btn--player {
     justify-content: flex-end;
 }
 
-.player__container-buttons__btn.player__container-buttons__btn--minus > .unity-button.btn.btn--player:active {
+.player__container__control-buttons__btn.player__container__control-buttons__btn--minus > .unity-button.btn.btn--player:active {
     background-color: var(--color-active-minus);
 }
 
-.player__container-buttons__btn > .unity-button.btn.btn--player.btn--left {
+.player__container__control-buttons__btn > .unity-button.btn.btn--player.btn--left {
     align-items: flex-start;
 }
 
-.player__container-buttons__btn > .unity-button.btn.btn--player.btn--right {
+.player__container__control-buttons__btn > .unity-button.btn.btn--player.btn--right {
     align-items: flex-end;
 }
 
-.player__container-buttons__btn.player__container-buttons__btn--plus > .unity-button.btn.btn--player > VisualElement > VisualElement {
+.player__container__control-buttons__btn.player__container__control-buttons__btn--plus > .unity-button.btn.btn--player > VisualElement > VisualElement {
     background-image: var(--ic-counter-positive-color-green);
 }
 
-.player__container-buttons__btn.player__container-buttons__btn--minus > .unity-button.btn.btn--player > VisualElement > VisualElement {
+.player__container__control-buttons__btn.player__container__control-buttons__btn--minus > .unity-button.btn.btn--player > VisualElement > VisualElement {
     background-image: var(--ic-counter-negative-color-red);
 }
 
-.player__container-counter {
+.player__container__control-counter {
     padding: var(--base-padding);
     width: 100%;
     height: 100%;
@@ -365,17 +387,17 @@ TemplateContainer {
     justify-content: flex-start;
 }
 
-.player__container-counter > VisualElement {
+.player__container__control-counter > VisualElement {
     align-items: center;
     justify-content: center;
 }
 
-.player__container-counter > VisualElement > VisualElement {
+.player__container__control-counter > VisualElement > VisualElement {
     width: var(--btn-square-size);
     height: var(--btn-square-size);
 }
 
-.player__container-counter > VisualElement > Label {
+.player__container__control-counter > VisualElement > Label {
     text-shadow: -1px -1px 0 var(--color-gray-transperent);
     -unity-font-definition: var(--font-main-asset);
     font-size: var(--font-palyer-btn-icon);
@@ -387,19 +409,19 @@ TemplateContainer {
     -unity-text-align: middle-center;
 }
 
-.player__container-counter > .zero {
+.player__container__control-counter > .zero {
     background-image: var(--ic-counter-zero-color-gray);
 }
 
-.player__container-counter > .negative > VisualElement {
+.player__container__control-counter > .negative > VisualElement {
     background-image: var(--ic-counter-negative-color-red);
 }
 
-.player__container-counter > .positive > VisualElement {
+.player__container__control-counter > .positive > VisualElement {
     background-image: var(--ic-counter-positive-color-green);
 }
 
-.player__container-image {
+.player__container__control-image {
     width: 100%;
     height: 100%;
     position: absolute;
