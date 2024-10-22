@@ -12,5 +12,7 @@ namespace Events
         public static readonly UnityEvent PauseClosed = new();
         public static readonly UnityEvent SettingsOpened = new();
         public static readonly UnityEvent SettingsClosed = new();
+        public static readonly UnityEvent HistoryOpened = new();
+        public static readonly UnityEvent HistoryClosed = new();
     }
 }
