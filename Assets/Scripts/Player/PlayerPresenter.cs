@@ -16,6 +16,7 @@ namespace Player
             _view = view;
             _model = model;
 
+            HideHistory();
             ChangeButtonsToLongPress();
             SubscribeToEvents();
             HideCounter();
@@ -109,6 +110,19 @@ namespace Player
 
         private void HideCounter() => _view.CounterContainer.Hide();
 
+        private void ShowHistory()
+        {
+            _view.PlayerContainerHistory.Show();
+            _view.PlayerContainerControl.Hide();
+            _view.HistoryLabel.text = _model.History;
+        }
+
+        private void HideHistory()
+        {
+            _view.PlayerContainerHistory.Hide();
+            _view.PlayerContainerControl.Show();
+        }
+
         private void ChangeButtonsToLongPress()
         {
             const long delay = 500;
@@ -126,6 +140,8 @@ namespace Player
             EventsManager.PointsCleared.AddListener(Clear);
             EventsManager.PointsRestarted.AddListener(RestartPoints);
             EventsManager.PauseOpened.AddListener(Clear);
+            EventsManager.HistoryOpened.AddListener(ShowHistory);
+            EventsManager.HistoryClosed.AddListener(HideHistory);
         }
 
         public void Dispose()
@@ -134,6 +150,8 @@ namespace Player
             EventsManager.PointsCleared.RemoveListener(Clear);
             EventsManager.PointsRestarted.RemoveListener(RestartPoints);
             EventsManager.PauseOpened.RemoveListener(Clear);
+            EventsManager.HistoryOpened.RemoveListener(ShowHistory);
+            EventsManager.HistoryClosed.RemoveListener(HideHistory);
         }
     }
 }

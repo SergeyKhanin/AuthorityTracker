@@ -8,7 +8,7 @@ namespace Menu
 {
     public sealed class SettingsModel
     {
-        private const int PlayerAmount = (int)Players.Player2;
+        private const int PlayerAmount = Players.PlayerAmount;
         public Languages Languages { get; private set; }
 
         private Dictionary<Languages, Locale> _locales;
@@ -47,6 +47,7 @@ namespace Menu
                 {
                     PlayerPrefs.DeleteKey(CommonNames.PlayerName + i);
                     PlayerPrefs.DeleteKey(CommonNames.MaxPointsName + CommonNames.PlayerName + i);
+                    PlayerPrefs.DeleteKey(CommonNames.HistoryName + CommonNames.PlayerName + i);
                 }
             }
         }
