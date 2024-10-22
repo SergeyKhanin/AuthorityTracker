@@ -27,16 +27,12 @@ TemplateContainer {
     justify-content: space-between;
 }
 
-.game__container > .btn.btn--rhombus.btn--green {
-    translate: 0 50%;
-}
-
-.game__container > .btn.btn--rhombus.btn--orange {
-    translate: 0 50%;
-}
-
-.game__container > .btn.btn--rhombus.btn--gray {
+.game__container > .btn.btn--on-top {
     translate: 0 -50%;
+}
+
+.game__container > .btn.btn--on-bottom {
+    translate: 0 50%;
 }
 
 .pause__container {
@@ -159,6 +155,10 @@ TemplateContainer {
     background-image: var(--ic-btn-rectangle-small-color-gray);
 }
 
+.unity-button.btn--rectangle-small.btn--orange {
+    background-image: var(--ic-btn-rectangle-small-color-orange);
+}
+
 .unity-button.btn.btn--square {
     width: var(--btn-square-size);
     height: var(--btn-square-size);
@@ -241,6 +241,10 @@ TemplateContainer {
     background-image: var(--ic-btn-square-color-gray);
 }
 
+.unity-button.btn--square.btn--orange {
+    background-image: var(--ic-btn-square-color-orange);
+}
+
 .lang__container .unity-button.btn--square.btn--green {
     -unity-background-image-tint-color: var(--color-gray);
 }
@@ -250,7 +254,7 @@ TemplateContainer {
 }
 
 .lang__container .unity-button.btn--square.btn--green.selected {
-    background-image: var(--ic-btn-square-color-gray);
+    background-image: var(--ic-btn-square-color-orange);
     -unity-background-image-tint-color: var(--color-white);
 }
 
