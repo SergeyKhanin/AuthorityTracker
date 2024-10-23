@@ -44,6 +44,7 @@
         </engine:VisualElement>
     </engine:VisualElement>
     <engine:VisualElement name="player-container-history" picking-mode="Ignore" class="player__container__history">
+        <engine:VisualElement picking-mode="Ignore" class="player__container__history-image" />
         <engine:ScrollView horizontal-scroller-visibility="Hidden">
             <engine:Label name="history-label" />
         </engine:ScrollView>

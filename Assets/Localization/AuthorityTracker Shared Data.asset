@@ -59,6 +59,10 @@ MonoBehaviour:
     m_Key: Button.Clear.Data
     m_Metadata:
       m_Items: []
+  - m_Id: 3179558717001728
+    m_Key: Placeholder.History
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

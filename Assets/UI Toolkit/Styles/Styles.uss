@@ -311,17 +311,25 @@ TemplateContainer {
 }
 
 .player__container__history {
-    background-image: var(--ic-history-color-green);
     border-color: var(--color-dark-gray-transperent);
     border-width: var(--base-border-width);
     width: 100%;
     height: 100%;
     position: absolute;
+    align-items: center;
+    justify-content: center;
+}
+
+.player__container__history-image {
+    background-image: var(--ic-history-color-green);
+    width: var(--points-image-size);
+    height: var(--points-image-size);
+    position: absolute;
 }
 
 .player__container__history > ScrollView {
     flex-grow: 1;
-    padding: 88px 128px;
+    padding: 110px 14px;
 }
 
 .player__container__history > ScrollView #history-label {
@@ -330,6 +338,31 @@ TemplateContainer {
     font-size: var(--font-size-common);
     text-shadow: -1px -1px 0 var(--color-gray-transperent);
     -unity-text-align: upper-center;
+}
+
+.player__container__history > ScrollView .unity-repeat-button {
+    border-width: 0;
+}
+
+.player__container__history > ScrollView #unity-low-button {
+    background-color: var(--color-green);
+}
+
+.player__container__history > ScrollView #unity-high-button {
+    background-color: var(--color-green);
+}
+
+.player__container__history > ScrollView #unity-dragger {
+    background-color: green;
+}
+
+.player__container__history > ScrollView #unity-tracker {
+    background-color: var(--color-green);
+    border-width: 0;
+}
+
+.player__container__history > ScrollView #unity-slider {
+    background-color: var(--color-black);
 }
 
 .player__container__control-buttons {

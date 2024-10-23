@@ -77,11 +77,12 @@ namespace Player
             Clear();
         }
 
-        public void RestartPoints()
+        public void Restart()
         {
             Points = StartPoints;
             _maxPoints = StartPoints;
-            _history = _historyBuilder.Clear().ToString();
+            _history = string.Empty;
+            _historyBuilder.Clear();
 
             UpdatePointsImageVisualState();
             UpdatePointsLabelVisualState();

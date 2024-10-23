@@ -62,6 +62,11 @@ MonoBehaviour:
     m_Localized: "SR \u092A\u094D\u0930\u093E\u0927\u093F\u0915\u0930\u0923 \u091F\u094D\u0930\u0945\u0915\u0930"
     m_Metadata:
       m_Items: []
+  - m_Id: 3179558717001728
+    m_Localized: "\u0907\u0924\u093F\u0939\u093E\u0938 \u0930\u093F\u0915\u094D\u0924
+      \u0906\u0939\u0947"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

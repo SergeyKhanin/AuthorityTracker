@@ -2,6 +2,7 @@ using System;
 using Common;
 using Events;
 using Extensions;
+using UnityEngine.Localization;
 using UnityEngine.UIElements;
 
 namespace Player
@@ -16,11 +17,11 @@ namespace Player
             _view = view;
             _model = model;
 
-            HideHistory();
             ChangeButtonsToLongPress();
             SubscribeToEvents();
+            HideHistory();
             HideCounter();
-            UpdateVisualElementAtStart();
+            UpdateVisualElement();
         }
 
         private void OnX1PlusButtonClicked() => PlusX1();
@@ -55,7 +56,7 @@ namespace Player
             UpdateCounterVisualState();
         }
 
-        private void UpdateVisualElementAtStart()
+        private void UpdateVisualElement()
         {
             UpdatePointsVisualState();
             UpdateHistoryLabel();
@@ -63,7 +64,20 @@ namespace Player
 
         private void UpdateHistoryLabel()
         {
-            _view.HistoryLabel.text = _model.History;
+            if (!string.IsNullOrEmpty(_model.History))
+            {
+                _view.HistoryLabel.text = _model.History;
+            }
+            else
+            {
+                var localizedString = new LocalizedString
+                {
+                    TableReference = "AuthorityTracker",
+                    TableEntryReference = "Placeholder.History"
+                };
+
+                _view.HistoryLabel.SetBinding("text", localizedString);
+            }
         }
 
         private void UpdatePointsVisualState()
@@ -100,7 +114,7 @@ namespace Player
         private void Apply()
         {
             _model.Apply();
-            UpdatePointsVisualState();
+            UpdateVisualElement();
             HideCounter();
         }
 
@@ -112,9 +126,9 @@ namespace Player
 
         private void RestartPoints()
         {
-            _model.RestartPoints();
+            _model.Restart();
+            UpdateVisualElement();
             Clear();
-            UpdatePointsVisualState();
         }
 
         private void ShowCounter() => _view.CounterContainer.Show();
@@ -125,7 +139,7 @@ namespace Player
         {
             _view.PlayerContainerHistory.Show();
             _view.PlayerContainerControl.Hide();
-            UpdateHistoryLabel();
+            UpdateVisualElement();
         }
 
         private void HideHistory()
