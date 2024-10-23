@@ -20,7 +20,7 @@ namespace Player
             ChangeButtonsToLongPress();
             SubscribeToEvents();
             HideCounter();
-            UpdatePointsVisualState();
+            UpdateVisualElementAtStart();
         }
 
         private void OnX1PlusButtonClicked() => PlusX1();
@@ -53,6 +53,17 @@ namespace Player
         {
             _model.X1Minus();
             UpdateCounterVisualState();
+        }
+
+        private void UpdateVisualElementAtStart()
+        {
+            UpdatePointsVisualState();
+            UpdateHistoryLabel();
+        }
+
+        private void UpdateHistoryLabel()
+        {
+            _view.HistoryLabel.text = _model.History;
         }
 
         private void UpdatePointsVisualState()
@@ -114,7 +125,7 @@ namespace Player
         {
             _view.PlayerContainerHistory.Show();
             _view.PlayerContainerControl.Hide();
-            _view.HistoryLabel.text = _model.History;
+            UpdateHistoryLabel();
         }
 
         private void HideHistory()

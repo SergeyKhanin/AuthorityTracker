@@ -15,26 +15,19 @@ namespace Player
         public int Points { get; private set; }
         public int Counter { get; private set; }
 
-        public string History
-        {
-            get
-            {
-                var splitHistory = _history.Split(Environment.NewLine);
-                return string.Join(
-                    Environment.NewLine,
-                    splitHistory.Where(line => !string.IsNullOrWhiteSpace(line)).Reverse()
-                );
-            }
-            private set => _history = value;
-        }
+        public string History =>
+            string.Join(
+                Environment.NewLine,
+                _history.Split(",").Take(_history.Split(",").Length - 1).Reverse()
+            );
 
         public PointsImageVisualState PointsImageVisualState { get; private set; }
         public PointsLabelVisualState PointsLabelVisualState { get; private set; }
         public CounterVisualState CounterVisualState { get; private set; }
         private readonly string _playerName;
         private readonly StringBuilder _historyBuilder;
-        private int _maxPoints;
         private string _history;
+        private int _maxPoints;
 
         public PlayerModel(string playerName)
         {
@@ -45,7 +38,7 @@ namespace Player
             {
                 Points = PlayerPrefs.GetInt(playerName);
                 _maxPoints = PlayerPrefs.GetInt(CommonNames.MaxPointsName + playerName);
-                History = _historyBuilder
+                _history = _historyBuilder
                     .Append(PlayerPrefs.GetString(CommonNames.HistoryName + playerName))
                     .ToString();
             }
@@ -53,7 +46,7 @@ namespace Player
             {
                 Points = StartPoints;
                 _maxPoints = StartPoints;
-                History = _historyBuilder.Clear().ToString();
+                _history = _historyBuilder.Clear().ToString();
             }
 
             UpdatePointsImageVisualState();
@@ -88,7 +81,7 @@ namespace Player
         {
             Points = StartPoints;
             _maxPoints = StartPoints;
-            History = _historyBuilder.Clear().ToString();
+            _history = _historyBuilder.Clear().ToString();
 
             UpdatePointsImageVisualState();
             UpdatePointsLabelVisualState();
@@ -153,17 +146,17 @@ namespace Player
         private void WriteHistory(int pointsCash, int counterCash)
         {
             var sing = Counter < 0 ? "-" : "+";
-            var line = $"{pointsCash}{sing}{Math.Abs(counterCash)}={Points}{Environment.NewLine}";
+            var line = $"{pointsCash}{sing}{Math.Abs(counterCash)}={Points},";
 
             _historyBuilder.Append(line);
-            History = _historyBuilder.ToString();
+            _history = _historyBuilder.ToString();
         }
 
         private void SavePlayerData()
         {
             PlayerPrefs.SetInt(_playerName, Points);
             PlayerPrefs.SetInt(CommonNames.MaxPointsName + _playerName, _maxPoints);
-            PlayerPrefs.SetString(CommonNames.HistoryName + _playerName, History);
+            PlayerPrefs.SetString(CommonNames.HistoryName + _playerName, _history);
             PlayerPrefs.Save();
         }
     }
