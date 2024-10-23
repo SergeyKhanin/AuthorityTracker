@@ -328,12 +328,12 @@ TemplateContainer {
 }
 
 .player__container__history > ScrollView {
-    flex-grow: 1;
-    padding: 110px 14px;
+    width: 780px;
+    height: 896px;
+    padding: 20px;
 }
 
 .player__container__history > ScrollView #history-label {
-    flex-grow: 1;
     color: var(--color-black);
     font-size: var(--font-size-common);
     text-shadow: -1px -1px 0 var(--color-gray-transperent);
@@ -350,14 +350,17 @@ TemplateContainer {
 
 .player__container__history > ScrollView #unity-high-button {
     background-color: var(--color-green);
+
 }
 
 .player__container__history > ScrollView #unity-dragger {
-    background-color: green;
+    background-color: var(--color-green);
+    opacity: 0.5;
 }
 
 .player__container__history > ScrollView #unity-tracker {
     background-color: var(--color-green);
+    opacity: var(--base-opacity);
     border-width: 0;
 }
 
