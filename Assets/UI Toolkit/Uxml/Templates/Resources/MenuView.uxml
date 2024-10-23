@@ -2,22 +2,22 @@
     <engine:VisualElement picking-mode="Ignore" class="buttons-container">
         <engine:Button name="start-button" class="btn btn--rectangle btn--green">
             <Bindings>
-                <UnityEngine.Localization.LocalizedString property="text" table="GUID:77b1ef30df61eb842ba46ae79c10ee1b" entry="Id(19375698382851)" />
+                <UnityEngine.Localization.LocalizedString property="text" table="AuthorityTracker" entry="Button.Start" />
             </Bindings>
         </engine:Button>
         <engine:Button name="continue-button" class="btn btn--rectangle btn--orange">
             <Bindings>
-                <UnityEngine.Localization.LocalizedString property="text" table="GUID:77b1ef30df61eb842ba46ae79c10ee1b" entry="Id(60677928423424)" />
+                <UnityEngine.Localization.LocalizedString property="text" table="AuthorityTracker" entry="Button.Continue" />
             </Bindings>
         </engine:Button>
         <engine:Button name="settings-button" class="btn btn--rectangle btn--green">
             <Bindings>
-                <UnityEngine.Localization.LocalizedString property="text" table="GUID:77b1ef30df61eb842ba46ae79c10ee1b" entry="Id(19375664828416)" />
+                <UnityEngine.Localization.LocalizedString property="text" table="AuthorityTracker" entry="Button.Settings" />
             </Bindings>
         </engine:Button>
         <engine:Button name="quit-button" class="btn btn--rectangle btn--red">
             <Bindings>
-                <UnityEngine.Localization.LocalizedString property="text" table="GUID:77b1ef30df61eb842ba46ae79c10ee1b" entry="Id(279212021682176)" />
+                <UnityEngine.Localization.LocalizedString property="text" table="AuthorityTracker" entry="Button.Quit" />
             </Bindings>
         </engine:Button>
     </engine:VisualElement>

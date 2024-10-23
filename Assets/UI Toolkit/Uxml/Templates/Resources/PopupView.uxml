@@ -2,12 +2,12 @@
     <engine:VisualElement picking-mode="Ignore" class="buttons-container">
         <engine:Button name="apply-button" class="btn btn--rectangle-small btn--orange">
             <Bindings>
-                <UnityEngine.Localization.LocalizedString property="text" table="GUID:77b1ef30df61eb842ba46ae79c10ee1b" entry="Id(41694519296)" />
+                <UnityEngine.Localization.LocalizedString property="text" table="AuthorityTracker" entry="Button.Apply" />
             </Bindings>
         </engine:Button>
         <engine:Button name="clear-button" class="btn btn--rectangle-small btn--gray">
             <Bindings>
-                <UnityEngine.Localization.LocalizedString property="text" table="GUID:77b1ef30df61eb842ba46ae79c10ee1b" entry="Id(281336078336)" />
+                <UnityEngine.Localization.LocalizedString property="text" table="AuthorityTracker" entry="Button.Clear" />
             </Bindings>
         </engine:Button>
     </engine:VisualElement>

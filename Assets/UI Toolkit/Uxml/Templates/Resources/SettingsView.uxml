@@ -2,7 +2,7 @@
     <engine:VisualElement picking-mode="Ignore" name="lang-container" class="buttons-container">
         <engine:Button name="back-button" class="btn btn--rectangle btn--gray">
             <Bindings>
-                <UnityEngine.Localization.LocalizedString property="text" table="GUID:77b1ef30df61eb842ba46ae79c10ee1b" entry="Id(19375698382848)" />
+                <UnityEngine.Localization.LocalizedString property="text" table="AuthorityTracker" entry="Button.Back" />
             </Bindings>
         </engine:Button>
         <engine:VisualElement picking-mode="Ignore" class="lang__container">
@@ -59,7 +59,7 @@
         </engine:VisualElement>
         <engine:Button name="clear-data-button" class="btn btn--rectangle btn--red">
             <Bindings>
-                <UnityEngine.Localization.LocalizedString property="text" table="GUID:77b1ef30df61eb842ba46ae79c10ee1b" entry="Id(1031025063878656)" />
+                <UnityEngine.Localization.LocalizedString property="text" table="AuthorityTracker" entry="Button.Clear.Data" />
             </Bindings>
         </engine:Button>
     </engine:VisualElement>
