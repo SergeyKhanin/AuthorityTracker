@@ -2,7 +2,6 @@ using System;
 using Common;
 using Events;
 using Extensions;
-using UnityEngine.Localization;
 using UnityEngine.UIElements;
 
 namespace Player
@@ -65,19 +64,9 @@ namespace Player
         private void UpdateHistoryLabel()
         {
             if (!string.IsNullOrEmpty(_model.History))
-            {
                 _view.HistoryLabel.text = _model.History;
-            }
             else
-            {
-                var localizedString = new LocalizedString
-                {
-                    TableReference = "AuthorityTracker",
-                    TableEntryReference = "Placeholder.History"
-                };
-
-                _view.HistoryLabel.SetBinding("text", localizedString);
-            }
+                _view.HistoryLabel.BindLocalization(LocalizationKeys.Placeholders.EmptyHistory);
         }
 
         private void UpdatePointsVisualState()

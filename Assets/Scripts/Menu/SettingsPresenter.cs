@@ -23,6 +23,7 @@ namespace Menu
             InitializeLanguageButtons();
             Subscribe();
             SubscribeToEvents();
+            BindLocalizations();
             UpdateLanguageButtonStates();
             Hide();
         }
@@ -111,6 +112,12 @@ namespace Menu
 
             EventsManager.SettingsOpened.RemoveListener(Show);
             EventsManager.SettingsClosed.RemoveListener(Hide);
+        }
+
+        private void BindLocalizations()
+        {
+            _view.BackButton.BindLocalization(LocalizationKeys.Buttons.Back);
+            _view.ClearDataButton.BindLocalization(LocalizationKeys.Buttons.ClearData);
         }
     }
 }

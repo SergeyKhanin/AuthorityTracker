@@ -58,12 +58,12 @@ MonoBehaviour:
     m_Localized: "VER\u0130LER\u0130 TEM\u0130ZLE"
     m_Metadata:
       m_Items: []
-  - m_Id: 2253785495670784
+  - m_Id: 3341615929221120
     m_Localized: SR Yetki Takibi
     m_Metadata:
       m_Items: []
-  - m_Id: 3179558717001728
-    m_Localized: "TAR\u0130H BO\u015E"
+  - m_Id: 3343850935410688
+    m_Localized: "BO\u015E"
     m_Metadata:
       m_Items: []
   references:

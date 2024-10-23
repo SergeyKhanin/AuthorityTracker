@@ -19,6 +19,7 @@ namespace Menu
 
             Subscribe();
             SubscribeToEvents();
+            BindLocalizations();
             UpdateContinueButtonVisibility();
         }
 
@@ -64,6 +65,14 @@ namespace Menu
 
             EventsManager.SettingsOpened.RemoveListener(Hide);
             EventsManager.SettingsClosed.RemoveListener(Show);
+        }
+
+        private void BindLocalizations()
+        {
+            _view.StartButton.BindLocalization(LocalizationKeys.Buttons.Start);
+            _view.SettingsButton.BindLocalization(LocalizationKeys.Buttons.Settings);
+            _view.ContinueButton.BindLocalization(LocalizationKeys.Buttons.Continue);
+            _view.QuitButton.BindLocalization(LocalizationKeys.Buttons.Quit);
         }
     }
 }

@@ -1,24 +1,8 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
     <engine:VisualElement picking-mode="Ignore" class="buttons-container">
-        <engine:Button name="start-button" class="btn btn--rectangle btn--green">
-            <Bindings>
-                <UnityEngine.Localization.LocalizedString property="text" table="AuthorityTracker" entry="Button.Start" />
-            </Bindings>
-        </engine:Button>
-        <engine:Button name="continue-button" class="btn btn--rectangle btn--orange">
-            <Bindings>
-                <UnityEngine.Localization.LocalizedString property="text" table="AuthorityTracker" entry="Button.Continue" />
-            </Bindings>
-        </engine:Button>
-        <engine:Button name="settings-button" class="btn btn--rectangle btn--green">
-            <Bindings>
-                <UnityEngine.Localization.LocalizedString property="text" table="AuthorityTracker" entry="Button.Settings" />
-            </Bindings>
-        </engine:Button>
-        <engine:Button name="quit-button" class="btn btn--rectangle btn--red">
-            <Bindings>
-                <UnityEngine.Localization.LocalizedString property="text" table="AuthorityTracker" entry="Button.Quit" />
-            </Bindings>
-        </engine:Button>
+        <engine:Button name="start-button" class="btn btn--rectangle btn--green" />
+        <engine:Button name="continue-button" class="btn btn--rectangle btn--orange" />
+        <engine:Button name="settings-button" class="btn btn--rectangle btn--green" />
+        <engine:Button name="quit-button" class="btn btn--rectangle btn--red" />
     </engine:VisualElement>
 </engine:UXML>

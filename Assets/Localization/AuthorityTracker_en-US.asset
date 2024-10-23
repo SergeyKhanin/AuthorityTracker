@@ -58,12 +58,12 @@ MonoBehaviour:
     m_Localized: CLEAR DATA
     m_Metadata:
       m_Items: []
-  - m_Id: 2253785495670784
+  - m_Id: 3341615929221120
     m_Localized: SR  Authority Tracker
     m_Metadata:
       m_Items: []
-  - m_Id: 3179558717001728
-    m_Localized: HISTORY IS EMPTY
+  - m_Id: 3343850935410688
+    m_Localized: EMPTY
     m_Metadata:
       m_Items: []
   references:

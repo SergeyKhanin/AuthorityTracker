@@ -58,12 +58,12 @@ MonoBehaviour:
     m_Localized: HAPUS DATA
     m_Metadata:
       m_Items: []
-  - m_Id: 2253785495670784
+  - m_Id: 3341615929221120
     m_Localized: Pelacak Otoritas SR
     m_Metadata:
       m_Items: []
-  - m_Id: 3179558717001728
-    m_Localized: SEJARAH KOSONG
+  - m_Id: 3343850935410688
+    m_Localized: KOSONG
     m_Metadata:
       m_Items: []
   references:

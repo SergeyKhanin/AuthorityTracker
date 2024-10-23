@@ -1,4 +1,6 @@
-﻿using UnityEngine.UIElements;
+﻿using Common;
+using UnityEngine.Localization;
+using UnityEngine.UIElements;
 
 namespace Extensions
 {
@@ -35,5 +37,23 @@ namespace Extensions
         /// </summary>
         /// <param name="element">The UI element to hide.</param>
         public static void Hide(this VisualElement element) => element.SetVisibility(false);
+
+        /// <summary>
+        /// Extension method for binding localized text to a VisualElement.
+        /// Binds a localized value from the localization table to the "text" property of a UI element.
+        /// </summary>
+        /// <param name="element">The VisualElement to which the localized text will be bound.</param>
+        /// <param name="key">The localization key that corresponds to the entry in the localization table.</param>
+        public static void BindLocalization(this VisualElement element, string key)
+        {
+            element.SetBinding(
+                "text",
+                new LocalizedString
+                {
+                    TableReference = LocalizationTables.TableReference,
+                    TableEntryReference = key
+                }
+            );
+        }
     }
 }

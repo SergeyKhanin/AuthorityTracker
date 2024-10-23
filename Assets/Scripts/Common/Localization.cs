@@ -3,25 +3,32 @@
     public static class LocalizationTables
     {
         public const string TableReference = "AuthorityTracker";
-        public const string TableEntryReference = "AuthorityTracker";
-        public const string PlaceholderHistory = "Placeholder.History";
     }
 
     public static class LocalizationKeys
     {
-        public const string AppName = "App.Name";
+        public static class Names
+        {
+            public const string App = "Name.Application";
+        }
 
-        public const string ButtonApply = "Button.Apply";
-        public const string ButtonClear = "Button.Clear";
-        public const string ButtonSettings = "Button.Settings";
-        public const string ButtonBack = "Button.Back";
-        public const string ButtonRestart = "Button.Restart";
-        public const string ButtonStart = "Button.Start";
-        public const string ButtonContinue = "Button.Continue";
-        public const string ButtonQuit = "Button.Quit";
-        public const string ButtonMenu = "Button.Menu";
-        public const string ButtonClearData = "Button.Clear.Data";
+        public static class Buttons
+        {
+            public const string Apply = "Button.Apply";
+            public const string Clear = "Button.Clear";
+            public const string Settings = "Button.Settings";
+            public const string Back = "Button.Back";
+            public const string Restart = "Button.Restart";
+            public const string Start = "Button.Start";
+            public const string Continue = "Button.Continue";
+            public const string Quit = "Button.Quit";
+            public const string Menu = "Button.Menu";
+            public const string ClearData = "Button.Clear.Data";
+        }
 
-        public const string PlaceholderHistory = "Placeholder.History";
+        public static class Placeholders
+        {
+            public const string EmptyHistory = "Placeholder.EmptyHistory";
+        }
     }
 }

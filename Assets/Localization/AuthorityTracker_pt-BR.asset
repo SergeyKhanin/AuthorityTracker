@@ -58,12 +58,12 @@ MonoBehaviour:
     m_Localized: LIMPAR DADOS
     m_Metadata:
       m_Items: []
-  - m_Id: 2253785495670784
-    m_Localized: Rastreador de Autoridade SR
+  - m_Id: 3341615929221120
+    m_Localized: Rastreador de autoridade SR
     m_Metadata:
       m_Items: []
-  - m_Id: 3179558717001728
-    m_Localized: "A HIST\xD3RIA EST\xC1 VAZIA"
+  - m_Id: 3343850935410688
+    m_Localized: VAZIO
     m_Metadata:
       m_Items: []
   references:

@@ -15,8 +15,8 @@ MonoBehaviour:
   m_TableCollectionName: AuthorityTracker
   m_TableCollectionNameGuidString: 77b1ef30df61eb842ba46ae79c10ee1b
   m_Entries:
-  - m_Id: 2253785495670784
-    m_Key: App.AuthorityTracker
+  - m_Id: 3341615929221120
+    m_Key: Name.Application
     m_Metadata:
       m_Items: []
   - m_Id: 41694519296
@@ -59,8 +59,8 @@ MonoBehaviour:
     m_Key: Button.Clear.Data
     m_Metadata:
       m_Items: []
-  - m_Id: 3179558717001728
-    m_Key: Placeholder.History
+  - m_Id: 3343850935410688
+    m_Key: Placeholder.EmptyHistory
     m_Metadata:
       m_Items: []
   m_Metadata:
