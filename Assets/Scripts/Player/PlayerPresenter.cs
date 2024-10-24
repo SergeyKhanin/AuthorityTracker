@@ -18,9 +18,10 @@ namespace Player
 
             ChangeButtonsToLongPress();
             SubscribeToEvents();
+            BindHistoryLabel();
             HideHistory();
             HideCounter();
-            UpdateVisualElement();
+            UpdatePointsVisualState();
         }
 
         private void OnX1PlusButtonClicked() => PlusX1();
@@ -62,6 +63,12 @@ namespace Player
         }
 
         private void UpdateHistoryLabel()
+        {
+            if (!string.IsNullOrEmpty(_model.History))
+                _view.HistoryLabel.text = _model.History;
+        }
+
+        private void BindHistoryLabel()
         {
             if (!string.IsNullOrEmpty(_model.History))
                 _view.HistoryLabel.text = _model.History;
