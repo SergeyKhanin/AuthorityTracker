@@ -32,7 +32,7 @@ namespace Menu
 
         private void OnClearDataButtonClicked()
         {
-            _model.ResetData();
+            _model.DeleteData();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 

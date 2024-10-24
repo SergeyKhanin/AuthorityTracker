@@ -30,7 +30,7 @@ namespace Game
         private void OnRestartButtonClicked()
         {
             EventsManager.PointsRestarted.Invoke();
-            EventsManager.PauseClosed.Invoke();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
         private void Hide() => _view.Container.Hide();

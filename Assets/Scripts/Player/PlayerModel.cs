@@ -77,16 +77,7 @@ namespace Player
             Clear();
         }
 
-        public void Restart()
-        {
-            Points = StartPoints;
-            _maxPoints = StartPoints;
-            _history = string.Empty;
-            _historyBuilder.Clear();
-
-            UpdatePointsImageVisualState();
-            UpdatePointsLabelVisualState();
-        }
+        public void Restart() => DeletePlayerData();
 
         public void Clear()
         {
@@ -159,6 +150,16 @@ namespace Player
             PlayerPrefs.SetInt(CommonNames.MaxPointsName + _playerName, _maxPoints);
             PlayerPrefs.SetString(CommonNames.HistoryName + _playerName, _history);
             PlayerPrefs.Save();
+        }
+
+        private void DeletePlayerData()
+        {
+            if (PlayerPrefs.HasKey(_playerName))
+            {
+                PlayerPrefs.DeleteKey(_playerName);
+                PlayerPrefs.DeleteKey(CommonNames.MaxPointsName + _playerName);
+                PlayerPrefs.DeleteKey(CommonNames.HistoryName + _playerName);
+            }
         }
     }
 }

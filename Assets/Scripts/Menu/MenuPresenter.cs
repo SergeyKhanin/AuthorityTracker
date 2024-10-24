@@ -25,7 +25,7 @@ namespace Menu
 
         private void OnStartButtonClicked()
         {
-            _model.ResetPlayersData();
+            _model.DeletePlayersData();
             SceneManager.LoadScene((int)Scenes.GameScene);
         }
 

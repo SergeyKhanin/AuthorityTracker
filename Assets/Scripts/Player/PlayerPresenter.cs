@@ -113,12 +113,7 @@ namespace Player
             HideCounter();
         }
 
-        private void RestartPoints()
-        {
-            _model.Restart();
-            UpdateVisualElement();
-            Clear();
-        }
+        private void RestartPoints() => _model.Restart();
 
         private void ShowCounter() => _view.CounterContainer.Show();
 

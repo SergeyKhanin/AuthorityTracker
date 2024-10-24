@@ -39,7 +39,7 @@ namespace Menu
             SaveLanguage();
         }
 
-        public void ResetPlayersData()
+        public void DeletePlayersData()
         {
             for (int i = 1; i <= PlayerAmount; i++)
             {
@@ -63,7 +63,7 @@ namespace Menu
             return false;
         }
 
-        public void ResetData() => PlayerPrefs.DeleteAll();
+        public void DeleteData() => PlayerPrefs.DeleteAll();
 
         private void InitializeLanguageLocales()
         {
