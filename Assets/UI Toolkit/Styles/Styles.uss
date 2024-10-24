@@ -61,15 +61,15 @@ TemplateContainer {
     background-color: var(--color-player-2);
 }
 
-.player-1 > .player__container__control > .player__container__control-buttons > .player__container__control-buttons__btn {
+.player-1 > .player__container-control > .player__container-control-buttons > .player__container-control-buttons-btn {
     flex-direction: row-reverse;
 }
 
-.player-1 > .player__container__control > .player__container__control-buttons > .player__container__control-buttons__btn > .unity-button.btn.btn--player.btn--left {
+.player-1 > .player__container-control > .player__container-control-buttons > .player__container-control-buttons-btn > .unity-button.btn.btn--player.btn--left {
     align-items: flex-end;
 }
 
-.player-1 > .player__container__control > .player__container__control-buttons > .player__container__control-buttons__btn > .unity-button.btn.btn--player.btn--right {
+.player-1 > .player__container-control > .player__container-control-buttons > .player__container-control-buttons-btn > .unity-button.btn.btn--player.btn--right {
     align-items: flex-start;
 }
 
@@ -306,11 +306,11 @@ TemplateContainer {
     -unity-text-align: middle-center;
 }
 
-.player__container__control {
+.player__container-control {
     flex-grow: 1;
 }
 
-.player__container__history {
+.player__container-history {
     border-color: var(--color-dark-gray-transperent);
     border-width: var(--base-border-width);
     width: 100%;
@@ -320,87 +320,87 @@ TemplateContainer {
     justify-content: center;
 }
 
-.player__container__history-image {
+.player__container-history-image {
     background-image: var(--ic-history-color-green);
     width: var(--points-history-image-size);
     height: var(--points-history-image-size);
     position: absolute;
 }
 
-.player__container__history > ScrollView {
+.player__container-history > ScrollView {
     width: var(--points-history-image-scroll-width);
     height: var(--points-history-image-scroll-heigh);
     padding: var(--points-history-image-scroll-padding);
 }
 
-.player__container__history > ScrollView .player__container__history-label {
+.player__container-history > ScrollView .player__container-history-label {
     color: var(--color-black);
     font-size: var(--font-size-common);
     text-shadow: -1px -1px 0 var(--color-gray-transperent);
     -unity-text-align: upper-center;
 }
 
-.player__container__history > ScrollView .unity-repeat-button {
+.player__container-history > ScrollView .unity-repeat-button {
     background-color: var(--color-green);
     border-width: 0;
 }
 
-.player__container__history > ScrollView .unity-base-slider__dragger {
+.player__container-history > ScrollView .unity-base-slider__dragger {
     background-color: var(--color-green);
 }
 
-.player__container__history > ScrollView .unity-base-slider__tracker {
+.player__container-history > ScrollView .unity-base-slider__tracker {
     background-color: var(--color-green-transperent);
     border-width: 0;
 }
 
-.player__container__control-buttons {
+.player__container-control-buttons {
     flex-grow: 1;
 }
 
-.player__container__control-buttons__btn {
+.player__container-control-buttons-btn {
     flex-grow: 1;
     flex-direction: row;
 }
 
-.player__container__control-buttons__btn.player__container__control-buttons__btn > .unity-button.btn.btn--player {
+.player__container-control-buttons-btn.player__container-control-buttons-btn > .unity-button.btn.btn--player {
     border-color: var(--color-dark-gray-transperent);
     border-width: var(--base-border-width);
 }
 
-.player__container__control-buttons__btn.player__container__control-buttons__btn--plus > .unity-button.btn.btn--player {
+.player__container-control-buttons-btn.btn--plus > .unity-button.btn.btn--player {
     justify-content: flex-start;
 }
 
-.player__container__control-buttons__btn.player__container__control-buttons__btn--plus > .unity-button.btn.btn--player:active {
+.player__container-control-buttons-btn.btn--plus > .unity-button.btn.btn--player:active {
     background-color: var(--color-active-plus);
 }
 
-.player__container__control-buttons__btn.player__container__control-buttons__btn--minus > .unity-button.btn.btn--player {
+.player__container-control-buttons-btn.player__container-control-buttons-btn--minus > .unity-button.btn.btn--player {
     justify-content: flex-end;
 }
 
-.player__container__control-buttons__btn.player__container__control-buttons__btn--minus > .unity-button.btn.btn--player:active {
+.player__container-control-buttons-btn.player__container-control-buttons-btn--minus > .unity-button.btn.btn--player:active {
     background-color: var(--color-active-minus);
 }
 
-.player__container__control-buttons__btn > .unity-button.btn.btn--player.btn--left {
+.player__container-control-buttons-btn > .unity-button.btn.btn--player.btn--left {
     align-items: flex-start;
 }
 
-.player__container__control-buttons__btn > .unity-button.btn.btn--player.btn--right {
+.player__container-control-buttons-btn > .unity-button.btn.btn--player.btn--right {
     align-items: flex-end;
 }
 
-.player__container__control-buttons__btn.player__container__control-buttons__btn--plus > .unity-button.btn.btn--player > VisualElement > VisualElement {
+.player__container-control-buttons-btn.btn--plus > .unity-button.btn.btn--player > VisualElement > VisualElement {
     background-image: var(--ic-counter-positive-color-green);
 }
 
-.player__container__control-buttons__btn.player__container__control-buttons__btn--minus > .unity-button.btn.btn--player > VisualElement > VisualElement {
+.player__container-control-buttons-btn.btn--minus > .unity-button.btn.btn--player > VisualElement > VisualElement {
     background-image: var(--ic-counter-negative-color-red);
 }
 
-.player__container__control-counter {
+.player__container-control-counter {
     padding: var(--base-padding);
     width: 100%;
     height: 100%;
@@ -409,17 +409,17 @@ TemplateContainer {
     justify-content: flex-start;
 }
 
-.player__container__control-counter > VisualElement {
+.player__container-control-counter > VisualElement {
     align-items: center;
     justify-content: center;
 }
 
-.player__container__control-counter > VisualElement > VisualElement {
+.player__container-control-counter > VisualElement > VisualElement {
     width: var(--btn-square-size);
     height: var(--btn-square-size);
 }
 
-.player__container__control-counter > VisualElement > Label {
+.player__container-control-counter > VisualElement > Label {
     text-shadow: -1px -1px 0 var(--color-gray-transperent);
     -unity-font-definition: var(--font-main-asset);
     font-size: var(--font-palyer-btn-icon);
@@ -431,19 +431,19 @@ TemplateContainer {
     -unity-text-align: middle-center;
 }
 
-.player__container__control-counter > .zero {
+.player__container-control-counter > .zero {
     background-image: var(--ic-counter-zero-color-gray);
 }
 
-.player__container__control-counter > .negative > VisualElement {
+.player__container-control-counter > .negative > VisualElement {
     background-image: var(--ic-counter-negative-color-red);
 }
 
-.player__container__control-counter > .positive > VisualElement {
+.player__container-control-counter > .positive > VisualElement {
     background-image: var(--ic-counter-positive-color-green);
 }
 
-.player__container__control-image {
+.player__container-control-image {
     width: 100%;
     height: 100%;
     position: absolute;
