@@ -54,16 +54,16 @@ MonoBehaviour:
     m_Localized: "MEN\xDC"
     m_Metadata:
       m_Items: []
-  - m_Id: 1031025063878656
-    m_Localized: "VER\u0130LER\u0130 TEM\u0130ZLE"
-    m_Metadata:
-      m_Items: []
   - m_Id: 3341615929221120
     m_Localized: SR Yetki Takibi
     m_Metadata:
       m_Items: []
   - m_Id: 3343850935410688
     m_Localized: "BO\u015E"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3507054147788800
+    m_Localized: "VER\u0130LER\u0130 S\u0130L"
     m_Metadata:
       m_Items: []
   references:

@@ -55,8 +55,8 @@ MonoBehaviour:
     m_Key: Button.Menu
     m_Metadata:
       m_Items: []
-  - m_Id: 1031025063878656
-    m_Key: Button.Clear.Data
+  - m_Id: 3507054147788800
+    m_Key: Button.DeleteData
     m_Metadata:
       m_Items: []
   - m_Id: 3343850935410688

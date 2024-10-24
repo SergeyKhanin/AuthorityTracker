@@ -54,16 +54,16 @@ MonoBehaviour:
     m_Localized: MENU
     m_Metadata:
       m_Items: []
-  - m_Id: 1031025063878656
-    m_Localized: LIMPAR DADOS
-    m_Metadata:
-      m_Items: []
   - m_Id: 3341615929221120
-    m_Localized: Rastreador de autoridade SR
+    m_Localized: Rastreador de Autoridade SR
     m_Metadata:
       m_Items: []
   - m_Id: 3343850935410688
     m_Localized: VAZIO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3507054147788800
+    m_Localized: EXCLUIR DADOS
     m_Metadata:
       m_Items: []
   references:

@@ -30,7 +30,7 @@ namespace Menu
 
         private void OnBackButtonClicked() => EventsManager.SettingsClosed.Invoke();
 
-        private void OnClearDataButtonClicked()
+        private void OnDeleteDataButtonClicked()
         {
             _model.DeleteData();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -93,7 +93,7 @@ namespace Menu
                 button.Key.clicked += clickHandler;
             }
 
-            _view.ClearDataButton.clicked += OnClearDataButtonClicked;
+            _view.DeleteDataButton.clicked += OnDeleteDataButtonClicked;
             _view.BackButton.clicked += OnBackButtonClicked;
         }
 
@@ -107,7 +107,7 @@ namespace Menu
                 }
             }
 
-            _view.ClearDataButton.clicked -= OnClearDataButtonClicked;
+            _view.DeleteDataButton.clicked -= OnDeleteDataButtonClicked;
             _view.BackButton.clicked -= OnBackButtonClicked;
 
             EventsManager.SettingsOpened.RemoveListener(Show);
@@ -117,7 +117,7 @@ namespace Menu
         private void BindLocalizations()
         {
             _view.BackButton.BindLocalization(LocalizationKeys.Buttons.Back);
-            _view.ClearDataButton.BindLocalization(LocalizationKeys.Buttons.ClearData);
+            _view.DeleteDataButton.BindLocalization(LocalizationKeys.Buttons.DeleteData);
         }
     }
 }

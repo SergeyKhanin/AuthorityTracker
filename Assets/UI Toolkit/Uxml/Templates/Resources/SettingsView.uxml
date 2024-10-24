@@ -53,6 +53,6 @@
                 <engine:VisualElement />
             </engine:Button>
         </engine:VisualElement>
-        <engine:Button name="clear-data-button" class="btn btn--rectangle btn--red" />
+        <engine:Button name="delete-data-button" class="btn btn--rectangle btn--red" />
     </engine:VisualElement>
 </engine:UXML>

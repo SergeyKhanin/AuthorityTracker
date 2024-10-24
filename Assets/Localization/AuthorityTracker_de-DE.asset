@@ -54,16 +54,16 @@ MonoBehaviour:
     m_Localized: SPEISEKARTE
     m_Metadata:
       m_Items: []
-  - m_Id: 1031025063878656
-    m_Localized: KLARE DATEN
-    m_Metadata:
-      m_Items: []
   - m_Id: 3341615929221120
     m_Localized: SR Authority Tracker
     m_Metadata:
       m_Items: []
   - m_Id: 3343850935410688
     m_Localized: LEER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3507054147788800
+    m_Localized: "DATEN L\xD6SCHEN"
     m_Metadata:
       m_Items: []
   references:

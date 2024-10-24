@@ -23,7 +23,7 @@
             public const string Continue = "Button.Continue";
             public const string Quit = "Button.Quit";
             public const string Menu = "Button.Menu";
-            public const string ClearData = "Button.Clear.Data";
+            public const string DeleteData = "Button.DeleteData";
         }
 
         public static class Placeholders
