@@ -14,5 +14,6 @@
         public const string MaxPointsName = "MaxPoints";
         public const string PlayerName = "Player";
         public const string LanguageName = "Language";
+        public const string HistoryName = "History";
     }
 }

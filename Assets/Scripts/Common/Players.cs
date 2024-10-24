@@ -1,9 +1,7 @@
 ﻿namespace Common
 {
-    public enum Players
+    public static class Players
     {
-        None = 0,
-        Player1 = 1,
-        Player2 = 2,
+        public const int PlayerAmount = 2;
     }
 }

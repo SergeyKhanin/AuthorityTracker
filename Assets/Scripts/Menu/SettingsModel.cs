@@ -8,7 +8,7 @@ namespace Menu
 {
     public sealed class SettingsModel
     {
-        private const int PlayerAmount = (int)Players.Player2;
+        private const int PlayerAmount = Players.PlayerAmount;
         public Languages Languages { get; private set; }
 
         private Dictionary<Languages, Locale> _locales;
@@ -39,7 +39,7 @@ namespace Menu
             SaveLanguage();
         }
 
-        public void ResetPlayersData()
+        public void DeletePlayersData()
         {
             for (int i = 1; i <= PlayerAmount; i++)
             {
@@ -47,6 +47,7 @@ namespace Menu
                 {
                     PlayerPrefs.DeleteKey(CommonNames.PlayerName + i);
                     PlayerPrefs.DeleteKey(CommonNames.MaxPointsName + CommonNames.PlayerName + i);
+                    PlayerPrefs.DeleteKey(CommonNames.HistoryName + CommonNames.PlayerName + i);
                 }
             }
         }
@@ -62,7 +63,7 @@ namespace Menu
             return false;
         }
 
-        public void ResetData() => PlayerPrefs.DeleteAll();
+        public void DeleteData() => PlayerPrefs.DeleteAll();
 
         private void InitializeLanguageLocales()
         {

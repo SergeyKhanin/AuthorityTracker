@@ -1,3 +1,6 @@
+using System;
+using System.Linq;
+using System.Text;
 using Common;
 using UnityEngine;
 
@@ -11,26 +14,39 @@ namespace Player
         private const int PointsLimitBottomCap = 99;
         public int Points { get; private set; }
         public int Counter { get; private set; }
+
+        public string History =>
+            string.Join(
+                Environment.NewLine,
+                _history.Split(",").Take(_history.Split(",").Length - 1).Reverse()
+            );
+
         public PointsImageVisualState PointsImageVisualState { get; private set; }
         public PointsLabelVisualState PointsLabelVisualState { get; private set; }
         public CounterVisualState CounterVisualState { get; private set; }
         private readonly string _playerName;
+        private readonly StringBuilder _historyBuilder;
+        private string _history;
         private int _maxPoints;
 
         public PlayerModel(string playerName)
         {
             _playerName = playerName;
+            _historyBuilder = new StringBuilder();
 
             if (PlayerPrefs.HasKey(playerName))
             {
                 Points = PlayerPrefs.GetInt(playerName);
                 _maxPoints = PlayerPrefs.GetInt(CommonNames.MaxPointsName + playerName);
+                _history = _historyBuilder
+                    .Append(PlayerPrefs.GetString(CommonNames.HistoryName + playerName))
+                    .ToString();
             }
             else
             {
                 Points = StartPoints;
                 _maxPoints = StartPoints;
-                SavePlayerData();
+                _history = _historyBuilder.Clear().ToString();
             }
 
             UpdatePointsImageVisualState();
@@ -41,31 +57,27 @@ namespace Player
 
         public void X5Plus() => IncrementCounterPoints(5);
 
-        public void X1Minus() => DecrementCounterPoints(1);
+        public void X1Minus() => DecrementCounterPoints(-1);
 
-        public void X5Minus() => DecrementCounterPoints(5);
+        public void X5Minus() => DecrementCounterPoints(-5);
 
         public void Apply()
         {
+            var pointsCash = Points;
+            var counterCash = Counter;
+
             Points += Counter;
 
             SetMaxPoints();
             ValidatePointsValue();
+            WriteHistory(pointsCash, counterCash);
             UpdatePointsImageVisualState();
             UpdatePointsLabelVisualState();
             SavePlayerData();
             Clear();
         }
 
-        public void RestartPoints()
-        {
-            Points = StartPoints;
-            _maxPoints = StartPoints;
-
-            UpdatePointsImageVisualState();
-            UpdatePointsLabelVisualState();
-            SavePlayerData();
-        }
+        public void Restart() => DeletePlayerData();
 
         public void Clear()
         {
@@ -73,19 +85,9 @@ namespace Player
             UpdateCounterVisualState();
         }
 
-        private void IncrementCounterPoints(int points)
-        {
-            Counter += points;
-            ValidateCounterValue();
-            UpdateCounterVisualState();
-        }
+        private void IncrementCounterPoints(int points) => CalculateCounterValue(points);
 
-        private void DecrementCounterPoints(int points)
-        {
-            Counter -= points;
-            ValidateCounterValue();
-            UpdateCounterVisualState();
-        }
+        private void DecrementCounterPoints(int points) => CalculateCounterValue(points);
 
         private void SetMaxPoints()
         {
@@ -124,31 +126,40 @@ namespace Player
             };
         }
 
-        private void ValidateCounterValue()
+        private void CalculateCounterValue(int points)
         {
-            Counter = Counter switch
-            {
-                > CounterLimit => CounterLimit,
-                < -CounterLimit => -CounterLimit,
-                _ => Counter
-            };
+            Counter = Mathf.Clamp(Counter + points, -CounterLimit, CounterLimit);
+            UpdateCounterVisualState();
         }
 
-        private void ValidatePointsValue()
+        private void ValidatePointsValue() =>
+            Points = Mathf.Clamp(Points, -PointsLimitBottomCap, PointsLimitTopCap);
+
+        private void WriteHistory(int pointsCash, int counterCash)
         {
-            Points = Points switch
-            {
-                > PointsLimitTopCap => PointsLimitTopCap,
-                < -PointsLimitBottomCap => -PointsLimitBottomCap,
-                _ => Points
-            };
+            var sing = Counter < 0 ? "-" : "+";
+            var line = $"{pointsCash}{sing}{Math.Abs(counterCash)}={Points},";
+
+            _historyBuilder.Append(line);
+            _history = _historyBuilder.ToString();
         }
 
         private void SavePlayerData()
         {
             PlayerPrefs.SetInt(_playerName, Points);
             PlayerPrefs.SetInt(CommonNames.MaxPointsName + _playerName, _maxPoints);
+            PlayerPrefs.SetString(CommonNames.HistoryName + _playerName, _history);
             PlayerPrefs.Save();
+        }
+
+        private void DeletePlayerData()
+        {
+            if (PlayerPrefs.HasKey(_playerName))
+            {
+                PlayerPrefs.DeleteKey(_playerName);
+                PlayerPrefs.DeleteKey(CommonNames.MaxPointsName + _playerName);
+                PlayerPrefs.DeleteKey(CommonNames.HistoryName + _playerName);
+            }
         }
     }
 }

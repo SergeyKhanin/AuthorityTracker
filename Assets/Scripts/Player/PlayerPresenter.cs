@@ -18,6 +18,8 @@ namespace Player
 
             ChangeButtonsToLongPress();
             SubscribeToEvents();
+            BindHistoryLabel();
+            HideHistory();
             HideCounter();
             UpdatePointsVisualState();
         }
@@ -54,6 +56,26 @@ namespace Player
             UpdateCounterVisualState();
         }
 
+        private void UpdateVisualElement()
+        {
+            UpdatePointsVisualState();
+            UpdateHistoryLabel();
+        }
+
+        private void UpdateHistoryLabel()
+        {
+            if (!string.IsNullOrEmpty(_model.History))
+                _view.HistoryLabel.text = _model.History;
+        }
+
+        private void BindHistoryLabel()
+        {
+            if (!string.IsNullOrEmpty(_model.History))
+                _view.HistoryLabel.text = _model.History;
+            else
+                _view.HistoryLabel.BindLocalization(LocalizationKeys.Placeholders.EmptyHistory);
+        }
+
         private void UpdatePointsVisualState()
         {
             _view.PointsImage.ClearClassList();
@@ -88,7 +110,7 @@ namespace Player
         private void Apply()
         {
             _model.Apply();
-            UpdatePointsVisualState();
+            UpdateVisualElement();
             HideCounter();
         }
 
@@ -98,21 +120,29 @@ namespace Player
             HideCounter();
         }
 
-        private void RestartPoints()
-        {
-            _model.RestartPoints();
-            Clear();
-            UpdatePointsVisualState();
-        }
+        private void RestartPoints() => _model.Restart();
 
         private void ShowCounter() => _view.CounterContainer.Show();
 
         private void HideCounter() => _view.CounterContainer.Hide();
 
+        private void ShowHistory()
+        {
+            _view.PlayerContainerHistory.Show();
+            _view.PlayerContainerControl.Hide();
+            UpdateVisualElement();
+        }
+
+        private void HideHistory()
+        {
+            _view.PlayerContainerHistory.Hide();
+            _view.PlayerContainerControl.Show();
+        }
+
         private void ChangeButtonsToLongPress()
         {
-            const long delay = 500;
-            const long interval = 100;
+            const long delay = 1000;
+            const long interval = 150;
 
             _view.X1PlusButton.clickable = new Clickable(OnX1PlusButtonClicked, delay, interval);
             _view.X5PlusButton.clickable = new Clickable(OnX5PlusButtonClicked, delay, interval);
@@ -126,6 +156,8 @@ namespace Player
             EventsManager.PointsCleared.AddListener(Clear);
             EventsManager.PointsRestarted.AddListener(RestartPoints);
             EventsManager.PauseOpened.AddListener(Clear);
+            EventsManager.HistoryOpened.AddListener(ShowHistory);
+            EventsManager.HistoryClosed.AddListener(HideHistory);
         }
 
         public void Dispose()
@@ -134,6 +166,8 @@ namespace Player
             EventsManager.PointsCleared.RemoveListener(Clear);
             EventsManager.PointsRestarted.RemoveListener(RestartPoints);
             EventsManager.PauseOpened.RemoveListener(Clear);
+            EventsManager.HistoryOpened.RemoveListener(ShowHistory);
+            EventsManager.HistoryClosed.RemoveListener(HideHistory);
         }
     }
 }

@@ -7,6 +7,7 @@
     --color-dark-gray-transperent: rgba(64, 64, 64, 0.25);
     --color-transperent: rgba(0, 0, 0, 0);
     --color-green: rgb(89, 168, 90);
+    --color-green-transperent: rgba(39, 108, 40, 0.75);
 }
 
 :root {
@@ -42,6 +43,11 @@
 :root {
     --points-image-size: 1024px;
     --points-label-bottom-offset: 40px;
+    --points-history-image-size: 1024px;
+    --points-history-image-scroll-width: 780px;
+    --points-history-image-scroll-heigh: 896px;
+    --points-history-image-scroll-padding: 20px;
+    
 }
 
 :root {
@@ -70,18 +76,23 @@
     --ic-point-half-color-orange: resource('IC_Point-half_Color-orange');
     --ic-point-quarter-color-red: resource('IC_Point-quarter_Color-red');
     --ic-point-zero-color-black: resource('IC_Point-zero_Color-black');
+    --ic-history-color-green: resource('IC_History_Color-green');
 }
 
 :root {
     --ic-btn-rhombus-color-green: resource('IC_Button-rhombus_Color-green');
     --ic-btn-rhombus-color-gray: resource('IC_Button-rhombus_Color-gray');
+    --ic-btn-rhombus-color-orange: resource('IC_Button-rhombus_Color-orange');
     --ic-btn-square-color-green: resource('IC_Button-square_Color-green');
     --ic-btn-square-color-gray: resource('IC_Button-square_Color-gray');
+    --ic-btn-square-color-orange: resource('IC_Button-square_Color-orange');
     --ic-btn-rectangle-color-red: resource('IC_Button-rectangle_Color-red');
     --ic-btn-rectangle-color-green: resource('IC_Button-rectangle_Color-green');
     --ic-btn-rectangle-color-gray: resource('IC_Button-rectangle_Color-gray');
+    --ic-btn-rectangle-color-orange: resource('IC_Button-rectangle_Color-orange');
     --ic-btn-rectangle-small-color-gray: resource('IC_Button-rectangle-small_Color-gray');
     --ic-btn-rectangle-small-color-green: resource('IC_Button-rectangle-small_Color-green');
+    --ic-btn-rectangle-small-color-orange: resource('IC_Button-rectangle-small_Color-orange');
 }
 
 :root {

@@ -18,6 +18,7 @@ namespace Game
             Hide();
             Subscribe();
             SubscribeToEvents();
+            BindLocalizations();
         }
 
         private void OnQuitButtonClicked() => Application.Quit();
@@ -29,7 +30,7 @@ namespace Game
         private void OnRestartButtonClicked()
         {
             EventsManager.PointsRestarted.Invoke();
-            EventsManager.PauseClosed.Invoke();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
         private void Hide() => _view.Container.Hide();
@@ -59,6 +60,14 @@ namespace Game
 
             EventsManager.PauseOpened.RemoveListener(Show);
             EventsManager.PauseClosed.RemoveListener(Hide);
+        }
+
+        private void BindLocalizations()
+        {
+            _view.BackButton.BindLocalization(LocalizationKeys.Buttons.Back);
+            _view.RestartButton.BindLocalization(LocalizationKeys.Buttons.Restart);
+            _view.MenuButton.BindLocalization(LocalizationKeys.Buttons.Menu);
+            _view.QuitButton.BindLocalization(LocalizationKeys.Buttons.Quit);
         }
     }
 }

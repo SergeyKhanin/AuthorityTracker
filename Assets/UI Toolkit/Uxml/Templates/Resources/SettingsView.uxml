@@ -1,10 +1,6 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
     <engine:VisualElement picking-mode="Ignore" name="lang-container" class="buttons-container">
-        <engine:Button name="back-button" class="btn btn--rectangle btn--green">
-            <Bindings>
-                <UnityEngine.Localization.LocalizedString property="text" table="GUID:77b1ef30df61eb842ba46ae79c10ee1b" entry="Id(19375698382848)" />
-            </Bindings>
-        </engine:Button>
+        <engine:Button name="back-button" class="btn btn--rectangle btn--gray" />
         <engine:VisualElement picking-mode="Ignore" class="lang__container">
             <engine:Button name="english-language-button" class="btn btn--square btn--green btn--english">
                 <engine:VisualElement picking-mode="Ignore" />
@@ -57,10 +53,6 @@
                 <engine:VisualElement />
             </engine:Button>
         </engine:VisualElement>
-        <engine:Button name="clear-data-button" class="btn btn--rectangle btn--red">
-            <Bindings>
-                <UnityEngine.Localization.LocalizedString property="text" table="GUID:77b1ef30df61eb842ba46ae79c10ee1b" entry="Id(1031025063878656)" />
-            </Bindings>
-        </engine:Button>
+        <engine:Button name="delete-data-button" class="btn btn--rectangle btn--red" />
     </engine:VisualElement>
 </engine:UXML>

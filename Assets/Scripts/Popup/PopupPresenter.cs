@@ -1,4 +1,5 @@
 ﻿using System;
+using Common;
 using Events;
 using Extensions;
 
@@ -14,6 +15,7 @@ namespace Popup
 
             Subscribe();
             SubscribeToEvents();
+            BindLocalizations();
             Hide();
         }
 
@@ -37,6 +39,7 @@ namespace Popup
         {
             EventsManager.CounterChanged.AddListener(Show);
             EventsManager.PauseOpened.AddListener(Hide);
+            EventsManager.HistoryOpened.AddListener(Hide);
         }
 
         private void Subscribe()
@@ -52,6 +55,13 @@ namespace Popup
 
             EventsManager.CounterChanged.RemoveListener(Show);
             EventsManager.PauseOpened.RemoveListener(Hide);
+            EventsManager.HistoryOpened.RemoveListener(Hide);
+        }
+
+        private void BindLocalizations()
+        {
+            _view.ApplyButton.BindLocalization(LocalizationKeys.Buttons.Apply);
+            _view.ClearButton.BindLocalization(LocalizationKeys.Buttons.Clear);
         }
     }
 }
