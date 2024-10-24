@@ -376,11 +376,11 @@ TemplateContainer {
     background-color: var(--color-active-plus);
 }
 
-.player__container-control-buttons-btn.player__container-control-buttons-btn--minus > .unity-button.btn.btn--player {
+.player__container-control-buttons-btn.btn--minus > .unity-button.btn.btn--player {
     justify-content: flex-end;
 }
 
-.player__container-control-buttons-btn.player__container-control-buttons-btn--minus > .unity-button.btn.btn--player:active {
+.player__container-control-buttons-btn.btn--minus > .unity-button.btn.btn--player:active {
     background-color: var(--color-active-minus);
 }
 
