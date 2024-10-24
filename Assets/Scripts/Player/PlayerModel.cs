@@ -138,7 +138,13 @@ namespace Player
         private void WriteHistory(int pointsCash, int counterCash)
         {
             var sing = Counter < 0 ? "-" : "+";
-            var line = $"{pointsCash}{sing}{Math.Abs(counterCash)}={Points},";
+
+            var line = Counter switch
+            {
+                < 0 => $"{Points}<color=red>({pointsCash}{sing}{Math.Abs(counterCash)})</color>,",
+                0 => $"{Points},",
+                _ => $"{Points}<color=green>({pointsCash}{sing}{Math.Abs(counterCash)})</color>,"
+            };
 
             _historyBuilder.Append(line);
             _history = _historyBuilder.ToString();

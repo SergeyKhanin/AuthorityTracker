@@ -13,4 +13,11 @@
         Big = 0,
         Small = 1,
     }
+
+    public enum CounterVisualState
+    {
+        Zero = 0,
+        Positive = 1,
+        Negative = 2,
+    }
 }
