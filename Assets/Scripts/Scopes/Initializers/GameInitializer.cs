@@ -7,10 +7,10 @@ using Popup;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace Bootstrap
+namespace Scopes.Initializers
 {
     [RequireComponent(typeof(UIDocument))]
-    public sealed class GameBootstrap : MonoBehaviour
+    public sealed class GameInitializer : MonoBehaviour
     {
         private PopupPresenter _popupPresenter;
         private GamePresenter _gamePresenter;
