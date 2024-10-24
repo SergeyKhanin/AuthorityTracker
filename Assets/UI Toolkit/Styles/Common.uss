@@ -7,6 +7,7 @@
     --color-dark-gray-transperent: rgba(64, 64, 64, 0.25);
     --color-transperent: rgba(0, 0, 0, 0);
     --color-green: rgb(89, 168, 90);
+    --color-green-transperent: rgba(39, 108, 40, 0.75);
 }
 
 :root {
@@ -42,6 +43,11 @@
 :root {
     --points-image-size: 1024px;
     --points-label-bottom-offset: 40px;
+    --points-history-image-size: 1024px;
+    --points-history-image-scroll-width: 780px;
+    --points-history-image-scroll-heigh: 896px;
+    --points-history-image-scroll-padding: 20px;
+    
 }
 
 :root {

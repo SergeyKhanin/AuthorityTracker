@@ -322,18 +322,18 @@ TemplateContainer {
 
 .player__container__history-image {
     background-image: var(--ic-history-color-green);
-    width: var(--points-image-size);
-    height: var(--points-image-size);
+    width: var(--points-history-image-size);
+    height: var(--points-history-image-size);
     position: absolute;
 }
 
 .player__container__history > ScrollView {
-    width: 780px;
-    height: 896px;
-    padding: 20px;
+    width: var(--points-history-image-scroll-width);
+    height: var(--points-history-image-scroll-heigh);
+    padding: var(--points-history-image-scroll-padding);
 }
 
-.player__container__history > ScrollView #history-label {
+.player__container__history > ScrollView .player__container__history-label {
     color: var(--color-black);
     font-size: var(--font-size-common);
     text-shadow: -1px -1px 0 var(--color-gray-transperent);
@@ -341,31 +341,17 @@ TemplateContainer {
 }
 
 .player__container__history > ScrollView .unity-repeat-button {
+    background-color: var(--color-green);
     border-width: 0;
 }
 
-.player__container__history > ScrollView #unity-low-button {
+.player__container__history > ScrollView .unity-base-slider__dragger {
     background-color: var(--color-green);
 }
 
-.player__container__history > ScrollView #unity-high-button {
-    background-color: var(--color-green);
-
-}
-
-.player__container__history > ScrollView #unity-dragger {
-    background-color: var(--color-green);
-    opacity: 0.5;
-}
-
-.player__container__history > ScrollView #unity-tracker {
-    background-color: var(--color-green);
-    opacity: var(--base-opacity);
+.player__container__history > ScrollView .unity-base-slider__tracker {
+    background-color: var(--color-green-transperent);
     border-width: 0;
-}
-
-.player__container__history > ScrollView #unity-slider {
-    background-color: var(--color-black);
 }
 
 .player__container__control-buttons {
