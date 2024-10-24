@@ -141,8 +141,8 @@ namespace Player
 
         private void ChangeButtonsToLongPress()
         {
-            const long delay = 500;
-            const long interval = 100;
+            const long delay = 1000;
+            const long interval = 150;
 
             _view.X1PlusButton.clickable = new Clickable(OnX1PlusButtonClicked, delay, interval);
             _view.X5PlusButton.clickable = new Clickable(OnX5PlusButtonClicked, delay, interval);
