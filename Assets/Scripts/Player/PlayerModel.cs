@@ -141,9 +141,10 @@ namespace Player
 
             var line = Counter switch
             {
-                < 0 => $"{Points}<color=red>({pointsCash}{sing}{Math.Abs(counterCash)})</color>,",
+                < 0
+                    => $"{Points}<color=#D73733>({pointsCash}{sing}{Math.Abs(counterCash)})</color>,",
                 0 => $"{Points},",
-                _ => $"{Points}<color=green>({pointsCash}{sing}{Math.Abs(counterCash)})</color>,"
+                _ => $"{Points}<color=#438B44>({pointsCash}{sing}{Math.Abs(counterCash)})</color>,"
             };
 
             _historyBuilder.Append(line);
