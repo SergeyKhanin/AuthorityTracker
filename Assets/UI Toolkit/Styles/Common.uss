@@ -8,6 +8,8 @@
     --color-transperent: rgba(0, 0, 0, 0);
     --color-green: rgb(89, 168, 90);
     --color-green-transperent: rgba(39, 108, 40, 0.75);
+    --color-orange: rgb(222, 149, 39);
+    --color-orange-transperent: rgba(182, 109, 19, 0.75);
 }
 
 :root {
@@ -47,7 +49,6 @@
     --points-history-image-scroll-width: 780px;
     --points-history-image-scroll-heigh: 896px;
     --points-history-image-scroll-padding: 20px;
-    
 }
 
 :root {
@@ -76,7 +77,7 @@
     --ic-point-half-color-orange: resource('IC_Point-half_Color-orange');
     --ic-point-quarter-color-red: resource('IC_Point-quarter_Color-red');
     --ic-point-zero-color-black: resource('IC_Point-zero_Color-black');
-    --ic-history-color-green: resource('IC_History_Color-green');
+    --ic-history-color-orange: resource('IC_History_Color-orange');
 }
 
 :root {
