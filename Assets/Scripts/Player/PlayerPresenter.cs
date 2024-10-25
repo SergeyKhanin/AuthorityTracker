@@ -17,7 +17,7 @@ namespace Player
             _model = model;
 
             ChangeButtonsToLongPress();
-            SubscribeToEvents();
+            Subscribe();
             BindHistoryLabel();
             HideHistory();
             HideCounter();
@@ -150,7 +150,7 @@ namespace Player
             _view.X5MinusButton.clickable = new Clickable(OnX5MinusButtonClicked, delay, interval);
         }
 
-        private void SubscribeToEvents()
+        private void Subscribe()
         {
             EventsManager.PointsApplied.AddListener(Apply);
             EventsManager.PointsCleared.AddListener(Clear);

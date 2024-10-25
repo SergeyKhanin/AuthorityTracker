@@ -13,7 +13,6 @@ namespace Game
             _view = view;
 
             Subscribe();
-            SubscribeToEvents();
             HideHistoryCloseButton();
         }
 
@@ -42,17 +41,14 @@ namespace Game
             _view.HistoryCloseButton.Hide();
         }
 
-        private void SubscribeToEvents()
-        {
-            EventsManager.PauseOpened.AddListener(Hide);
-            EventsManager.PauseClosed.AddListener(Show);
-        }
-
         private void Subscribe()
         {
             _view.PauseButton.clicked += OnPauseButtonClicked;
             _view.HistoryOpenButton.clicked += OnHistoryOpenButtonClicked;
             _view.HistoryCloseButton.clicked += OnHistoryCloseButtonClicked;
+
+            EventsManager.PauseOpened.AddListener(Hide);
+            EventsManager.PauseClosed.AddListener(Show);
         }
 
         public void Dispose()

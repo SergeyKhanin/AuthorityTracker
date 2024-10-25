@@ -22,7 +22,6 @@ namespace Menu
 
             InitializeLanguageButtons();
             Subscribe();
-            SubscribeToEvents();
             BindLocalizations();
             UpdateLanguageButtonStates();
             Hide();
@@ -77,12 +76,6 @@ namespace Menu
             UpdateLanguageButtonStates();
         }
 
-        private void SubscribeToEvents()
-        {
-            EventsManager.SettingsOpened.AddListener(Show);
-            EventsManager.SettingsClosed.AddListener(Hide);
-        }
-
         private void Subscribe()
         {
             foreach (var button in _languageButtons)
@@ -95,6 +88,9 @@ namespace Menu
 
             _view.DeleteDataButton.clicked += OnDeleteDataButtonClicked;
             _view.BackButton.clicked += OnBackButtonClicked;
+
+            EventsManager.SettingsOpened.AddListener(Show);
+            EventsManager.SettingsClosed.AddListener(Hide);
         }
 
         public void Dispose()

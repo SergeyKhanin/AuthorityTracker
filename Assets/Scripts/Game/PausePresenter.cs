@@ -17,7 +17,6 @@ namespace Game
 
             Hide();
             Subscribe();
-            SubscribeToEvents();
             BindLocalizations();
         }
 
@@ -37,18 +36,15 @@ namespace Game
 
         private void Show() => _view.Container.Show();
 
-        private void SubscribeToEvents()
-        {
-            EventsManager.PauseOpened.AddListener(Show);
-            EventsManager.PauseClosed.AddListener(Hide);
-        }
-
         private void Subscribe()
         {
             _view.BackButton.clicked += OnBackButtonClicked;
             _view.RestartButton.clicked += OnRestartButtonClicked;
             _view.MenuButton.clicked += OnMenuButtonClicked;
             _view.QuitButton.clicked += OnQuitButtonClicked;
+
+            EventsManager.PauseOpened.AddListener(Show);
+            EventsManager.PauseClosed.AddListener(Hide);
         }
 
         public void Dispose()

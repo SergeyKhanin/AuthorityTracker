@@ -14,7 +14,6 @@ namespace Popup
             _view = view;
 
             Subscribe();
-            SubscribeToEvents();
             BindLocalizations();
             Hide();
         }
@@ -35,17 +34,14 @@ namespace Popup
 
         private void Hide() => _view.Container.Hide();
 
-        private void SubscribeToEvents()
-        {
-            EventsManager.CounterChanged.AddListener(Show);
-            EventsManager.PauseOpened.AddListener(Hide);
-            EventsManager.HistoryOpened.AddListener(Hide);
-        }
-
         private void Subscribe()
         {
             _view.ApplyButton.clicked += ApplyButtonOnClicked;
             _view.ClearButton.clicked += ClearButtonOnClicked;
+
+            EventsManager.CounterChanged.AddListener(Show);
+            EventsManager.PauseOpened.AddListener(Hide);
+            EventsManager.HistoryOpened.AddListener(Hide);
         }
 
         public void Dispose()
