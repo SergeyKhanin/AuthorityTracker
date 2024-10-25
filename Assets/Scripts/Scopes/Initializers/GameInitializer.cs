@@ -23,20 +23,26 @@ namespace Scopes.Initializers
         [Inject]
         public GameInitializer(UIDocument uiDocument) => _uiDocument = uiDocument;
 
-        public void Start() => CreateElements(_uiDocument);
-
-        private void CreateElements(UIDocument uiDocument)
+        public void Start()
         {
-            _popupPresenter = new PopupPresenter(new PopupView(uiDocument));
-            _gamePresenter = new GamePresenter(new GameView(uiDocument));
-            _pausePresenter = new PausePresenter(new PauseView(uiDocument));
+            CreateElements();
+            KeepScreenAwake();
+        }
+
+        private void KeepScreenAwake() => Screen.sleepTimeout = SleepTimeout.NeverSleep;
+
+        private void CreateElements()
+        {
+            _popupPresenter = new PopupPresenter(new PopupView(_uiDocument));
+            _gamePresenter = new GamePresenter(new GameView(_uiDocument));
+            _pausePresenter = new PausePresenter(new PauseView(_uiDocument));
 
             CreatePlayers();
             return;
 
             void CreatePlayers()
             {
-                var root = uiDocument.rootVisualElement.Q<VisualElement>(
+                var root = _uiDocument.rootVisualElement.Q<VisualElement>(
                     CommonNames.ContentContainer
                 );
                 var playerTemplate = Resources.Load<VisualTreeAsset>(
@@ -56,7 +62,7 @@ namespace Scopes.Initializers
                     root.Add(template);
 
                     var playerPresenter = new PlayerPresenter(
-                        new PlayerView(uiDocument, templateName),
+                        new PlayerView(_uiDocument, templateName),
                         new PlayerModel(playerName)
                     );
 

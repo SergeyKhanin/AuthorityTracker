@@ -1,5 +1,6 @@
 using System;
 using Menu;
+using UnityEngine;
 using UnityEngine.UIElements;
 using VContainer;
 using VContainer.Unity;
@@ -20,13 +21,19 @@ namespace Scopes.Initializers
             _model = model;
         }
 
+        public void Start()
+        {
+            CreateElements();
+            AllowScreenSleep();
+        }
+
+        private void AllowScreenSleep() => Screen.sleepTimeout = SleepTimeout.SystemSetting;
+
         private void CreateElements()
         {
             _menuPresenter = new MenuPresenter(new MenuView(_uiDocument), _model);
             _settingsPresenter = new SettingsPresenter(new SettingsView(_uiDocument), _model);
         }
-
-        public void Start() => CreateElements();
 
         public void Dispose()
         {
