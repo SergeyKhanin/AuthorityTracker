@@ -26,8 +26,8 @@ namespace Scopes.Initializers
 
         public void Dispose()
         {
-            _menuPresenter?.Dispose();
-            _settingsPresenter?.Dispose();
+            _menuPresenter.Dispose();
+            _settingsPresenter.Dispose();
         }
     }
 }
