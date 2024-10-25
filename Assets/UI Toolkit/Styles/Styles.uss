@@ -321,7 +321,7 @@ TemplateContainer {
 }
 
 .player__container-history-image {
-    background-image: var(--ic-history-color-green);
+    background-image: var(--ic-history-color-orange);
     width: var(--points-history-image-size);
     height: var(--points-history-image-size);
     position: absolute;
