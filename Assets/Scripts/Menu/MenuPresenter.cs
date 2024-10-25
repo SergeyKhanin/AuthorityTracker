@@ -18,7 +18,6 @@ namespace Menu
             _model = model;
 
             Subscribe();
-            SubscribeToEvents();
             BindLocalizations();
             UpdateContinueButtonVisibility();
         }
@@ -42,18 +41,15 @@ namespace Menu
         private void UpdateContinueButtonVisibility() =>
             _view.ContinueButton.SetVisibility(_model.HasPlayersData());
 
-        private void SubscribeToEvents()
-        {
-            EventsManager.SettingsOpened.AddListener(Hide);
-            EventsManager.SettingsClosed.AddListener(Show);
-        }
-
         private void Subscribe()
         {
             _view.StartButton.clicked += OnStartButtonClicked;
             _view.SettingsButton.clicked += OnSettingButtonClicked;
             _view.ContinueButton.clicked += OnContinueButtonClicked;
             _view.QuitButton.clicked += OnQuitButtonClicked;
+
+            EventsManager.SettingsOpened.AddListener(Hide);
+            EventsManager.SettingsClosed.AddListener(Show);
         }
 
         public void Dispose()
