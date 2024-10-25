@@ -321,7 +321,7 @@ TemplateContainer {
 }
 
 .player__container-history-image {
-    background-image: var(--ic-history-color-green);
+    background-image: var(--ic-history-color-orange);
     width: var(--points-history-image-size);
     height: var(--points-history-image-size);
     position: absolute;
@@ -341,16 +341,16 @@ TemplateContainer {
 }
 
 .player__container-history > ScrollView .unity-repeat-button {
-    background-color: var(--color-green);
+    background-color: var(--color-orange);
     border-width: 0;
 }
 
 .player__container-history > ScrollView .unity-base-slider__dragger {
-    background-color: var(--color-green);
+    background-color: var(--color-orange);
 }
 
 .player__container-history > ScrollView .unity-base-slider__tracker {
-    background-color: var(--color-green-transperent);
+    background-color: var(--color-orange-transperent);
     border-width: 0;
 }
 
