@@ -1,3 +1,4 @@
+using Menu;
 using Scopes.Initializers;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -14,6 +15,7 @@ namespace Scopes
         protected override void Configure(IContainerBuilder builder)
         {
             builder.RegisterComponent(uiDocument);
+            builder.Register<SettingsModel>(Lifetime.Singleton);
             builder.Register<MenuInitializer>(Lifetime.Singleton).As<IStartable>();
         }
     }

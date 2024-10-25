@@ -11,18 +11,22 @@ namespace Scopes.Initializers
         private MenuPresenter _menuPresenter;
         private SettingsPresenter _settingsPresenter;
         private readonly UIDocument _uiDocument;
+        private readonly SettingsModel _model;
 
         [Inject]
-        public MenuInitializer(UIDocument uiDocument) => _uiDocument = uiDocument;
-
-        private void CreateElements(UIDocument uiDocument)
+        public MenuInitializer(UIDocument uiDocument, SettingsModel model)
         {
-            var model = new SettingsModel();
-            _menuPresenter = new MenuPresenter(new MenuView(uiDocument), model);
-            _settingsPresenter = new SettingsPresenter(new SettingsView(uiDocument), model);
+            _uiDocument = uiDocument;
+            _model = model;
         }
 
-        public void Start() => CreateElements(_uiDocument);
+        private void CreateElements()
+        {
+            _menuPresenter = new MenuPresenter(new MenuView(_uiDocument), _model);
+            _settingsPresenter = new SettingsPresenter(new SettingsView(_uiDocument), _model);
+        }
+
+        public void Start() => CreateElements();
 
         public void Dispose()
         {
