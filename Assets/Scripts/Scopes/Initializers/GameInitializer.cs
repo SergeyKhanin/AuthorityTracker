@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Common;
 using Game;
@@ -6,20 +7,23 @@ using Player;
 using Popup;
 using UnityEngine;
 using UnityEngine.UIElements;
+using VContainer;
+using VContainer.Unity;
 
 namespace Scopes.Initializers
 {
-    [RequireComponent(typeof(UIDocument))]
-    public sealed class GameInitializer : MonoBehaviour
+    public sealed class GameInitializer : IStartable, IDisposable
     {
         private PopupPresenter _popupPresenter;
         private GamePresenter _gamePresenter;
         private PausePresenter _pausePresenter;
         private readonly List<PlayerPresenter> _playerPresenters = new();
+        private readonly UIDocument _uiDocument;
 
-        private void Start() => CreateElements(GetUiDocument());
+        [Inject]
+        public GameInitializer(UIDocument uiDocument) => _uiDocument = uiDocument;
 
-        private UIDocument GetUiDocument() => GetComponent<UIDocument>();
+        public void Start() => CreateElements(_uiDocument);
 
         private void CreateElements(UIDocument uiDocument)
         {
@@ -28,38 +32,40 @@ namespace Scopes.Initializers
             _pausePresenter = new PausePresenter(new PauseView(uiDocument));
 
             CreatePlayers();
-        }
+            return;
 
-        private void CreatePlayers()
-        {
-            var root = GetUiDocument()
-                .rootVisualElement.Q<VisualElement>(CommonNames.ContentContainer);
-            var playerTemplate = Resources.Load<VisualTreeAsset>(
-                CommonTemplatePath.PlayerTemplatePath
-            );
-            var playersAmount = new SettingsModel().GetPlayersAmount();
-
-            for (int i = 1; i <= playersAmount; i++)
+            void CreatePlayers()
             {
-                var templateName = CommonNames.PlayerViewName + i;
-                var playerName = CommonNames.PlayerName + i;
-                var playerClassName = CommonNames.PlayerName.ToLower() + "-" + i;
-                var template = playerTemplate.Instantiate();
-
-                template.name = templateName;
-                template.AddToClassList(playerClassName);
-                root.Add(template);
-
-                var playerPresenter = new PlayerPresenter(
-                    new PlayerView(GetUiDocument(), templateName),
-                    new PlayerModel(playerName)
+                var root = uiDocument.rootVisualElement.Q<VisualElement>(
+                    CommonNames.ContentContainer
                 );
+                var playerTemplate = Resources.Load<VisualTreeAsset>(
+                    CommonTemplatePath.PlayerTemplatePath
+                );
+                var playersAmount = new SettingsModel().GetPlayersAmount();
 
-                _playerPresenters.Add(playerPresenter);
+                for (int i = 1; i <= playersAmount; i++)
+                {
+                    var templateName = CommonNames.PlayerViewName + i;
+                    var playerName = CommonNames.PlayerName + i;
+                    var playerClassName = CommonNames.PlayerName.ToLower() + "-" + i;
+                    var template = playerTemplate.Instantiate();
+
+                    template.name = templateName;
+                    template.AddToClassList(playerClassName);
+                    root.Add(template);
+
+                    var playerPresenter = new PlayerPresenter(
+                        new PlayerView(uiDocument, templateName),
+                        new PlayerModel(playerName)
+                    );
+
+                    _playerPresenters.Add(playerPresenter);
+                }
             }
         }
 
-        private void OnDestroy()
+        public void Dispose()
         {
             _popupPresenter?.Dispose();
             _gamePresenter?.Dispose();

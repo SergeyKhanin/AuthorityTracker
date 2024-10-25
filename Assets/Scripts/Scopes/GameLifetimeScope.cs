@@ -1,3 +1,4 @@
+using Scopes.Initializers;
 using UnityEngine;
 using UnityEngine.UIElements;
 using VContainer;
@@ -13,6 +14,7 @@ namespace Scopes
         protected override void Configure(IContainerBuilder builder)
         {
             builder.RegisterComponent(uiDocument);
+            builder.Register<GameInitializer>(Lifetime.Singleton).As<IStartable>();
         }
     }
 }
