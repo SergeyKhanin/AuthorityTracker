@@ -1,4 +1,6 @@
-﻿namespace Menu
+﻿using Extensions;
+
+namespace Menu
 {
     public sealed class SplashPresenter
     {
@@ -7,6 +9,7 @@
         public SplashPresenter(SplashView view)
         {
             _view = view;
+            _view.Container.Hide();
         }
     }
 }

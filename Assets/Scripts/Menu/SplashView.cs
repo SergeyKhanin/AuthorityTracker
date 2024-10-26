@@ -9,7 +9,7 @@ namespace Menu
 
         public SplashView(UIDocument uiDocument)
         {
-            var root = uiDocument.rootVisualElement.Q<VisualElement>(CommonNames.SettingsViewName);
+            var root = uiDocument.rootVisualElement.Q<VisualElement>(CommonNames.SplashViewName);
             Container = root;
         }
     }

@@ -10,6 +10,7 @@ namespace Scopes.Initializers
 {
     public sealed class MenuInitializer : IStartable, IDisposable
     {
+        private SplashPresenter _splashPresenter;
         private MenuPresenter _menuPresenter;
         private SettingsPresenter _settingsPresenter;
         private readonly UIDocument _uiDocument;
@@ -36,6 +37,8 @@ namespace Scopes.Initializers
         {
             var view = _uiDocument;
             var model = new SettingsModel();
+
+            _splashPresenter = new SplashPresenter(new SplashView(view));
             _menuPresenter = new MenuPresenter(new MenuView(view), model);
             _settingsPresenter = new SettingsPresenter(new SettingsView(view), model);
         }
