@@ -6,10 +6,10 @@ namespace Menu
     {
         private readonly SplashView _view;
 
-        public SplashPresenter(SplashView view)
-        {
-            _view = view;
-            _view.Container.Hide();
-        }
+        public SplashPresenter(SplashView view) => _view = view;
+
+        public void Hide() => _view.Container.Hide();
+
+        public void Show() => _view.Container.Show();
     }
 }

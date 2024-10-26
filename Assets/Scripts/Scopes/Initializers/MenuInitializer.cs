@@ -23,9 +23,15 @@ namespace Scopes.Initializers
 
         public void Start()
         {
+            _splashPresenter = new SplashPresenter(new SplashView(_uiDocument));
+
+            if (Application.platform == RuntimePlatform.WebGLPlayer)
+                _splashPresenter.Show();
+
             var init = LocalizationSettings.InitializationOperation;
             init.Completed += a =>
             {
+                _splashPresenter.Hide();
                 CreateElements();
                 AllowScreenSleep();
             };
@@ -35,12 +41,10 @@ namespace Scopes.Initializers
 
         private void CreateElements()
         {
-            var view = _uiDocument;
             var model = new SettingsModel();
 
-            _splashPresenter = new SplashPresenter(new SplashView(view));
-            _menuPresenter = new MenuPresenter(new MenuView(view), model);
-            _settingsPresenter = new SettingsPresenter(new SettingsView(view), model);
+            _menuPresenter = new MenuPresenter(new MenuView(_uiDocument), model);
+            _settingsPresenter = new SettingsPresenter(new SettingsView(_uiDocument), model);
         }
 
         public void Dispose()

@@ -52,6 +52,8 @@ TemplateContainer {
     position: absolute;
     align-items: center;
     justify-content: center;
+    display: none;
+    visibility: hidden;
 }
 
 .splash__container > VisualElement {
