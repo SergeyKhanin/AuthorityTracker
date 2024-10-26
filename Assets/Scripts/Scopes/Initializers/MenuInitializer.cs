@@ -13,13 +13,11 @@ namespace Scopes.Initializers
         private MenuPresenter _menuPresenter;
         private SettingsPresenter _settingsPresenter;
         private readonly UIDocument _uiDocument;
-        private readonly SettingsModel _model;
 
         [Inject]
-        public MenuInitializer(UIDocument uiDocument, SettingsModel model)
+        public MenuInitializer(UIDocument uiDocument)
         {
             _uiDocument = uiDocument;
-            _model = model;
         }
 
         public void Start()
@@ -36,9 +34,10 @@ namespace Scopes.Initializers
 
         private void CreateElements()
         {
-            _model.Init();
-            _menuPresenter = new MenuPresenter(new MenuView(_uiDocument), _model);
-            _settingsPresenter = new SettingsPresenter(new SettingsView(_uiDocument), _model);
+            var view = _uiDocument;
+            var model = new SettingsModel();
+            _menuPresenter = new MenuPresenter(new MenuView(view), model);
+            _settingsPresenter = new SettingsPresenter(new SettingsView(view), model);
         }
 
         public void Dispose()
