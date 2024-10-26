@@ -354,6 +354,18 @@ TemplateContainer {
     border-width: 0;
 }
 
+.player__container-history > ScrollView .unity-text-element.unity-repeat-button:hover {
+    background-color: var(--color-orange);
+}
+
+.player__container-history > ScrollView .unity-base-slider__drag-container > .unity-base-slider__tracker:hover {
+    background-color: var(--color-orange-transperent);
+}
+
+.player__container-history > ScrollView .unity-base-slider__drag-container > .unity-base-slider__dragger:hover {
+    background-color: var(--color-orange);
+}
+
 .player__container-control-buttons {
     flex-grow: 1;
 }
