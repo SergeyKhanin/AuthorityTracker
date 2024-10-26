@@ -18,6 +18,13 @@ namespace Game
             Hide();
             Subscribe();
             BindLocalizations();
+            HideQuitButtonOnWeb();
+        }
+
+        private void HideQuitButtonOnWeb()
+        {
+            if (Application.platform == RuntimePlatform.WebGLPlayer)
+                _view.QuitButton.Hide();
         }
 
         private void OnQuitButtonClicked() => Application.Quit();

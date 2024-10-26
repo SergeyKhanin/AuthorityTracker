@@ -73,12 +73,12 @@ namespace Scopes.Initializers
 
         public void Dispose()
         {
-            _popupPresenter.Dispose();
-            _gamePresenter.Dispose();
-            _pausePresenter.Dispose();
+            _popupPresenter?.Dispose();
+            _gamePresenter?.Dispose();
+            _pausePresenter?.Dispose();
 
             foreach (var playerPresenter in _playerPresenters)
-                playerPresenter.Dispose();
+                playerPresenter?.Dispose();
         }
     }
 }

@@ -582,7 +582,10 @@ MonoBehaviour:
     - line: '|   - serializedVersion: 2'
     - line: '|     m_BuildTarget: WebGL'
     - line: '|     m_EncodingQuality: 0'
-    - line: '|   m_BuildTargetGroupLightmapSettings: []'
+    - line: '|   m_BuildTargetGroupLightmapSettings:'
+    - line: '|   - m_BuildTarget: WebGL'
+    - line: '|     m_TextureStreamingEnabled: 0'
+    - line: '|     m_TextureStreamingPriority: 0'
     - line: '|   m_BuildTargetGroupLoadStoreDebugModeSettings: []'
     - line: '|   m_BuildTargetNormalMapEncoding:'
     - line: '|   - m_BuildTarget: Android'
@@ -855,10 +858,10 @@ MonoBehaviour:
     - line: '|   webGLMemoryGeometricGrowthCap: 96'
     - line: '|   webGLEnableWebGPU: 0'
     - line: '|   webGLPowerPreference: 2'
-    - line: '|   webGLWebAssemblyTable: 0'
-    - line: '|   webGLWebAssemblyBigInt: 0'
+    - line: '|   webGLWebAssemblyTable: 1'
+    - line: '|   webGLWebAssemblyBigInt: 1'
     - line: '|   webGLCloseOnQuit: 0'
-    - line: '|   webWasm2023: 0'
+    - line: '|   webWasm2023: 1'
     - line: '|   scriptingDefineSymbols: {}'
     - line: '|   additionalCompilerArguments: {}'
     - line: '|   platformArchitecture: {}'
@@ -866,7 +869,7 @@ MonoBehaviour:
     - line: '|     Android: 1'
     - line: '|   il2cppCompilerConfiguration: {}'
     - line: '|   il2cppCodeGeneration:'
-    - line: '|     WebGL: 1'
+    - line: '|     WebGL: 0'
     - line: '|   il2cppStacktraceInformation: {}'
     - line: '|   managedStrippingLevel:'
     - line: '|     Android: 1'
@@ -1010,4 +1013,4 @@ MonoBehaviour:
         m_CodeOptimization: 4
         m_WebGLClientBrowserPath: 
         m_WebGLClientBrowserType: 0
-        m_WebGLTextureSubtarget: 0
+        m_WebGLTextureSubtarget: 1
