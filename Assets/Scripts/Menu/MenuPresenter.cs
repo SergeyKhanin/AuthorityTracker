@@ -20,6 +20,13 @@ namespace Menu
             Subscribe();
             BindLocalizations();
             UpdateContinueButtonVisibility();
+            HideQuitButtonOnWeb();
+        }
+
+        private void HideQuitButtonOnWeb()
+        {
+            if (Application.platform == RuntimePlatform.WebGLPlayer)
+                _view.QuitButton.Hide();
         }
 
         private void OnStartButtonClicked()
