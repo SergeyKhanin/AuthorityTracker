@@ -12,9 +12,9 @@
   <xs:import schemaLocation="UnityEditor.Search.xsd" namespace="UnityEditor.Search" />
   <xs:import schemaLocation="UnityEditor.Experimental.GraphView.xsd" namespace="UnityEditor.Experimental.GraphView" />
   <xs:import schemaLocation="UnityEditor.PackageManager.UI.Internal.xsd" namespace="UnityEditor.PackageManager.UI.Internal" />
+  <xs:import schemaLocation="UnityEditor.UIElements.ProjectSettings.xsd" namespace="UnityEditor.UIElements.ProjectSettings" />
   <xs:import schemaLocation="UnityEditor.UIElements.xsd" namespace="UnityEditor.UIElements" />
   <xs:import schemaLocation="UnityEditor.Audio.UIElements.xsd" namespace="UnityEditor.Audio.UIElements" />
-  <xs:import schemaLocation="UnityEditor.UIElements.ProjectSettings.xsd" namespace="UnityEditor.UIElements.ProjectSettings" />
   <xs:import schemaLocation="Unity.Profiling.Editor.UI.xsd" namespace="Unity.Profiling.Editor.UI" />
   <xs:import schemaLocation="UnityEditor.Overlays.xsd" namespace="UnityEditor.Overlays" />
   <xs:import schemaLocation="Unity.Profiling.Editor.xsd" namespace="Unity.Profiling.Editor" />
