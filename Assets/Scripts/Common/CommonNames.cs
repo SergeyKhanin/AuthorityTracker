@@ -10,6 +10,7 @@
         public const string SettingsViewName = "settings-view";
         public const string GameViewName = "game-view";
         public const string PauseViewName = "pause-view";
+        public const string SplashViewName = "splash-view";
 
         public const string MaxPointsName = "MaxPoints";
         public const string PlayerName = "Player";

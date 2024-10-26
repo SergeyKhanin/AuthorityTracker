@@ -46,6 +46,7 @@
     --points-image-size: 1024px;
     --points-label-bottom-offset: 40px;
     --points-history-image-size: 1024px;
+    --points-splash-image-size: 1024px;
     --points-history-image-scroll-width: 780px;
     --points-history-image-scroll-heigh: 896px;
     --points-history-image-scroll-padding: 20px;
@@ -78,6 +79,7 @@
     --ic-point-quarter-color-red: resource('IC_Point-quarter_Color-red');
     --ic-point-zero-color-black: resource('IC_Point-zero_Color-black');
     --ic-history-color-orange: resource('IC_History_Color-orange');
+    --ic-splash-color-green: resource('IC_Splash_Color-green');
 }
 
 :root {

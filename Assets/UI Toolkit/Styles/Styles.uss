@@ -44,6 +44,22 @@ TemplateContainer {
     justify-content: space-between;
 }
 
+.splash__container {
+    background-color: var(--color-black);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+}
+
+.splash__container > VisualElement {
+    width: var(--points-splash-image-size);
+    height: var(--points-splash-image-size);
+    background-image: var(--ic-splash-color-green);
+
+}
+
 .players__container {
     width: 100%;
     height: 100%;
