@@ -1,6 +1,7 @@
 using System;
 using Menu;
 using UnityEngine;
+using UnityEngine.Localization.Settings;
 using UnityEngine.UIElements;
 using VContainer;
 using VContainer.Unity;
@@ -23,22 +24,27 @@ namespace Scopes.Initializers
 
         public void Start()
         {
-            CreateElements();
-            AllowScreenSleep();
+            var init = LocalizationSettings.InitializationOperation;
+            init.Completed += a =>
+            {
+                CreateElements();
+                AllowScreenSleep();
+            };
         }
 
         private void AllowScreenSleep() => Screen.sleepTimeout = SleepTimeout.SystemSetting;
 
         private void CreateElements()
         {
+            _model.Init();
             _menuPresenter = new MenuPresenter(new MenuView(_uiDocument), _model);
             _settingsPresenter = new SettingsPresenter(new SettingsView(_uiDocument), _model);
         }
 
         public void Dispose()
         {
-            _menuPresenter.Dispose();
-            _settingsPresenter.Dispose();
+            _menuPresenter?.Dispose();
+            _settingsPresenter?.Dispose();
         }
     }
 }

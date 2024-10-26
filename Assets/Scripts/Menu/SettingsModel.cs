@@ -13,7 +13,7 @@ namespace Menu
 
         private Dictionary<Languages, Locale> _locales;
 
-        public SettingsModel()
+        public void Init()
         {
             InitializeLanguageLocales();
 
