@@ -5,5 +5,5 @@
     <engine:VisualElement picking-mode="Ignore" class="frame frame--menu" />
     <engine:Instance template="MenuView" picking-mode="Ignore" name="menu-view" class="menu__container" />
     <engine:Instance template="SettingsView" name="settings-view" picking-mode="Ignore" class="settings__container" />
-    <engine:Instance template="SplashView" name="splash-view" class="splash__container" />
+    <engine:Instance template="SplashView" name="splash-view" picking-mode="Ignore" class="splash__container" />
 </engine:UXML>

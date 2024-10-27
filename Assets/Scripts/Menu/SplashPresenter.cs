@@ -8,8 +8,16 @@ namespace Menu
 
         public SplashPresenter(SplashView view) => _view = view;
 
-        public void Hide() => _view.Container.Hide();
+        public void Hide()
+        {
+            _view.ImageContainer.style.opacity = 0;
+            _view.ImageFakeContainer.Hide();
+        }
 
-        public void Show() => _view.Container.Show();
+        public void Show()
+        {
+            _view.ImageContainer.style.opacity = 1;
+            _view.ImageFakeContainer.Show();
+        }
     }
 }
