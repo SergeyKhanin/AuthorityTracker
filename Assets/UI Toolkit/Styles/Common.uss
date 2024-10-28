@@ -33,6 +33,11 @@
 }
 
 :root {
+    --base-transition-duration: 1s;
+    --base-transition-timing-function: ease;
+}
+
+:root {
     --btn-rhombus-size: 180px;
     --btn-square-size: 204px;
     --btn-square-iocn-size: 120px;
