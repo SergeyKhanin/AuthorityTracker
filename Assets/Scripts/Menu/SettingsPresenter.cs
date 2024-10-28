@@ -24,7 +24,6 @@ namespace Menu
             Subscribe();
             BindLocalizations();
             UpdateLanguageButtonStates();
-            Hide();
         }
 
         private void OnBackButtonClicked() => EventsManager.SettingsClosed.Invoke();
@@ -76,6 +75,12 @@ namespace Menu
             UpdateLanguageButtonStates();
         }
 
+        private void BindLocalizations()
+        {
+            _view.BackButton.BindLocalization(LocalizationKeys.Buttons.Back);
+            _view.DeleteDataButton.BindLocalization(LocalizationKeys.Buttons.DeleteData);
+        }
+
         private void Subscribe()
         {
             foreach (var button in _languageButtons)
@@ -108,12 +113,6 @@ namespace Menu
 
             EventsManager.SettingsOpened.RemoveListener(Show);
             EventsManager.SettingsClosed.RemoveListener(Hide);
-        }
-
-        private void BindLocalizations()
-        {
-            _view.BackButton.BindLocalization(LocalizationKeys.Buttons.Back);
-            _view.DeleteDataButton.BindLocalization(LocalizationKeys.Buttons.DeleteData);
         }
     }
 }

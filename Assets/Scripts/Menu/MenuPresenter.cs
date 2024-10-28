@@ -21,6 +21,7 @@ namespace Menu
             BindLocalizations();
             UpdateContinueButtonVisibility();
             HideQuitButtonOnWeb();
+            Show();
         }
 
         private void HideQuitButtonOnWeb()
@@ -41,7 +42,11 @@ namespace Menu
 
         private void OnQuitButtonClicked() => Application.Quit();
 
-        private void Show() => _view.Container.Show();
+        private void Show()
+        {
+            _view.Container.Show();
+            _view.Container.style.opacity = 1;
+        }
 
         private void Hide() => _view.Container.Hide();
 
