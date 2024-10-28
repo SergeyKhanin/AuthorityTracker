@@ -10,22 +10,31 @@ namespace Menu
     {
         private const int PlayerAmount = Players.PlayerAmount;
         public Languages Languages { get; private set; }
-
         private Dictionary<Languages, Locale> _locales;
 
-        public SettingsModel()
+        public void InitializeLanguageLocales()
         {
-            InitializeLanguageLocales();
+            _locales = new Dictionary<Languages, Locale>();
+            var settings = LocalizationSettings.AvailableLocales;
 
-            if (PlayerPrefs.HasKey(CommonNames.LanguageName))
-            {
-                Languages = (Languages)PlayerPrefs.GetInt(CommonNames.LanguageName);
-                SetLanguage(Languages);
-            }
-            else
-            {
-                SetLanguage(Languages.English);
-            }
+            _locales.Add(Languages.English, settings.GetLocale(LanguagesIdentifier.En));
+            _locales.Add(Languages.Chinese, settings.GetLocale(LanguagesIdentifier.Zh));
+            _locales.Add(Languages.Hindi, settings.GetLocale(LanguagesIdentifier.Hi));
+            _locales.Add(Languages.Spanish, settings.GetLocale(LanguagesIdentifier.Es));
+            _locales.Add(Languages.French, settings.GetLocale(LanguagesIdentifier.Fr));
+            _locales.Add(Languages.Arabic, settings.GetLocale(LanguagesIdentifier.Ar));
+            _locales.Add(Languages.Bangla, settings.GetLocale(LanguagesIdentifier.Bn));
+            _locales.Add(Languages.Portuguese, settings.GetLocale(LanguagesIdentifier.Pt));
+            _locales.Add(Languages.Russian, settings.GetLocale(LanguagesIdentifier.Ru));
+            _locales.Add(Languages.Urdu, settings.GetLocale(LanguagesIdentifier.Ur));
+            _locales.Add(Languages.Indonesian, settings.GetLocale(LanguagesIdentifier.Id));
+            _locales.Add(Languages.Japanese, settings.GetLocale(LanguagesIdentifier.Ja));
+            _locales.Add(Languages.German, settings.GetLocale(LanguagesIdentifier.De));
+            _locales.Add(Languages.Telugu, settings.GetLocale(LanguagesIdentifier.Te));
+            _locales.Add(Languages.Marathi, settings.GetLocale(LanguagesIdentifier.Mr));
+            _locales.Add(Languages.Turkish, settings.GetLocale(LanguagesIdentifier.Tr));
+
+            SetStartLanguage();
         }
 
         public int GetPlayersAmount() => PlayerAmount;
@@ -65,29 +74,6 @@ namespace Menu
 
         public void DeleteData() => PlayerPrefs.DeleteAll();
 
-        private void InitializeLanguageLocales()
-        {
-            _locales = new Dictionary<Languages, Locale>();
-            var settings = LocalizationSettings.AvailableLocales;
-
-            _locales.Add(Languages.English, settings.GetLocale(LanguagesIdentifier.En));
-            _locales.Add(Languages.Chinese, settings.GetLocale(LanguagesIdentifier.Zh));
-            _locales.Add(Languages.Hindi, settings.GetLocale(LanguagesIdentifier.Hi));
-            _locales.Add(Languages.Spanish, settings.GetLocale(LanguagesIdentifier.Es));
-            _locales.Add(Languages.French, settings.GetLocale(LanguagesIdentifier.Fr));
-            _locales.Add(Languages.Arabic, settings.GetLocale(LanguagesIdentifier.Ar));
-            _locales.Add(Languages.Bangla, settings.GetLocale(LanguagesIdentifier.Bn));
-            _locales.Add(Languages.Portuguese, settings.GetLocale(LanguagesIdentifier.Pt));
-            _locales.Add(Languages.Russian, settings.GetLocale(LanguagesIdentifier.Ru));
-            _locales.Add(Languages.Urdu, settings.GetLocale(LanguagesIdentifier.Ur));
-            _locales.Add(Languages.Indonesian, settings.GetLocale(LanguagesIdentifier.Id));
-            _locales.Add(Languages.Japanese, settings.GetLocale(LanguagesIdentifier.Ja));
-            _locales.Add(Languages.German, settings.GetLocale(LanguagesIdentifier.De));
-            _locales.Add(Languages.Telugu, settings.GetLocale(LanguagesIdentifier.Te));
-            _locales.Add(Languages.Marathi, settings.GetLocale(LanguagesIdentifier.Mr));
-            _locales.Add(Languages.Turkish, settings.GetLocale(LanguagesIdentifier.Tr));
-        }
-
         private Locale GetLocal(Languages language)
         {
             return language switch
@@ -110,6 +96,19 @@ namespace Menu
                 Languages.Turkish => _locales[Languages.Turkish],
                 _ => _locales[Languages.English]
             };
+        }
+
+        private void SetStartLanguage()
+        {
+            if (PlayerPrefs.HasKey(CommonNames.LanguageName))
+            {
+                Languages = (Languages)PlayerPrefs.GetInt(CommonNames.LanguageName);
+                SetLanguage(Languages);
+            }
+            else
+            {
+                SetLanguage(Languages.English);
+            }
         }
 
         private void SaveLanguage()

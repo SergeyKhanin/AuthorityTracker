@@ -44,23 +44,47 @@ TemplateContainer {
     justify-content: space-between;
 }
 
-.splash__container {
-    background-color: var(--color-black);
-    background-image: var(--im-main-menu-frame);
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    align-items: center;
-    justify-content: center;
+.menu__container {
+    transition-duration: var(--base-transition-duration);
+    transition-timing-function: var(--base-transition-timing-function);
+    transition-property: opacity;
+    opacity: 0;
+}
+
+.settings__container {
     display: none;
     visibility: hidden;
 }
 
-.splash__container > VisualElement {
+.splash__container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.splash__container-image {
+    background-color: var(--color-black);
+    background-image: var(--im-main-menu-frame);
+    transition-duration: var(--base-transition-duration);
+    transition-timing-function: var(--base-transition-timing-function);
+    width: 100%;
+    height: 100%;
+    transition-property: opacity;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+}
+
+.splash__container-image > VisualElement {
     width: var(--points-splash-image-size);
     height: var(--points-splash-image-size);
     background-image: var(--ic-splash-color-green);
+}
 
+.splash__container-image--fake {
+    width: 100%;
+    height: 100%;
+    position: absolute;
 }
 
 .players__container {
