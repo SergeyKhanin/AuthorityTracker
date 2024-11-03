@@ -80,6 +80,7 @@ namespace Player
         public void Restart()
         {
             Points = StartPoints;
+            _history = _historyBuilder.Clear().ToString();
             DeletePlayerData();
         }
 

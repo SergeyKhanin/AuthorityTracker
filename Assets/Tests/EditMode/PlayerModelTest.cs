@@ -104,7 +104,7 @@ namespace Tests.EditMode
         }
 
         [Test]
-        public void PlayerModel_Counter_IncreaseBy10_PointsSetsTo10()
+        public void PlayerModel_Counter_IncreaseBy10_CounterSetsTo10()
         {
             // Arrange
             _model.Restart();
@@ -119,7 +119,7 @@ namespace Tests.EditMode
         }
 
         [Test]
-        public void PlayerModel_Counter_MaximumValueIs99()
+        public void PlayerModel_Counter_MaximumCounterValueIs99()
         {
             // Arrange
             _model.Restart();
@@ -134,7 +134,7 @@ namespace Tests.EditMode
         }
 
         [Test]
-        public void PlayerModel_Counter_DecreaseBy10_PointsSetsToNegative10()
+        public void PlayerModel_Counter_DecreaseBy10_CounterSetsToNegative10()
         {
             // Arrange
             _model.Restart();
@@ -149,7 +149,7 @@ namespace Tests.EditMode
         }
 
         [Test]
-        public void PlayerModel_Counter_MinimumValueIsNegative99()
+        public void PlayerModel_Counter_MinimumCounterValueIsNegative99()
         {
             // Arrange
             _model.Restart();
@@ -161,6 +161,35 @@ namespace Tests.EditMode
 
             // Assert
             Assert.AreEqual(-99, _model.Counter);
+        }
+
+        [Test]
+        public void PlayerModel_History_AfterSingleApply_ReturnsCorrectEntry()
+        {
+            // Arrange
+            _model.Restart();
+            _model.ResetCounter();
+
+            // Act
+            _model.X5Minus();
+            _model.Apply();
+
+            // Assert
+            Assert.AreEqual("45<color=#D73733>(50-5)</color>", _model.History);
+        }
+
+        [Test]
+        public void PlayerModel_History_WithoutApply_ReturnsEmpty()
+        {
+            // Arrange
+            _model.Restart();
+            _model.ResetCounter();
+
+            // Act
+            _model.X5Minus();
+
+            // Assert
+            Assert.AreEqual(string.Empty, _model.History);
         }
     }
 }
