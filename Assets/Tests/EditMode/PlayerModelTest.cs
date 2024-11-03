@@ -12,7 +12,7 @@ namespace Tests.EditMode
         {
             // Arrange
             _model.Restart();
-            _model.Clear();
+            _model.ResetCounter();
 
             // Act
             for (int i = 0; i < 999; i++)
@@ -30,7 +30,7 @@ namespace Tests.EditMode
         {
             // Arrange
             _model.Restart();
-            _model.Clear();
+            _model.ResetCounter();
 
             // Act
             for (int i = 0; i < 999; i++)
@@ -48,7 +48,7 @@ namespace Tests.EditMode
         {
             // Arrange
             _model.Restart();
-            _model.Clear();
+            _model.ResetCounter();
 
             // Act
             _model.X1Minus();
@@ -63,7 +63,7 @@ namespace Tests.EditMode
         {
             // Arrange
             _model.Restart();
-            _model.Clear();
+            _model.ResetCounter();
 
             // Act
             _model.X5Minus();
@@ -78,7 +78,7 @@ namespace Tests.EditMode
         {
             // Arrange
             _model.Restart();
-            _model.Clear();
+            _model.ResetCounter();
 
             // Act
             _model.X1Plus();
@@ -93,7 +93,7 @@ namespace Tests.EditMode
         {
             // Arrange
             _model.Restart();
-            _model.Clear();
+            _model.ResetCounter();
 
             // Act
             _model.X5Plus();
@@ -108,7 +108,7 @@ namespace Tests.EditMode
         {
             // Arrange
             _model.Restart();
-            _model.Clear();
+            _model.ResetCounter();
 
             // Act
             for (int i = 0; i < 2; i++)
@@ -123,7 +123,7 @@ namespace Tests.EditMode
         {
             // Arrange
             _model.Restart();
-            _model.Clear();
+            _model.ResetCounter();
 
             // Act
             for (int i = 0; i < 100; i++)
@@ -138,7 +138,7 @@ namespace Tests.EditMode
         {
             // Arrange
             _model.Restart();
-            _model.Clear();
+            _model.ResetCounter();
 
             // Act
             for (int i = 0; i < 2; i++)
@@ -153,7 +153,7 @@ namespace Tests.EditMode
         {
             // Arrange
             _model.Restart();
-            _model.Clear();
+            _model.ResetCounter();
 
             // Act
             for (int i = 0; i < 100; i++)

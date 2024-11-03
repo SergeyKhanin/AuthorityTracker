@@ -74,7 +74,7 @@ namespace Player
             UpdatePointsImageVisualState();
             UpdatePointsLabelVisualState();
             SavePlayerData();
-            Clear();
+            ResetCounter();
         }
 
         public void Restart()
@@ -83,7 +83,7 @@ namespace Player
             DeletePlayerData();
         }
 
-        public void Clear()
+        public void ResetCounter()
         {
             Counter = 0;
             UpdateCounterVisualState();
