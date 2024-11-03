@@ -74,12 +74,17 @@ namespace Player
             UpdatePointsImageVisualState();
             UpdatePointsLabelVisualState();
             SavePlayerData();
-            Clear();
+            ResetCounter();
         }
 
-        public void Restart() => DeletePlayerData();
+        public void Restart()
+        {
+            Points = StartPoints;
+            _history = _historyBuilder.Clear().ToString();
+            DeletePlayerData();
+        }
 
-        public void Clear()
+        public void ResetCounter()
         {
             Counter = 0;
             UpdateCounterVisualState();

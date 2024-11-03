@@ -114,7 +114,7 @@ namespace Player
 
         private void Clear()
         {
-            _model.Clear();
+            _model.ResetCounter();
             HideCounter();
         }
 
