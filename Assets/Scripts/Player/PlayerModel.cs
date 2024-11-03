@@ -77,7 +77,11 @@ namespace Player
             Clear();
         }
 
-        public void Restart() => DeletePlayerData();
+        public void Restart()
+        {
+            Points = StartPoints;
+            DeletePlayerData();
+        }
 
         public void Clear()
         {
